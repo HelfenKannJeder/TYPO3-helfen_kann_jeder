@@ -1,0 +1,517 @@
+
+.helfen_kann_jeder label {
+	width: 250px;
+	display: block;
+	float: left;
+}
+
+.helfen_kann_jeder br {
+	clear: left;
+}
+
+.helfen_kann_jeder h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.helfen_kann_jeder h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.helfen_kann_jeder_organisation_show_pictures {
+	float: right;
+	padding-right: 20px;
+}
+
+.helfen_kann_jeder_organisation_group_new {
+	float: right;
+}
+
+.helfen_kann_jeder_organisation_show_table {
+	width: 600px;
+}
+
+.helfen_kann_jeder_organisation_show_div_group {
+	background-color: #c0c0c0;
+	padding: 5px;
+	margin: 5px;
+}
+
+.helfen_kann_jeder_organisation_show_div_buttons_group {
+	float: right;
+}
+
+#helfen_kann_jeder_matrix_table {
+	width: 100%;
+}
+
+.helfen_kann_jeder_matrix_col_odd.helfen_kann_jeder_matrix_row_odd,
+.helfen_kann_jeder_matrix_col_odd.helfen_kann_jeder_matrix_row_even,
+.helfen_kann_jeder_matrix_col_even.helfen_kann_jeder_matrix_row_odd,
+.helfen_kann_jeder_matrix_col_even.helfen_kann_jeder_matrix_row_even {
+	text-align: center;
+}
+
+.helfen_kann_jeder_matrix_col {
+	width: 20px;
+}
+
+.helfen_kann_jeder_matrix_row_odd {
+	background-color: #dddddd;
+}
+
+.helfen_kann_jeder_matrix_col_odd {
+	background-color: #dddddd;
+}
+
+.helfen_kann_jeder_matrix_row_odd.helfen_kann_jeder_matrix_col_odd {
+	background-color: #d4d4d4;
+}
+
+.helfen_kann_jeder_matrix_button {
+	cursor: pointer;
+}
+
+.helfen_kann_jeder_generator_background {
+	width: 684px;
+	height: 457px;
+	background-color: #d1eef6;
+	background-repeat: no-repeat;
+	background-position: 302px 102px;
+}
+
+.helfen_kann_jeder_generator_background_normal {
+	background-repeat: no-repeat;
+	background-position: 302px 102px;
+}
+
+.helfen_kann_jeder_generator_background_youth {
+	background-repeat: no-repeat;
+	background-position: 475px 0px;
+}
+
+.helfen_kann_jeder_generator_step12 {
+	float: left;
+	width: 342px;
+	height: 292px;
+}
+
+.helfen_kann_jeder_generator_step12 #activities_list_ul, .helfen_kann_jeder_generator_step12 #activityfields_list_ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.helfen_kann_jeder_generator_step12 #activities_list_ul li, .helfen_kann_jeder_generator_step12 #activityfields_list_ul li {
+	color: #666666;
+	font-weight: bold;
+}
+
+.helfen_kann_jeder_generator_step12 #activities_list_ul span, .helfen_kann_jeder_generator_step12 #activityfields_list_ul span {
+	color: red;
+	font-weight: bold;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+.helfen_kann_jeder_generator_step12 #activities_list_ul span:HOVER, .helfen_kann_jeder_generator_step12 #activityfields_list_ul span:HOVER {
+	color: #B30000;
+}
+
+.helfen_kann_jeder_generator_step12_image {
+	float: left;
+}
+
+.helfen_kann_jeder_generator_step12_text {
+	float: left;
+	width: 215px;
+	margin-top: 26px;
+	color: black;
+}
+
+.helfen_kann_jeder_generator_step3_image {
+	float: left;
+}
+
+.helfen_kann_jeder_generator_step3_text {
+	float: left;
+	width: 150px;
+	padding-right: 5px;
+	padding-top: 35px;
+}
+
+.helfen_kann_jeder_generator_step3_organisations {
+	float: left;
+	width: 530px;
+	padding-top: 35px;
+}
+
+.helfen_kann_jeder_generator_step3_organisations #organisation_none, .helfen_kann_jeder_generator_step3_organisations #organisation_searching {
+	color: #666666;
+}
+
+.helfen_kann_jeder_generator_step3_organisations_percentage {
+	padding-right: 5px;
+	text-align: right;
+	width: 50px;
+	color: black;
+	float: left;
+	font-weight: bold;
+}
+
+.helfen_kann_jeder_generator_step3_organisations_name {
+	float: left;
+	width: 390px;
+	overflow: hidden;
+}
+
+.helfen_kann_jeder_generator_step3_organisations_name a {
+	text-decoration: none;
+	color: #00ADEF;
+	font-weight: bold;
+}
+
+.helfen_kann_jeder_generator_step3_organisations_distance {
+	color: black;
+}
+
+.helfen_kann_jeder_generator_line {
+	background-color: #c5deed;
+	height: 250px;
+	margin-bottom: -18px;
+}
+
+.helfen_kann_jeder_matrix_highlighted td, .helfen_kann_jeder_matrix_highlighted {
+        background-color: #00ADEF !IMPORTANT;
+}
+
+.helfen_kann_jeder_activity_input {
+	border: 1px solid #00ADEF;
+}
+
+#helfen_kann_jeder_search_result {
+	position: absolute;
+	background-color: white;
+	height: 220px;
+	width: 450px;
+	border: 1px solid #00ADEF;
+	border-top: none;
+	overflow: auto;
+}
+
+#helfen_kann_jeder_search_result ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#helfen_kann_jeder_search_result ul li {
+	padding: 2px;
+}
+
+#helfen_kann_jeder_search_result ul li:HOVER {
+	background-color: #00ADEF;
+}
+
+#helfen_kann_jeder_search_result ul li:HOVER .show-tooltip, #helfen_kann_jeder_search_result ul li:HOVER .show-tooltip-extend {
+	color: white !IMPORTANT;
+}
+
+.helfen_kann_jeder_gray {
+	color: #777777;
+}
+
+.helfen_kann_jeder_citysign_exclamationmark {
+	padding-left: 80px;
+	padding-top: 60px;
+	padding-right: 20px;
+	float: left;
+}
+
+.helfen_kann_jeder_citysign_text {
+	padding-top: 70px;
+	width: 440px;
+	float: left;
+}
+
+.helfen_kann_jeder_citysign_input_div {
+	padding-top: 50px;
+	padding-left: 82px;
+}
+
+.helfen_kann_jeder_citysign_input {
+	float: left;
+	border: 2px solid #b3b3b3;
+	color: black;
+	height: 20px;
+	line-height: 30px;
+	width: 390px;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+.helfen_kann_jeder_citysign_submit {
+	float: left;
+	display: inline;
+	border: 2px solid #4088ed;
+	background-color: #40abed;
+	color: white;
+	height: 34px;
+	line-height: 30px;
+}
+
+#helfen_kann_jeder_citysign_content {
+	cursor: pointer;
+	padding:20px 15px;
+	font-size: 10px;
+}
+
+#helfen_kann_jeder_citysign_error {
+	width: 450px;
+	color: red;
+	font-weight: bold;
+	clear: both;
+	padding-top: 15px;
+	padding-left: 82px;
+}
+
+.helfen_kann_jeder_citysign_age {
+	padding-top: 40px;
+	width: 550px;
+	float: left;
+	padding-left: 82px;
+}
+
+.helfen_kann_jeder_citysign_age input {
+	display: inline;
+	border: 2px solid #b3b3b3;
+	color: black;
+	line-height: 30px;
+	width: 50px;
+	padding: 5px;
+}
+
+.helfen_kann_jeder_overview_icon {
+	float: left;
+	width: 140px;
+	height: 70px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.helfen_kann_jeder_overview_text, .helfen_kann_jeder_employee_text {
+	float: left;
+	margin-left: 10px;
+	width: 474px;
+}
+
+.helfen_kann_jeder_overview_text ul {
+	margin: 0;
+}
+
+.helfen_kann_jeder_overview_text h1 {
+	margin-bottom: 5px !IMPORTANT;
+}
+
+.helfen_kann_jeder_overview_text h2 a, .helfen_kann_jeder_overview_detail_back_link {
+/*	color: #00ADEF !IMPORTANT;*/
+	color: #162082 !IMPORTANT;
+	text-decoration: none !IMPORTANT;
+}
+
+.helfen_kann_jeder_overview_detail_back_link {
+	font-weight:bold;
+	margin-bottom: 20px;
+}
+
+.helfen_kann_jeder_overview_text .helfen_kann_jeder_overview_website {
+	font-size: 12px;
+}
+
+.helfen_kann_jeder_overview_text .helfen_kann_jeder_overview_website a, .helfen_kann_jeder_overview_detail_website a { 
+	color: #827e7f !IMPORTANT;
+	text-decoration: none !IMPORTANT;
+}
+
+.helfen_kann_jeder_overview_distance {
+	color: #827e7f;
+	font-size: 12px;
+	float: right;
+}
+
+.helfen_kann_jeder_overview_text .helfen_kann_jeder_overview_website a:HOVER, .helfen_kann_jeder_overview_detail_website a:HOVER {
+	text-decoration: underline !IMPORTANT;
+}
+
+.helfen_kann_jeder_overview_complete {
+	padding: 10px 0;
+}
+
+.helfen_kann_jeder_overview_even {
+	background-color: #e5f2f6;
+}
+
+.helfen_kann_jeder_overview_detail_images, .helfen_kann_jeder_employee_detail_images {
+	float: left;
+	width: 140px;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.helfen_kann_jeder_overview_detail_images img {
+	margin-bottom: 15px;
+}
+
+.helfen_kann_jeder_overview_detail_contactperson_label {
+	float: left;
+	width: 140px;
+}
+
+.helfen_kann_jeder_overview_detail_contactperson_content {
+	float: left;
+}
+
+.helfen_kann_jeder_overview_detail_contactperson_picture {
+	float: right;
+	padding-left: 20px;
+}
+
+.helfen_kann_jeder_overview_detail_workingtime_content {
+	float: left;
+	width: 330px;
+}
+
+a.show-tooltip, a.show-tooltip-extend {
+	font-weight: bold;
+	text-decoration: none;
+	color: #4088ed;
+}
+
+.helfen_kann_jeder_search_nothing_found {
+	color: #444444;
+}
+
+.show-tooltip-text {
+	z-index: 100000;
+}
+
+.helfen_kann_jeder_employee_detail {
+	padding-bottom: 20px 0;
+}
+
+.helfen_kann_jeder_overview_picture {
+	float: right;
+}
+
+.helfen_kann_jeder_organisation_detail_description ul {
+	margin: 0;
+}
+
+#helfen_kann_jeder_citysign_current_addressbar {
+	background-color: #4088ed;
+	color: white;
+	padding: 5px;
+}
+
+.helfen_kann_jeder_citysign_current_addressbar_edit {
+	color: #dddddd;
+	cursor: pointer;
+}
+
+.helfenkannjeder_backer_grider_top {
+	border-top: 1px solid white;
+}
+
+.helfenkannjeder_backer_grider {
+	height: 50px;
+}
+
+.helfenkannjeder_backer_grider_bottom {
+	border-bottom: 1px solid white;
+}
+
+.helfenkannjeder_backer_small {
+	float: left;
+	width: 125px;
+	height: 50px;
+	font-size: 10px;
+}
+
+.helfenkannjeder_backer_small.helfenkannjeder_backer_small_financial {
+	width: auto;
+	min-width: 125px;
+}
+
+.helfenkannjeder_backer_small a {
+	white-space:normal;
+	line-height: 12px;
+}
+
+.helfenkannjeder_backer_small_image {
+	padding-right: 5px;
+}
+
+.helfenkannjeder_backer_small_image, .helfenkannjeder_backer_small_text {
+	float: left;
+}
+
+.helfenkannjeder_backer_small_text {
+	padding-top: 7px;
+	width: 65px;
+}
+
+.helfenkannjeder_backer_description_type {
+	float: right;
+}
+
+.helfenkannjeder_backer_small_text a {
+	color: #162082;
+	text-decoration: none;
+}
+
+.helfenkannjeder_backer_spacer {
+	float: left;
+	width: 20px;
+	height: 50px;
+}
+
+.clearer {
+	clear: both;
+}
+
+#margin_header {
+	padding: 20px;
+}
+
+#citysign {
+	display: none;
+}
+
+.helfen_kann_jeder_generator_organisation_resultbar_complete {
+	float: left;
+	width: 120px;
+	padding-right: 5px;
+}
+
+.helfen_kann_jeder_generator_organisation_resultbar {
+	margin-top: 4px;
+	background-image: url(../Images/PercentBar.png);
+	border: 1px solid #00ADEF;
+	border-radius: 3px;
+	height: 8px;
+	line-height: 8px;
+	font-size: 8px;
+}
+
+#helfen_kann_jeder_result_survey {
+	padding-left: 15px;
+	padding-top: 5px;
+}

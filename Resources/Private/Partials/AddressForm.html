@@ -1,0 +1,37 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div class="organisationAddressHeadline {hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: '')} {f:if(condition:'{address.uid} == {organisation.defaultaddress.uid}', then:'organisationAddressHeadlineDefault')}" id="organisationAddressNum_{num}" onclick="register_organisation_object_detail_show(this);"{f:if(condition: '{invisible} == 1', then: ' style="display:none"')}>
+<div style="float:right;cursor:pointer" onclick="if (window.confirm('{f:translate(key: 'organisation_address_delete_question')}')) register_organisation_object_delete(this);" onmouseover="register_organisation_object_delete_button_over(this);" onmouseout="register_organisation_object_delete_button_out(this);"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_delete.png')}" alt="Delete" /></div>
+<div style="float:right;cursor:pointer"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_edit.png')}" alt="Edit" /></div>
+<strong><f:if condition="{address.street}">{address.street}, </f:if><f:if condition="{address.zipcode}"><f:format.printf arguments="{0: address.zipcode}">%05d</f:format.printf></f:if> {address.city}</strong><br />
+</div><div class="labelForm organisationAddressContainer" {f:if(condition: '{hkj:isValid(errors: errorFields, object: \'address\', id: address.uid, property: \'\')}', then: '', else: '{f:if(condition: \'{invisible} != 2\', then: \' style="display:none"\')}')}>
+<f:form.hidden name="addresses[{num}][id]" value="{address.uid}" />
+<f:form.hidden id="organisationAddressNumDelete_{num}" name="addresses[{num}][delete]" value="{f:if(condition: '{invisible} == 1', then: '1', else: '0')}" />
+<label for="street"><f:translate key="organisation_addressappendix" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_addressappendix_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][addressappendix]" value="{address.addressappendix}" class="{hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: 'addressappendix')}" /><br />
+<label for="street"><f:translate key="organisation_street" />  <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_street_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][street]" value="{address.street}" class="{hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: 'street')}" /><br />
+<label for="city"><f:translate key="organisation_zipcode" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_zipcode_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][zipcode]" value="{f:if(condition: address.zipcode, then: address.zipcode)}" class="{hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: 'zipcode')}" /><br />
+<label for="city"><f:translate key="organisation_city" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_city_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][city]" value="{address.city}" class="{hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: 'city')}" /><br />
+<label for="telephone"><f:translate key="organisation_telephone" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_telephone_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][telephone]" value="{address.telephone}" class="{hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: 'telephone')}" /><br />
+<label for="website"><f:translate key="organisation_website" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_website_help')}">?</a></label>
+<f:form.textfield name="addresses[{num}][website]" value="{address.website}" class="{hkj:isValid(errors: errorFields, object: 'website', id: address.uid, property: 'website')}" /><br />
+<label for="address"><f:translate key="organisation_address_default" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_address_default_help')}">?</a></label>
+<f:form.radio name="defaultaddress" value="{f:if(condition:address.uid else:num then:address.uid)}" checked="{f:if(condition: forceNotDefault, then:'0', else: '{f:if(condition: \'{address.uid} == {organisation.defaultaddress.uid}\', then:\'1\', else:\'0\')}')}" /> <f:translate key="organisation_address_default_description" /><br />
+<label for="geodata"><f:translate key="organisation_geodata" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_geodata_help')}">?</a></label>
+<f:if condition="{address.latitude}"><f:then>
+{hkj:geo.CoordinateCalculator(coordinate: address.latitude)} N, {hkj:geo.CoordinateCalculator(coordinate: address.longitude)} E
+</f:then>
+<f:else>
+<f:alias map="{newStatus: 'new'}">
+<f:if condition="{num} == {newStatus}">
+<f:then>{f:translate(key: 'organisation_geodata.new')}</f:then>
+<f:else>{f:translate(key: 'organisation_geodata.failed')}</f:else>
+</f:if>
+</f:alias>
+</f:else>
+</f:if>
+<br style="clear:both" />
+</div>

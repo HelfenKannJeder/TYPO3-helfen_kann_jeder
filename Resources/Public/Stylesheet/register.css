@@ -1,0 +1,314 @@
+#helfen_kann_jeder_register_margin20 {
+	float: left;
+	padding: 20px;
+	background-color: #D1EEF6;
+	width: 640px;
+}
+
+#helfen_kann_jeder_register {
+	width: 640px;
+}
+
+.helfen_kann_jeder_register_progress_steps {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.helfen_kann_jeder_register_progress_steps li {
+	float: left;
+	width: 70px;
+	padding: 0 10px 0 20px;
+	background-color: #00ADEF;
+	color: white;
+	line-height: 25px;
+	background-image: url(../Images/register_arrow_0_0.png);
+	background-repeat: no-repeat;
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_first_step {
+	margin-right: 20px;
+	padding: 0 10px 0 10px;
+	width: 100px;
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_second_child {
+	background-image: none !IMPORTANT;
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_finished {
+	background-color: #162082;
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_next_step {
+	background-image: url(../Images/register_arrow_1_0.png);
+}
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_finished {
+	background-image: url(../Images/register_arrow_1_1.png);
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_finished:first-child {
+	background-image: none; /*url(../Images/register_arrow_n_1.png);*/
+}
+
+.helfen_kann_jeder_register_progress_steps li.helfen_kann_jeder_register_progress_finished a {
+	color: white;
+}
+
+.helfen_kann_jeder_register_current_step {
+	font-weight: bold;
+}
+
+#helfen_kann_jeder_register #error {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	color: red;
+}
+
+#helfen_kann_jeder_register .labelForm label {
+	float: left;
+	width: 120px;
+}
+
+#helfen_kann_jeder_register .labelForm input, #helfen_kann_jeder_register .labelForm textarea,
+#helfen_kann_jeder_register .labelForm select {
+	width: 320px;
+	margin-bottom: 5px;
+	border: 1px solid #162082;
+}
+
+#helfen_kann_jeder_register .labelForm select.organisationWorkinghourSmall {
+	width: 50px;
+}
+
+#helfen_kann_jeder_register .labelForm input.f3-form-error, #helfen_kann_jeder_register .labelForm textarea.f3-form-error,
+#helfen_kann_jeder_register .labelForm select.f3-form-error {
+	border: 1px solid red;
+}
+
+#helfen_kann_jeder_register .labelForm input[type=checkbox], #helfen_kann_jeder_register .labelForm input[type=radio] {
+	width: auto;
+	border: 0;
+}
+
+#helfen_kann_jeder_register .labelForm textarea.textareaHuge {
+	width: 390px;
+	height: 150px;
+}
+
+#helfen_kann_jeder_register_contactperson {
+	float: left;
+	width: 180px;
+	margin-left: 30px;
+	margin-right: 20px;
+}
+
+#helfen_kann_jeder_register .submitStepBack input, #helfen_kann_jeder_register .submitStepNext input {
+	border: 0;
+	background-color: #00ADEF;
+	color: white;
+}
+
+#helfen_kann_jeder_register .submitStepBack {
+	float: left;
+}
+
+#helfen_kann_jeder_register .submitStepNext {
+	float: right;
+	margin-right: 4px;
+}
+
+#helfen_kann_jeder_register .submitEnd {
+	clear: both;
+}
+
+#helfen_kann_jeder_register .submitStepBack input:HOVER, #helfen_kann_jeder_register .submitStepNext input:HOVER {
+	background-color: #162082;
+}
+
+/* organisation */
+.organisationAddressHeadline, .organisationEmployeeHeadline, .organisationWorkinghourHeadline {
+	border: 1px solid #162082;
+	background-color: #00ADEF;
+	line-height: 16px;
+	width: 500px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+.organisationAddressContainer, .organisationEmployeeContainer, .organisationWorkinghourContainer {
+	border: 1px solid #162082;
+	border-top: 0;
+	background-color: #eeeeee;
+	width: 500px;
+	padding: 5px;
+}
+
+.organisationAddressContainerNew, .organisationEmployeeContrainerNew, .organisationWorkinghourContainerNew {
+	background-color: #dddddd;
+}
+
+#organisationAddressContainerMap {
+	width: 200px;
+	height: 200px;
+}
+
+.organisationAddressHeadlineDefault, .organisationEmployeeHeadlineContactperson {
+	background-color: darkgreen;
+	color: white;
+}
+
+.organisationAddressHeadlineError, .organisationEmployeeHeadlineError {
+	background-color: #ff0000;
+}
+
+#helfen_kann_jeder_register .organisationEmployeeContainer.labelForm textarea, #helfen_kann_jeder_register .organisiationGroupContainer textarea {
+	width: 320px;
+}
+
+.organisationGroupTemplateContainer {
+	background-color: #eeeeee;
+	border: 1px solid #162082;
+	width: 500px;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.organisationGroupTemplateContainer .organisationGroupTemplateCheckbox {
+	float: left;
+	width: 35px;
+}
+
+.organisationGroupTemplateContainer .organisationGroupTemplateDescriptor {
+	float: left;
+	width: 450px;
+}
+
+.organisiationGroupContainer {
+	border: 1px solid #162082;
+	border-top: 0;
+	margin-left: 20px;
+	width: 480px;
+	padding: 5px;
+	background-color: white;
+}
+
+.organisationGroupError {
+	color: red;
+}
+
+.organisationGroupContactpersons {
+	float: left;
+	width: 320px;
+}
+
+#dummyElement {
+	float: left;
+	width: 100px; height: 100px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.organisation_picture_delete {
+	margin-left: 84px;
+	margin-top: 84px;
+	width: 16px;
+	height: 16px;
+}
+
+#helfen_kann_jeder_register .labelForm input.organisation_invalid_field,
+#helfen_kann_jeder_register .labelForm textarea.organisation_invalid_field,
+#helfen_kann_jeder_register .labelForm select.organisation_invalid_field,
+.organisationAddressHeadline.organisation_invalid_field,
+.organisationEmployeeHeadline.organisation_invalid_field,
+.organisationWorkinghourHeadline.organisation_invalid_field {
+	border: 1px solid red !IMPORTANT;
+}
+
+.logo_choose_radio {
+	margin-left: 10px;
+}
+
+.logo_choose_radio:first-child {
+	margin-left: 0px;
+}
+
+.logo_choose_radio_0 {
+	margin-left: 0px;
+}
+
+.borderChange, .borderChangeDrag {
+	width: 100px;
+	height: 100px;
+	background-repeat: no-repeat;
+	float:left;
+	margin: 5px;
+	background-position: center center;
+}
+
+#uploadsListPosition {
+	position: absolute;
+}
+
+#uploads {
+	background-color: lightgrey;
+	min-width: 400px;
+}
+
+#tx_helfenkannjeder_bluebox_content #error {
+	list-style-type: none;
+	color: red;
+	margin: 0;
+	padding: 0;
+}
+
+.supportButtonBack {
+	padding: 5px;
+	background-color: #b3adff;
+	border: 1px solid blue;
+	margin-right: 20px;
+}
+
+.supportButtonMode {
+	padding: 5px;
+	background-color: #ffd9a2;
+	border: 1px solid orange;
+	margin-right: 5px;
+}
+
+.supportButtonBackFloat {
+	float: left;
+	margin-right: 20px;
+}
+
+.supportButtonDeny {
+	float: left;
+	padding: 5px;
+	background-color: #ffadad;
+	border: 1px solid red;
+}
+
+.supportButtonAccept {
+	float: right;
+	padding: 5px;
+	background-color: #b1ffad;
+	border: 1px solid green;
+}
+
+.diff-html-added {
+	color: green;
+}
+
+.diff-html-added img {
+	border: 2px solid green;
+}
+
+.diff-html-removed {
+	color: darkred;
+	text-decoration: line-through;
+}
+
+.diff-html-removed img {
+	border: 2px solid darkred;
+	opacity: 0.5;
+}

@@ -1,0 +1,33 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:alias map="{weekdays: {0: '{f:translate(key: \'organisation_workinghour_day.please_choose\')}', 1: '{f:translate(key: \'organisation_workinghour_day.monday\')}', 2: '{f:translate(key: \'organisation_workinghour_day.tuesday\')}', 3: '{f:translate(key: \'organisation_workinghour_day.wednesday\')}', 4: '{f:translate(key: \'organisation_workinghour_day.thursday\')}', 5: '{f:translate(key: \'organisation_workinghour_day.friday\')}', 6: '{f:translate(key: \'organisation_workinghour_day.saturday\')}', 7: '{f:translate(key: \'organisation_workinghour_day.sunday\')}'}, hours: {0: '00', 1: '01', 2: '02', 3: '03', 4: '04', 5: '05', 6: '06', 7: '07', 8: '08', 9: '09', 10: '10', 11: '11', 12: '12', 13: '13', 14: '14', 15: '15', 16: '16', 17: '17', 18: '18', 19: '19', 20: '20', 21: '21', 22: '22', 23: '23'}, minutes: {0: '00', 15: '15', 30: '30', 45: '45'}}">
+<div class="organisationWorkinghourHeadline  {hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: '')}" id="organisationWorkinghourNum_{num}" onclick="register_organisation_object_detail_show(this);"{f:if(condition: '{invisible} == 1', then: ' style="display:none"')}>
+<div style="float:right" onclick="if (window.confirm('{f:translate(key: 'organisation_workinghour_delete_question')}')) register_organisation_object_delete(this);" onmouseover="register_organisation_object_delete_button_over(this);" onmouseout="register_organisation_object_delete_button_out(this);"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_delete.png')}" alt="Delete" /></div>
+<div style="float:right;cursor:pointer"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_edit.png')}" alt="Edit" /></div>
+<strong><f:if condition="{workinghour.day}">{hkj:storage.at(storage: weekdays, index: workinghour.day)}, </f:if><f:if condition="{workinghour.starttimehour}">{hkj:storage.at(storage: hours, index:workinghour.starttimehour)}:{hkj:storage.at(storage: minutes, index:workinghour.starttimeminute)}</f:if><f:if condition="{workinghour.stoptimehour}"><f:then> {f:translate(key: 'organisation_workinghour_until')} {hkj:storage.at(storage: hours, index:workinghour.stoptimehour)}:{hkj:storage.at(storage: minutes, index:workinghour.stoptimeminute)} {f:translate(key: 'organisation_workinghour_oclock')}</f:then><f:else><f:if condition="{workinghour.starttimehour}"> {f:translate(key: 'organisation_workinghour_oclock')}</f:if></f:else></f:if></strong><br />
+</div><div class="labelForm organisationWorkinghourContainer" {f:if(condition: '{hkj:isValid(errors: errorFields, object: \'workinghour\', id: workinghour.uid, property: \'\')}', then: '', else: '{f:if(condition: \'{invisible} != 2\', then: \' style="display:none"\')}')}>
+<f:form.hidden name="workinghours[{num}][id]" value="{workinghour.uid}" />
+<f:form.hidden id="organisationWorkinghourNumDelete_{num}" name="workinghours[{num}][delete]" value="{f:if(condition: '{invisible} == 1', then: '1', else: '0')}" />
+<label for="day"><f:translate key="organisation_workinghour_day" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_day_help')}">?</a></label>
+<f:form.select options="{weekdays}" name="workinghours[{num}][day]" value="{workinghour.day}" class="{hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: 'day')}" /><br />
+<label for="starttime"><f:translate key="organisation_workinghour_starttime" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_starttime_help')}">?</a></label>
+<f:form.select options="{hours}" name="workinghours[{num}][starttimehour]" value="{workinghour.starttimehour}" class="organisationWorkinghourSmall {hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: 'time')}" />:
+<f:form.select options="{minutes}" name="workinghours[{num}][starttimeminute]" value="{workinghour.starttimeminute}" class="organisationWorkinghourSmall {hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: 'time')}" /> {f:translate(key: 'organisation_workinghour_oclock')}<br />
+<label for="stoptime"><f:translate key="organisation_workinghour_stoptime" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_stoptime_help')}">?</a></label>
+<f:form.select options="{hours}" name="workinghours[{num}][stoptimehour]" value="{workinghour.stoptimehour}" class="organisationWorkinghourSmall {hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: 'time')}" />:
+<f:form.select options="{minutes}" name="workinghours[{num}][stoptimeminute]" value="{workinghour.stoptimeminute}" class="organisationWorkinghourSmall {hkj:isValid(errors: errorFields, object: 'workinghour', id: workinghour.uid, property: 'time')}" /> {f:translate(key: 'organisation_workinghour_oclock')}<br />
+<label for="address"><f:translate key="organisation_workinghour_address" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_address_help')}">?</a></label>
+<f:form.select options="{organisation.addresses}" name="workinghours[{num}][address]" value="{workinghour.address}" optionLabelField="street" optionValueField="uid" /><br />
+<label for="groups"><f:translate key="organisation_workinghour_groups" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_groups_help')}">?</a></label>
+<div style="float:left;">
+<f:for each="{organisation.groups}" as="group" key="groupItem">
+<f:if condition="{group.template.isfeature}"><f:then></f:then><f:else>
+<f:form.checkbox name="workinghours[{num}][groups][]" value="{group.uid}" checked="{f:if(condition:workinghour.groups, then:'{hkj:storage.contains(storage: workinghour.groups, object: group)}', else: 1)}" /> {group.name}<br />
+</f:else></f:if>
+</f:for>
+</div>
+<br style="clear:both" />
+<label for="addition"><f:translate key="organisation_workinghour_addition" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_workinghour_addition_help')}">?</a></label>
+<f:form.textarea name="workinghours[{num}][addition]" value="{workinghour.addition}" rows="3" cols="20" /><br />
+<br style="clear:both" />
+</div>
+</f:alias>

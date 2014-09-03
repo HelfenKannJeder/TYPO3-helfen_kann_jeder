@@ -1,0 +1,1 @@
+<f:for each="{list}" as="item" iteration="iteration"><f:if condition="{iteration.isFirst}"><f:then></f:then><f:else><f:if condition="{iteration.isLast}"><f:then> {f:translate(key: 'overview_and')} </f:then><f:else>, </f:else></f:if></f:else></f:if>{item.name}</f:for>

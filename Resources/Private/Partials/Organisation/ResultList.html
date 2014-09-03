@@ -1,0 +1,29 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+	<div class="helfen_kann_jeder_generator_line" id="helfen_kann_jeder_generator_line">
+		<div id="helfen_kann_jeder_result_box" style="display:{f:if(condition: visible, else: 'none')}">
+			<div class="helfen_kann_jeder_generator_step3_image">
+			<f:image src="{f:uri.resource(path:'Images/generator_third.png')}" alt="{f:translate(key: 'generator_third')}" />
+			</div>
+			<div class="helfen_kann_jeder_generator_step3_organisations">
+				<span id="organisation_start"></span>
+				<div id="organisation_none" style="display:none">{f:translate(key: 'generator_no_organisation')}</div>
+				<div id="organisation_searching" style="display:none">{f:translate(key: 'generator_searching')}</div>
+<f:for each="{param}" key="num" as="info">
+				<div id="organisation_{num}" style="display:{f:if(condition: visible, else: 'none')}">
+					<div style="float:left;">
+<f:if condition="{resultBar}"><f:then>
+						<div class="helfen_kann_jeder_generator_organisation_resultbar_complete">
+							<div class="helfen_kann_jeder_generator_organisation_resultbar" style="width: {hkj:math.multiply(a: info.grade, b: normGradeToMax, c: 100) -> f:format.number(decimals: 0)}px">&nbsp;</div>
+						</div>
+</f:then><f:else>
+						<div class="helfen_kann_jeder_generator_step3_organisations_percentage">zu <span id="organisation_{num}_percentage" class="show-tooltip" title="{f:translate(key: 'generator_grade_tooltip')}">{info.grade}</span>{f:translate(key: 'generator_grade_unit')}</div>
+</f:else></f:if>
+						<div class="helfen_kann_jeder_generator_step3_organisations_name"><a id="organisation_{num}_link" href="{f:if(condition: info.link, then: info.link, else: '#')}">{info.name}</a> <span id="organisation_{num}_distance" class="helfen_kann_jeder_generator_step3_organisations_distance show-tooltip" title="{f:translate(key: 'generator_distance_tooltip')}">({info.distance -> f:format.number(decimals: 1, decimalSeparator: ',', thousandsSeparator: '.')} {f:translate(key: 'generator_distance_unit')})</span></div>
+					</div>
+				</div>
+</f:for>        
+			</div>
+			<br style="clear:both" />
+<f:if condition="{survey}"><div id="helfen_kann_jeder_result_survey">{f:translate(key: 'resultlist_survey_prefix')}<f:link.external uri="{survey}" target="_blank">{f:translate(key: 'resultlist_survey_link')}</f:link.external>{f:translate(key: 'resultlist_survey_suffix')}</div></f:if>
+		</div>
+	</div>

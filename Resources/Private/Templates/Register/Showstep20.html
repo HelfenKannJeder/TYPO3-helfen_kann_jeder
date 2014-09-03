@@ -1,0 +1,175 @@
+<f:layout name="Register" />
+<f:section name="content">
+{f:translate(key: 'register_step2_starting_text') -> f:format.nl2br()}<br />
+<br />
+<div class="labelForm">
+<label for="organisationtype">{f:translate(key: 'register_step2_label_organisationtype')}</label>
+<f:form.select id="organisationtype_field" property="organisationtype" options="{organisationType}" optionValueField="uid" optionLabelField="name" /><br />
+<label for="organisationtype">{f:translate(key: 'register_step30_label_city')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_city_help')}">?</a></label>
+<f:if condition="{cityNames}">
+<f:then>
+<f:form.select property="city" options="{cityNames}" />
+</f:then>
+<f:else>
+<f:form.textfield property="city" id="zipcode_field" />
+</f:else>
+</f:if>
+<br />
+<label for="organisationtype">{f:translate(key: 'register_step30_label_department')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_department_help')}">?</a></label>
+<f:form.textfield property="department" id="department_field" /><br />
+<label for="organisationtype">{f:translate(key: 'register_step30_label_organisationname')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_organisationname_help')}">?</a></label>
+<f:form.textfield property="organisationname" id="new_organisation_name" /><br />
+<label for="username">{f:translate(key: 'register_step31_label_username')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step31_label_username_help')}">?</a></label>
+<f:form.textfield property="username" id="new_organisation_username" /><br />
+<label for="mail">{f:translate(key: 'register_step31_label_mail')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step31_label_mail_help')}">?</a></label>
+<f:form.textfield property="mail" /><br />
+
+
+<label for="password">{f:translate(key: 'register_step31_label_password')} <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step31_label_password_help')}">?</a></label>
+<f:form.password property="password" value="" /><br />
+<label for="password2">{f:translate(key: 'register_step31_label_password_repeat')}</label>
+<f:form.password property="password2" value="" /><br />
+
+<label for="surname">{f:translate(key: 'register_step31_label_surname')}</label>
+<f:form.textfield property="surname" /><br />
+<label for="prename">{f:translate(key: 'register_step31_label_prename')}</label>
+<f:form.textfield property="prename" /><br />
+</div>
+
+<script type="text/javascript">
+lastUsernameSet = '';
+lastOrganisationnameSet = '';
+organisationTypes = new Object();
+organisationTypesName = new Object();
+<f:for each="{organisationType}" as="orgaType">
+organisationTypes[{orgaType.uid}] = "{orgaType.namedisplay}";
+organisationTypesName[{orgaType.uid}] = "{orgaType.acronym}";
+</f:for>
+
+organisationType = "{objectEdit.organisationtype.namedisplay}";
+organisationTypeName = "{objectEdit.organisationtype.acronym}";
+departmentPrefix = "{f:translate(key: 'organisation_department')}";
+calculatedText = "<em>{f:translate(key: 'register_step30_calculated')}</em>";
+
+function generateOrganisationName(zipcode) {
+	geocoder = new google.maps.Geocoder();
+	address = "Germany, " + zipcode;
+	organisationname = "";
+	if (geocoder) {
+		geocoder.geocode( { 'address': address}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				cityname2 = "";
+				cityname = "";
+				city = "";
+				postalcode = "";
+				gdepartment = "";
+
+				for (i=0;i<results[0].address_components.length;i++) {
+					if (results[0].address_components[i]["types"][0] == "administrative_area_level_2") {
+						cityname2 = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "administrative_area_level_3") {
+						cityname = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "locality") {
+						city = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "sublocality") {
+						gdepartment = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "postal_code") {
+						postalcode = results[0].address_components[i]["long_name"];
+					}
+				}
+
+				geocoder.geocode( { 'address': "Germany, " + city + " " + gdepartment }, function(results, status) {
+		                        if (status == google.maps.GeocoderStatus.OK) {
+						if (results.length > 1) {
+							if (cityname == "") cityname = cityname2;
+							organisationname += " " + cityname;
+						}
+
+						if (cityname != city || results.length == 1) {
+							organisationname += " " + city;
+						}
+						if (gdepartment != "" && gdepartment != city) {
+							organisationname += " " + gdepartment;
+						}
+						organisatinname = $.trim(organisationname);
+                
+ 						buildOrganisationName(organisatinname, document.getElementById('department_field').value);
+					}
+				});
+
+			}
+		});
+	}
+}
+
+function generateUsernameFromOrganisationname(organisationName) {
+	if (lastUsernameSet == document.getElementById("new_organisation_username").value) {
+		document.getElementById("new_organisation_username").value = organisationName
+										.toLowerCase()
+										.replace(new RegExp(" ", 'g'),"-")
+										.replace(new RegExp("ü", 'g'),"ue")
+										.replace(new RegExp("ö", 'g'),"oe")
+										.replace(new RegExp("ä", 'g'),"ae")
+										.replace(new RegExp("ß", 'g'),"ss")
+										.replace(new RegExp("[^a-z0-9\-]+", 'g'), '');
+		lastUsernameSet = document.getElementById("new_organisation_username").value;
+	}
+}
+
+function generateOrganisationnameFromOrganisationname(organisationName) {
+	if (lastOrganisationnameSet == document.getElementById("new_organisation_name").value) {
+		document.getElementById("new_organisation_name").value = organisationName;
+		lastOrganisationnameSet = organisationName;
+	}
+}
+
+storedCity = "";
+function buildOrganisationName(city, department) {
+	if (city !=  null) {
+		storedCity = city;
+	} else if (storedCity == '' && city != null) {
+		return generateOrganisationName(document.getElementById("zipcode_field").value);
+	} else {
+		city = storedCity;
+	}
+
+	var departmentOld = $.trim(department);
+	if ($.trim(departmentOld) != "") {
+		departmentOld = "-"+departmentOld;
+	}
+	if ($.trim(department) != "") {
+		department = ", "+departmentPrefix+" "+department;
+	}
+
+	if ($.trim(organisationType) != "" && $.trim(city) != "" && $.trim(city+department) != "") {
+//		document.getElementById("new_organisation_name").innerHTML = organisationType+" "+city+department;
+		generateOrganisationnameFromOrganisationname(organisationType+" "+city+departmentOld);
+		generateUsernameFromOrganisationname(organisationTypeName+" "+city+departmentOld);
+	} else {
+//		document.getElementById("new_organisation_name").innerHTML = calculatedText;
+		generateOrganisationnameFromOrganisationname('');
+		generateUsernameFromOrganisationname('');
+	}
+}
+
+document.getElementById("organisationtype_field").onchange = function() {
+	organisationType = organisationTypes[document.getElementById("organisationtype_field").value];
+	organisationTypeName = organisationTypesName[document.getElementById("organisationtype_field").value];
+	buildOrganisationName(null, document.getElementById("department_field").value);
+}
+
+document.getElementById("department_field").onchange = function() {
+	buildOrganisationName(null, document.getElementById("department_field").value);
+}
+
+document.getElementById("zipcode_field").onchange = function() {
+	generateOrganisationName(document.getElementById("zipcode_field").value);
+}
+
+generateOrganisationName(document.getElementById("zipcode_field").value);
+</script>
+</f:section>

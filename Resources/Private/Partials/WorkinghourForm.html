@@ -1,0 +1,11 @@
+{f:translate(key: 'info_text_workinghour')}<br />
+<br />
+<h2>{f:translate(key: 'organisation_workinghours')}</h2>
+<f:for each="{organisation.workinghours}" as="workinghour" iteration="workinghourIteration">
+<f:render partial="WorkinghourDetailForm" arguments="{organisation: organisation, num: workinghourIteration.cycle, workinghour: workinghour, errorFields: errorFields}" />
+</f:for>
+<f:if condition="{f:count(subject: '{organisation.workinghours}')} == 0">
+<f:render partial="WorkinghourDetailForm" arguments="{organisation: organisation, num: 0, invisible: 2, errorFields: errorFields}" />
+</f:if>
+<f:render partial="WorkinghourDetailForm" arguments="{organisation: organisation, num: 'new', invisible: 1, errorFields: errorFields}" />
+<div style="cursor:pointer" onclick="register_organisation_object_create('organisationWorkinghourNum');return false;"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_new.png')}" alt="{f:translate(key: 'organisation_workinghour_add_new')}" /> {f:translate(key: 'organisation_workinghour_add_new')}</div>

@@ -1,0 +1,105 @@
+<f:layout name="register" />
+<f:section name="content">
+{f:translate(key: 'register_step30_starting_text') -> f:format.nl2br()}<br />
+<br />
+<div class="labelForm">
+<label for="organisationtype">{f:translate(key: 'register_step30_label_city')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_city_help')}">?</a></label>
+<f:if condition="{cityNames}">
+<f:then>
+<f:form.select property="city" options="{cityNames}" />
+</f:then>
+<f:else>
+<f:form.textfield property="city" id="zipcode_field" />
+</f:else>
+</f:if>
+<br />
+<label for="organisationtype">{f:translate(key: 'register_step30_label_department')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_department_help')}">?</a></label>
+<f:form.textfield property="department" id="department_field" /><br />
+<label for="organisationtype">{f:translate(key: 'register_step30_label_organisationname')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_organisationname_help')}">?</a></label>
+<span id="new_organisation_name"><em>Wird automatisch berechnet</em></span>
+
+<script type="text/javascript">
+organisationType = "{objectEdit.organisationtype.namedisplay}";
+departmentPrefix = "{f:translate(key: 'organisation_department')}";
+
+function generateOrganisationName(zipcode) {
+	geocoder = new google.maps.Geocoder();
+	address = "Germany, " + zipcode;
+	organisationname = "";
+	if (geocoder) {
+		geocoder.geocode( { 'address': address}, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				cityname = "";
+				city = "";
+				postalcode = "";
+				gdepartment = "";
+
+				for (i=0;i<results[0].address_components.length;i++) {
+					if (results[0].address_components[i]["types"][0] == "administrative_area_level_2") {
+						cityname = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "locality") {
+						city = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "sublocality") {
+						gdepartment = results[0].address_components[i]["long_name"];
+					}
+					if (results[0].address_components[i]["types"][0] == "postal_code") {
+						postalcode = results[0].address_components[i]["long_name"];
+					}
+				}
+
+				geocoder.geocode( { 'address': "Germany, " + city + " " + gdepartment }, function(results, status) {
+		                        if (status == google.maps.GeocoderStatus.OK) {
+						if (results.length > 1) {
+							organisationname += " " + cityname;
+						}
+
+						if (cityname != city || results.length == 1) {
+							organisationname += " " + city;
+						}
+						if (gdepartment != "" && gdepartment != city) {
+							organisationname += " " + gdepartment;
+						}
+						organisatinname = $.trim(organisationname);
+                
+ 						buildOrganisationName(organisatinname, document.getElementById('department_field').value);
+					}
+				});
+
+			}
+		});
+	}
+}
+
+storedCity = "";
+function buildOrganisationName(city, department) {
+	if (city !=  null) {
+		storedCity = city;
+	} else if (storedCity == '' && city != null) {
+		return generateOrganisationName(document.getElementById("zipcode_field").value);
+	} else {
+		city = storedCity;
+	}
+
+	if ($.trim(department) != "") {
+		department = ", "+departmentPrefix+" "+department;
+	}
+
+	if ($.trim(city+department) != "") {
+		document.getElementById("new_organisation_name").innerHTML = organisationType+" "+city+department;
+	}
+}
+
+document.getElementById("department_field").onchange = function() {
+	buildOrganisationName(null, document.getElementById("department_field").value);
+}
+
+document.getElementById("zipcode_field").onchange = function() {
+	generateOrganisationName(document.getElementById("zipcode_field").value);
+}
+
+generateOrganisationName(document.getElementById("zipcode_field").value);
+</script>
+</div>
+</f:section>

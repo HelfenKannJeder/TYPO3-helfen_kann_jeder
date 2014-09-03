@@ -1,0 +1,8 @@
+<table>
+<f:for each="{matrices}" as="matrix">
+	<tr>
+		<td>{matrix.name}</td>
+		<td><f:link.action action="edit" arguments="{matrix: matrix}"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_show.png')}" alt="{f:translate(key: 'organisation_view')}" /></f:link.action></td>
+	</tr>
+</f:for>
+</table>

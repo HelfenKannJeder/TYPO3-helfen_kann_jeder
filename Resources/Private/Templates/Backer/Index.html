@@ -1,0 +1,72 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div id="margin_header">
+	<h1>{f:translate(key: 'backer_thanks_to')}</h1>
+</div>
+<div class="helfenkannjeder_backer_grider helfenkannjeder_backer_grider_top">
+	<div class="helfenkannjeder_backer_spacer"></div>
+	<div id="backer_scroll1" class="scrollable" style="float:left;height:50px;width:534px;overflow:hidden">
+<f:for each="{backersIdeal}" iteration="backerIteration" as="backer">
+<div class="helfenkannjeder_backer_small">
+	<div class="helfenkannjeder_backer_small_image"><f:link.action arguments="{backer: backer}"><hkj:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" width="50c" height="50c" /></f:link.action></div>
+	<div class="helfenkannjeder_backer_small_text"><f:link.action arguments="{backer: backer}"><f:if condition="{backer.surname}"><f:then><f:if condition="{backer.degree}">{backer.degree} </f:if>{backer.prename} {backer.surname}</f:then><f:else>{backer.company}</f:else></f:if></f:link.action></div>
+</div>
+<f:if condition="{backerIteration.index -> hkj:condition.backerListBreak(num: 5)}">
+<f:if condition="{backerIteration.isLast}">
+<f:then></f:then>
+<f:else>
+			<div style="clear:both;"></div>
+	</div>
+<f:if condition="{backerIteration.index} == 3">
+<div class="helfenkannjeder_backer_description_type">
+	<f:image src="{f:uri.resource(path:'Images/backer_ideal.png')}" alt="{f:translate(key: 'backer_ideal')}" />
+</div>
+</f:if>
+</div>
+<div class="helfenkannjeder_backer_grider">
+	<div class="helfenkannjeder_backer_spacer"></div>
+<f:if condition="{backerIteration.index -> hkj:condition.backerListBreak(num: 10)}">
+	<div class="helfenkannjeder_backer_spacer"></div>
+</f:if>
+	<div id="backer_scroll1" class="scrollable" style="float:left;height:50px;overflow:hidden">
+</f:else>
+</f:if>
+</f:if>
+</f:for>
+			<div style="clear:both;"></div>
+	</div>
+</div>
+<div class="helfenkannjeder_backer_grider helfenkannjeder_backer_grider_top helfenkannjeder_backer_grider_bottom">
+	<div class="helfenkannjeder_backer_spacer"></div>
+	<div id="backer_scroll1" class="scrollable" style="float:left;height:50px;width:534px;overflow:hidden">
+		<div id="backer_scroll2_content" style="height:50px;width:{backersLength}px;">
+	<div class="helfenkannjeder_backer_spacer"></div>
+	<div class="helfenkannjeder_backer_spacer"></div>
+<f:for each="{backersFinancial}" as="backer">
+<div class="helfenkannjeder_backer_small helfenkannjeder_backer_small_financial">
+	<div class="helfenkannjeder_backer_small_image"><f:link.action arguments="{backer: backer}"><hkj:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" maxWidth="100c" minHeight="50" height="50c" /></f:link.action></div>
+	<div class="helfenkannjeder_backer_small_text"><f:link.action arguments="{backer: backer}"><f:if condition="{backer.surname}"><f:then><f:if condition="{backer.degree}">{backer.degree} </f:if>{backer.prename} {backer.surname}</f:then><f:else>{backer.company}</f:else></f:if></f:link.action></div>
+</div>
+</f:for>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+	<div class="helfenkannjeder_backer_spacer"></div>
+	<div class="helfenkannjeder_backer_description_type"><f:image src="{f:uri.resource(path:'Images/backer_financial.png')}" alt="{f:translate(key: 'backer_financial')}" /></div>
+</div>
+
+<div class="clearer"></div>
+<f:if condition="{backerSelected}">
+<div id="margin20">
+<div class="helfen_kann_jeder_employee_detail">
+	<div class="helfen_kann_jeder_employee_detail_images"><hkj:image.first path="uploads/pics/" src="{backerSelected.picture}" alt="{backerSelected.prename} {backerSelected.surname}" width="140m" /></div>
+	<div class="helfen_kann_jeder_employee_text">
+<f:if condition="{backerSelected.surname}"><f:then>
+<h1><f:if condition="{backerSelected.degree}">{backerSelected.degree} </f:if>{backerSelected.prename} {backerSelected.surname}</h1>
+<i><f:if condition="{backerSelected.status}">{backerSelected.status} </f:if>{backerSelected.company}<f:if condition="{backerSelected.since} != 43200"><br />{f:translate(key: 'backer_since')} <f:format.date format="d.m.Y">@{backerSelected.since}</f:format.date></f:if></i><br />
+</f:then><f:else>
+<h1>{backerSelected.company}</h1></f:else></f:if><br />
+{backerSelected.description -> f:format.nl2br()}<br /><br /><br />
+	</div>
+</div>
+</div>
+</f:if>

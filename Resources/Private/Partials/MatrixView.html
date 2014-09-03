@@ -1,0 +1,61 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<script type="text/javascript">
+window.onload = function() {
+	citysignStartup(false, true);
+	playlist = new Array();
+	playlist[0] = {organisation.organisationtype.uid};
+	tx_helfenkannjeder_set_organisation(playlist);
+}
+</script>
+<a href="javascript:history.back();" class="helfen_kann_jeder_overview_detail_back_link">{f:translate(key:'overview_back')}</a><br />
+<br /><br />
+<h1>{f:translate(key:'overview_mainactivities')} {organisation.name}</h1>
+<br />{f:translate(key:'overview_matrix') -> f:format.nl2br()}
+{organisation.name}{f:translate(key:'overview_matrix2') -> f:format.nl2br()}<br />
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_2.png')}" alt="{f:translate(key: 'matrix_primary_activity_field')}" /> {f:translate(key:'overview_matrix_primary_activity')}<br />
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_1.png')}" alt="{f:translate(key: 'matrix_secondary_activity_field')}" /> {f:translate(key:'overview_matrix_secondary_activity')}<br />
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_0.png')}" alt="{f:translate(key: 'matrix_no_activity_field')}" /> {f:translate(key:'overview_matrix_no_activity')}<br />
+<br /><br />
+<table colspan="0" cellpadding="0" cellspacing="0" id="helfen_kann_jeder_matrix_table">
+	<thead>
+	<tr id="helfen_kann_jeder_matrix_headline">
+		<td></td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
+		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}"><img src="{f:uri.action(action: 'column', pluginName: 'OverviewList', controller: 'Matrix', pageType: 1332254762, arguments: {activityfield: activityfield}, format: '.png')}" alt="{activityfield.name}" /></td>
+		</f:for>
+	</tr>
+	</thead>
+	<tbody>
+	<f:for each="{activities}" as="activity" iteration="iteration_activity">
+		<f:if condition="{hkj:storage.contains(storage:activityList object: activity.uid)}">
+	<tr>
+		<td class="helfen_kann_jeder_matrix_row_{f:if(condition: iteration_activity.isEven, then: 'even', else: 'odd')}" title="{activity.name}: {activity.description}">{activity.name -> f:format.crop(maxCharacters:35)}</td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration_activityfield">
+		<td class="helfen_kann_jeder_matrix_col_{f:if(condition: iteration_activityfield.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{f:if(condition: iteration_activity.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" style="width:20px;height:20px" title="{activityfield.name}">
+<f:alias map="{y: activityfield.activities, activityfielduid: activityfield.uid, activityuid: activity.uid}">
+<f:if condition="{hkj:storage.contains(storage:y object: activity)}">
+<hkj:storage.at storage="{matrixarray}" index="{activityfielduid}" index2="{activityuid}" content="matrixfield">
+<f:if condition="{matrixfield.grade} == 1">
+	<f:then><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_1.png')}" alt="{f:translate(key: 'matrix_secondary_activity_field')}" /></f:then>
+	<f:else><f:if condition="{matrixfield.grade} == 2">
+		<f:then><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_2.png')}" alt="{f:translate(key: 'matrix_primary_activity_field')}" /></f:then>
+		<f:else><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_0.png')}" alt="{f:translate(key: 'matrix_no_activity_field')}" /></f:else></f:if>
+	</f:else></f:if>
+</hkj:storage.at>
+</f:if>
+</f:alias>
+		</td>
+		</f:for>
+	</tr>
+		</f:if>
+	</f:for>
+	</tbody>
+	<tfoot>
+	<tr id="helfen_kann_jeder_matrix_subline">
+		<td></td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
+		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}"><img src="{f:uri.action(action: 'column', pluginName: 'OverviewList', controller: 'Matrix', pageType: 1332254762, arguments: {activityfield: activityfield}, format: '.png')}" alt="{activityfield.name}" /></td>
+		</f:for>
+	</tr>
+	</tfoot>
+</table>

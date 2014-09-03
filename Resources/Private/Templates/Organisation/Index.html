@@ -1,0 +1,4 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:for each="{organisations}" as="organisation">
+{organisation.uid}: {organisation.name} <f:link.action action="show" arguments="{organisation: organisation}">link</f:link.action> <br />
+</f:for>

@@ -1,0 +1,135 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div class="helfen_kann_jeder">
+<script type="text/javascript">
+/* TODO: Auslagern */
+function rotatetext(obj) {
+	var canvas = document.createElement("canvas");
+	canvas.width = 20;
+	canvas.height = 200;
+
+	if (canvas.getContext){
+		var context = canvas.getContext('2d');
+		context.save();
+		context.translate(10, 200);
+		context.rotate(-Math.PI/2);
+		context.textAlign = "left";
+		context.font = "10pt Helvetica,Arial,sans-serif";
+		context.fillText(obj.innerHTML, 10, 7);
+		context.restore();
+        }
+
+	if (obj.hasChildNodes()) {
+		while ( obj.childNodes.length >= 1 ) {
+	        	obj.removeChild( obj.firstChild );       
+		} 
+	}
+
+	obj.appendChild(canvas);
+}
+
+highlighted_act_old = null;
+highlighted_act_field_old = null;
+
+function highlightCol(actField, act) {
+	if (highlighted_act_old != null) {
+        	document.getElementById('activity_highlight_' + highlighted_act_old).className = '';
+	}
+	if (highlighted_act_field_old != null) {
+		for (i=0;i<document.getElementsByClassName('helfen_kann_jeder_matrix_row_' + highlighted_act_field_old).length;i++) {
+			document.getElementsByClassName('helfen_kann_jeder_matrix_row_' + highlighted_act_field_old)[i].className = 
+				document.getElementsByClassName('helfen_kann_jeder_matrix_row_' + highlighted_act_field_old)[i].className.replace(/helfen_kann_jeder_matrix_highlighted/g, "");
+		}
+	}
+
+        document.getElementById('activity_highlight_' + act).className = 'helfen_kann_jeder_matrix_highlighted';
+	for (i=0;i<document.getElementsByClassName('helfen_kann_jeder_matrix_row_' + actField).length;i++) {
+		document.getElementsByClassName('helfen_kann_jeder_matrix_row_' + actField)[i].className += " helfen_kann_jeder_matrix_highlighted";
+	}
+
+	highlighted_act_old = act;
+	highlighted_act_field_old = actField;
+}
+
+</script>
+<!-- TODO: Auslagern in Sprachdatei: Name, -, N, H -->
+<f:form class="helfen_kann_jeder_form" method="post" action="{action}" name="{objectName}" object="{object}" arguments="{organisation: organisation}">
+<h2>{f:translate(key: 'matrix')}: {object.name}</h2>
+<table colspan="0" cellpadding="0" cellspacing="0" id="helfen_kann_jeder_matrix_table">
+	<thead>
+	<tr>
+		<td><f:translate key="organisation_matrix_name" /></td>
+		<td colspan="8"><f:form.textfield property="name" /></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td colspan="6"><f:form.submit name="submit" value="{f:translate(key: 'organisation_matrix_save')}" /></td>
+	</tr>
+	<tr id="helfen_kann_jeder_matrix_headline">
+		<td></td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
+		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}">{activityfield.name}</td>
+		</f:for>
+	</tr>
+	</thead>
+	<tbody style="height:700px;overflow:scroll;">
+	<f:for each="{activities}" as="activity" iteration="iteration_activity">
+	<tr id="activity_highlight_{activity.uid}">
+		<td class="helfen_kann_jeder_matrix_row_{f:if(condition: iteration_activity.isEven, then: 'even', else: 'odd')}" title="{activity.description}">{activity.name -> f:format.crop(maxCharacters:35)}</td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration_activityfield">
+		<td class="helfen_kann_jeder_matrix_col_{f:if(condition: iteration_activityfield.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{f:if(condition: iteration_activity.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" onMouseOver="highlightCol({activityfield.uid}, {activity.uid});" style="width:20px;height:20px" title="{activityfield.name}">
+<f:alias map="{y: activityfield.activities, activityfielduid: activityfield.uid, activityuid: activity.uid}">
+<f:if condition="{hkj:storage.contains(storage:y object: activity)}">
+<hkj:storage.at storage="{matrixarray}" index="{activityfielduid}" index2="{activityuid}" content="matrixfield">
+	<f:form.select name="matrixField[{activityfielduid}][{activityuid}]" options="{0: '-', 1: 'N', 2: 'H'}" value="{matrixfield.grade}" />
+</hkj:storage.at>
+</f:if>
+</f:alias>
+		</td>
+		</f:for>
+	</tr>
+	</f:for>
+	</tbody>
+	<tfoot>
+	<tr id="helfen_kann_jeder_matrix_subline">
+		<td></td>
+		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
+		<td id="helfen_kann_jeder_matrix_subline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}">{activityfield.name}</td> 
+		</f:for>
+	</tr>
+	</tfoot>
+</table>
+<br />
+<br />
+<h2>{f:translate(key: 'legend')}</h2>
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_0.gif')}" alt="{f:translate(key: 'matrix_no_activity_field')}" /> {f:translate(key: 'matrix_no_activity_field')}<br />
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_1.gif')}" alt="{f:translate(key: 'matrix_secondary_activity_field')}" /> {f:translate(key: 'matrix_secondary_activity_field')}<br />
+<f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_2.gif')}" alt="{f:translate(key: 'matrix_primary_activity_field')}" /> {f:translate(key: 'matrix_primary_activity_field')}<br />
+</f:form>
+
+<script type="text/javascript">
+	images = new Array(
+		"{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_0.gif')}",
+		"{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_1.gif')}",
+		"{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_domain_model_matrix_grade_2.gif')}"
+	);
+	for (i=0;i<document.getElementById("helfen_kann_jeder_matrix_headline").getElementsByTagName("td").length;i++) {
+		rotatetext(document.getElementById("helfen_kann_jeder_matrix_headline").getElementsByTagName("td")[i]);
+	}
+	for (i=0;i<document.getElementById("helfen_kann_jeder_matrix_subline").getElementsByTagName("td").length;i++) {
+		rotatetext(document.getElementById("helfen_kann_jeder_matrix_subline").getElementsByTagName("td")[i]);
+	}
+
+	for (i=0;i<document.getElementById("helfen_kann_jeder_matrix_table").getElementsByTagName("select").length;i++) {
+		selectBox = document.getElementById("helfen_kann_jeder_matrix_table").getElementsByTagName("select")[i];
+		myImage = document.createElement("img");
+		myImage.src = images[selectBox.value];
+		myImage.className = "helfen_kann_jeder_matrix_button";
+		myImage.onclick = function () {
+			this.parentNode.getElementsByTagName("select")[0].selectedIndex = ((this.parentNode.getElementsByTagName("select")[0].selectedIndex + 1)%3);
+			this.src = images[this.parentNode.getElementsByTagName("select")[0].value];
+		}
+		selectBox.parentNode.appendChild(myImage);
+		selectBox.style.display = "none";
+	}
+</script>
+</div>

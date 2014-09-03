@@ -1,0 +1,44 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<h2>{f:translate(key: 'organisation_group')}</h2>
+{f:translate(key: 'organisation_group_section_description')}<br />
+<br />
+<f:for each="{hkj:storage.sort(storage: organisation.organisationType.groupTemplateCategories, property: 'sort')}" as="groupTemplateCategory" iteration="groupCategoryIterator">
+<h3>{groupTemplateCategory.name}</h3>
+<f:for each="{hkj:storage.sort(storage: groupTemplateCategory.groupTemplates, property: 'sort')}" as="groupTemplate" iteration="groupIterator">
+<hkj:storage.at storage="{groups}" index="{groupTemplate.uid}" content="group">
+<div class="organisationGroupTemplateContainer">
+	<div class="organisationGroupTemplateCheckbox"><f:if condition="{groupTemplate.isoptional}">
+<f:then><f:form.checkbox value="1" additionalAttributes="{onchange: 'register_organisation_group_show_detail(this);'}" checked="{f:if(condition: '{groupsCount} > 0', then: group.uid, else: groupTemplate.isdefault)}" name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][checked]" /></f:then>
+<f:else><f:form.checkbox value="1" additionalAttributes="{onchange: 'register_organisation_group_show_detail(this);'}" disabled="disabled" checked="{groupTemplate.isdefault}" name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][checked_dummy]" /><f:form.hidden value="1" name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][checked]" /></f:else>
+</f:if></div>
+	<div class="organisationGroupTemplateDescriptor">
+		<h2>{groupTemplate.name} 
+<f:if condition="{groupTemplate.isfeature}"> {f:translate(key: 'group_template_feature')}</f:if>
+<f:if condition="{groupTemplate.description}"><a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{groupTemplate.description}">?</a></f:if></h2>
+	</div>
+	<br style="clear:left" />
+</div><div class="organisiationGroupContainer labelForm" style="{f:if(condition: '{f:if(condition: \'{groupsCount} > 0\', then: group.uid, else: groupTemplate.isdefault)} > 0', then:'', else:'display:none')}">
+<f:if condition="{groupTemplate.matrix}"><f:then></f:then><f:else><div class="organisationGroupError"><f:translate key="organisation_group_info_missing" /></div></f:else></f:if>
+<f:if condition="{hkj:storage.countByMethod(storage: organisation.employees, method: 'getIscontact', methodResult: 2, sum: 0)}"><label for="contactperson"><f:translate key="organisation_group_contactperson" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_group_contactperson_help')}">?</a></label><div class="organisationGroupContactpersons"><f:for each="{organisation.employees}" as="employee">
+<f:if condition="{employee.iscontact} == 2">
+<f:form.checkbox value="{employee.uid}" name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][contact][]" checked="{hkj:storage.contains(storage: group.contactpersons, object: employee)}" /> {employee.prename} {employee.surname}<br />
+</f:if>
+</f:for></div><br style="clear:left;" /></f:if>
+<label for="description"><f:translate key="organisation_group_description" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_group_description_help')}">?</a></label><f:form.textarea rows="20" cols="5" name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][description]" value="{f:if(condition: group.description, then: group.description, else: groupTemplate.suggestion)}" class="textareaHuge {hkj:isValid(errors: errorFields, object: 'group', id: group.uid, property: 'description')}" /><br />
+<f:if condition="{groupTemplate.isfeature}">
+<f:then>
+<f:form.hidden name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][website]" value="" />
+<f:form.hidden name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][minimum_age]" value="{groupTemplate.minimumAge}" />
+<f:form.hidden name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][maximum_age]" value="{groupTemplate.maximumAge}" />
+</f:then>
+<f:else>
+<label for="website"><f:translate key="organisation_group_website" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_group_website_help')}">?</a></label><f:form.textfield name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][website]" value="{group.website}" class="{hkj:isValid(errors: errorFields, object: 'group', id: group.uid, property: 'website')}" /><br />
+<label for="minimum_age"><f:translate key="organisation_group_minimum_age" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_group_minimum_age_help')}">?</a></label><f:form.textfield name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][minimum_age]" value="{f:if(condition: '{group.minimumAge} > 0', then: group.minimumAge, else: groupTemplate.minimumAge)}" class="{hkj:isValid(errors: errorFields, object: 'group', id: group.uid, property: 'minimum_age')}" /><br />
+<label for="maximum_age"><f:translate key="organisation_group_maximum_age" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_group_maximum_age_help')}">?</a></label><f:form.textfield name="groups[{groupTemplateCategory.uid}][{groupTemplate.uid}][maximum_age]" value="{f:if(condition: '{group.maximumAge} > 0', then: group.maximumAge, else: groupTemplate.maximumAge)}" class="{hkj:isValid(errors: errorFields, object: 'group', id: group.uid, property: 'maximum_age')}" /><br />
+</f:else>
+</f:if>
+</div>
+</hkj:storage.at>
+</f:for>
+<br />
+</f:for>

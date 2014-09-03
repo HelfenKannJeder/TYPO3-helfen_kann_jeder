@@ -1,0 +1,8 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<h2 style="{f:if(condition: pictures, then: '', else: 'display:none')}" id="sort_headline">{f:translate(key: 'organisation_picture_sort')}</h2>
+<div style="width: 550px" id="blockview">
+<f:for each="{hkj:storage.create(text: pictures)}" as="picture">
+<div style="background-image:url({hkj:image.path(src: picture, path: imageFolder, maxWidth: 100, maxHeight: 100, alt: "Picture")});" class="borderChange" onmousedown="if (isOverDeleteButton==0){sorter_start(this);}"><span class="picture_name" style="display:none">{picture}</span><div onclick="if (window.confirm('{f:translate(key: 'organisation_picture_delete_question')}')) {removeElementFromList(this.parentNode);}" onmouseover="isOverDeleteButton=1;" onmouseout="isOverDeleteButton=0;" class="organisation_picture_delete"><f:image src="{f:uri.resource(path:'Images/delete.png')}" alt="{f:translate(key: 'organisation_picture_delete')}" /></div></div>
+</f:for>
+<br id="sorterEndingBr" style="clear:both" />
+</div>

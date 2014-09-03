@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>flexform</type>
+		<description>Language labels for flexform belonging to extension 'tx_helfenkannjeder'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_helfenkannjeder_action_default">Default action</label>
+			<label index="tx_helfenkannjeder_action_register">Register part 1</label>
+			<label index="tx_helfenkannjeder_action_register_continue">Register part 3</label>
+			<label index="tx_helfenkannjeder_action_register_step33">Register part 2</label>
+			<label index="tx_helfenkannjeder_action_support">Support</label>
+			<label index="tx_helfenkannjeder_action_user_settings">User settings</label>
+			<label index="tx_helfenkannjeder_action_organisation_edit">Organisation edit</label>
+			<label index="tx_helfenkannjeder_action_cron">Cron</label>
+			<label index="tx_helfenkannjeder_action_helfomat">Helf-O-Mat</label>
+			<label index="tx_helfenkannjeder_register_session_lifetime">Session Lifetime (in seconds)</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_helfenkannjeder_action_default">Standard Aktion</label>
+			<label index="tx_helfenkannjeder_action_register">Registrieren Teil 1</label>
+			<label index="tx_helfenkannjeder_action_register_continue">Registrieren Teil 3</label>
+			<label index="tx_helfenkannjeder_action_register_step33">Registrieren Teil 2</label>
+			<label index="tx_helfenkannjeder_action_support">Support</label>
+			<label index="tx_helfenkannjeder_action_user_settings">User settings</label>
+			<label index="tx_helfenkannjeder_action_organisation_edit">Organisation bearbeiten</label>
+			<label index="tx_helfenkannjeder_action_cron">Cron</label>
+			<label index="tx_helfenkannjeder_action_helfomat">Helf-O-Mat</label>
+			<label index="tx_helfenkannjeder_register_session_lifetime">Session Lebenszeit (in Sekunden)</label>
+		</languageKey>
+	</data>
+</T3locallang>

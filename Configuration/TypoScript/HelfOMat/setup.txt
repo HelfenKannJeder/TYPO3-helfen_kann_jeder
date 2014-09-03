@@ -1,0 +1,10 @@
+plugin.tx_helfenkannjeder {
+	settings {
+		helfomat {
+			default = 1
+		}
+	}
+}
+
+page.includeJS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Scripts/HelfOMat.js
+page.includeCSS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/HelfOMat.css

@@ -1,0 +1,17 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<table>
+	<tr>
+		<td>&nbsp;</td>
+<f:for each="{organisationsObj}" as="organisation">
+		<td>{organisation.name}</td>
+</f:for>
+	</tr>
+<f:for each="{helfOMat.questions}" as="question">
+	<tr>
+		<td>{question.question}</td>
+<f:for each="{organisationsObj}" as="organisation">
+		<td>{hkj:storage.at(storage: organisationPercent index: organisation.uid, index2: question.uid)}%</td>
+</f:for>
+	</tr>
+</f:for>
+</table>

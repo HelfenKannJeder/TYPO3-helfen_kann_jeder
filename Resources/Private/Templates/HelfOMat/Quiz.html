@@ -1,0 +1,44 @@
+{namespace qu=Tx_QuBase_ViewHelpers}
+<script type="text/javascript">
+window.onload = function () {
+	citysignStartup(false, false);
+	tx_helfenkannjeder_set_organisation(tx_helfenkannjeder_organisation_current);
+}
+</script>
+<div class="tx-helfenkannjeder-helfomat">
+	<div class="tx-helfenkannjeder-helfomat-quiz">
+<f:form action="{f:if(condition: helfOMat.method, then: 'groupResult', else: 'result')}" arguments="{helfOMat: helfOMat}" id="tx-helfenkannjeder-helfomat-form">
+{qu:storage.sort(objectStorage: helfOMat.questions, sortBy: 'sort', as: 'helfOMatQuestions')}
+	<f:for each="{helfOMatQuestions}" as="question" iteration="questionIteration">
+	<div class="tx-helfenkannjeder-helfomat-question" id="tx-helfenkannjeder-helfomat-question-{questionIteration.index}">
+		<div class="tx-helfenkannjeder-helfomat-question-info">
+			<span class="tx-helfenkannjeder-helfomat-question-info">{f:translate(key: 'helfomat_question')} {questionIteration.cycle} {f:translate(key: 'helfomat_question_from')} {questionIteration.total}</span>
+			<h1>{question.question}</h1>
+			<span class="tx-helfenkannjeder-helfomat-question-description">{question.description}</span><br />
+		</div>
+		<f:form.select class="tx-helfenkannjeder-helfomat-question-options" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-select" name="answer[{question.uid}]" options="{0: '{f:translate(key: \'helfomat_question_neutral\')}', 1: '{f:translate(key: \'helfomat_question_yes\')}', 2: '{f:translate(key: \'helfomat_question_no\')}'}" />
+		<ul class="tx-helfenkannjeder-helfomat-question-buttons" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}" style="display:none">
+			<li class="tx-helfenkannjeder-helfomat-question-buttons-yes"><f:image src="{f:uri.resource(path:'Images/Yes.png')}" alt="{f:translate(key: 'helfomat_question_yes')}" width="50" /><br />{f:translate(key: 'helfomat_question_yes')}</li>
+			<li class="tx-helfenkannjeder-helfomat-question-buttons-neutral"><f:image src="{f:uri.resource(path:'Images/Neutral.png')}" alt="{f:translate(key: 'helfomat_question_neutral')}" width="50" /><br />{f:translate(key: 'helfomat_question_neutral')}</li>
+			<li class="tx-helfenkannjeder-helfomat-question-buttons-no"><f:image src="{f:uri.resource(path:'Images/No.png')}" alt="{f:translate(key: 'helfomat_question_no')}" width="50" /><br />{f:translate(key: 'helfomat_question_no')}</li>
+		</ul>
+		<br style="clear:both" />
+	</div>
+	</f:for>
+	<div class="tx-helfenkannjeder-helfomat-question-submit">
+		<f:form.submit value="{f:translate(key: 'helfomat_question_result')}" />
+	</div>
+	<div class="tx-helfenkannjeder-helfomat-question-status" style="display:none">
+		<div id="tx-helfenkannjeder-helfomat-question-status-bar">
+			<div id="tx-helfenkannjeder-helfomat-question-status-bar-current"></div>
+		</div>
+		<ul id="tx-helfenkannjeder-helfomat-question-status-num">
+	<f:for each="{helfOMatQuestions}" as="question" iteration="questionIteration">
+			<li id="tx-helfenkannjeder-helfomat-question-status-link-{questionIteration.index}" onclick="helfenKannJederSetCurrentQuestion({questionIteration.index}, 0);">{questionIteration.cycle}</li>
+	</f:for>
+		</ul>
+		<br style="clear:both" />
+	</div>
+</f:form>
+	</div>
+</div>

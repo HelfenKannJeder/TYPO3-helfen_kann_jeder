@@ -1,0 +1,20 @@
+<f:if condition="{organisationDraft.request}==3">
+<f:then>
+<f:link.action action="back" class="supportButtonBack" arguments="{organisationDraft: organisationDraft}">{f:translate(key: 'support.organisation.back')}</f:link.action>
+</f:then>
+<f:else>
+<f:link.action action="index" class="supportButtonBack">{f:translate(key: 'support.organisation.back')}</f:link.action>
+</f:else>
+</f:if>
+<f:link.action action="view" class="supportButtonMode" arguments="{organisationDraft: organisationDraft}">{f:translate(key: 'support.organisation.view.new')}</f:link.action>
+<f:if condition="{organisationDraft.reference}">
+<f:link.action action="diff" class="supportButtonMode" arguments="{organisationDraft: organisationDraft}">{f:translate(key: 'support.organisation.view.diff')}</f:link.action>
+<br /><br />
+</f:if>
+<f:render section="activationContent" />
+<f:if condition="{organisationDraft.request}==3">
+<f:link.action action="back" class="supportButtonBack supportButtonBackFloat" arguments="{organisationDraft: organisationDraft}">{f:translate(key: 'support.organisation.back')}</f:link.action>
+<f:link.action action="deny" class="supportButtonDeny" arguments="{organisationDraft: organisationDraft}" onclick="return window.confirm('{f:translate(key: 'support.organisation.deny.realy')}');">{f:translate(key: 'support.organisation.deny')}</f:link.action> 
+<f:link.action action="test2live" class="supportButtonAccept" arguments="{organisationDraft: organisationDraft}" onclick="return window.confirm('{f:translate(key: 'support.organisation.confirm.realy')}');">{f:translate(key: 'support.organisation.confirm')}</f:link.action>
+</f:if>
+<br style="clear:both" />

@@ -1,0 +1,115 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div id="helfen_kann_jeder_register_margin20">
+<div id="helfen_kann_jeder_register">
+<f:form class="helfen_kann_jeder_form" method="post" action="{actionSendMethod}"  name="{objectEditName}" object="{objectEdit}" arguments="{args}" enctype="multipart/form-data">
+<br />
+<ul class="helfen_kann_jeder_register_progress_steps">
+	<li class="helfen_kann_jeder_register_first_step helfen_kann_jeder_register_progress_finished {f:if(condition: '{step} == 20', then:'helfen_kann_jeder_register_current_step ')}">{f:translate(key: 'register_step2')}</li>
+	<li class="helfen_kann_jeder_register_progress_second_child {f:if(condition: '{registerOrganisationProgress.finisheduntil} > 39', then:'helfen_kann_jeder_register_progress_finished ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 30', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{step} == 40', then:'helfen_kann_jeder_register_current_step ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 31', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 32', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 33', then:'helfen_kann_jeder_register_progress_next_step ')}">
+	<f:if condition="{registerOrganisationProgress.finisheduntil} > 39">
+		<f:then><f:link.action action="showstep40" arguments="{args}" onclick="return window.confirm('{f:translate(key: 'register_destroy_data')}');">{f:translate(key: 'register_step4')}</f:link.action></f:then>
+		<f:else>{f:translate(key: 'register_step4')}</f:else>
+	</f:if></li>
+	<li class="{f:if(condition: '{registerOrganisationProgress.finisheduntil} > 49', then:'helfen_kann_jeder_register_progress_finished ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 40', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{step} == 50', then:'helfen_kann_jeder_register_current_step ')}">
+	<f:if condition="{registerOrganisationProgress.finisheduntil} > 49">
+		<f:then><f:link.action action="showstep50" arguments="{args}" onclick="return window.confirm('{f:translate(key: 'register_destroy_data')}');">{f:translate(key: 'register_step5')}</f:link.action></f:then>
+		<f:else>{f:translate(key: 'register_step5')}</f:else>
+	</f:if></li>
+	<li class="{f:if(condition: '{registerOrganisationProgress.finisheduntil} > 59', then:'helfen_kann_jeder_register_progress_finished ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 50', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{step} == 60', then:'helfen_kann_jeder_register_current_step ')}">
+	<f:if condition="{registerOrganisationProgress.finisheduntil} > 59">
+		<f:then><f:link.action action="showstep60" arguments="{args}" onclick="return window.confirm('{f:translate(key: 'register_destroy_data')}');">{f:translate(key: 'register_step6')}</f:link.action></f:then>
+		<f:else>{f:translate(key: 'register_step6')}</f:else>
+	</f:if></li>
+	<li class="{f:if(condition: '{registerOrganisationProgress.finisheduntil} > 69', then:'helfen_kann_jeder_register_progress_finished ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 60', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{step} == 70', then:'helfen_kann_jeder_register_current_step ')}{f:if(condition: '{step} == 71', then:'helfen_kann_jeder_register_current_step ')}">
+	<f:if condition="{registerOrganisationProgress.finisheduntil} > 69">
+		<f:then><f:link.action action="showstep70" arguments="{args}" onclick="return window.confirm('{f:translate(key: 'register_destroy_data')}');">{f:translate(key: 'register_step7')}</f:link.action></f:then>
+		<f:else>{f:translate(key: 'register_step7')}</f:else>
+	</f:if></li>
+	<li class="{f:if(condition: '{registerOrganisationProgress.finisheduntil} > 79', then:'helfen_kann_jeder_register_progress_finished ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 70', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{registerOrganisationProgress.finisheduntil} == 71', then:'helfen_kann_jeder_register_progress_next_step ')}{f:if(condition: '{step} == 80', then:'helfen_kann_jeder_register_current_step ')}">
+	<f:if condition="{registerOrganisationProgress.finisheduntil} > 79">
+		<f:then><f:link.action action="showstep80" arguments="{args}" onclick="return window.confirm('{f:translate(key: 'register_destroy_data')}');">{f:translate(key: 'register_step8')}</f:link.action></f:then>
+		<f:else>{f:translate(key: 'register_step8')}</f:else>
+	</f:if></li>
+</ul>
+<br />
+<br />
+<f:if condition="{step} != 81">
+<f:if condition="{step} != 20">
+<f:if condition="{step} == 80">
+<f:then>
+<div class="submitStepBack"><f:form.submit name="stepBack" value="{f:translate(key:'register_last_step')}" id="register_back_step_head" /></div>
+</f:then>
+<f:else>
+<f:if condition="{step} != 32">
+<div class="submitStepNext"><f:form.submit value="{f:translate(key:'register_next_step')}" id="register_next_step_head" /></div>
+<f:if condition="{step} >= 40">
+<div class="submitStepNext"><f:form.submit name="stepSave" value="{f:translate(key:'register_save_step')}" id="register_save_step_head" /></div>
+</f:if>
+<f:if condition="{step} != 33">
+<div class="submitStepBack"><f:form.submit name="stepBack" value="{f:translate(key:'register_last_step')}" id="register_back_step_head" /></div>
+</f:if>
+</f:if>
+<f:if condition="{step} >= 40"><f:if condition="{step} < 80">
+<f:form.checkbox name="forcePageChange" value="1" /> {f:translate(key:'register_force_page_change')}<br />
+</f:if></f:if>
+</f:else>
+</f:if>
+</f:if>
+</f:if>
+<br class="submitEnd" />
+<br />
+<h2><f:translate key="{headline}" /></h2>
+
+<ul id="error">
+<f:form.validationResults for="{objectEditName}">
+	<!-- {error.code} -->
+<f:comment>	<f:translate key="error.{error.code}">{error.message} ({error.code})</f:translate></f:comment>
+	<f:if condition="{error.propertyName}">
+		<li>
+			<strong>{error.propertyName}</strong>:
+			<f:for each="{error.errors}" as="errorDetail">
+				<!-- {errorDetail.code} -->
+				<f:translate key="error.{errorDetail.code}">{errorDetail.message} ({errorDetail.code})</f:translate>
+			</f:for>
+		</li>
+	</f:if>
+</f:form.validationResults>
+</ul>
+<f:flashMessages id="error" />
+<f:render section="content" arguments="{registerOrganisationProgress: registerOrganisationProgress}" />
+<br />
+<br />
+<f:if condition="{step} != 81">
+	<f:if condition="{step} == 80">
+		<f:then>
+			<f:if condition="{has_errors}">
+	<f:then><span style="color:red"><f:translate key="register_correct_mistakes" /></span></f:then>
+	<f:else><div class="submitStepNext"><f:form.submit value="{f:translate(key:'register_next_endup')}" id="register_next_step_head" /></div></f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:if condition="{step} == 20">
+				<f:then>
+<div class="submitStepNext"><f:form.submit value="{f:translate(key:'register_new_user')}" id="register_next_step_foot" /></div>
+<div class="submitStepBack"><f:form.submit name="stepBack" value="{f:translate(key:'register_abort')}" id="register_back_step_foot" /></div>
+				</f:then>
+				<f:else>
+					<f:if condition="{step} != 32">
+<div class="submitStepNext"><f:form.submit value="{f:translate(key:'register_next_step')}" id="register_next_step_foot" /></div>
+						<f:if condition="{step} >= 40">
+<div class="submitStepNext"><f:form.submit name="stepSave" value="{f:translate(key:'register_save_step')}" id="register_save_step_foot" /></div>
+						</f:if>
+						<f:if condition="{step} != 33">
+<div class="submitStepBack"><f:form.submit name="stepBack" value="{f:translate(key:'register_last_step')}" id="register_back_step_foot" /></div>
+						</f:if>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:if>
+<br class="submitEnd" />
+</f:form>
+</div>
+</div>
+<f:render partial="RegisterContactRow" arguments="{settings:settings, objectEdit:objectEdit, step:step}" />

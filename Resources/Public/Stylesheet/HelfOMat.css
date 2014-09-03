@@ -1,0 +1,77 @@
+.tx-helfenkannjeder-helfomat-quiz {
+	width: 100%;
+	min-height: 400px;
+	padding-top: 1px;
+	margin-top: -1px;
+}
+
+.tx-helfenkannjeder-helfomat-question {
+	margin: 25px;
+	padding: 25px;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.tx-helfenkannjeder-helfomat-question-status {
+	margin: 25px;
+	padding: 25px;
+	margin-top: 0;
+	background-color: white;
+}
+
+.tx-helfenkannjeder-helfomat-question-status #tx-helfenkannjeder-helfomat-question-status-bar {
+	height: 10px;
+	background-color: #D1EEF6;
+	margin-bottom: 2px;
+}
+
+.tx-helfenkannjeder-helfomat-question-status #tx-helfenkannjeder-helfomat-question-status-bar-current {
+	height: 10px;
+	background-color: #00ADEF;
+}
+
+.tx-helfenkannjeder-helfomat-question-status ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.tx-helfenkannjeder-helfomat-question-status ul li {
+	float: left;
+	width: 100px;
+	padding: 5px 0;
+	text-align: center;
+}
+
+.tx-helfenkannjeder-helfomat-question-status ul li.tx-helfenkannjeder-helfomat-question-status-li-clickable {
+	cursor: pointer;
+}
+
+.tx-helfenkannjeder-helfomat-question-status ul li.tx-helfenkannjeder-helfomat-question-status-li-current {
+	background-color: lightgrey;
+}
+
+.tx-helfenkannjeder-helfomat-question-info {
+	height: 175px;
+}
+
+.tx-helfenkannjeder-helfomat-question h1 {
+	font-size: 20px !IMPORTANT;
+	margin: 20px 0 !IMPORTANT;
+}
+
+.tx-helfenkannjeder-helfomat-question-buttons {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.tx-helfenkannjeder-helfomat-question-buttons li {
+	float: left;
+	width: 50px;
+	height: 60px;
+/*	background-color: lightgrey;*/
+	margin-right: 20px;
+	text-align: center;
+	color: #777777;
+}

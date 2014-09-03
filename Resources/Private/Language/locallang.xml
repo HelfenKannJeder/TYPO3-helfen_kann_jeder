@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Strings for the helfen_kann_jeder extension</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="loog_also_in">... auch in </label>
+			<label index="about">About</label>
+			<label index="backer_financial">Finanziell</label>
+			<label index="backer_ideal">Ideell</label>
+			<label index="backer_since">Unterstützer seit </label>
+			<label index="backer_special_thanks_to">Ein besonderer Dank geht an </label>
+			<label index="backer_thanks_to">Vielen Dank für die Unterstützung an...</label>
+			<label index="error.1361959228">Bitte bestätige die Bedingungen.</label>
+			<label index="error.170320111501">Der Sicherheitscode ist falsch, bitte versuche es nocheinmal.</label>
+			<label index="register_captcha_prefix">Um SPAM vorzubeugen, bitten wir Dich, den Text, der rechts abgebildet ist, in das nachfolgende Feld einzugeben:</label>
+			<label index="register_captcha_suffix">Solltest du hierbei Probleme haben, wende dich bitte an unseren Support.</label>
+			<label index="register_upload_picture">Hochladen</label>
+			<label index="citysign_ask_age">Um die Ergebnisse für Dich anzupassen, benötigen wir noch Dein Alter: </label>
+			<label index="citysign_description">Damit wir Dir passende Möglichkeiten in Deiner Nähe vorschlagen können, benötigen wir neben Deinem Alter Deinen Ort. Bei Deiner Anschrift reicht Deine PLZ, wenn Du möchtest, kannst Du zur näheren Eingrenzung auch Ort, Straße, ggf. Hausnummer von Deiner Wohnung oder Arbeit angeben.
+
+Hinweis: Zum jetzigen Zeitpunkt befindet sich das Portal in der Anfangs-Phase, so dass für Deinen Ort ggf. noch keine Ergebnisse geliefert werden.
+
+Bitte beachte auch unsere </label>
+			<label index="citysign_description_dataprivacy">Datenschutzbestimmungen</label>
+			<label index="citysign_error_not_found">Deine Anschrift konnte leider nicht gefunden werden. Bitte stelle sicher, dass Du Straße und Deinen Ort angibst.</label>
+			<label index="citysign_error_not_ka">Entweder konnte Deine Adresse nicht gefunden werden oder in Deiner Region sind noch keine Mitmachmöglichkeiten erfasst, weil die Plattform erst vor Kurzem für alle Organisationen geöffnet wurde. Falls Du HelfenKannJeder.de nur ausprobieren möchtest, gib als Anschrift einfach &quot;Karlsruhe&quot; ein.</label>
+			<label index="citysign_error_technical">Es ist ein technischer Fehler aufgetreten. Wir bitten Dich dies zu entschuldigen. Bitte wende Dich an das HelfenKannJeder-Team über die Seite &quot;Kontakt&quot;. Details: </label>
+			<label index="citysign_input_field">Bitte Adresse eingeben: Ort, (Straße) ...</label>
+			<label index="citysign_submit_button">OK</label>
+			<label index="citysign_your_position">Hier ist Deine Heimatadresse.</label>
+			<label index="edit_organisation">Edit Organisation</label>
+			<label index="error_registerorganisationprogress_missing_name">Du musst Deinen Vor- und Nachnamen angeben.</label>
+			<label index="error_registerorganisationprogress_missing_organisationtype">Es muss ein Dachverband angegeben werden.</label>
+			<label index="error_registerorganisationprogress_wrong_zipcode">Die angegebene Postleitzahl ist ungültig.</label>
+			<label index="error_registerorganisationprogress_invalid_mail">Die angegebene E-Mail-Adresse ist ungültig.</label>
+			<label index="error_registerorganisationprogress_invalid_username">Der Benutzername enthält ungültige Zeichen. Dieser darf nur a-z, 0-9 und einen Bindestrich enthalten. Andere Zeichen sind nicht erlaubt.</label>
+			<label index="error_organisation_address_no_addresses_found">Bitte gebe mindestens eine Adresse Deiner Organisation an.</label>
+			<label index="error_organisation_address_no_default_address">Es ist keine Standardadresse festgelegt.</label>
+			<label index="error_organisation_address_not_found">Die Adresse %s, %s konnte nicht gefunden werden.</label>
+			<label index="error_organisation_appendix_to_long">Der Adresszusatz der Adresse %s %s ist mit %d Zeichen von %d erlaubten Zeichen zu lang.</label>
+			<label index="error_organisation_city_out_of_range">Der Ort in der die &quot;%s&quot; Straße ist, hat eine ungültige Länge.</label>
+			<label index="error_organisation_contact_person_invalid_mail">Der Ansprechpartner %s %s hat eine ungültig formatierte E-Mail-Adresse angegeben (Beispiel: info@example.com).</label>
+			<label index="error_organisation_contact_person_invalid_mobilephone_number">Der Ansprechpartner %s %s hat eine ungültig formatierte Mobilfunknummer angegeben (Beispiel: 0175 1234567).</label>
+			<label index="error_organisation_contact_person_invalid_phone_number">Der Ansprechpartner %s %s hat eine ungültig formatierte Telefonnummer angegeben (Beispiel: 0721 1234567).</label>
+			<label index="error_organisation_contact_person_missing_contact_possibility">Der Ansprechpartner %s %s sollte eine Kontaktmöglichkeit (entweder E-Mail-Adresse oder Telefonnummer) haben.</label>
+			<label index="error_organisation_contact_person_missing_prename">Es gibt einen Ansprechpartner, bei dem kein Vorname angegeben ist.</label>
+			<label index="error_organisation_contact_person_missing_surname">Es gibt einen Ansprechpartner, bei dem kein Nachname angegeben ist.</label>
+			<label index="error_organisation_name_empty">Bitte gib den Namen deiner Organisation an.</label>
+			<label index="error_organisation_name_longest_word_to_long">Das längste Wort des Namens hat %d Zeichen, darf allerdings nur %d Zeichen haben!</label>
+			<label index="error_organisation_description_empty">Bitte beschreibe Deine Organisation. Dies hilft dem Nutzer sich besser zu orientieren und Details über Deine Organisation zu erfahren.</label>
+			<label index="error_organisation_description_longest_word_to_long">Das längste Wort hat %d Zeichen, darf allerdings nur %d Zeichen haben!</label>
+			<label index="error_organisation_employee_invalid_mobilephone_number">Bei dem Mitmacher &quot;%s&quot; ist eine ungültige Mobilfunknummer angegeben (Beispiel für richtiges Format: 0175 1234567).</label>
+			<label index="error_organisation_employee_invalid_phone_number">Bei dem Mitmacher &quot;%s&quot; ist eine ungültige Telefonnummer angegeben (bitte nach dem Format 0721 1234567 eingeben).</label>
+			<label index="error_organisation_employee_person_missing_motivation">Bei dem Mitmacher &quot;%s&quot; ist kein Text mit seiner Motivation zum Mitmachen angegeben.</label>
+			<label index="error_organisation_employee_person_missing_prename">Es gibt einen Mitmacher, bei dem kein Vorname angegeben ist.</label>
+			<label index="error_organisation_group_invalid_website">Die angegebene Webseite der Einheit &quot;%s&quot; ist ungültig, bitte beachte, dass Du http:// voranstellen musst.</label>
+			<label index="error_organisation_group_maximum_age_not_a_number">Das Höchstalter der Einheit &quot;%s&quot; ist keine Zahl!</label>
+			<label index="error_organisation_group_maximum_age_out_of_range">Das Höchstalter der Einheit &quot;%s&quot; ist außerhalb des möglichen Gültigkeitsbereich (zwischen %d und %d)!</label>
+			<label index="error_organisation_group_minimum_age_greater_than_maximum_age">Bei der Einheit &quot;%s&quot; ist das Mindestalter (%d) größer als das Höchstalter (%d)!</label>
+			<label index="error_organisation_group_minimum_age_not_a_number">Das Mindestalter der Einheit &quot;%s&quot; ist keine Zahl!</label>
+			<label index="error_organisation_group_minimum_age_out_of_range">Das Mindestalter der Einheit &quot;%s&quot; ist außerhalb des möglichen Gültigkeitsbereich (zwischen %d und %d)!</label>
+			<label index="error_organisation_group_missing_description">Bitte beschreibe die Einheit &quot;%s&quot;!</label>
+			<label index="error_organisation_group_missing_maximum_age">Bitte gib das Höchstalter für die Einheit &quot;%s&quot; an!</label>
+			<label index="error_organisation_group_missing_minimum_age">Bitte gib das Mindestalter für die Einheit &quot;%s&quot; an!</label>
+			<label index="error_organisation_invalid_url">Die angegebene Webseite ist ungültig, bitte stelle ein http:// der Seite voran.</label>
+			<label index="error_organisation_no_contact_persons">Du musst mindestens einen Ansprechpartner festlegen.</label>
+			<label index="error_organisation_no_groups">Du musst mindestens eine Einheit zu Deiner Organisation hinzufügen, sonst kann Deine Organisation nicht gefunden werden!</label>
+			<label index="error_organisation_no_logo">Bitte wähle ein Logo aus!</label>
+			<label index="error_organisation_no_workinghours">Bitte gib mindestens eine Dienstzeit an!</label>
+			<label index="error_organisation_not_in_range_of_main_address">Die Postleitzahl %05d ist zu weit von der ursprünglich eingegebenen Postleitzahl %05d entfernt.</label>
+			<label index="error_organisation_not_valid_phonenumber">Die Adresse %s %s hat eine ungültige formatierte Telefonnummer (Beispiel: 0721 1234567).</label>
+			<label index="error_organisation_not_valid_time_period">Die Zeitspanne %02d:%02d bis %02d:%02d ist ungültig, da der Startzeitpunkt vor dem Endzeitpunkt liegt.</label>
+			<label index="error_organisation_picture_not_a_image">Eines der Bilder enthält einen Fehler und kann nicht verarbeitet werden, bitte lösche es es aus der Liste.</label>
+			<label index="error_organisation_picture_not_found">Eines der Bilder konnte leider nicht mehr gefunden werden, bitte lösche es es aus der Liste.</label>
+			<label index="error_organisation_picture_to_small">Für eine optimale Darstellungsqualität müssen Bilder eine Mindestgröße von 600x600 Pixel haben.</label>
+			<label index="error_organisation_pictures_empty">Du musst mindestens ein Bild für Deine Organisation hochladen.</label>
+			<label index="error_organisation_street_out_of_range">Der Name der Straße im Ort &quot;%s&quot; hat eine ungültige Länge.</label>
+			<label index="error_organisation_upload_failed_image_size_form">Das Hochladen eines Bildes ist aufgrund der zu hohen Dateigröße fehlgeschlagen! (Formularfehler)</label>
+			<label index="error_organisation_upload_failed_image_size_ini">Das Hochladen eines Bildes ist aufgrund der zu hohen Dateigröße (max. 10 MB) fehlgeschlagen!</label>
+			<label index="error_organisation_upload_failed_internal_problem_extension">Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072803</label>
+			<label index="error_organisation_upload_failed_internal_problem_partial">Der Upload ist fehlgeschlagen, bitte probieren es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072754</label>
+			<label index="error_organisation_upload_failed_internal_problem_tmp_dir">Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072771</label>
+			<label index="error_organisation_upload_failed_internal_problem_write">Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072788</label>
+			<label index="error_organisation_upload_failed_wrong_image_type">Das Hochladen ist fehlgeschlagen, es dürfen nur Bilder vom Typ PNG oder JPG hochgeladen werden.</label>
+			<label index="error_organisation_workinghours_no_day_given">Es gibt eine Dienstzeit, die keinen Tag angegeben hat!</label>
+			<label index="error_organisation_workinghours_not_all_time_values_should_be_null">Es gibt eine Dienstzeit, der keine Uhrzeit zugewiesen wurde!</label>
+			<label index="error_organisation_zipcode_out_of_range">Die Postleitzahl des Ortes &quot;%s&quot; muss genau fünf Zeichen lang sein.</label>
+			<label index="organisation_upload_types">Bilder (png und jpg)</label>
+			<label index="organisation_upload_status_start">Starte...</label>
+			<label index="organisation_upload_status_failed">Fehlgeschlagen</label>
+			<label index="organisation_upload_status_wait">Warte</label>
+			<label index="error_organisation_upload_size">Es ist bei einigen Dateien ein Fehler aufgetreten, bitte prüfe die Bildgröße:</label>
+			<label index="error_organisation_upload_general">Es ist ein Fehler aufgetreten, für weitere Informationen bitte die Administratoren kontaktieren, mit folgenden Informationen: </label>
+			<label index="error_organisation_upload_file">Eine Datei konnte nicht vollständig erkannt werden und wurde übersprungen.</label>
+			<label index="generator_error_nothing_found">Leider konnten wir kein passendes Ergebnis finden.</label>
+			<label index="generator_first">1.</label>
+			<label index="generator_first_list">Liste</label>
+			<label index="generator_first_text">Wähle im ersten Schritt bis zu fünf verschiedene Tätigkeiten, die Du gerne machen würdest. Du kannst auch ein Stichwort eingeben (z. B. &quot;tauchen&quot;).</label>
+			<label index="generator_list_all">List all</label>
+			<label index="generator_no_organisation">Leider konnten keine Hilfsorganisationen in unmittelbarer Nähe gefunden werden. Dies bedeutet jedoch nicht, dass keine Mitmachmöglichkeiten vorhanden sind. Die Plattform befindet sich im Aufbau und eine Registrierung der Organisationen in Deinem Ort ist noch nicht erfolgt. Das Rathaus/Bürgerbüro kann in der Regel jedoch Auskunft über die Möglichkeiten ehrenamtlichen Engagements mitteilen.</label>
+			<label index="generator_please_choose">Bitte wählen</label>
+			<label index="generator_searching">Suche läuft...</label>
+			<label index="generator_second">2.</label>
+			<label index="generator_second_help">Manche Tätigkeiten werden durch die Hilfsorganisationen in verschiedenen Einsatzbereichen geleistet. Durch die optionale Eingrenzung dieser kannst Du die Auswahl der für Dich infrage kommenden Organisationen weiter verfeinern.</label>
+			<label index="generator_second_text">Wähle optional zur Verfeinerung der Suchergebnisse Deine Wunsch-Einsatzbereiche für Deine gewählte(n) Tätigkeit(en) aus.</label>
+			<label index="generator_sentence_first">Ich möchte...</label>
+			<label index="generator_sentence_second">... und im Einsatz sein bei...</label>
+			<label index="generator_sentence_third">Deshalb passt zu mir:</label>
+			<label index="generator_third">Dein Ergebnis</label>
+			<label index="generator_third_text">Hier werden die örtlichen Organisationen aufgelistet, die am ehesten Deinen Vorlieben entsprechen.</label>
+			<label index="generator_distance_unit">km</label>
+			<label index="generator_distance_tooltip">Entfernung von Deinem Wohnort (Luftlinie).</label>
+			<label index="generator_grade_unit">%</label>
+			<label index="generator_grade_tooltip">Ein Ergebnis von 100% bedeutet, dass Du in der angebotenen Organisation alle Deine gewünschten Tätigkeiten möglich sind. Kleinere Prozentzahlen weisen darauf hin, dass die Organisation Deine Tätigkeit entweder nicht schwerpunktmäßig erfüllt oder, solltest Du mehrere Tätigkeiten ausgewählt haben, nicht alle hier angeboten werden.</label>
+			<label index="legend">Legend</label>
+			<label index="matrix">Matrix</label>
+			<label index="matrix_no_activity_field">No activity field</label>
+			<label index="matrix_primary_activity_field">Primary activity field</label>
+			<label index="matrix_secondary_activity_field">Secondary activity field</label>
+			<label index="new_organisation">New Organisation</label>
+			<label index="organisation_address_add_new">Add new address</label>
+			<label index="organisation_address_default">Default address</label>
+			<label index="organisation_address_default_description">Use this address as default address</label>
+			<label index="organisation_address_default_help">Du kannst eine Adresse als Standardadresse festlegen. Dies sollte die erste Adresse sein, mit der ein neuer Interessent in Verbindung kommt. Für Dienste können noch weitere Adressen hinzugefügt werden.</label>
+			<label index="organisation_addressappendix">Addressappendix</label>
+			<label index="organisation_addressappendix_help">Zusätzliche Angabe, die für den Benutzer wichtig ist (Nebengebäude, Etage, ...).</label>
+			<label index="organisation_addresses">Organisation addresses and meeting points</label>
+			<label index="organisation_city">City</label>
+			<label index="organisation_city_help">Die Stadt zu der Adresse. Diese wird überprüft, ob sie mit der Postleitzahl übereinstimmt.</label>
+			<label index="organisation_contactperson">Organisation contact persons</label>
+			<label index="organisation_delete_logo">Logo löschen</label>
+			<label index="organisation_department">Abt.</label>
+			<label index="organisation_description">Description</label>
+			<label index="organisation_do_you_really_want_to_delete_this_group">Do you really want to delete this group?</label>
+			<label index="organisation_edit">Edit</label>
+			<label index="organisation_employee_add_new">Add new employee</label>
+			<label index="organisation_employee_birthday">Birthday</label>
+			<label index="organisation_employee_city">City</label>
+			<label index="organisation_employee_contactperson">Funktion</label>
+			<label index="organisation_employee_contactperson_no">Mitmacher</label>
+			<label index="organisation_employee_contactperson_complete">Ansprechpartner der gesamten Organisation</label>
+			<label index="organisation_employee_contactperson_group">Ansprechpartner einer Einheit</label>
+			<label index="organisation_employee_contactperson_description">Ansprechpartner der gesamten Organisation</label>
+			<label index="organisation_employee_contactperson_help">Hierdurch kann eine Person als Ansprechpartner für die gesamte Organisation gemacht werden. Ansprechpartner für andere Organisationen können später noch festgelegt werden.</label>
+			<label index="organisation_employee_delete_picture">Bild löschen</label>
+			<label index="organisation_employee_mail">Mail</label>
+			<label index="organisation_employee_mail_help">Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, mehrere Kontaktmöglichkeiten anzugeben.</label>
+			<label index="organisation_employee_mobilephone_help">Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, mehrere Kontaktmöglichkeiten anzugeben.</label>
+			<label index="organisation_employee_motivation">Motivation</label>
+			<label index="organisation_employee_motivation_help">Die Motivation soll eine kurze Beschreibung des Mitmachers sein, wieso er bei der Hilfsorganisation dabei ist.</label>
+			<label index="organisation_employee_pictures_help">Ein Bild des Mitmachers/Ansprechpartners schafft einen persönlicheren Bezug und senkt die Hemmschwelle des Interessenten, die Organisation zu kontaktieren. Mitmacher müssen ein Bild bereitstellen.</label>
+			<label index="organisation_employee_prename_help">Ansprechpartner und Mitmacher müssen ihren Vornamen angeben.</label>
+			<label index="organisation_employee_rank">Rank</label>
+			<label index="organisation_employee_rank_help">Für einen Ansprechpartner kann hier ein Dienstgrad oder eine Beschreibung der Funktion innerhalb der Organisation angegeben werden, bei Mitmachern wird dieser ignoriert.</label>
+			<label index="organisation_employee_street">Street</label>
+			<label index="organisation_employee_surname_help">Der Nachname ist für Mitmacher freiwillig, bei Ansprechpartnern muss dieser zwingend angegeben werden.</label>
+			<label index="organisation_employee_telephone_help">Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, Interessenten mehrere Kontaktmöglichkeiten anzubieten.</label>
+			<label index="organisation_general">Allgemeines zur Organisation</label>
+			<label index="organisation_generic">Generic</label>
+			<label index="organisation_geodata">Geodata</label>
+			<label index="organisation_geodata_help">Die Position der Adresse wird automatisch ermittelt.</label>
+			<label index="organisation_group">Group</label>
+			<label index="organisation_group_add">Add</label>
+			<label index="organisation_group_address">Address</label>
+			<label index="organisation_group_city">City</label>
+			<label index="organisation_group_contactperson">Ansprechpartner</label>
+			<label index="organisation_group_contactperson_help">Wenn der Ansprechpartner dieser Einheit von dem Organisations-Ansprechpartner abweicht, kann dieser hier angegeben werden. Sollte der Ansprechpartner hier nicht zur Auswahl aufgelistet werden, speichere den bisherigen Stand, gehe bitte zurück und lege unter "Ansprechpartner und Mitmacher" einen Ansprechpartner an, dessen Funktion Du dann von "Mitmacher" auf "Ansprechpartner einer Einheit" bitte änderst.</label>
+			<label index="organisation_group_delete">Delete</label>
+			<label index="organisation_group_description">Description</label>
+			<label index="organisation_group_description_help">Hier kannst Du dem Interessenten ein paar kurze Informationen zu dieser Einheit geben. Du kannst gerne, sofern vorhanden, den vorgeschlagenen Text übernehmen oder überarbeiten. Hier kann auch auf Details, die diese Organisation in dieser Hinsicht von anderen Organisationen abhebt, hingewiesen werden.</label>
+			<label index="organisation_group_edit">Edit</label>
+			<label index="organisation_group_info_missing">Diese Einheit ist noch nicht vollständig in unserem System erfasst. Das heißt für Dich, dass Du zwar angeben kannst, dass Deine Organisation in diesem Umfeld tätig ist, sie allerdings nicht über &quot;Was kann ich tun?&quot;-Anfrage von Interessenten gefunden wird. Wir würden uns freuen, wenn Du auf uns zukommst und uns hilfst, Deine Einheit in unser System aufzunehmen. Wir würden uns um Deine Kontaktaufnahme zu uns freuen (siehe Supporter auf der rechten Seite).</label>
+			<label index="organisation_group_latitude_and_longitude">Latitude and longitude</label>
+			<label index="organisation_group_matrix">Matrix</label>
+			<label index="organisation_group_maximum_age">Maximum age</label>
+			<label index="organisation_group_maximum_age_help">Das Höchstalter wird dazu verwendet, diese Tätigkeiten bei &quot;Bei wem?&quot; der entsprechenden Altersklasse zuzuordnen.</label>
+			<label index="organisation_group_minimum_age">Minimum age</label>
+			<label index="organisation_group_minimum_age_help">Das Mindestalter wird dazu verwendet, diese Tätigkeiten bei &quot;Bei wem?&quot; der entsprechenden Altersklasse zuzuordnen.</label>
+			<label index="organisation_group_name">Name</label>
+			<label index="organisation_group_new">New</label>
+			<label index="organisation_group_save">Save</label>
+			<label index="organisation_group_street">Street</label>
+			<label index="organisation_group_website">Website</label>
+			<label index="organisation_group_website_help">Nur wenn diese Einheit eine eigene Webseite hat, wie z. B. eine Jugendgruppe, kann diese hier angegeben werden.</label>
+			<label index="organisation_group_workinghours">Working hours</label>
+			<label index="organisation_group_zipcode">Zipcode</label>
+			<label index="organisation_logo">Logo</label>
+			<label index="organisation_logo_upload">Logo hochladen</label>
+			<label index="organisation_logo_choose">oder auswählen</label>
+			<label index="organisation_matrices">Matrices</label>
+			<label index="organisation_matrix_delete">Delete</label>
+			<label index="organisation_matrix_edit">Edit</label>
+			<label index="organisation_matrix_name">Organisationsname</label>
+			<label index="organisation_matrix_new">New</label>
+			<label index="organisation_matrix_save">Save</label>
+			<label index="organisation_name">Name</label>
+			<label index="organisation_new">New</label>
+			<label index="organisation_picture_upload">Bilder hochladen</label>
+			<label index="organisation_picture_sort">Bilder sortieren (mit gedrückter Maustaste positionieren) und löschen</label>
+			<label index="organisation_picture_starting_text">Bitte lade mindestens ein aussagekräftiges Bild deiner Organisation (z. B. von einer Übung oder einem Einsatz) hoch. Bitte beachte, dass die Bilder mindestens 600x600 Pixel groß und im JPG- oder PNG-Format vorliegen müssen.
+
+Dir ist bekannt, dass die unrechtmäßige Verwendung von durch Dritte geschützten Motiven kein Kavaliersdelikt ist und mit Geldstrafen geahndet werden kann.</label>
+			<label index="organisation_save">Save</label>
+			<label index="organisation_street">Street</label>
+			<label index="organisation_street_help">Die Angabe einer Straße ist ein Pflichtfeld und wird automatisch validiert.</label>
+			<label index="organisation_telephone">Telephone</label>
+			<label index="organisation_telephone_help">Die Telefonnummer muss in dem Format &quot;Vorwahl Ortsrufnummer&quot; angegeben werden, also z. B. 01234 567890. Es sind nur Zahlen erlaubt.</label>
+			<label index="organisation_website">Webseite</label>
+			<label index="organisation_website_help">Falls es zu dieser Adresse eine Webseite gibt, kann diese hier hinterlegt werden.</label>
+			<label index="organisation_view">View</label>
+			<label index="organisation_website">Website</label>
+			<label index="organisation_workinghour_add_new">Weiteren Termin hinzufügen</label>
+			<label index="organisation_workinghour_addition">Zusatz</label>
+			<label index="organisation_workinghour_addition_help">Wenn der Dienst z. B. nur alle zwei Wochen oder in unregelmäßigen Abständen stattfindet, kann dies hier stichwortartig vermerkt werden.</label>
+			<label index="organisation_workinghour_address">Adresse</label>
+			<label index="organisation_workinghour_address_help">Die Angabe des Ortes ermöglicht es dem Nutzer, sofern er Interesse hat, bei einem Dienst mal hereinzuschnuppern. Weitere Orte können unter Stammdaten erfasst werden.</label>
+			<label index="organisation_workinghour_day">Wochentag</label>
+			<label index="organisation_workinghour_day.friday">Freitag</label>
+			<label index="organisation_workinghour_day.monday">Montag</label>
+			<label index="organisation_workinghour_day.please_choose">-- Bitte wählen --</label>
+			<label index="organisation_workinghour_day.saturday">Samstag</label>
+			<label index="organisation_workinghour_day.sunday">Sonntag</label>
+			<label index="organisation_workinghour_day.thursday">Donnerstag</label>
+			<label index="organisation_workinghour_day.tuesday">Dienstag</label>
+			<label index="organisation_workinghour_day.wednesday">Mittwoch</label>
+			<label index="organisation_workinghour_day_help">Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seiner Terminplanung vereinbaren lässt.</label>
+			<label index="organisation_workinghour_groups">Einheiten</label>
+			<label index="organisation_workinghour_groups_help">Sofern dieser Dienst nicht für alle Einheiten gilt, kann dies hier eingeschränkt werden.</label>
+			<label index="organisation_workinghour_oclock">Uhr</label>
+			<label index="organisation_workinghour_starttime">Beginn</label>
+			<label index="organisation_workinghour_starttime_help">Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seinem Terminkalender vereinbaren lässt.</label>
+			<label index="organisation_workinghour_stoptime">Ende</label>
+			<label index="organisation_workinghour_stoptime_help">Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seinem Terminkalender vereinbaren lässt.</label>
+			<label index="organisation_workinghour_until">bis</label>
+			<label index="organisation_workinghours">Workinghours</label>
+			<label index="organisation_zipcode">Zipcode</label>
+			<label index="organisation_zipcode_help">Die Postleitzahl ist ein Pflichtfeld und es wird automatisch überprüft, ob sie zum Ort gehört. Des Weiteren muss die Postleitzahl in der Nähe von der im Schritt &quot;Konto erstellen&quot; angegebenen Postleitzahl sein.</label>
+			<label index="overview_age">Year</label>
+			<label index="overview_all_groups">All groups</label>
+			<label index="overview_all_organisations">&lt;&lt; zurück zur Organisationsübersicht</label>
+			<label index="overview_and">and</label>
+			<label index="overview_back">&lt;&lt; back</label>
+			<label index="overview_contactperson">Contact person</label>
+			<label index="overview_employees">Active members...</label>
+			<label index="overview_group">Group</label>
+			<label index="overview_groups">Groups</label>
+			<label index="overview_location">Location</label>
+			<label index="overview_mail">Mail:</label>
+			<label index="overview_mainactivities">Tätigkeitsschwerpunkte</label>
+			<label index="overview_mainactivities_text">Die Darstellung der Organisationsschwerpunkte befindet sich </label>
+			<label index="overview_mainactivities_there">hier</label>
+			<label index="overview_matrix">In der folgenden Tabelle wird dargestellt, welche Tätigkeiten die Hilfsorganisation, </label>
+			<label index="overview_matrix2">, in dem jeweiligen Einsatzbereich erbringt. Tätigkeiten, die in keinem Bereich erbracht werden, werden nicht dargestellt.
+
+Legende:</label>
+			<label index="overview_matrix_no_activity">Tätigkeit wird nicht erbracht</label>
+			<label index="overview_matrix_primary_activity">Haupttätigkeit (Schwerpunkt) in dem jeweiligen Bereich</label>
+			<label index="overview_matrix_secondary_activity">Nebentätigkeit</label>
+			<label index="overview_mobilephone">Mobile:</label>
+			<label index="overview_telefax">Fax:</label>
+			<label index="overview_telephone">Tel.:</label>
+			<label index="overview_distance">Entfernung ca. </label>
+			<label index="overview_distance_unit"> km</label>
+			<label index="overview_without">Excepted from</label>
+			<label index="overview_workinghour_clock">o'clock</label>
+			<label index="overview_workinghour_day_1">Monday</label>
+			<label index="overview_workinghour_day_2">Tuesday</label>
+			<label index="overview_workinghour_day_3">Wednesday</label>
+			<label index="overview_workinghour_day_4">Thursday</label>
+			<label index="overview_workinghour_day_5">Friday</label>
+			<label index="overview_workinghour_day_6">Saturday</label>
+			<label index="overview_workinghour_day_7">Sunday</label>
+			<label index="overview_workinghour_addition">Note</label>
+			<label index="overview_workinghours">Working hours:</label>
+			<label index="read_more">(more...)</label>
+			<label index="register_correct_mistakes">Es gibt noch Fehler in Deinen Angaben, bitte korrigiere diese, anschließend findest Du hier den Button um Deine Organisation einzutragen.</label>
+			<label index="register_destroy_data">Wenn Du auf diese Seite springst, gehen aktuelle nicht gespeicherte Daten auf dieser Seite verloren. Möchtest Du dennoch fortfahren?</label>
+			<label index="register_force_page_change">Fehlermeldungen vorerst ignorieren.</label>
+			<label index="register_incorrect_fields">Es fehlt noch:</label>
+			<label index="register_last_step">« Zurück</label>
+			<label index="register_next_endup">Eintrag zur Validierung und Veröffentlichung beantragen</label>
+			<label index="register_next_step">Weiter »</label>
+			<label index="register_abort">Abbrechen</label>
+			<label index="register_new_user">Benutzer anlegen</label>
+			<label index="register_right_contactperson">Ansprechpartner</label>
+			<label index="register_right_login">Anmeldung</label>
+			<label index="register_right_logout">Abmelden und später fortfahren</label>
+			<label index="register_right_username">Benutzername</label>
+			<label index="register_save_step">Speichern</label>
+			<label index="register_step1">Rechtliches</label>
+			<label index="register_step1_checkbox_error">Bitte bestätige, dass Du berechtigt bist, die Organisation anzumelden.</label>
+			<label index="register_step1_checkbox_text"></label>
+			<label index="register_step1_headline">Rechtlicher Hinweis zur Registrierung</label>
+			<label index="register_step1_starting_text">Dies ist das Registrierungsportal von HelfenKannJeder.de. Hier hast Du die Möglichkeit, Deine Hilfsorganisation selber zu erfassen - Du musst dazu von Deiner Organisation berechtigt sein. In der jetzigen Phase können nur Organisationen innerhalb Baden-Württembergs sich registrieren - ein bundesweiter Einsatz ist zukünftig vorgesehen. Den Registrierungsprozess kannst Du jederzeit abbrechen und zu einem späteren Zeitpunkt fortsetzen. Allerdings wird Deine Organisation erst nach Überprüfung Deiner Angaben durch uns nur dann freigeschaltet, wenn Du alle notwendigen Angaben hinterlegt hast. Vor der Freischaltung ist Deine Organisation auf HelfenKannJeder.de nicht auffindbar. Bitte zögere nicht, bei Problemen Hilfe anzufordern - ein persönlicher Ansprechpartner wird Dir genannt, sobald Du Deine Anmeldedaten hinterlegt hast. Sollten bereits Schwierigkeiten bei einem Schritt davor auftreten, besteht die Möglichkeit, das HelfenKannJeder.de-Team über das Kontaktformular erreichen. Da wir HelfenKannJeder.de ausschließlich ehrenamtlich betreiben, habe bitte dafür Verständnis, dass Freischaltungen etwas Zeit in Anspruch nehmen können. Möchtest Du uns z. B. als Supporter unterstützen, Kritik oder Verbesserungsvorschläge unterbreiten? Wir freuen uns auf Deine Nachricht an uns.</label>
+			<label index="register_step2">Konto erstellen</label>
+			<label index="register_step21_headline">Detailangabe über den Dachverband</label>
+			<label index="register_step21_label_acronym">Abkürzung</label>
+			<label index="register_step21_label_description">Beschreibung</label>
+			<label index="register_step21_label_name">Name</label>
+			<label index="register_step21_starting_text">Leider können wir Deine Organisation nicht finden, da diese noch nicht in unserer Datenbank hinterlegt ist. Bitte nimm Kontakt zu uns auf, so dass wir diese eintragen können.</label>
+			<label index="register_step2_headline">Konto erstellen</label>
+			<label index="register_step2_label_organisationtype">Dachverband</label>
+			<label index="register_step2_please_choose">-- Bitte wählen --</label>
+			<label index="register_step2_starting_text">In diesem Schritt werden die grundlegenden Eigenschaften Deines Benutzerkontos abgefragt. Diese können im Nachhinein, abgesehen von Deinem Passwort, nur noch durch einen Supporter angepasst werden. Nach diesem Schritt erhältst Du zur Prüfung Deiner Eingaben eine E-Mail, die Du bestätigen musst.</label>
+			<label index="register_step3">Anmeldedaten</label>
+			<label index="register_step30_calculated">Wird automatisch berechnet</label>
+			<label index="register_step30_label_city">Postleitzahl (PLZ)</label>
+			<label index="register_step30_label_city_help">Gib hier bitte die Postleitzahl des Ortes Deiner Organisation an. Anhand dieser wird ein Vorschlag für Deinen Anmeldenamen erstellt.</label>
+			<label index="register_step30_label_department">Abteilung (optional)</label>
+			<label index="register_step30_label_department_help">Sollte es in Deiner Stadt mehrere Organisationen Deines Dachverbandes geben, ergänze bitte den Ortsnamen um den Namen Deiner Abteilung (Abteilung: Ortsteilname, Ortsgruppenname, ...).</label>
+			<label index="register_step30_label_organisationname">Organisationsname</label>
+			<label index="register_step30_label_organisationname_help">Dieser wird automatisch aus den bisher getätigten Angaben berechnet.</label>
+			<label index="register_step30_starting_text">Als Nächstes benötigen wir die Postleitzahl (PLZ) des Ortes Deiner Hilfsorganisation. Hat Dein Ort mehrere Teilorte, kannst Du optional eine Abteilung (=Ortsteilname, Ortsgruppenname, ...) angeben. Anschließend wird geprüft, ob Deine Hilfsorganisation bereits registriert ist und Deine Anmeldedaten automatisch generiert.</label>
+			<label index="register_step31_ending_text">
+An dieser Stelle schließt Du die Registrierung Deines Benutzerkontos ab. Anschließend hast Du die Möglichkeit, die Stammdaten Deiner Organisation zu erfassen. Bitte halte dazu ein paar Bilder bereit. Der Dachverband und Ort der Organisation kann beim Absenden dieses Formulars nicht mehr geändert werden!
+</label>
+			<label index="register_step31_error_password_match_word">Passwort wird nicht akzeptiert, da einfach zu erraten (zu ähnlich zu &quot;%s&quot;).</label>
+			<label index="register_step31_error_password_to_short">Das gewählte Passwort ist zu kurz (benötigte Mindestlänge: acht Zeichen).</label>
+			<label index="register_step31_error_passwords_not_match">Die Passwörter stimmen nicht überein.</label>
+			<label index="register_step31_error_user_exists">Deine Hilfsorganisation ist bereits registriert. Vielleicht hast Du versehentlich die Zurücktaste Deines Browsers gedrückt? Wenn Du noch keine E-Mail bekommen haben solltest, wenden Dich bitte an den Support.</label>
+			<label index="register_step31_label_city">Postleitzahl (PLZ)</label>
+			<label index="register_step31_label_mail">E-Mail-Adresse</label>
+			<label index="register_step31_label_mail_help">Bitte gib, sofern verfügbar, an dieser Stelle nicht Deine private oder eine personalisierte E-Mail-Adresse an, sondern idealerweise eine allgemeine, die Deiner Organisation gehört (z. B. info@deine-organisation.de). Hierdurch erleichtert sich für uns die Freischaltung und Benachrichtigungen von uns erreichen Deinen Nachfolger oder Deine Vertretung automatisch.</label>
+			<label index="register_step31_label_organisationtype">Dachverband</label>
+			<label index="register_step31_label_password">Passwort</label>
+			<label index="register_step31_label_password_help">Zu Deinem eigenen Schutz wähle an dieser Stelle bitte ein schwer zu erratendes Kennwort mit einer Mindestlänge von acht Zeichen.</label>
+			<label index="register_step31_label_password_repeat">wiederholen</label>
+			<label index="register_step31_label_surname">Dein Name</label>
+			<label index="register_step31_label_prename">Dein Vorname</label>
+			<label index="register_step31_label_username">Benutzername</label>
+			<label index="register_step31_label_username_help">Bitte verwende, wenn möglich, den vorgeschlagenen Anmeldenamen. Dieser kann an dieser Stelle von Dir bei Bedarf geändert werden, sollte z. B. Deine Ortsbezeichnung nicht korrekt sein. Nach diesem Schritt ist keine Änderung mehr möglich. Der Anmeldename erscheint nicht öffentlich und wird nur plattformintern verwendet.</label>
+			<label index="register_step31_mail_content">Vielen Dank für Ihre Registrierung bei HelfenKannJeder.de! Das HelfenKannJeder.de-Team freut sich, dass Du Deine Hilfsorganisation registriert hast. Um mit dem Eintragen Deiner Organisationsdaten fortzufahren, klicke bitte auf den nachfolgenden Link:
+%s
+
+Dein Benutzername lautet: %s
+
+Wir meinen, dass es effizienter ist, wenn alle Hilfsorganisationen nicht nur im Einsatz zusammenarbeiten, sondern auch gemeinsam für neue Mitmacher ohne die Schaffung von Konkurrenzsituationen werben. Dies klappt zum Beispiel in Karlsruhe hervorragend, wo das Portal seinen Ursprung hat. Wir würden uns daher freuen, wenn Du HelfenKannJeder.de auch anderen Organisationen in Deiner Stadt weiterempfiehlst, um das Spektrum der Vielzahl an Mitmachmöglichkeiten in den verschiedenen Hilfsorganisationen für Interessenten transparent zu gestalten. 
+
+Wir wünschen Dir neue motivierte Mitmacher für Deine Organisation.
+
+Bei Fragen schaue bitte in die FAQ (http://helfenkannjeder.de/faq/) oder wende Dich an den Support (siehe Kontaktformular).
+
+Viele Grüße,
+
+Dein HelfenKannJeder.de-Team
+(http://helfenkannjeder.de/team/)
+
+PS: Wir würden uns freuen, wenn Du uns auf Facebook oder Twitter folgst und damit auf dem Laufenden bleibst:
+Facebook: http://www.facebook.com/HelfenKannJeder
+Twitter https://twitter.com/#!/HelfenKannJeder</label>
+			<label index="register_step31_mail_headline">Registrierung auf HelfenKannJeder.de</label>
+			<label index="register_step31_starting_text">In diesem Schritt erhältst Du nochmals einen Überblick über Deine bereits angegebenen Daten. Nun musst Du bitte noch eine E-Mail-Adresse und ein Passwort wählen. Sollten die hier angegebenen Daten nicht korrekt sein, gehe bitte zurück und nehme entsprechende Korrekturen vor. Nach diesem Schritt erhältst Du eine E-Mail zur Verifizierung der Richtigkeit Deiner E-Mail-Adresse.</label>
+			<label index="register_step32_text">Glückwunsch! Der erste Teil der Registrierung ist nun abgeschlossen. In wenigen Minuten erhältst Du eine E-Mail, in der ein Link zur Fortsetzung der Registrierung enthalten ist. Solltest Du innerhalb von wenigen Stunden keine E-Mail bekommen -bitte schaue ggf. auch in den Ordner für SPAM-Mails-, wende Dich bitte an den Support (siehe Spalte rechts).
+
+Wir würden uns sehr freuen, wenn sich die Karlsruher Idee der gemeinsamen Personalsuche durch alle Hilfsorganisationen auch in Deiner Region Gefallen findet. Deshalb wäre es nett, wenn Du unser fast ausschließlich in ehrenamtlicher Arbeit entstandenes und auch zukünftig nichtkommerzielles Portal Deinen Bekannten, Freunden und Kollegen anderer Hilfsorganisationen empfiehlst. Natürlich freuen wir uns auch, wenn Du die Plattform z. B. durch eine Mitarbeit als Supporter unterstützt. 
+
+Solltest Du Probleme bei der Registrierung haben, kontaktiere unseren Support. Fast alle Supportmitarbeiter sind ehrenamtlich für die Plattform tätig und selber bei einer Hilfsorganisation dabei. Soweit möglich, versuchen wir Dir bei Problemen einen persönlichen Support-Mitarbeiter aus Deiner Organisation zu vermitteln.</label>
+			<label index="register_step33_text">Dein Benutzerkonto wurde erfolgreich freigeschaltet. Du kannst nun mit der Registrierung Deiner Hilfsorganisation fortfahren.
+
+Solltest Du einmal nicht weiter kommen, zögere bitte nicht und wende Dich an unseren Support (siehe Randspalte).</label>
+			<label index="register_step3_error_missing_department">Dieser Benutzername existiert bereits. Falls du Deinen Organisationsnamen als Benutzername gewählt hast, überprüfe bitte, ob Deine Organisation sich bereits registriert hat. Falls mehrere Organisationen in Deinem Ort existieren unter dem selben Dachverband, gebe eine Abteilung zur Unterscheidung an. Sollte dies nicht möglich sein, wende Dich bitte an Deinen Supporter, </label>
+			<label index="register_step3_error_missing_department_mail">, E-Mail: </label>
+			<label index="register_step3_error_nothing_found">Eine Nutzung der Plattform ist zurzeit nur innerhalb von Baden-Württemberg möglich - hier konnte Dein Ort nicht ermittelt werden. Bitte überprüfe Deine Eingabe oder wende Dich an den Support.</label>
+			<label index="register_step4">Stammdaten</label>
+			<label index="register_step40_error_address_not_found">Die Adresse konnte nicht eindeutig zugeordnet werden. Bitte ergänze Deine Angaben.</label>
+			<label index="register_step40_map">Karte</label>
+			<label index="organisaton_employee_teaser_text">Es muss mindestens ein Ansprechpartner erfasst werden, an den sich Interessierte wenden können.
+Weiterhin besteht optional die Möglichkeit, bereits in Deiner Hilfsorganisation Mitwirkende mit ihrem Foto und einem kurzen Text vorzustellen, um Interessierten Deine Hilfsorganisation persönlicher erscheinen zu lassen. Mitmacher können auch noch später durch Dich ergänzt werden.
+
+Als Anregung für Mitmacher-Statements schau doch mal auf </label>
+			<label index="organisaton_employee_teaser_text_and">und</label>
+			<label index="register_step5">Einheiten</label>
+			<label index="register_step6">Termine</label>
+			<label index="register_step7">Bilder</label>
+			<label index="register_step70_upload_add_files">Dateien hinzufügen</label>
+			<label index="register_step70_upload_drag_files_here">Ziehe die Dateien hier hin</label>
+			<label index="register_step70_upload_file_extension_error">Dateiendungs-Fehler.</label>
+			<label index="register_step70_upload_file_size_error">Dateigrößen-Fehler.</label>
+			<label index="register_step70_upload_filename">Dateiname</label>
+			<label index="register_step70_upload_files_queued">%d Dateien in der Warteschlange.</label>
+			<label index="register_step70_upload_generic_error">Allgemeiner Fehler beim Hochladen.</label>
+			<label index="register_step70_upload_http_error">HTTP-Fehler.</label>
+			<label index="register_step70_upload_init_error">Initialisierungs-Fehler.</label>
+			<label index="register_step70_upload_io_error">Ein-/Ausgabe-Fehler.</label>
+			<label index="register_step70_upload_na">Nicht verfügbar</label>
+			<label index="register_step70_upload_no_flash">Ihr Browser hat keine Flash-, Silverlight-, Gears-, BrowserPlus- oder HTML5-Unterstützung.</label>
+			<label index="register_step70_upload_security_error">Sicherheits-Fehler.</label>
+			<label index="register_step70_upload_select_files">Bilder auswählen</label>
+			<label index="register_step70_upload_select_files_description">Dateien zur Warteschlange hinzufügen und Start drücken.</label>
+			<label index="register_step70_upload_size">Größe</label>
+			<label index="register_step70_upload_start_upload">Starten des Uploads...</label>
+			<label index="register_step70_upload_start_uploading_queue">Warteschlange hochladen</label>
+			<label index="register_step70_upload_status">Status</label>
+			<label index="register_step70_upload_stop_current_upload">Hochladen anhalten</label>
+			<label index="register_step70_upload_stop_upload">Stoppen des Hochladens.</label>
+			<label index="register_step70_upload_uploaded_files">%d/%d Dateien sind hochgeladen</label>
+			<label index="register_step70_upload_you_must_at_least_upload_one_file">Es muss mindestens ein aussagekräftiges Bild Deiner Organisation hochgeladen werden.</label>
+			<label index="register_step8">Abschließen</label>
+			<label index="register_step80_mail_content">Hallo,
+
+wir danken Dir für Deine Registrierung auf HelfenKannJeder.de! Deine Daten werden noch von einem unserer Supporter geprüft und anschließend freigeschaltet. Du erhältst dann über E-Mail Bescheid.
+
+Du würdest uns übrigens einen großen Gefallen machen, wenn Du HelfenKannJeder.de an Kollegen befreundeter Hilfsorganisationen weiterempfiehlst.
+
+Zur Verbesserung der Plattform würden wir uns freuen, Deine Meinung zu hören - wir haben dazu fünf Fragen vorbereitet. Deine Antworten behandeln wir selbstverständlich vertraulich und, sofern Du uns Deine Kontaktdaten nicht mitteilst, anonymisiert: http://www.surveymonkey.com/s/QXBS5PK
+
+Das HelfenKannJeder.de-Team wünscht Dir viel Erfolg bei der Gewinnung neuer Mitmacher!</label>
+			<label index="register_step80_mail_headline">Registrierung auf HelfenKannJeder.de</label>
+			<label index="register_step90_edit">Zum Bearbeiten fortfahren.</label>
+			<label index="register_step90_text">
+Vielen Dank für Deine Registrierung!
+
+Diese ist nun vollständig und einer unserer ehrenamtlich tätigen Supporter wird Deine Seite in Kürze freischalten. 
+Sollte Dir vor der Freischaltung dennoch etwas aufgefallen sein, was nicht ganz passt, kannst Du dies mit dem unten stehenden Link ändern.
+
+Sobald Deine Seite freigeschaltet ist, wirst von uns per E-Mail benachrichtigt.</label>
+			<label index="register_supporter">Support</label>
+			<label index="organisation_group">Einheiten</label>
+			<label index="organisation_group_section_description">Bitte wähle hier aus, über welche Gruppen/Einheiten und (Sonder-)Ausstattung Ihr verfügt und wo Ihr Euch spezialisiert habt. Bitte beachte, dass diese Angaben
+sowohl vollständig sein sollen, da jeder Gruppe/Einheit/Ausstattung entsprechende Tätigkeiten durch das System intern zugeordnet sind. Interessierte potenzielle Mitmacher, die solche Tätigkeiten suchen, erhalten dann Eure Organisation vorgeschlagen. Als auch der Wahrheit entsprechen müssen - sollte z. B. auf Eurer Homepage nicht ersichtlich sein, dass Ihr die angegebenen Gruppen/Ausstattungen habt, wird die Veröffentlichung Deiner Organisation abgelehnt.</label>
+			<label index="about">Über</label>
+			<label index="backer_financial">Financial</label>
+			<label index="backer_ideal">Ideal</label>
+			<label index="backer_special_thanks_to">Special thanks to</label>
+			<label index="edit_organisation">Organisation bearbeiten</label>
+			<label index="legend">Legende</label>
+			<label index="matrix">Matrix</label>
+			<label index="matrix_edit">Bearbeiten</label>
+			<label index="matrix_no_activity_field">Kein Tätigkeitsgebiet</label>
+			<label index="matrix_primary_activity_field">Haupttätigkeit</label>
+			<label index="matrix_secondary_activity_field">Nebentätigkeit</label>
+			<label index="new_organisation">Neue Organisation</label>
+			<label index="organisation_address_add_new">Weitere Adresse hinzufügen</label>
+			<label index="organisation_address_default">Standardadresse</label>
+			<label index="organisation_address_default_description">Diese Adresse zur Standardadresse machen.</label>
+			<label index="organisation_address_delete_question">Möchtest Du diese Adresse wirklich löschen?</label>
+			<label index="organisation_addressappendix">Adresszusatz</label>
+			<label index="organisation_addresses">Organisationsanschriften und Treffpunkte</label>
+			<label index="organisation_city">Ort</label>
+			<label index="organisation_contactperson">Ansprechpartner und Mitmacher</label>
+			<label index="organisation_description">Beschreibung</label>
+			<label index="organisation_description_help">Diese Beschreibung soll dem Interessenten einen ersten Eindruck von Deiner Organisation vermitteln. Der Text sollte kurz und aussagekräftig sein.</label>
+			<label index="organisation_do_you_really_want_to_delete_this_group">Möchtest Du wirklich diese Einheit/Gruppe/Abteilung löschen?</label>
+			<label index="organisation_edit">Bearbeiten</label>
+			<label index="organisation_employee_add_new">Weiteren Ansprechpartner/Mitmacher hinzufügen</label>
+			<label index="organisation_employee_birthday">Geburtstag</label>
+			<label index="organisation_employee_delete_question">Wollen Sie diesen Ansprechpartner/Mitmacher wirklich löschen?</label>
+			<label index="organisation_employee_mail">E-Mail</label>
+			<label index="organisation_employee_mobilephone">Mobiltelefon</label>
+			<label index="organisation_employee_motivation">Warum mache ich mit</label>
+			<label index="organisation_employee_pictures">Bild</label>
+			<label index="organisation_employee_prename">Vorname</label>
+			<label index="organisation_employee_rank">Dienstgrad</label>
+			<label index="organisation_employee_surname">Nachname</label>
+			<label index="organisation_employee_telephone">Telefon</label>
+			<label index="organisation_generic">Allgemein</label>
+			<label index="organisation_geodata">Koordinaten</label>
+			<label index="organisation_geodata.new">Die Berechnung erfolgt nach dem Speichern.</label>
+			<label index="organisation_geodata.failed">Die Berechnung schlug fehl, bitte korrigiere sie, sollte sie so stimmen, wende dich bitte an den Support.</label>
+			<label index="organisation_group">Einheiten/Gruppen/Abteilungen</label>
+			<label index="organisation_group_add">Hinzufügen</label>
+			<label index="organisation_group_address">Adresse</label>
+			<label index="organisation_group_city">Stadt</label>
+			<label index="organisation_group_delete">Löschen</label>
+			<label index="organisation_group_description">Beschreibung</label>
+			<label index="organisation_group_edit">Bearbeiten</label>
+			<label index="organisation_group_latitude_and_longitude">Breiten- und Längengrad</label>
+			<label index="organisation_group_matrix">Tätigkeitsmatrix</label>
+			<label index="organisation_group_maximum_age">Höchstalter</label>
+			<label index="organisation_group_minimum_age">Mindestalter</label>
+			<label index="organisation_group_name">Name</label>
+			<label index="organisation_group_new">Neu</label>
+			<label index="organisation_group_save">Speichern</label>
+			<label index="organisation_group_street">Straße, HNr.</label>
+			<label index="organisation_group_website">Webseite</label>
+			<label index="organisation_group_workinghours">Regelmäßige Termine</label>
+			<label index="organisation_group_zipcode">PLZ</label>
+			<label index="organisation_matrices">Matrizen</label>
+			<label index="organisation_matrix_delete">Löschen</label>
+			<label index="organisation_matrix_name">Name</label>
+			<label index="organisation_matrix_new">Hinzufügen</label>
+			<label index="organisation_matrix_save">Speichern</label>
+			<label index="organisation_name">Name</label>
+			<label index="organisation_name_help">Der Name Deiner Hilfsorganisation wird aufgrund einheitlicher Vergabe automatisch bestimmt, wenn in dem Namen fehler sind, kannst Du diesen allerdings noch anpassen.</label>
+			<label index="organisation_new">Hinzufügen</label>
+			<label index="organisation_picture_delete">Löschen</label>
+			<label index="organisation_picture_delete_question">Möchtest Du dieses Bild wirklich löschen?</label>
+			<label index="organisation_save">Speichern</label>
+			<label index="organisation_street">Straße, HNr.</label>
+			<label index="organisation_telephone">Telefon</label>
+			<label index="organisation_website">Webseite</label>
+			<label index="organisation_website_help">Falls es zu dieser Adresse eine Webseite gibt, kann diese hier hinterlegt werden.</label>
+			<label index="organisation_view">Ansehen</label>
+			<label index="organisation_website">Webseite</label>
+			<label index="organisation_website_help">Bitte gib hier die Webseite Deiner Hilfsorganisation an. Diese muss mit http:// beginnen.</label>
+			<label index="organisation_workinghour_delete_question">Möchtest Du diesen Termin wirklich löschen?</label>
+			<label index="organisation_workinghours">Regelmäßig wiederkehrende Termine</label>
+			<label index="organisation_zipcode">PLZ</label>
+			<label index="overview_age">Jahre</label>
+			<label index="overview_all_groups">Alle</label>
+			<label index="overview_and">und</label>
+			<label index="overview_back">&lt;&lt; zurück</label>
+			<label index="overview_contactperson">Ansprechpartner</label>
+			<label index="overview_employees">Wir sind dabei, weil...</label>
+			<label index="overview_group">Einheit</label>
+			<label index="overview_groups">Einheiten</label>
+			<label index="overview_location">Ort</label>
+			<label index="overview_mail">E-Mail-Adresse:</label>
+			<label index="overview_mobilephone">Mobil:</label>
+			<label index="overview_telefax">Fax:</label>
+			<label index="overview_telephone">Tel.:</label>
+			<label index="overview_without">Alle außer</label>
+			<label index="overview_workinghour_clock">Uhr</label>
+			<label index="overview_workinghour_day_1">Montag</label>
+			<label index="overview_workinghour_day_2">Dienstag</label>
+			<label index="overview_workinghour_day_3">Mittwoch</label>
+			<label index="overview_workinghour_day_4">Donnerstag</label>
+			<label index="overview_workinghour_day_5">Freitag</label>
+			<label index="overview_workinghour_day_6">Samstag</label>
+			<label index="overview_workinghour_day_7">Sonntag</label>
+			<label index="overview_workinghour_addition">Hinweis</label>
+			<label index="overview_workinghours">Regelmäßige Termine</label>
+			<label index="read_more">(mehr...)</label>
+			<label index="no_organisation_found">Es konnte leider keine passende Organisation gefunden werden.</label>
+			<label index="edit">Bearbeiten</label>
+			<label index="error_message_category.OrganisationInformation">Allgemeine Informationen</label>
+			<label index="error_message_category.OrganisationAddress">Adressen</label>
+			<label index="error_message_category.OrganisationEmployee">Mitmacher</label>
+			<label index="error_message_category.OrganisationContactperson">Ansprechpartner</label>
+			<label index="error_message_category.OrganisationGroup">Gruppen</label>
+			<label index="error_message_category.OrganisationWorkinghour">Dienstzeiten</label>
+			<label index="error_message_category.OrganisationPicture">Bilder</label>
+			<label index="organisation_edit_headline">Organisation bearbeiten</label>
+			<label index="organisation_back_without_saving">« Verwerfen und Zurück</label>
+			<label index="organisation_back">« Zurück</label>
+			<label index="organisation_save">Speichern</label>
+			<label index="organisation_mode_user_text.0">Diese Organisation kann frei bearbeitet werden. Durck Klick auf die Stifte kannst Du die einzelnen Abschnitte der Organisation bearbeiten. Wenn du fertig bist, kannst Du die Daten hier freigeben, anschließend werden sie noch von einem unserer Supporter geprüft und freigegeben.</label>
+			<label index="organisation_mode_user_text.0.error">Wir bitten Dich, noch alle angegebenen Fehler zu beseitigen, da sonst keine Veröffentlichung möglich ist.</label>
+			<label index="organisation_mode_user_text.0.request">Falls Du fertig mit dem Bearbeiten bist, kannst Du hier die angegebenen Daten zur Freischaltung beantragen.</label>
+			<label index="organisation_mode_user_text.0.request_confirm">Bist Du Dir sicher, dass die Daten so nun alle stimmen?</label>
+			<label index="organisation_mode_user_text.1">Diese Orgnisation ist zum Freischalten vorgesehen.</label>
+			<label index="organisation_mode_user_text.1.request">Wenn du noch einen Fehler gefunden hast, kannst Du hier nocheinmal die Organisation bearbeiten.</label>
+			<label index="organisation_mode_user_text.1.request_confirm">Bist Du Dir sicher, dass Du die Organisation nochmal bearbeiten möchtest?</label>
+			<label index="organisation_mode_user_text.2">Deine Organisation wird, so wie Du sie hier siehst, veröffentlicht. Änderungen können im Bearbeitungsmodus vorgenommen werden.</label>
+			<label index="organisation_mode_user_text.2.request">In den Bearbeitungsmodus wechseln.</label>
+			<label index="organisation_mode_user_text.3">Die Anpassungen werden gerade von einem unserer Supporter gesichtet, bitte gedulde Dich etwas, bis Du Deine Daten wieder anpassen kannst. Sollte diese Meldung über einen längeren Zeitraum erscheinen, wende Dich bitte an den Support.</label>
+			<label index="organisation_error">Noch vorhandene Fehler</label>
+			<label index="organisation_settings">Einstellungen</label>
+			<label index="organisation_general_settings">Allgemeine Einstellungen</label>
+			<label index="organisation_group_settings">Einheiten</label>
+			<label index="organisation_workinghour_settings">Dienstzeiten</label>
+			<label index="organisation_picture_settings">Bilder</label>
+			<label index="organisation_mode_user_text_request_button_bold">Ich habe alles fertig, veröffentlicht nun meine Organisation!</label>
+			<label index="register_step10_term_of_use_prefix">Ja, ich akzeptiere die </label>
+			<label index="register_step10_term_of_use">Nutzungsbedingungen</label>
+			<label index="register_step10_and"> und die </label>
+			<label index="register_step10_privacy">Datenschutzbestimmungen</label>
+			<label index="register_step10_term_of_use_suffix"> und bin berechtigt, meine Organisation hier anzumelden.</label>
+			<label index="usersetting.firstname">Vorname</label>
+			<label index="usersetting.lastname">Nachname</label>
+			<label index="usersetting.username">Benutzername</label>
+			<label index="usersetting.password">Passwort</label>
+			<label index="usersetting.password_repeat">wiederholen</label>
+			<label index="usersetting.email">E-Mail</label>
+			<label index="usersetting.submit">Speichern</label>
+			<label index="usersetting.firstname.toShort">Der Vorname ist zu kurz, dieser muss mindestens zwei Zeichen haben.</label>
+			<label index="usersetting.lastname.toShort">Der Nachname ist zu kurz, dieser muss mindestens zwei Zeichen haben.</label>
+			<label index="usersetting.password.toShort">Das Passwort ist zu kurz, dieser muss mindestens acht Zeichen haben.</label>
+			<label index="usersetting.password.notMatch">Die Passwörter stimmen nicht überein.</label>
+			<label index="usersetting.password.changed">Das Passwort wurde geändert.</label>
+			<label index="support.requestnum.0">In Bearbeitung</label>
+			<label index="support.requestnum.1">Warte auf Aktivierung</label>
+			<label index="support.requestnum.2">Aktiviert</label>
+			<label index="support.requestnum.3">Gesperrt von Dir</label>
+			<label index="support.organisationdraft.name">Organisationsname</label>
+			<label index="support.organisationdraft.tstamp">Letzte Änderung</label>
+			<label index="support.feuser.username">Benutzername</label>
+			<label index="support.feuser.realname">Ansprechpartner</label>
+			<label index="support.sendMessage">Nachricht schreiben</label>
+			<label index="support.organisation.view">Bearbeiten</label>
+			<label index="support.organisation.view.new">Neue Ansicht</label>
+			<label index="support.organisation.view.diff">Unterschiede anzeigen (BETA)</label>
+			<label index="support.organisation.back">Zurück</label>
+			<label index="support.organisation.confirm">Freischalten</label>
+			<label index="support.organisation.confirm.realy">Wirklich freischalten?</label>
+			<label index="support.organisation.deny">Verweigern (Begründung erforderlich!)</label>
+			<label index="support.organisation.deny.realy">Wirklich verweigern?</label>
+
+			<label index="mail.supporter.afterRequest.headline">[HKJ-WWW] Freischaltungsanfrage von %s</label>
+			<label index="mail.supporter.afterRequest.content">Hallo %s,
+
+es liegt eine neue Freischaltungsanfrage von %s vor. Wir bitten dich, zeitnah diese zu beurteilen und freizugeben.
+
+Vielen Dank im Voraus
+
+Das HelfenKannJeder.de-Administrationsteam</label>
+			<label index="mail.supporter.removedRequest.headline">[HKJ-WWW] Rückzug einer Freischaltungsanfrage von %s</label>
+			<label index="mail.supporter.removedRequest.content">Hallo %s,
+
+die Hilfsorganisation %s hat die Beantragung der Freischaltung zurückgezogen.
+
+Viele Grüße
+
+Das HelfenKannJeder.de-Administrationsteam</label>
+			<label index="mail.organisation.requestSucceed.headline">Deine Organisation wurde veröffentlicht</label>
+			<label index="mail.organisation.requestSucceed.content">Hallo %s,
+
+Deine Hilfsorganisation wurde soeben auf HelfenKannJeder.de freigeschaltet. Änderungen kannst Du selber vornehmen, indem Du Dich auf HelfenKannJeder.de mit Deinem Zugangsdaten anmeldest. Bitte halte den Datenbestand immer aktuell - nichts ist für interessierte Mitmacher frustrierender, als ein veralteter Datenbestand oder nicht mehr vorhandene Ansprechpartner. Bis die Änderungen sichtbar werden, kann es teilweise bis zu 24 Stunden dauern.
+
+Wir wünschen Dir viel Glück beim Werben von neuen Mitmachern!
+Bitte empfehle uns (z. B. auf Facebook unter http://www.facebook.com/HelfenKannJeder) an befreundete Organisationen weiter - nur wenn die Plattform rege genutzt wird, haben sich die vielen Stunden teils ehrenamtliche Programmierung auch gelohnt :-)
+
+Viele Grüße,
+
+Das HelfenKannJeder.de-Team (http://helfenkannjeder.de/team/)
+(welches selber in verschiedenen Hilfsorganisationen tätig ist)
+
+P. S.: Gerne schicken wir Dir, so lange der Vorrat reicht, kostenlos Handzettel und Plakate. Teile uns bitte die gewünschte Menge und das Plakat-Format (A0 oder A1) per E-Mail an info@helfenkannjeder.de mit.
+Das Plakat sieht so aus: http://helfenkannjeder.de/plakat/</label>
+			<label index="mail.organisation.requestDeny.headline">Deine Organisation konnten wir leider noch nicht veröffentlichen</label>
+			<label index="mail.organisation.requestDeny.content">Hallo %s,
+
+leider können wir Deine Hilfsorganisation mit den von Dir erfassen Daten so nicht veröffentlichen. Ein genauer Grund wird Dir getrennt von dieser E-Mail von dem zuständigen Supporter mitgeteilt. Solltest Du keine weitere E-Mail erhalten oder Du der Ablehnung nicht einverstanden sein, wende Dich bitte an info@helfenkannjeder.de, damit wir eine Lösung finden können.
+
+Vielen Dank im Voraus
+
+Das HelfenKannJeder.de-Team (http://helfenkannjeder.de/team/)</label>
+			<label index="group_template_feature">(Ausstattungsmerkmal)</label>
+			<label index="info_text_workinghour">Um Interessenten mitzuteilen, wann Ihr Euch in der Regel trefft, kannst Du hier die entsprechenden Termine erfassen.
+Wenn verschiedene Gruppen zu unterschiedlichen Zeiten sich treffen, hast Du die Möglichkeit, einen weiteren Termin zu
+ergänzen (Plus-Zeichen bei "Weiteren Termin hinzufügen") und ein Häkchen für die entsprechenden Gruppen zu setzen
+(Bitte Häkchen entfernen für alle Gruppen, bei denen dieser Termin nicht gilt).
+Sollte sich die Gruppe nicht an der Hauptadresse treffen, besteht die Möglichkeit, eine alternative Adresse für den
+Treffpunkt auszuwählen. Wenn die gewünschte Adresse nicht erscheint, gehe auf den Auswahlpunkt "Sammdaten" zurück
+und füge unter "Organisationsanschriften und Treffpunkte" eine neue Anschrift hinzu.</label>
+			<label index="info_text_register_endup">So sieht der Interessent Deine Organisation später. Du hast die Möglichkeit, die Daten an dieser Stelle zu ändern, indem Du das Symbol mit dem Stift anklickst.</label>
+			<label index="info_text_register_endup_warning">Die Registrierung ist noch nicht fertig. Bitte drücke noch auf den Knopf am Seitenende, um eine Veröffentlichung zu beantragen.</label>
+			<label index="mail_reminder_organisation_register_headline">Deine Organisation auf HelfenKannJeder.de</label>
+			<label index="mail_reminder_organisation_register_content">Hallo %s,
+
+Du hast am %s begonnen, Deine Hilfsorganisation %s auf HelfenKannJeder.de zu registrieren. Leider ist Deine Registrierung noch unvollständig und somit Deine Organisation für Interessenten noch nicht sichtbar.
+
+Wir würden uns freuen, wenn Du deine Hilfsorganisation vollständig registrierst - melde Dich dazu einfach mit Deinen Anmeldedaten auf helfenkannjeder.de an. Wenn es bei der Registrierung Schwierigkeiten gab, kontaktiere uns bitte, so dass wir Dir weiterhelfen und die Plattform verbessern können - über Deine E-Mail an info@helfenkannjeder.de freuen wir uns!
+
+Viele Grüße
+
+Valentin Zickner
+im Namen des HelfenKannJeder.de-Teams (http://helfenkannjeder.de/team/)
+
+PS: Falls du keine Erinnerungen mehr von uns erhalten möchtest, kannst Du auf nachfolgenden Link klicken:
+http://helfenkannjeder.de/%s</label>
+			<label index="no_remind_true">Du wirst nicht mehr an die Registrierung erinnert.</label>
+			<label index="no_remind_false">Das Austragen aus unserer Erinnerungsliste ist leider fehlgeschlagen. Bitte melde Dich bei valentin.zickner@helfenkannjeder.de.</label>
+
+			<label index="helfomat_question">Frage</label>
+			<label index="helfomat_question_from">von</label>
+			<label index="helfomat_question_yes">Ja</label>
+			<label index="helfomat_question_no">Nein</label>
+			<label index="helfomat_question_neutral">Egal</label>
+			<label index="helfomat_question_result">Ergebnis</label>
+			<label index="resultlist_survey_prefix">Lob oder Kritik? Hilf uns den Helf-O-Mat </label>
+			<label index="resultlist_survey_link">zu verbessern</label>
+			<label index="resultlist_survey_suffix">.</label>
+			<label index="register_guide">Anleitung zur Registrierung</label>
+			<label index="register_guide_text">Bist Du noch unschlüssig, ob Du dich registrieren sollst? Willst Du wissen, was Dich erwartet? Hier findest Du Antworten darauf.</label>
+			<label index="register_step31_error_mail_server_connection_failed">Es liegt ein interner Fehler vor. Der Schritt konnte nicht vollständig ausgeführt werden. Wende Dich bitte an webmaster@helfenkannjeder.de und sende uns (gerne auch ohne weitere Kommentare) diese Fehlermeldung.</label>
+		</languageKey>
+	</data>
+</T3locallang>

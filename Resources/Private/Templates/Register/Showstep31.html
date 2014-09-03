@@ -1,0 +1,25 @@
+<f:layout name="register" />
+<f:section name="content">
+{f:translate(key: 'register_step31_starting_text') -> f:format.nl2br()}<br />
+<br />
+<div class="labelForm">
+<label for="organisation_name">{f:translate(key: 'register_step31_label_organisationtype')}</label>
+<f:if condition="{objectEdit.organisationtype.pseudo}"><f:then>{objectEdit.typename}</f:then><f:else>{objectEdit.organisationtype.name}</f:else></f:if><br />
+
+<label for="organisationtype">{f:translate(key: 'register_step30_label_organisationname')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step30_label_organisationname_help')}">?</a></label>
+{objectEdit.organisationname}<br />
+
+<label for="mail">{f:translate(key: 'register_step31_label_mail')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step31_label_mail_help')}">?</a></label>
+<f:form.textfield property="mail" /><br />
+
+<label for="username">{f:translate(key: 'register_step31_label_username')}</label>
+{objectEdit.username}<br />
+
+<label for="password">{f:translate(key: 'register_step31_label_password')} <a onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'register_step31_label_password_help')}">?</a></label>
+<f:form.password property="password" value="" /><br />
+<label for="password2">{f:translate(key: 'register_step31_label_password_repeat')}</label>
+<f:form.password property="password2" value="" /><br />
+</div>
+<br />
+{f:translate(key: 'register_step31_ending_text')}
+</f:section>

@@ -1,0 +1,36 @@
+<f:be.container pageTitle="HelfenKannJeder">
+<div class="typo3-fullDoc">
+        <div id="typo3-docheader">
+                <div id="typo3-docheader-row1">
+                        <div class="buttonsleft">###BUTTONLIST_LEFT###</div>
+                        <div class="buttonsright">###BUTTONLIST_RIGHT###</div>
+                </div>
+                <div id="typo3-docheader-row2">
+                        <div class="docheader-row2-left">
+                                <div class="docheader-csh">
+				</div>
+                                <div style="white-space:nowrap;float:left;">
+<f:be.menus.actionMenu>
+  <f:be.menus.actionMenuItem label="Statistic" controller="Statistic" action="index" />
+  <f:be.menus.actionMenuItem label="Matrix" controller="Matrix" action="backend" />
+  <f:be.menus.actionMenuItem label="SupportGeoAndOrganisation" controller="SupportMaster" action="index" />
+  <f:be.menus.actionMenuItem label="SupportOverview" controller="SupportMaster" action="overview" />
+  <f:be.menus.actionMenuItem label="Organisation" controller="SupportMaster" action="organisation" />
+  <f:be.menus.actionMenuItem label="MailTest" controller="SupportMaster" action="mailtest" />
+  <f:be.menus.actionMenuItem label="Helf-O-Mat Master" controller="HelfOMat" action="master" />
+  <f:be.menus.actionMenuItem label="Register Link" controller="SupportMaster" action="registerLink" />
+</f:be.menus.actionMenu>
+</div>
+                        </div>
+                        <div class="docheader-row2-right"><f:be.pagePath /><f:be.pageInfo /></div>
+                </div>
+        </div>
+        <!-- Content of module, for instance listing, info or editing -->
+        <div id="typo3-docbody">
+                <div id="typo3-inner-docbody">
+<f:render section="content" arguments="{users: users}" />
+                </div>
+        </div>
+</div>
+</f:be.container>
+

@@ -1,0 +1,5 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:layout name="supportActivation" />
+<f:section name="activationContent">
+<hkj:diff.text new="{f:render(partial: 'OrganisationView', arguments: {organisation: organisationDraft, employees: employeesDraft, groups: groupsDraft, imageFolder: 'uploads/tx_helfenkannjeder/'})}" old="{f:render(partial: 'OrganisationView', arguments: {organisation: organisation, employees: employees, groups: groups, imageFolder: 'uploads/tx_helfenkannjeder/'})}" />
+</f:section>

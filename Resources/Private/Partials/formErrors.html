@@ -1,0 +1,8 @@
+<f:form.validationResults>
+	<div id="dialog" title="{f:translate(key: '{formName}.{error.propertyName}',
+		default: error.propertyName)}">
+	<f:for each="{error.errors}" as="errorDetail">
+		<p><f:translate key="{formName}.{error.propertyName}.{errorDetail.code}" default="{errorDetail.message} (#{errorDetail.code})" /></p>
+	</f:for>
+	</div>
+</f:form.validationResults>

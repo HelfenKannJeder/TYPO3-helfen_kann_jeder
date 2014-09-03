@@ -1,0 +1,105 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div class="helfen_kann_jeder_overview_detail">
+	<div class="helfen_kann_jeder_overview_detail_images">
+		<hkj:image.all path="{imageFolder}" src="{organisation.pictures}" alt="Organisation pictures" maxWidth="140c" maxHeight="140c" rel="lightbox[organisation]" lightboxHeight="600m" lightboxWidth="600m" />&nbsp;
+		<f:if condition="{edit}==1"><f:link.action action="{editLink.picture}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
+	</div>
+	<div class="helfen_kann_jeder_overview_text">
+		<div style="float:right"><hkj:image.first path="{imageFolder}" src="{organisation.logo}" alt="Logo" maxWidth="140c" maxHeight="140c" /></div>
+		<h1>{organisation.name}
+		<f:if condition="{edit}==1"><f:link.action action="{editLink.general}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
+		</h1>
+<f:if condition="{organisation.website}">		<span class="helfen_kann_jeder_overview_detail_website"><f:link.external uri="{organisation.website}" target="_blank">{organisation.website}</f:link.external></span> </f:if>
+		<br />
+		<br />
+<f:if condition="{organisation.defaultaddress}">
+	<f:then>
+		<f:if condition="{organisation.defaultaddress.addressappendix}">{organisation.defaultaddress.addressappendix}, </f:if>
+		{organisation.defaultaddress.street}, {organisation.defaultaddress.zipcode} {organisation.defaultaddress.city}<br />
+<f:if condition="{organisation.defaultaddress.telephone}">{f:translate(key: 'overview_telephone')} {organisation.defaultaddress.telephone}<br /></f:if>
+	</f:then>
+	<f:else>
+		{organisation.street}, {organisation.zipcode} {organisation.city}<br />
+<f:if condition="{organisation.telephone}">{f:translate(key: 'overview_telephone')} {organisation.telephone}<br /></f:if>
+	</f:else>
+</f:if>
+		<div style="clear:both;"></div>
+		<br />
+		<br />
+<f:render partial="Contactperson" arguments="{contactpersons: organisation.contactpersons, mode: 'verbose'}" />
+		<br />
+		<br />
+		<span class="helfen_kann_jeder_organisation_detail_description">{organisation.description -> hkj:bbcode.parse() -> f:format.nl2br()}</span>
+		<br />
+		<br />
+<f:if condition="{groups}">
+		<h1>{f:translate(key:'overview_mainactivities')}</h1>
+{f:translate(key:'overview_mainactivities_text')}
+<f:if condition="{editLink.matrix}">
+<f:then><f:link.action action="{editLink.matrix}" arguments="{organisation: organisation, registerOrganisationProgress: registerOrganisationProgress}">{f:translate(key:'overview_mainactivities_there')}</f:link.action>.</f:then>
+<f:else><f:if condition="{matrixPlugin}"><f:then><f:link.action pluginName="{matrixPlugin}" action="{matrixAction}" controller="{matrixController}" arguments="{organisation: organisation}">{f:translate(key:'overview_mainactivities_there')}</f:link.action>.</f:then>
+<f:else><f:link.action action="view" pluginName="OverviewList" controller="Matrix" arguments="{organisation: organisation}">{f:translate(key:'overview_mainactivities_there')}</f:link.action>.</f:else></f:if></f:else>
+</f:if><br />
+		<br />
+</f:if>
+<f:if condition="{organisation.workinghours}">
+		<h1>{f:translate(key: 'overview_workinghours')}
+		<f:if condition="{edit}==1"><f:link.action action="{editLink.workinghour}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
+		</h1>
+	<f:for each="{organisation.workinghours}" as="workinghour">
+			<strong><f:translate key="overview_workinghour_day_{workinghour.day}" />, {workinghour.starttimehour}:<f:if condition="{workinghour.starttimeminute} < 10">0</f:if>{workinghour.starttimeminute}-{workinghour.stoptimehour}:<f:if condition="{workinghour.stoptimeminute} < 10">0</f:if>{workinghour.stoptimeminute} {f:translate(key: 'overview_workinghour_clock')}</strong><br />
+				<div class="helfen_kann_jeder_overview_detail_contactperson_label">{f:translate(key: 'overview_group')}:</div>
+				<div class="helfen_kann_jeder_overview_detail_workingtime_content"><f:if condition="{f:count(subject:'{hkj:storage.removeByMethod(storage: organisation.groups, method: \'template\', method2: \'isfeature\', value: 0)}')} != {f:count(subject:'{hkj:storage.removeByMethod(storage: workinghour.groups, method: \'template\', method2: \'isfeature\', value: 0)}')}"><f:then><f:if condition="{hkj:storage.removeByMethod(storage: workinghour.groups, method: 'template', method2: 'isfeature', value: 0)}"><f:then><f:if condition="{f:count(subject:'{hkj:storage.removeByMethod(storage: organisation.groups, method: \'template\', method2: \'isfeature\', value: 0)}')} < {f:count(subject:'{hkj:storage.removeByMethod(storage: workinghour.groups, method: \'template\', method2: \'isfeature\', value: 0)}') -> hkj:math.multiply(a: NULL, b: 2)}">
+		<f:then>{f:translate(key: 'overview_without')} <f:for each="{hkj:storage.removeByMethod(storage: '{hkj:storage.diff(storage: organisation.groups, without: workinghour.groups)}', method: 'template', method2: 'isfeature', value: 0)}" as="group" iteration="giter"><f:if condition="{giter.isFirst}"><f:then></f:then><f:else><f:if condition="{giter.isLast}"><f:then> {f:translate(key: 'overview_and')} </f:then><f:else>, </f:else></f:if></f:else></f:if>{group.name}</f:for></f:then>
+		<f:else><f:for each="{hkj:storage.removeByMethod(storage: workinghour.groups, method: 'template', method2: 'isfeature', value: 0)}" as="group" iteration="giter"><f:if condition="{giter.isFirst}"><f:then></f:then><f:else><f:if condition="{giter.isLast}"><f:then> {f:translate(key: 'overview_and')} </f:then><f:else>, </f:else></f:if></f:else></f:if>{group.name}</f:for></f:else></f:if></f:then>
+		<f:else>{f:translate(key: 'overview_all_groups')}</f:else></f:if></f:then><f:else>{f:translate(key: 'overview_all_groups')}</f:else></f:if><br /></div>
+				<br style="clear:both;" />
+<f:if condition="{workinghour.address}">
+				<div class="helfen_kann_jeder_overview_detail_contactperson_label">{f:translate(key: 'overview_location')}:</div>
+				<div class="helfen_kann_jeder_overview_detail_contactperson_content">
+<f:if condition="{workinghour.address.addressappendix}">{workinghour.address.addressappendix}<br /></f:if>
+{workinghour.address.street}<br />
+{workinghour.address.zipcode} {workinghour.address.city}<f:if condition="{workinghour.address.website}"><br />
+<f:link.external uri="{workinghour.address.website}" target="_blank"><f:format.crop maxCharacters="40">{workinghour.address.website}</f:format.crop></f:link.external>
+</f:if>
+				</div>
+				<br style="clear:both;" />
+</f:if>
+<f:if condition="{workinghour.addition}">
+				<div class="helfen_kann_jeder_overview_detail_contactperson_label">{f:translate(key: 'overview_workinghour_addition')}:</div>
+				<div class="helfen_kann_jeder_overview_detail_contactperson_content">{workinghour.addition}</div>
+				<br style="clear:both;" />
+</f:if>
+			<br style="line-height:10px;" />
+	</f:for>
+</f:if>
+<f:if condition="{groups}">
+		<h1>{f:translate(key: 'overview_groups')}
+		<f:if condition="{edit}==1"><f:link.action action="{editLink.group}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
+		</h1>
+<f:for each="{groups}" as="group">
+		<strong>{group.name}</strong><f:if condition="{group.template.isfeature}"><f:then></f:then><f:else> ({group.minimumAge}-{group.maximumAge} {f:translate(key: 'overview_age')})</f:else></f:if>
+<f:if condition="{group.website}"><span class="helfen_kann_jeder_overview_detail_website"><f:link.external uri="{group.website}" target="_blank">{group.website}</f:link.external></span></f:if><br />
+<f:if condition="{group.description}">		{group.description -> hkj:bbcode.parse() -> f:format.nl2br()}<br /></f:if>
+<f:render partial="Contactperson" arguments="{contactpersons: group.contactpersons, mode: 'verbose'}" />
+		<br style="line-height:10px;" />
+</f:for>
+</f:if>
+
+<f:if condition="{employees}">
+		<h1>{f:translate(key: 'overview_employees')}
+		<f:if condition="{edit}==1"><f:link.action action="{editLink.general}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
+		</h1>
+<f:for each="{employees}" as="employee">
+<div class="helfen_kann_jeder_overview_picture">
+<hkj:image.first path="{imageFolder}" src="{employee.pictures}" alt="{employee.prename} {employee.surname}" width="90c" height="90c" />
+</div>
+<strong>{employee.prename} {employee.surname}</strong><br />
+<f:if condition="{employee.teaser}"><f:then>{employee.teaser} <f:if condition="{employee.motivation}"> <f:link.action action="detail" controller="Employee" pluginName="EmployeeDetail" arguments="{employee: employee}" pageUid="45">{f:translate(key: 'read_more')}</f:link.action></f:if></f:then><f:else>{employee.motivation}</f:else></f:if><br />
+<div style="clear:both;"></div>
+<br />
+</f:for>
+</f:if>
+	</div>
+	<br style="clear:both" />
+</div>

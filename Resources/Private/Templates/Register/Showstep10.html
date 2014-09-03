@@ -1,0 +1,29 @@
+{namespace captcha=Tx_CaptchaViewhelper_ViewHelpers}
+<div id="helfen_kann_jeder_register_margin20">
+<div id="helfen_kann_jeder_register">
+<f:form class="helfen_kann_jeder_form" method="post" action="{actionSendMethod}"  name="{objectEditName}" object="{objectEdit}" arguments="{args}">
+<h2><f:translate key="{headline}" /></h2>
+<f:form.validationResults>
+  <f:if condition="{validationResults.flattenedErrors}">
+    <ul id="error">
+      <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+          <f:for each="{errors}" as="error">
+            <li><f:translate key="error.{error.code}">{error.code}: {error}</f:translate></li>
+          </f:for>
+      </f:for>
+    </ul>
+  </f:if>
+</f:form.validationResults>
+{f:translate(key: 'register_step1_starting_text') -> f:format.nl2br()}<br />
+<br />
+<div class="labelForm">
+<div style="float:right"><captcha:captcha /> </div>
+{f:translate(key: 'register_captcha_prefix')}<f:form.textfield property="captcha" /><br />
+{f:translate(key: 'register_captcha_suffix')}<br style="clear:both" />
+</div>
+<f:form.checkbox property="agreement" value="1" checked="{objectEdit.agreement}" /> {f:translate(key: 'register_step1_checkbox_text')} {f:translate(key: 'register_step10_term_of_use_prefix')}<f:link.page pageUid="{settings.page.termsOfUse}">{f:translate(key: 'register_step10_term_of_use')}</f:link.page>{f:translate(key: 'register_step10_and')}<f:link.page pageUid="{settings.page.privacy}">{f:translate(key: 'register_step10_privacy')}</f:link.page>{f:translate(key: 'register_step10_term_of_use_suffix')}
+<div class="submitStepNext"><f:form.submit value="{f:translate(key:'register_next_step')}" id="register_next_step_foot" /></div>
+</f:form>
+</div>
+</div>
+<f:render partial="RegisterContactRow" arguments="{settings:settings, step:step}" />

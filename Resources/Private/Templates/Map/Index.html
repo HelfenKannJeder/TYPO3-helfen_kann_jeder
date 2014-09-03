@@ -1,0 +1,61 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div id="subcontent" style="width:100%; height:450px;"></div>
+<script type="text/javascript">
+var hkjMap;
+var fluster;
+
+function initialize() {
+    var latlng = new google.maps.LatLng(49.009227, 8.403929);
+    var myOptions = {};
+	myOptions["zoom"] = 12;
+ 	myOptions["center"] = latlng;
+	myOptions["mapTypeId"] = google.maps.MapTypeId.ROADMAP;
+	hkjMap = new google.maps.Map(document.getElementById("subcontent"), myOptions);
+
+	fluster = new Fluster2(hkjMap);
+
+
+<f:for each="{organisations}" as="organisation" iteration="iter">
+	drawOrganisation({organisation.latitude}, {organisation.longitude}, "uploads/pics/{organisation.organisationtype.picture}", "{organisation.name}", '/{f:uri.action(pageUid: 9, controller: 'Overview', action: 'detail', arguments: {organisation: organisation.uid})}');
+</f:for>
+
+	fluster.initialize();
+  }
+
+
+//var infowindow = new google.maps.InfoWindow("Loading ...");
+var markers = new Array();
+var positions = new Array();
+function drawOrganisation(lat, lng, icon, name, description) {
+	obj = {};
+//        obj["map"] = hkjMap;
+
+	pos = lat+"#"+lng;
+	while (positions[pos] != null) {
+		lng += 0.0005;
+		pos = lat+"#"+lng;
+	}
+	positions[pos] = 1;
+
+	obj["position"] = new google.maps.LatLng(lat, lng);
+        obj["title"] = name;
+        obj["icon"] = icon;
+
+	i = markers.length;
+	markers[i] = new google.maps.Marker(obj);
+	markers[i].html = description;
+
+	google.maps.event.addListener(markers[i], 'click', function() {
+		location.href = this.html;
+//		infowindow.open(hkjMap, this);
+	});
+	fluster.addMarker(markers[i]);
+}
+
+
+window.onload = function () {
+	initialize();
+	citysignStartup(false, false);
+	tx_helfenkannjeder_set_organisation(tx_helfenkannjeder_organisation_current);
+}
+</script>

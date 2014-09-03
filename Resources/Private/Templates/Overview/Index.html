@@ -1,0 +1,35 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<script type="text/javascript">
+window.onload = function () {
+	citysignStartup(false, false);
+	tx_helfenkannjeder_set_organisation(tx_helfenkannjeder_organisation_current);
+}
+</script>
+<f:if condition="{organisationsCount}">
+<f:then>
+<f:for each="{organisations}" as="organisation" iteration="oiter">
+<div class="helfen_kann_jeder_overview_complete helfen_kann_jeder_overview_{f:if(condition: oiter.isEven, then: 'even', else: 'odd')}">
+<div class="helfen_kann_jeder_overview_icon"><f:link.action action="detail" arguments="{organisation: organisation}"><hkj:image.first path="uploads/pics/" src="{organisation.logo}" alt="Logo" maxWidth="140c" maxHeight="70c" /></f:link.action>
+</div>
+<div class="helfen_kann_jeder_overview_text">
+<span class="helfen_kann_jeder_overview_distance" title="{f:translate(key: 'generator_distance_tooltip')}">{f:translate(key: 'overview_distance')} <f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">{hkj:geo.distance(p1lat: latitude, p1lng: longitude, p2lat: organisation.latitude, p2lng: organisation.longitude)}</f:format.number> {f:translate(key: 'overview_distance_unit')}<br /></span>
+<h2><f:link.action action="detail" arguments="{organisation: organisation}">{organisation.name}</f:link.action></h2>
+<f:if condition="{organisation.website}">
+<span class="helfen_kann_jeder_overview_website"><f:link.external uri="{organisation.website}" target="_blank">{organisation.website}</f:link.external></span>
+<br style="clear:both" />
+</f:if>
+<f:for each="{organisation.contactpersons}" as="contactperson">
+<strong>{contactperson.prename} {contactperson.surname}</strong><f:if condition="{contactperson.rank}"> ({contactperson.rank})</f:if><f:if condition="{contactperson.telephone}">, {contactperson.telephone}</f:if><f:if condition="{contactperson.mail}">, {contactperson.mail}</f:if><br />
+</f:for>
+<f:if condition="{organisation.telephone}">{f:translate(key: 'overview_telephone')} {organisation.telephone},</f:if>
+<f:if condition="{organisation.telefax}">{f:translate(key: 'overview_telefax')} {organisation.telefax},</f:if>
+<f:if condition="{organisation.street}">{organisation.street}, </f:if><f:if condition="{organisation.zipcode}">{organisation.zipcode}</f:if> {organisation.city}<br />
+</div>
+<br style="clear:both" />
+</div>
+</f:for>
+</f:then>
+<f:else>
+{f:translate(key: 'no_organisation_found')}
+</f:else>
+</f:if>

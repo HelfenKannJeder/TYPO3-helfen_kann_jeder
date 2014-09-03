@@ -1,0 +1,11 @@
+<f:layout name="bluebox" />
+<f:section name="content">
+<div id="helfen_kann_jeder_register">
+<h1>{f:translate(key: 'organisation_edit_headline')}</h1>
+<f:flashMessages id="error" />
+<f:form class="helfen_kann_jeder_form" method="post" action="groupSend"  name="organisation" object="{organisation}" enctype="multipart/form-data">
+<f:render partial="GroupForm" arguments="{organisation: organisation, groups: groups, groupsCount: groupsCount, errorFields: errorFields}" />
+<f:render partial="Organisation/SubmitButton" />
+</f:form>
+</div>
+</f:section>

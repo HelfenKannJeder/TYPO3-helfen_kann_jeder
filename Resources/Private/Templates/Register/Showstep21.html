@@ -1,0 +1,15 @@
+<f:layout name="register" />
+<f:section name="content">
+{f:translate(key: 'register_step21_starting_text') -> f:format.nl2br()}<br />
+<br />
+<div class="labelForm">
+<label for="organisationtype">{f:translate(key: 'register_step21_label_name')}</label>
+<f:form.textfield property="typename" /><br />
+
+<label for="organisationtype">{f:translate(key: 'register_step21_label_acronym')}</label>
+<f:form.textfield property="typeacronym" /><br />
+
+<label for="organisationtype">{f:translate(key: 'register_step21_label_description')}</label>
+<f:form.textarea property="typedescription" rows="5" cols="10" /><br />
+</div>
+</f:section>

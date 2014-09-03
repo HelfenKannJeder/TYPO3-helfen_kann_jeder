@@ -1,0 +1,26 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+{namespace qu=Tx_QuBase_ViewHelpers}
+<script type="text/javascript">
+window.onload = function () {
+	citysignStartup(false, false);
+	var playlist = new Array();
+<f:for each="{organisations}" as="organisation" iteration="organisationIteration">
+	playlist[{organisationIteration.index}] = {organisation.organisationtype};
+</f:for>
+	tx_helfenkannjeder_set_organisation(playlist);
+}
+</script>
+<div style="padding:16px;margin-bottom: 50px">
+	<table style="width:100%">
+{qu:storage.sort(objectStorage: helfOMat.questions, sortBy: 'sort', as: 'helfOMatQuestions')}
+<f:for each="{helfOMatQuestions}" as="question">
+		<tr>
+			<td>{question.question}</td>
+			<td><f:image src="{f:uri.resource(path:'Images/Yes{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 1\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_yes')}" width="20" /></td>
+			<td><f:image src="{f:uri.resource(path:'Images/Neutral{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 0\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" /></td>
+			<td><f:image src="{f:uri.resource(path:'Images/No{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 2\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_no')}" width="20" /></td>
+		</tr>
+</f:for>
+	</table>
+</div>
+<f:render partial="Organisation/ResultList" arguments="{visible: 1, param: organisations, resultBar: 1, normGradeToMax: normGradeToMax, survey: 'http://www.surveymonkey.com/s/3DDBJZG'}" />

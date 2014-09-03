@@ -1,0 +1,32 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<a href="#" onclick="history.back();" class="helfen_kann_jeder_overview_detail_back_link">{f:translate(key:'overview_back')}</a><br />
+<br /><br />
+<script type="text/javascript">
+window.onload = function() {
+	citysignStartup(false, true);
+	playlist = new Array();
+	playlist[0] = {employee.organisation.organisationtype.uid};
+	tx_helfenkannjeder_set_organisation(playlist);
+}
+</script>
+<div class="helfen_kann_jeder_employee_detail" >
+	<div class="helfen_kann_jeder_employee_detail_images"><hkj:image.first path="uploads/pics/" src="{employee.pictures}" alt="{employee.name}" width="140m" /></div>
+
+	<div class="helfen_kann_jeder_employee_text"><h1><f:if condition="{employee.headline}"><f:then>{employee.headline}</f:then><f:else>{employee.prename} {employee.surname}</f:else></f:if></h1>
+<f:if condition="{employee.organisation.uid} != 14">({employee.organisation.name})</f:if>
+	<p>{employee.motivation -> f:format.nl2br()}</p>
+	</div>
+</div>
+<div style="clear:both;"></div>
+<br /><br />
+<f:if condition="{employee.organisation.uid} != 14">
+<div class="helfen_kann_jeder_employee_detail" >
+	<div class="helfen_kann_jeder_employee_detail_images"><hkj:image.first path="uploads/pics/" src="{employee.organisation.pictures}" alt="{employee.organisation.name}" width="140m" /></div>
+
+	<div class="helfen_kann_jeder_employee_text"><h1><f:translate key="about">About</f:translate> {employee.organisation.name}</h1>
+
+	<p>{employee.organisation.description -> hkj:bbcode.delete() -> f:format.crop(maxCharacters: 250) -> f:format.nl2br()} <f:link.page pageUid="9" additionalParams="{tx_helfenkannjeder_overviewlist: {organisation: employee.organisation.uid, action: 'detail', controller: 'Overview'}}"><f:translate key="read_more">[read more]</f:translate></f:link.page></p>
+	</div>
+</div>
+</f:if>
+<div class="clearer"></div>

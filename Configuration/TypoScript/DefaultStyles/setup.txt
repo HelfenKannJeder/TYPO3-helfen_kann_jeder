@@ -1,0 +1,5 @@
+page.includeCSS.tx_helfenkannjeder = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/Backend.css
+page.includeCSS.tx_helfenkannjeder_tooltip = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/tooltip.css
+page.includeCSS.tx_helfenkannjeder_register = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/register.css
+##page.includeCSS.tx_helfenkannjeder_jquery = EXT:helfen_kann_jeder/Resources/Public/plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css
+page.includeCSS.tx_helfenkannjeder_organisation = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/organisation.css

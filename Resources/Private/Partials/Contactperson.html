@@ -1,0 +1,15 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:for each="{contactpersons}" as="contactperson" iteration="cp_iteration">
+	<f:if condition="{contactperson.pictures}">
+		<div class="helfen_kann_jeder_overview_detail_contactperson_picture"><hkj:image.first path="uploads/tx_helfenkannjeder/" src="{contactperson.pictures}" alt="Picture" width="90c" height="90c" /></div>
+	</f:if>
+		<div class="helfen_kann_jeder_overview_detail_contactperson_label"><f:if condition="{cp_iteration.isFirst}">{f:translate(key: 'overview_contactperson')}:</f:if>&nbsp;</div>
+		<div class="helfen_kann_jeder_overview_detail_contactperson_content">
+{contactperson.prename} {contactperson.surname}<br />
+<f:if condition="{contactperson.telephone}">{f:translate(key: 'overview_telephone')} {contactperson.telephone}<br /></f:if>
+<f:if condition="{contactperson.mobilephone}">{f:translate(key: 'overview_mobilephone')} {contactperson.mobilephone}<br /></f:if>
+<f:if condition="{contactperson.mail}">{contactperson.mail}<br /><br /></f:if>
+		</div>
+		<br style="clear: both;" />
+		<br />
+</f:for>

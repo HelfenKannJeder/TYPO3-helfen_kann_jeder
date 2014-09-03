@@ -1,0 +1,68 @@
+#tx_helfenkannjeder_bluebox_content {
+	background-color:#D1EEF6;
+	margin:8px;
+	min-height:450px;
+	text-align:left;
+}
+
+#tx_helfenkannjeder_bluebox_margin20 {
+	padding: 20px;
+}
+
+#tx_helfenkannjeder_organisation_mode {
+	padding: 5px;
+}
+
+#tx_helfenkannjeder_organisation_mode.tx_helfenkannjeder_organisation_mode_released {
+	background-color: #a1a1ff;
+	border: 1px solid blue;
+}
+
+#tx_helfenkannjeder_organisation_mode.tx_helfenkannjeder_organisation_mode_free {
+	background-color: #a1ffa1;
+	border: 1px solid green;
+}
+
+#tx_helfenkannjeder_organisation_mode.tx_helfenkannjeder_organisation_mode_locked {
+	background-color: #ffd0a1;
+	border: 1px solid orange;
+}
+
+#tx_helfenkannjeder_organisation_mode.tx_helfenkannjeder_organisation_mode_hard_locked {
+	background-color: #ffa0a0;
+	border: 1px solid red;
+}
+
+.error2dim {
+	margin: 0;
+	padding: 0;
+	color: red;
+	list-style-type: none;
+}
+
+.error2dim li {
+	font-weight: bold;
+}
+
+.error2dim ul {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+
+.error2dim ul li {
+	font-weight: normal;
+}
+
+input.buttonExtreme {
+	border: 0;
+	background-color: #00ADEF;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+input.buttonExtreme:HOVER {
+	background-color: #162082;
+}

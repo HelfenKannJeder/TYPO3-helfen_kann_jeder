@@ -1,0 +1,33 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<hkj:security.ifAuthenticated person="{frontendUser}">
+<f:then>
+<f:form action="save" object="{frontendUser}" name="frontendUser">
+<div id="helfen_kann_jeder_register">
+	<f:flashMessages id="error" />
+	<div class="labelForm">
+		<label for="firstname"><f:translate key="usersetting.firstname" /></label>
+		<f:form.textfield property="firstName" /><br />
+		<label for="lastname"><f:translate key="usersetting.lastname" /></label>
+		<f:form.textfield property="lastName" /><br />
+		<br />
+		<label for="username"><f:translate key="usersetting.username" /></label>
+		{frontendUser.username}<br />
+		<label for="password"><f:translate key="usersetting.password" /></label>
+		<f:form.password name="password1" /><br />
+		<label for="password2"><f:translate key="usersetting.password_repeat" /></label>
+		<f:form.password name="password2" /><br />
+		<br />
+		<label for="email"><f:translate key="usersetting.email" /></label>
+		<f:form.textfield property="email" /><br />
+		<label>&nbsp;</label>
+	</div>
+	<div class="submitStepNext">
+		<f:form.submit value="{f:translate(key: 'usersetting.submit')}" />
+	</div>
+</div>
+</f:form>
+</f:then>
+<f:else>
+LANG PLEASE LOG IN!
+</f:else>
+</hkj:security.ifAuthenticated>

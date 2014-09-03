@@ -1,0 +1,64 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<h2>{f:translate(key: 'organisation_general')}</h2>
+<div class="labelForm">
+<label for="name"><f:translate key="organisation_name" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_name_help')}">?</a></label>
+<f:form.textfield property="name" class="{hkj:isValid(errors: errorFields, object: 'organisation', id: organisation.uid, property: 'name')}" /><br />
+<label for="description"><f:translate key="organisation_description" />  <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_description_help')}">?</a></label>
+<f:form.textarea property="description" rows="5" cols="30" class="{hkj:isValid(errors: errorFields, object: 'organisation', id: organisation.uid, property: 'description')}" /><br />
+<label for="website"><f:translate key="organisation_website" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_website_help')}">?</a></label>
+<f:form.textfield property="website" class="{hkj:isValid(errors: errorFields, object: 'organisation', id: organisation.uid, property: 'website')}" /><br />
+<f:if condition="{organisation.logo}">
+<f:then>
+<label for="logo"><f:translate key="organisation_logo" /></label>
+<div style="float:left">
+<f:form.checkbox name="organisation_logodelete" value="1" /> {f:translate(key: 'organisation_delete_logo')}<br />
+<hkj:image.first path="uploads/tx_helfenkannjeder/" src="{organisation.logo}" alt="" width="100c" />
+</div>
+<br style="clear:left" />
+</f:then>
+<f:else>
+<label for="logo"><f:translate key="organisation_logo_upload" /></label>
+<f:form.radio name="organisation_logoradio" value="[upload]" checked="checked" class="logo_choose_radio_0" /><f:form.upload name="organisation_logo[0][logo]" class="{hkj:isValid(errors: errorFields, object: 'organisation', id: organisation.uid, property: 'logo')}" /><br />
+<f:if condition="{organisationType.logos}">
+<label for="logoRadio"><f:translate key="organisation_logo_choose" /></label>
+<div style="float:left">
+<hkj:image.all path="uploads/tx_helfenkannjeder/" src="{organisationType.logos}" alt="" height="50c" align="center"><f:form.radio name="organisation_logoradio" value="{path}" class="logo_choose_radio" />&nbsp;</hkj:image.all><br />
+</div>
+<br style="clear:left" />
+</f:if>
+</f:else>
+</f:if><br />
+</div>
+<br />
+<h2>{f:translate(key: 'organisation_addresses')}</h2>
+<f:for each="{organisation.addresses}" as="address" iteration="addressIteration">
+<f:render partial="AddressForm" arguments="{num: addressIteration.cycle, address: address, organisation: organisation, errorFields: errorFields, forceDefault: 0, forceNotDefault: 0}" />
+</f:for>
+<f:if condition="{f:count(subject: '{organisation.addresses}')} == 0">
+<f:render partial="AddressForm" arguments="{num: 0, invisible: 2, organisation: organisation, errorFields: errorFields, forceDefault: 1, forceNotDefault: 0}" />
+</f:if>
+<f:render partial="AddressForm" arguments="{num: 'new', invisible: 1, organisation: organisation, errorFields: errorFields, forceDefault: 0, forceNotDefault: 1}" />
+<div style="cursor:pointer" onclick="register_organisation_object_create('organisationAddressNum');return false;"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_new.png')}" alt="{f:translate(key: 'organisation_address_add_new')}" /> {f:translate(key: 'organisation_address_add_new')}</div>
+<script type="text/javascript">
+window.onload = function () {
+	register_organisation_address_init({mainPosition.latitude}, {mainPosition.longitude});
+<f:for each="{organisation.addresses}" as="address" iteration="addressIteration">
+	register_organisation_address_draw({address.latitude}, {address.longitude}, '{address.street}');
+</f:for>
+	citysignStartup(false, true);
+}
+</script>
+<br />
+<h2>{f:translate(key: 'organisation_contactperson')}</h2>
+{f:translate(key: 'organisaton_employee_teaser_text') -> f:format.nl2br()}
+<f:link.action target="_blank" action="detail" pageUid="9" controller="Overview" arguments="{organisation: 11}">Bergwacht Karlsruhe</f:link.action>,
+<f:link.action target="_blank" action="detail" pageUid="9" controller="Overview" arguments="{organisation: 34}">Freiwillige Feuerwehr Mühlburg</f:link.action> {f:translate(key: 'organisaton_employee_teaser_text_and')} 
+<f:link.action target="_blank" action="detail" pageUid="9" controller="Overview" arguments="{organisation: 1}">THW Karlsruhe</f:link.action>.<br />
+<f:for each="{organisation.employees}" as="employee" iteration="employeeIteration">
+<f:render partial="EmployeeForm" arguments="{num: employeeIteration.cycle, employee: employee, errorFields: errorFields}" />
+</f:for>
+<f:if condition="{f:count(subject: '{organisation.employees}')} == 0">
+<f:render partial="EmployeeForm" arguments="{num: 0, invisible: 2, errorFields: errorFields, forceIscontact: 1}" />
+</f:if>
+<f:render partial="EmployeeForm" arguments="{num: 'new', invisible: 1, errorFields: errorFields}" />
+<div style="cursor:pointer" onclick="register_organisation_object_create('organisationEmployeeNum');return false;"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_new.png')}" alt="{f:translate(key: 'organisation_employee_add_new')}" /> {f:translate(key: 'organisation_employee_add_new')}</div>

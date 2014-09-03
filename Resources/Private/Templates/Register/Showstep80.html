@@ -1,0 +1,10 @@
+<f:layout name="register" />
+<f:section name="content">
+<div style="width:644px">
+{f:translate(key: 'info_text_register_endup')}<br />
+<br />
+<span style="color:red">{f:translate(key: 'info_text_register_endup_warning')}</span><br />
+<br />
+<f:render partial="OrganisationView" arguments="{organisation: objectEdit, registerOrganisationProgress: registerOrganisationProgress, employees: employees, groups: groups, imageFolder: imageFolder, edit: 1, args: args, editLink: editLink}" />
+</div>
+</f:section>

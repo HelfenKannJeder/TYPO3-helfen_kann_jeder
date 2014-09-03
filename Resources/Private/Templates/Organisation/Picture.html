@@ -1,0 +1,14 @@
+<f:layout name="bluebox" />
+<f:section name="content">
+<div id="helfen_kann_jeder_register">
+<h1>{f:translate(key: 'organisation_edit_headline')}</h1>
+<f:flashMessages id="error" />
+<f:form class="helfen_kann_jeder_form" method="post" action="pictureSend"  name="organisation" object="{organisation}" enctype="multipart/form-data">
+<f:render partial="UploadForm" arguments="{organisation: organisation, uploadUriAction: 'upload', internetexplorer: internetexplorer, uploadUriController: 'Register', uploadUriPluginName: 'List', uploadUriExtensionName: 'HelfenKannJeder', uploadUriPageUid: uploadPageUid, uploadUriPageType: 1326560582, uploadUriArguments: '{organisation: organisation, session: sessionid}'}" />
+<f:render partial="SortPictures" arguments="{pictures: organisation.pictures, imageFolder: imageFolder}" />
+<f:form.hidden property="pictures" id="organisation_register_pictures" />
+<f:render partial="Organisation/SubmitButton" />
+</f:form>
+</div>
+</f:section>
+

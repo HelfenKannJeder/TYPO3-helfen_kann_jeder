@@ -1,0 +1,12 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<script type="text/javascript">
+window.onload = function() {
+	citysignStartup(false, true);
+	playlist = new Array();
+	playlist[0] = {organisation.organisationtype.uid};
+	tx_helfenkannjeder_set_organisation(playlist);
+}
+</script>
+<a href="javascript:history.back();" class="helfen_kann_jeder_overview_detail_back_link">{f:translate(key:'overview_back')}</a><br />
+<br /><br />
+<f:render partial="OrganisationView" arguments="{organisation: organisation, employees: employees, groups: groups, imageFolder: 'uploads/pics/'}" />

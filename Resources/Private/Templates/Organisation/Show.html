@@ -1,0 +1,76 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<hkj:security.ifAuthenticated person="{organisation.feuser}">
+<f:layout name="bluebox" />
+<f:section name="content">
+<h1>{f:translate(key: 'organisation_edit_headline')}</h1>
+<br />
+<v:switch value="{organisation.request}">
+	<v:case case="0" break="TRUE">
+<div id="tx_helfenkannjeder_organisation_mode" class="tx_helfenkannjeder_organisation_mode_free">
+{f:translate(key: 'organisation_mode_user_text.0')}<br />
+<f:if condition="{has_errors}">
+	<f:then>{f:translate(key: 'organisation_mode_user_text.0.error')}</f:then>
+	<f:else><f:link.action action="statusChange" arguments="{organisation: organisation, newStatus: 1}" onclick="return window.confirm('{f:translate(key: 'organisation_mode_user_text.0.request_confirm')}');">{f:translate(key: 'organisation_mode_user_text.0.request')}</f:link.action> </f:else>
+</f:if>
+</div>
+
+<f:if condition="{has_errors}">
+<f:then></f:then>
+<f:else>
+<br /><br />
+<f:form action="statusChange" arguments="{organisation: organisation, newStatus: 1}">
+<f:form.submit value="{f:translate(key: 'organisation_mode_user_text_request_button_bold')}" class="buttonExtreme" />
+</f:form>
+</f:else>
+</f:if>
+
+<br />
+<h2>{f:translate(key: 'organisation_settings')}</h2>
+<ul>
+	<li><f:link.action action="general" arguments="{organisation: organisation}">{f:translate(key: 'organisation_general_settings')} <f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'edit')}" /></f:link.action></li>
+	<li><f:link.action action="group" arguments="{organisation: organisation}">{f:translate(key: 'organisation_group_settings')} <f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'edit')}" /></f:link.action></li>
+	<li><f:link.action action="workinghour" arguments="{organisation: organisation}">{f:translate(key: 'organisation_workinghour_settings')} <f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'edit')}" /></f:link.action></li>
+	<li><f:link.action action="picture" arguments="{organisation: organisation}">{f:translate(key: 'organisation_picture_settings')} <f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'edit')}" /></f:link.action></li>
+</ul>
+<f:if condition="{flashMessages}">
+	<ul class="error2dim">
+	<f:for each="{flashMessages}" as="container" key="name">
+		<f:if condition="{container.1}">
+		<li><f:translate key="error_message_category.{name}">{name}</f:translate> <f:link.action action="{container.0}" arguments="{organisation: organisation}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'edit')}" /></f:link.action></li>
+		<ul>
+		<f:for each="{container.1}" as="message">
+			<li>{message.message}</li>
+		</f:for>
+		</ul>
+		</f:if>
+	</f:for>
+	</ul>
+</f:if>
+	</v:case>
+	<v:case case="1" break="TRUE">
+<div id="tx_helfenkannjeder_organisation_mode" class="tx_helfenkannjeder_organisation_mode_locked">
+{f:translate(key: 'organisation_mode_user_text.1')}<br />
+<f:link.action action="statusChange" arguments="{organisation: organisation, newStatus: 0}" onclick="return window.confirm('{f:translate(key: 'organisation_mode_user_text.1.request_confirm')}');">{f:translate(key: 'organisation_mode_user_text.1.request')}</f:link.action>
+</div>
+	</v:case>
+	<v:case case="2" break="TRUE">
+<div id="tx_helfenkannjeder_organisation_mode" class="tx_helfenkannjeder_organisation_mode_released">
+{f:translate(key: 'organisation_mode_user_text.2')}<br />
+<f:link.action action="statusChange" arguments="{organisation: organisation, newStatus: 0}">{f:translate(key: 'organisation_mode_user_text.2.request')}</f:link.action>
+</div>
+	</v:case>
+	<v:case case="3" break="TRUE">
+<div id="tx_helfenkannjeder_organisation_mode" class="tx_helfenkannjeder_organisation_mode_hard_locked">
+{f:translate(key: 'organisation_mode_user_text.3')}<br />
+</div>
+	</v:case>
+</v:switch>
+
+<br />
+
+
+<br />
+<f:render partial="OrganisationView" arguments="{organisation: organisation, employees: employees, groups: groups, imageFolder: imageFolder, edit: '{f:if(condition: organisation.request, then: 0, else: 1)}', args: args, editLink: editLink}" />
+</f:section>
+</hkj:security.ifAuthenticated>

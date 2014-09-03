@@ -1,0 +1,174 @@
+# compatiblity typoscript start
+config.tx_extbase {
+	persistence{
+		classes {
+			Tx_Extbase_Domain_Model_FrontendUser {
+				mapping {
+					tableName = fe_users
+					recordType = Tx_Extbase_Domain_Model_FrontendUser
+					columns {
+						lockToDomain.mapOnProperty = lockToDomain
+					}
+				}
+			}
+			Tx_Extbase_Domain_Model_FrontendUserGroup {
+				mapping {
+					tableName = fe_groups
+					recordType = Tx_Extbase_Domain_Model_FrontendUserGroup
+					columns {
+						lockToDomain.mapOnProperty = lockToDomain
+					}
+				}
+			}
+		}
+	}
+}
+
+config.tx_extbase.persistence.classes {
+	Tx_Extbase_Domain_Model_FrontendUser {
+		mapping.recordType >
+	}
+	Tx_Extbase_Domain_Model_FrontendUserGroup {
+		mapping.recordType >
+	}
+}
+# compatiblity typoscript end
+
+config.tx_extbase.persistence.classes {
+	Tx_Extbase_Domain_Model_FrontendUser {
+		subclasses {
+			Tx_HelfenKannJeder_Domain_Model_Supporter = Tx_HelfenKannJeder_Domain_Model_Supporter
+		}
+	}
+}
+
+plugin.tx_helfenkannjeder.settings.mail.reminder.supporter {
+	periodDays = 2
+	minDays = 2
+	additionalCCDays = 8
+	additionalCCAddress = vorstand@helfenkannjeder.de
+}
+plugin.tx_helfenkannjeder.settings.mail.reminder.supporter.subject = Wartende Freischaltungsanfrage auf HelfenKannJeder.de
+plugin.tx_helfenkannjeder.settings.mail.reminder.supporter.content (
+Hallo %name%,
+
+auf HelfenKannJeder.de wartet die Organisation "%organisation%" darauf, freigeschaltet zu werden. Wir bitten Dich dies zeitnah zu tun - melde Dich dazu bitte auf https://helfenkannjeder.de/ an.
+
+Viele Grüße
+
+Valentin Zickner
+im Namen des HelfenKannJeder.de-Teams
+)
+
+plugin.tx_helfenkannjeder {
+	settings {
+		googleMapsServer = maps.google.de
+		googleMapsApiKey = 
+
+		mailFrom = webmaster@helfenkannjeder.de
+		mailAdmin = webmaster@beta.helfenkannjeder.eu
+
+		registerOrganisationStepsPart1 = 18
+		registerOrganisationStepsPart2 = 59
+		registerOrganisationStepsPart3 = 58
+		loggedInMainSite = 3
+
+		registerProgressUserGroup = 2
+		registeredUserGroup = 1
+		supporterGroup = 3
+		supporterDefault = 45
+
+		defaultEmployee = 1
+		defaultEmployeeDetailPage = 1
+
+		sessionLifetime = 1800
+
+		page {
+			termsOfUse = 78
+			privacy = 81
+			messaging = 62
+			register.guide = 94
+		}
+	}
+
+	persistence{
+                classes {
+			Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata {
+				mapping {
+					tableName = tx_helfenkannjeder_domain_model_userdo
+					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata
+				}
+			}
+			Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch {
+				mapping {
+					tableName = tx_helfenkannjeder_domain_model_userdo
+					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch
+				}
+			}
+			Tx_HelfenKannJeder_Domain_Model_UserdoActivity {
+				mapping {
+					tableName = tx_helfenkannjeder_domain_model_userdo
+					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivity
+				}
+			}
+			Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield {
+				mapping {
+					tableName = tx_helfenkannjeder_domain_model_userdo
+					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield
+				}
+			}
+			Tx_HelfenKannJeder_Domain_Model_Supporter {
+				mapping {
+					tableName = fe_users
+					recordType = Tx_HelfenKannJeder_Domain_Model_Supporter
+				}
+			}
+		}
+	}
+}
+
+module.tx_helfenkannjeder < plugin.tx_helfenkannjeder
+
+plugin.tx_qumessaging.persistence.classes.Tx_HelfenKannJeder_Domain_Model_Supporter < plugin.tx_helfenkannjeder.persistence.classes.Tx_HelfenKannJeder_Domain_Model_Supporter
+#plugin.tx_qumessaging.persistence.classes.Tx_HelfenKannJeder_Domain_Model_OrganisationDraft {
+#	mapping {
+#		tableName = tx_helfenkannjeder_domain_model_organisationdraft
+#	}
+#}
+
+page.includeJS.helfen_kann_jeder = EXT:helfen_kann_jeder/Resources/Public/Scripts/generator.js
+page.includeJS.helfen_kann_jeder_register = EXT:helfen_kann_jeder/Resources/Public/Scripts/register.js
+##page.includeJS.jquery_min_js = EXT:helfen_kann_jeder/Resources/Public/Scripts/jquery.min.js
+page.includeJS.tooltip = EXT:helfen_kann_jeder/Resources/Public/Scripts/tooltip.js
+page.includeJS.draganddrop = EXT:helfen_kann_jeder/Resources/Public/Scripts/draganddrop.js
+
+###page.includeJS.browserplus = http://bp.yahooapis.com/2.4.21/browserplus-min.js
+
+page.includeJS.yahooDomEvent = EXT:helfen_kann_jeder/Resources/Public/Scripts/yahoo-dom-event.js
+page.includeJS.yahooAnimationMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/animation-min.js
+page.includeJS.yahooContainerMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/container-min.js
+page.includeJS.yahooMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/yahoo-min.js
+page.includeJS.yahooDomMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/dom-min.js
+page.includeJS.yahooEventMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/event-min.js
+page.includeJS.yahooElementMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/element-min.js
+page.includeJS.yahooUploaderMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/uploader-min.js
+
+page.includeJS.googleMaps = http://maps.google.de/maps/api/js?sensor=true&language=de&region=DE
+page.includeJS.googleMaps.external = 1
+page.includeJS.fluster2 = EXT:helfen_kann_jeder/Resources/Public/Scripts/Fluster2.packed.js
+
+
+
+pageImageMatrixColumn = PAGE
+pageImageMatrixColumn {
+  typeNum = 1332254762
+  config {
+    disableAllHeaderCode = 1
+    disableCharsetHeader = 1
+    ftu = 0
+    xhtml_cleaning = 0
+    admPanel = 0
+    additionalHeaders = Content-type:image/png
+  }
+  10 < tt_content.list.20.helfenkannjeder_overviewlist
+}

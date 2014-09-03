@@ -1,0 +1,14 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:layout name="backend" />
+<f:section name="content">
+<h2>OVERVIEW OVER ALL SUPPORTER</h2>
+<table>
+<f:for each="{supporters}" as="supporter">
+<tr>
+	<td>{supporter.firstName}</td>
+	<td>{supporter.lastName}</td>
+	<td><f:for each="{supporter.usergroup}" as="usergroup">{usergroup.title}, </f:for></td>
+</tr>
+</f:for>
+</table>
+</f:section>

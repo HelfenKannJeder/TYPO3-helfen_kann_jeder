@@ -1,0 +1,40 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<div class="organisationEmployeeHeadline {hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: '')} {f:if(condition:forceIscontact, then:'organisationEmployeeHeadlineContactperson')} {f:if(condition:employee.iscontact, then:'organisationEmployeeHeadlineContactperson')}" id="organisationEmployeeNum_{num}" onclick="register_organisation_object_detail_show(this);"{f:if(condition: '{invisible} == 1', then: ' style="display:none"')}>
+<div style="float:right;cursor:pointer" onclick="if (window.confirm('{f:translate(key: 'organisation_employee_delete_question')}')) register_organisation_object_delete(this);" onmouseover="register_organisation_object_delete_button_over(this);" onmouseout="register_organisation_object_delete_button_out(this);"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_delete.png')}" alt="Delete" /></div>
+<div style="float:right;cursor:pointer"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_edit.png')}" alt="Edit" /></div>
+<strong>{employee.prename} {employee.surname}
+<f:if condition="{employee.iscontact} == 1"> ({f:translate(key: 'organisation_employee_contactperson_complete')})</f:if>
+<f:if condition="{forceIscontact}"> ({f:translate(key: 'organisation_employee_contactperson_complete')})</f:if>
+<f:if condition="{employee.iscontact} == 2"> ({f:translate(key: 'organisation_employee_contactperson_group')})</f:if></strong><br />
+</div><div class="labelForm organisationEmployeeContainer" {f:if(condition: '{hkj:isValid(errors: errorFields, object: \'employee\', id: employee.uid, property: \'\')}', then: '', else: '{f:if(condition: \'{invisible} != 2\', then: \' style="display:none"\')}')}>
+<f:form.hidden name="employees[{num}][id]" value="{employee.uid}" />
+<f:form.hidden id="organisationEmployeeNumDelete_{num}" name="employees[{num}][delete]" value="{f:if(condition: '{invisible} == 1', then: '1', else: '0')}" />
+<label for="rank"><f:translate key="organisation_employee_rank" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_rank_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][rank]" value="{employee.rank}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'rank')}" /><br />
+<label for="prename"><f:translate key="organisation_employee_prename" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_prename_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][prename]" value="{employee.prename}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'prename')}" /><br />
+<label for="surname"><f:translate key="organisation_employee_surname" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_surname_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][surname]" value="{employee.surname}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'surname')}" /><br />
+<label for="motivation"><f:translate key="organisation_employee_motivation" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_motivation_help')}">?</a></label>
+<f:form.textarea name="employees[{num}][motivation]" value="{employee.motivation}" rows="5" cols="30" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'motivation')}" /><br />
+<label for="mail"><f:translate key="organisation_employee_mail" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_mail_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][mail]" value="{employee.mail}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'mail')}" /><br />
+<label for="telephone"><f:translate key="organisation_employee_telephone" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_telephone_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][telephone]" value="{employee.telephone}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'telephone')}" /><br />
+<label for="mobilephone"><f:translate key="organisation_employee_mobilephone" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_mobilephone_help')}">?</a></label>
+<f:form.textfield name="employees[{num}][mobilephone]" value="{employee.mobilephone}" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'mobilephone')}" /><br />
+<label for="pictures"><f:translate key="organisation_employee_pictures" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_pictures_help')}">?</a></label>
+<f:if condition="{employee.pictures}">
+<f:then>
+<div style="float:left">
+<f:form.checkbox name="employees[{num}][picturesdelete]" value="1" /> {f:translate(key: 'organisation_employee_delete_picture')}<br />
+<hkj:image.first path="uploads/tx_helfenkannjeder/" src="{employee.pictures}" alt="{employee.prename}" width="100c" />
+</div>
+<br style="clear:both" />
+</f:then>
+<f:else><f:form.upload name="employees[{num}][pictures]" class="{hkj:isValid(errors: errorFields, object: 'employee', id: employee.uid, property: 'pictures')}" /></f:else>
+</f:if><br />
+<label for="iscontact"><f:translate key="organisation_employee_contactperson" /> <a tabindex="-1" onclick="return false;" href="#" class="show-tooltip" title="{f:translate(key: 'organisation_employee_contactperson_help')}">?</a></label>
+<f:form.select name="employees[{num}][iscontact]" options="{0: '{f:translate(key: \'organisation_employee_contactperson_no\')}', 2: '{f:translate(key: \'organisation_employee_contactperson_group\')}', 1: '{f:translate(key: \'organisation_employee_contactperson_complete\')}'}" value="{f:if(condition:forceIscontact, then:1, else:employee.iscontact)}" /><br />
+<br style="clear:both" />
+</div>

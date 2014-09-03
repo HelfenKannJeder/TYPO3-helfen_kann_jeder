@@ -1,0 +1,62 @@
+{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+<f:layout name="backend" />
+<f:section name="content">
+<ul>
+<f:for each="{helfOMatList}" as="helfOMatThis">
+	<li><strong>{helfOMatThis.name}</strong></li>
+	<ul>
+<f:for each="{helfOMatThis.questions}" as="questionThis">
+		<li><f:link.action action="master" arguments="{question: questionThis}">{questionThis.question}</f:link.action></li>
+</f:for>
+	</ul>
+</f:for>
+</ul>
+
+<h1>{question.question}</h1>
+<table width="100%">
+	<tr>
+		<td><strong>POSITIVE</strong></td>
+		<td><strong>NEGATIVE</strong></td>
+	</tr>
+	<tr>
+		<td>
+<f:for each="{question.positive}" as="activity">
++{activity.name} ({activity.uid})<br />
+</f:for>
+<f:for each="{question.negative}" as="activity">
+-{activity.name} ({activity.uid})<br />
+</f:for>
+</td>
+		<td>
+<f:for each="{question.positiveNot}" as="activity">
++{activity.name} ({activity.uid})<br />
+</f:for>
+<f:for each="{question.negativeNot}" as="activity">
+-{activity.name} ({activity.uid})<br />
+</f:for>
+</td>
+	</tr>
+	<tr>
+		<td>
+		<table>
+		<f:for each="{organisationsVotingPositive}" as="orga">
+			<tr>
+				<td>{orga.name} ({orga.organisation})</td>
+				<td>{orga.gradesum}</td>
+			</tr>
+		</f:for>
+		</table>
+		</td>
+		<td>
+		<table>
+		<f:for each="{organisationsVotingNegative}" as="orga">
+			<tr>
+				<td>{orga.name} ({orga.organisation})</td>
+				<td>{orga.gradesum}</td>
+			</tr>
+		</f:for>
+		</table>
+		</td>
+	</tr>
+</table>
+</f:section>
