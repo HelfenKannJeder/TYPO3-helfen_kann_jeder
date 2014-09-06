@@ -180,6 +180,7 @@
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.logos">Logo suggestions</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.registerable">Registerable</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.hide_in_result">Hide in result</label>
+			<label index="tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation">Dummy organisation</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress">Register organisation progress</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress.agreement">Accepted agreements</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress.city">City</label>
@@ -447,6 +448,7 @@
 			<label index="tx_helfenkannjeder_domain_model_organisation.zipcode">PLZ</label>
 			<label index="tx_helfenkannjeder_domain_model_organisation.remind_last">Zuletzt erinnert</label>
 			<label index="tx_helfenkannjeder_domain_model_organisation.remind_count">Anzahl Erinnerungen</label>
+			<label index="tx_helfenkannjeder_domain_model_organisation.is_dummy">Ist eine Dummy Organisation</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationdraft">Organisations Entwurf</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype">Organisation Typ</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.acronym">Abkürzung</label>
@@ -462,6 +464,7 @@
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.logos">Logo Vorschläge</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.registerable">Registrierbar</label>
 			<label index="tx_helfenkannjeder_domain_model_organisationtype.hide_in_result">Im Ergebnis verbergen</label>
+			<label index="tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation">Dummy Organisation</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress">Registrierungsprozess für Organisationen</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress.agreement">Bedingungen akzeptiert</label>
 			<label index="tx_helfenkannjeder_domain_model_registerorganisationprogress.city">Stadt</label>

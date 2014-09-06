@@ -4,7 +4,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 	'ctrl' => $TCA['tx_helfenkannjeder_domain_model_organisationtype']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'name, description, picture, teaser, registerable, hide_in_result',
+		'showRecordFieldList' => 'name, description, picture, teaser, registerable, hide_in_result, dummy_organisation',
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -191,9 +191,24 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 				'type' => 'check'
 			)
 		),
+		'dummy_organisation' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation',
+			'config' => array(
+				'type' => 'select',
+				'foreign_class' => 'Tx_HelfenKannJeder_Domain_Model_Organisation',
+				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
+				'foreign_table_where' => 'AND tx_helfenkannjeder_domain_model_organisation.is_dummy=1',
+				'items' => array(
+					array('---', 0),
+				),
+				'wizards' => array(),
+				'suppress_icons' => 1,
+			)
+		),
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid, hidden, name, namedisplay, acronym, description, picture, teaser, logos, group_template_categories, pseudo, fegroup, registerable, hide_in_result')
+		'1' => array('showitem' => 'sys_language_uid, hidden, name, namedisplay, acronym, description, picture, teaser, logos, group_template_categories, pseudo, fegroup, registerable, hide_in_result, dummy_organisation')
 	),
 	'palettes' => array(
 		'1' => array('showitem' => '')
@@ -203,7 +218,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 	'ctrl' => $TCA['tx_helfenkannjeder_domain_model_organisation']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'crdate, tstamp, name, description, website, street, city, zipcode, longitude, latitude, contact_person, picture, feuser, remind_last, remind_count',
+		'showRecordFieldList' => 'crdate, tstamp, name, description, website, street, city, zipcode, longitude, latitude, contact_person, picture, feuser, remind_last, remind_count, is_dummy',
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -674,9 +689,16 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 				'max' => 255
 			)
 		),
+		'is_dummy' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.is_dummy',
+			'config' => array(
+				'type' => 'check'
+			)
+		),
 	),
 	'types' => array(
-		'1' => array('showitem' => 'hidden, crdate, tstamp, name, description, organisationtype, website, street, city, zipcode, umbrellaorganisation, nationalassociation, addressappendix, longitude, latitude, telephone, defaultaddress, addresses, logo, pictures, feuser, groups, employees, contactpersons, workinghours, reference, hash')
+		'1' => array('showitem' => 'hidden, crdate, tstamp, name, description, organisationtype, website, street, city, zipcode, umbrellaorganisation, nationalassociation, addressappendix, longitude, latitude, telephone, defaultaddress, addresses, logo, pictures, feuser, groups, employees, contactpersons, workinghours, reference, hash, is_dummy')
 	),
 	'palettes' => array(
 		'1' => array('showitem' => '')

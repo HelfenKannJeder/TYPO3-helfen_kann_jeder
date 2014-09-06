@@ -18,6 +18,7 @@ CREATE TABLE tx_helfenkannjeder_domain_model_organisationtype (
 	fegroup int(11) DEFAULT '0' NOT NULL,
 	registerable tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	hide_in_result tinyint(4) unsigned DEFAULT '0' NOT NULL,
+	dummy_organisation int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -65,6 +66,7 @@ CREATE TABLE tx_helfenkannjeder_domain_model_organisation (
 	addresses int(11) DEFAULT '0' NOT NULL,
 	hash varchar(255) DEFAULT '' NOT NULL,
 	reference int(11) DEFAULT '0' NOT NULL,
+	is_dummy tinyint(4) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
