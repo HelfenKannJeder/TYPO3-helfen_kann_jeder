@@ -430,6 +430,9 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 					'collapseAll' => 1,
 					'expandSingle' => 1,
 				),
+				'items' => array(
+					array('---', 0),
+				),
 			)
 		),
 		'addresses' => array( // TODO

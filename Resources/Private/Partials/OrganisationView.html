@@ -19,8 +19,10 @@
 <f:if condition="{organisation.defaultaddress.telephone}">{f:translate(key: 'overview_telephone')} {organisation.defaultaddress.telephone}<br /></f:if>
 	</f:then>
 	<f:else>
+		<f:if condition="{organisation.city}">
 		{organisation.street}, {organisation.zipcode} {organisation.city}<br />
 <f:if condition="{organisation.telephone}">{f:translate(key: 'overview_telephone')} {organisation.telephone}<br /></f:if>
+		</f:if>
 	</f:else>
 </f:if>
 		<div style="clear:both;"></div>

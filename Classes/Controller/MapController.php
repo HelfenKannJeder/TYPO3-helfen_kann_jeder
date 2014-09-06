@@ -11,7 +11,7 @@ class Tx_HelfenKannJeder_Controller_MapController
 	 * @return void
 	 */
 	public function indexAction() { // TODO: Optimize performance
-		$organisations =  $this->organisationRepository->findAll();
+		$organisations =  $this->organisationRepository->findByIsDummy(0);
 		$this->view->assign('organisations', $organisations);
 	}
 
