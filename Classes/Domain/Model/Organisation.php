@@ -151,6 +151,11 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	 */
 	protected $hash;
 
+	/**
+	 * @var boolean
+	 */
+	protected $isDummy;
+
 	public function __construct() {
 		$this->groups = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->workinghours = new Tx_Extbase_Persistence_ObjectStorage();
@@ -412,6 +417,14 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 
 	public function getHash() {
 		return $this->hash;
+	}
+
+	public function setIsDummy($isDummy) {
+		$this->isDummy = $isDummy;
+	}
+
+	public function getIsDummy() {
+		return $this->isDummy;
 	}
 }
 ?>

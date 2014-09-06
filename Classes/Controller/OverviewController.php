@@ -17,17 +17,25 @@ class Tx_HelfenKannJeder_Controller_OverviewController
 	 * @return void
 	 */
 	public function indexAction() {
-		$informations = explode("##1##",$_COOKIE["hkj_info"]);
-		$latitude = (float)$informations[0];
-		$longitude = (float)$informations[1];
-		$age = (int)$informations[4];
+		$age = 18;
+		$latitude = 0;
+		$longitude = 0;
+		if (isset($_COOKIE["hkj_info"])) {
+			$informations = explode("##1##",$_COOKIE["hkj_info"]);
+			$latitude = (float)$informations[0];
+			$longitude = (float)$informations[1];
+			$age = (int)$informations[4];
+		}
 		if ($age == 0) $age = 18;
 		if ($latitude == 0 || $longitude == 0) {
+			$organisations = $this->organisationRepository->findByIsDummy(1);
+			$count = count($organisations);
+		} else {
+			$organisations = $this->organisationRepository->findNearLatLngExecute($latitude, $longitude, $age);
+ 			$count = $this->organisationRepository->findNearLatLngCount($latitude, $longitude, $age);
 		}
-
-		$organisations = $this->organisationRepository->findNearLatLngExecute($latitude, $longitude, $age);
 		$this->view->assign('organisations', $organisations);
-		$this->view->assign('organisationsCount', $this->organisationRepository->findNearLatLngCount($latitude, $longitude, $age));
+		$this->view->assign('organisationsCount', $count);
 		$this->view->assign('city', $city);
 		$this->view->assign('latitude', $latitude);
 		$this->view->assign('longitude', $longitude);

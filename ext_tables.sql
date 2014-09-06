@@ -129,6 +129,7 @@ CREATE TABLE tx_helfenkannjeder_domain_model_organisationdraft (
 	reference int(11) DEFAULT '0' NOT NULL,
 	remind_last int(11) DEFAULT '0' NOT NULL,
 	remind_count int(11) DEFAULT '0' NOT NULL,
+	is_dummy tinyint(4) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

@@ -12,7 +12,7 @@ window.onload = function () {
 <div class="helfen_kann_jeder_overview_icon"><f:link.action action="detail" arguments="{organisation: organisation}"><hkj:image.first path="uploads/pics/" src="{organisation.logo}" alt="Logo" maxWidth="140c" maxHeight="70c" /></f:link.action>
 </div>
 <div class="helfen_kann_jeder_overview_text">
-<span class="helfen_kann_jeder_overview_distance" title="{f:translate(key: 'generator_distance_tooltip')}">{f:translate(key: 'overview_distance')} <f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">{hkj:geo.distance(p1lat: latitude, p1lng: longitude, p2lat: organisation.latitude, p2lng: organisation.longitude)}</f:format.number> {f:translate(key: 'overview_distance_unit')}<br /></span>
+<f:if condition="{organisation.isDummy}"><f:then></f:then><f:else><span class="helfen_kann_jeder_overview_distance" title="{f:translate(key: 'generator_distance_tooltip')}">{f:translate(key: 'overview_distance')} <f:format.number decimals="1" decimalSeparator="," thousandsSeparator=".">{hkj:geo.distance(p1lat: latitude, p1lng: longitude, p2lat: organisation.latitude, p2lng: organisation.longitude)}</f:format.number> {f:translate(key: 'overview_distance_unit')}<br /></span></f:else></f:if>
 <h2><f:link.action action="detail" arguments="{organisation: organisation}">{organisation.name}</f:link.action></h2>
 <f:if condition="{organisation.website}">
 <span class="helfen_kann_jeder_overview_website"><f:link.external uri="{organisation.website}" target="_blank">{organisation.website}</f:link.external></span>

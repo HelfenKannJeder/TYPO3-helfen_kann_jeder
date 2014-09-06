@@ -82,6 +82,12 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 	 */
 	protected $hideInResult;
 
+	/**
+	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @lazy
+	 */
+	protected $dummyOrganisation;
+
 	public function __construct() {
 		$this->groupTemplateCategories = new Tx_Extbase_Persistence_ObjectStorage();
 	}
@@ -180,6 +186,14 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 
 	public function getHideInResult() {
 		return $this->hideInResult;
+	}
+
+	public function setDummyOrganisation(Tx_HelfenKannJeder_Domain_Model_Organisation $dummyOrganisation) {
+		$this->dummyOrganisation = $dummyOrganisation;
+	}
+
+	public function getDummyOrganisation() {
+		return $this->dummyOrganisation;
 	}
 }
 ?>
