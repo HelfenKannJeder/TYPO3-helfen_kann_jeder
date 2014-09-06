@@ -12,6 +12,8 @@ class Tx_HelfenKannJeder_Controller_AbstractSearchController
 
 	protected function createOrganisationObjectsForTemplate($organisationsNear, $organisationsVoting, $persLat, $persLng) {
 		$organisations = array();
+		$organisationTypes = array();
+
 		foreach ($organisationsVoting as $organisation) {
 			$prefix = strtolower('tx_' . $this->request->getControllerExtensionName() . '_' . 'overviewlist');
 			$arguments = array(
@@ -26,10 +28,14 @@ class Tx_HelfenKannJeder_Controller_AbstractSearchController
 
 			if ($organisationObj instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
 				if ($organisationObj->getOrganisationtype() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationType) {
-					$distance = $this->googleMapsService->approxDistance(	$organisationsNear[$organisation["organisation"]][0],
-											$organisationsNear[$organisation["organisation"]][1],
-											$persLat, $persLng
-					);
+					if (($persLat == 0 && $persLng == 0) || $organisationsNear[$organisation['organisation']]['is_dummy'] == 1) {
+						$distance = -1;
+					} else {
+						$distance = $this->googleMapsService->approxDistance(	$organisationsNear[$organisation["organisation"]][0],
+												$organisationsNear[$organisation["organisation"]][1],
+												$persLat, $persLng
+						);
+					}
 					$grade = round($organisation["gradesum"]);
 					if ($this->gradeMin == null || $grade < $this->gradeMin) {
 						$this->gradeMin = $grade;
@@ -38,7 +44,10 @@ class Tx_HelfenKannJeder_Controller_AbstractSearchController
 						$this->gradeMax = $grade;
 					}
 
-					if ($distance <= 20) {
+					if ($distance <= 20 || $distance == -1) {
+						if ($organisationsNear[$organisation['organisation']]['is_dummy'] == 0) {
+							$organisationTypes[] = $organisationsNear[$organisation["organisation"]]['organisationtype'];
+						}
 						$organisations[] = array(
                                                 
 							"uid"=>$organisation["organisation"],
@@ -47,10 +56,17 @@ class Tx_HelfenKannJeder_Controller_AbstractSearchController
 							"description"=>$organisationObj->getDescription(),
 							"grade"=>$grade,
 							"link"=>$this->uriBuilder->reset()->setTargetPageUid(9)->setArguments($arguments)->uriFor('', array()), // TODO dynamic
-							"distance"=> $distance
+							"distance"=> $distance,
+							'is_dummy' => $organisationsNear[$organisation['organisation']]['is_dummy']
 						);
 					}
 				}
+			}
+		}
+
+		foreach ($organisations as $key => $info) {
+			if ($info['is_dummy'] == 1 && in_array($info['organisationtype'], $organisationTypes)) {
+				unset($organisations[$key]);
 			}
 		}
 

@@ -35,7 +35,9 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 				t0.website,
 				t0.workinghours,
 				t0.sort,
-				t0.contactpersons
+				t0.contactpersons,
+				t1.is_dummy,
+				t1.organisationtype
 			FROM
 				tx_helfenkannjeder_domain_model_organisation AS t1
 			LEFT JOIN
@@ -47,6 +49,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 					ON
 				t1.organisationtype = t2.uid
 			WHERE
+				(
 				t1.latitude >= ".($lat-1.5)." AND
 				t1.latitude <= ".($lat+1.5)." AND
 				t1.longitude >= ".($lng-1.5)." AND
@@ -54,6 +57,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 				t0.minimum_age <= ".(int)$age." AND
 				t0.maximum_age >= ".(int)$age." AND
 				t2.hide_in_result = 0
+				) OR t1.is_dummy = 1
 				";
 		//file_put_contents("test.txt", $statement);
 		$query->statement($statement , array( ));
@@ -95,7 +99,9 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 					0 => $group["latitude"],
 					1 => $group["longitude"],
 					'organisation' => $group['organisation'],
-					'gradesum' => 100
+					'gradesum' => 100,
+					'is_dummy' => $group['is_dummy'],
+					'organisationtype' => $group['organisationtype']
 				);
 			}
 			$matrices[] = $group["matrix"];
@@ -117,6 +123,10 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 		if (!is_array($questionNo)) $questionNo = array();
 		$questionNo[] = -1;
 		if (!is_array($organisations)) $organisations = array();
+		if ($organisations == array('')) {
+			$organisations = array();
+		}
+
 		$organisations[] = -1;
 
 		$statement = "

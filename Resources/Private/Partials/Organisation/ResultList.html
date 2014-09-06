@@ -18,7 +18,7 @@
 </f:then><f:else>
 						<div class="helfen_kann_jeder_generator_step3_organisations_percentage">zu <span id="organisation_{num}_percentage" class="show-tooltip" title="{f:translate(key: 'generator_grade_tooltip')}">{info.grade}</span>{f:translate(key: 'generator_grade_unit')}</div>
 </f:else></f:if>
-						<div class="helfen_kann_jeder_generator_step3_organisations_name"><a id="organisation_{num}_link" href="{f:if(condition: info.link, then: info.link, else: '#')}">{info.name}</a> <span id="organisation_{num}_distance" class="helfen_kann_jeder_generator_step3_organisations_distance show-tooltip" title="{f:translate(key: 'generator_distance_tooltip')}">({info.distance -> f:format.number(decimals: 1, decimalSeparator: ',', thousandsSeparator: '.')} {f:translate(key: 'generator_distance_unit')})</span></div>
+						<div class="helfen_kann_jeder_generator_step3_organisations_name"><a id="organisation_{num}_link" href="{f:if(condition: info.link, then: info.link, else: '#')}">{info.name}</a><f:if condition="{info.distance} >= 0"> <span id="organisation_{num}_distance" class="helfen_kann_jeder_generator_step3_organisations_distance show-tooltip" title="{f:translate(key: 'generator_distance_tooltip')}">({info.distance -> f:format.number(decimals: 1, decimalSeparator: ',', thousandsSeparator: '.')} {f:translate(key: 'generator_distance_unit')})</span></f:if></div>
 					</div>
 				</div>
 </f:for>        

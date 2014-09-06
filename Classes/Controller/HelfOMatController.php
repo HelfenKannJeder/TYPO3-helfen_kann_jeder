@@ -121,8 +121,8 @@ class Tx_HelfenKannJeder_Controller_HelfOMatController
 	 * Parse cookie to get pers lat, pers lng and age.
 	 */
 	public function parseCookie() {
-		$persLat = 49.009227;
-		$persLng = 8.403929;
+		$persLat = 0.0;
+		$persLng = 0.0;
 		$age = 18;
 		if (isset($_COOKIE["hkj_info"])) {
 			$cookieInfo = explode("##1##", $_COOKIE["hkj_info"]);
