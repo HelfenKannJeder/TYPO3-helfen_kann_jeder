@@ -12,7 +12,8 @@ window.onload = function () {
 </script>
 <div style="padding:16px;margin-bottom: 50px">
 	<table style="width:100%">
-<f:for each="{helfOMat.questions}" as="question">
+{qu:storage.sort(objectStorage: helfOMat.questions, sortBy: 'sort', as: 'helfOMatQuestions')}
+<f:for each="{helfOMatQuestions}" as="question">
 		<tr>
 			<td>{question.question}</td>
 			<td><f:image src="{f:uri.resource(path:'Images/Yes{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 1\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_yes')}" width="20" /></td>
