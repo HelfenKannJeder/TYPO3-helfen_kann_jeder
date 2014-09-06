@@ -99,6 +99,14 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	)
 );
 
+Tx_Extbase_Utility_Extension::configurePlugin(
+	$_EXTKEY,
+	'Location',
+	array(
+		'Location' => 'index',
+	)
+);
+
 /**
  * Hooking for PluginInfo
  */

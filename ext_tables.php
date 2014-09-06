@@ -63,6 +63,12 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 	'Backer'
 );
 
+Tx_Extbase_Utility_Extension::registerPlugin(
+	$_EXTKEY, // Extension-Key
+	'Location', //
+	'Location'
+);
+
 if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 	/**
 	 * Registers a Backend Module
