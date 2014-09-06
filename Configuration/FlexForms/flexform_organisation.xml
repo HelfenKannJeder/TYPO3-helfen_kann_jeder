@@ -45,6 +45,10 @@
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xml:tx_helfenkannjeder_action_helfomat</numIndex>
 										<numIndex index="1">HelfOMat->quiz;HelfOMat->result;HelfOMat->groupResult;HelfOMat->detail</numIndex>
 									</numIndex>
+									<numIndex index="8" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xml:tx_helfenkannjeder_action_location</numIndex>
+										<numIndex index="1">Location->index</numIndex>
+									</numIndex>
 								</items>
 								<maxitems>1</maxitems>
 								<size>1</size>

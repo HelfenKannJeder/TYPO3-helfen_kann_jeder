@@ -141,6 +141,7 @@ page.includeJS.helfen_kann_jeder_register = EXT:helfen_kann_jeder/Resources/Publ
 ##page.includeJS.jquery_min_js = EXT:helfen_kann_jeder/Resources/Public/Scripts/jquery.min.js
 page.includeJS.tooltip = EXT:helfen_kann_jeder/Resources/Public/Scripts/tooltip.js
 page.includeJS.draganddrop = EXT:helfen_kann_jeder/Resources/Public/Scripts/draganddrop.js
+page.includeJS.helfen_kann_jeder_location = EXT:helfen_kann_jeder/Resources/Public/Scripts/Location.js
 
 ###page.includeJS.browserplus = http://bp.yahooapis.com/2.4.21/browserplus-min.js
 

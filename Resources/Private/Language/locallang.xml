@@ -669,6 +669,8 @@ http://helfenkannjeder.de/%s</label>
 			<label index="register_guide">Anleitung zur Registrierung</label>
 			<label index="register_guide_text">Bist Du noch unschlüssig, ob Du dich registrieren sollst? Willst Du wissen, was Dich erwartet? Hier findest Du Antworten darauf.</label>
 			<label index="register_step31_error_mail_server_connection_failed">Es liegt ein interner Fehler vor. Der Schritt konnte nicht vollständig ausgeführt werden. Wende Dich bitte an webmaster@helfenkannjeder.de und sende uns (gerne auch ohne weitere Kommentare) diese Fehlermeldung.</label>
+			<label index="living_place">Wohnort</label>
+			<label index="filter_result">Ergebnisse eingrenzen</label>
 		</languageKey>
 	</data>
 </T3locallang>

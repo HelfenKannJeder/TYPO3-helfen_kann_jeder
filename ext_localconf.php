@@ -12,6 +12,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 		'Cron' => 'execute',
 		'HelfOMat' => 'quiz,result,groupResult,detail',
 		'SupportMaster' => 'reenableScreeningOrganisation',
+		'Location' => 'index'
 	),
 	array(
 		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,upload,doNotRemindMe',

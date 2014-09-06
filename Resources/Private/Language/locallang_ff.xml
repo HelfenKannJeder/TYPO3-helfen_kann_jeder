@@ -15,6 +15,7 @@
 			<label index="tx_helfenkannjeder_action_organisation_edit">Organisation edit</label>
 			<label index="tx_helfenkannjeder_action_cron">Cron</label>
 			<label index="tx_helfenkannjeder_action_helfomat">Helf-O-Mat</label>
+			<label index="tx_helfenkannjeder_action_location">Location</label>
 			<label index="tx_helfenkannjeder_register_session_lifetime">Session Lifetime (in seconds)</label>
 		</languageKey>
 		<languageKey index="de" type="array">
@@ -27,6 +28,7 @@
 			<label index="tx_helfenkannjeder_action_organisation_edit">Organisation bearbeiten</label>
 			<label index="tx_helfenkannjeder_action_cron">Cron</label>
 			<label index="tx_helfenkannjeder_action_helfomat">Helf-O-Mat</label>
+			<label index="tx_helfenkannjeder_action_location">Ort</label>
 			<label index="tx_helfenkannjeder_register_session_lifetime">Session Lebenszeit (in Sekunden)</label>
 		</languageKey>
 	</data>
