@@ -53,3 +53,53 @@ function helfenKannJederSetCurrentQuestion(num,offset) {
 		$(listItem.get(num)).addClass("tx-helfenkannjeder-helfomat-question-status-li-clickable");
 	}
 }
+
+function helfenKannJederChangeHelfOMatQuestion(uid, newValue) {
+	var current = $('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-select').val();
+
+	if (current != newValue) {
+		$('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-image-' + current + '-yes').hide();
+		$('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-image-' + current + '-no').show();
+		$('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-image-' + newValue + '-yes').show();
+		$('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-image-' + newValue + '-no').hide();
+
+		$('#tx-helfenkannjeder-helfomat-question-buttons-' + uid + '-select').val(newValue);
+
+		var result = new Object();
+		$('.tx-helfenkannjeder-helfomat-question-options').each(function () {
+			result[$(this).attr('name')] = $(this).val();
+		});
+
+
+		var url = $('base').attr('href') + $('#tx-helfenkannjeder-helfomat-form').attr('action');
+
+		$('#organisation_searching').show();
+
+		$('.organisation_entry', $('.helfen_kann_jeder_generator_step3_organisations')).hide();
+
+
+		$.ajax({
+			type: 'post',
+			url: url,
+			data: result,
+			success: function(response) {
+				$('#organisation_searching').hide();
+				for (var i = 0; i < response.length; i++) {
+					var par = $('#organisation_' + i, $('.helfen_kann_jeder_generator_step3_organisations'));
+					$('.helfen_kann_jeder_generator_organisation_resultbar', par).width(parseInt(response[i]['grade']));
+					$('#organisation_' + i + '_link', par).attr('href', response[i]['link']);
+					$('#organisation_' + i + '_link', par).html(response[i]['name']);
+
+					if (response[i]['distance'] >= 0) {
+						$('.helfen_kann_jeder_generator_step3_organisations_distance', par).html('(' + response[i]['distance'].toFixed(1).replace('.', ',') + ' km)');
+					} else {
+						$('.helfen_kann_jeder_generator_step3_organisations_distance', par).html('');
+					}
+					par.show();
+				}
+			},
+			dataType: 'json'
+		});
+		// TODO: Send result as ajax request
+	}
+}

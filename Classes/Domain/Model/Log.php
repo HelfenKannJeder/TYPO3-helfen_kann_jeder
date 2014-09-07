@@ -53,4 +53,3 @@ class Tx_HelfenKannJeder_Domain_Model_Log
 	}
 }
 ?>
-

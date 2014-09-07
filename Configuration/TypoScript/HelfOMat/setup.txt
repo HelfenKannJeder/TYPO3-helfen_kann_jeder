@@ -8,3 +8,18 @@ plugin.tx_helfenkannjeder {
 
 page.includeJS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Scripts/HelfOMat.js
 page.includeCSS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/HelfOMat.css
+
+pageHelfOMatJsonAction = PAGE
+pageHelfOMatJsonAction {
+  typeNum = 1410087872
+  config {
+    disableAllHeaderCode = 1
+    disableCharsetHeader = 1
+    ftu = 0
+    xhtml_cleaning = 0
+    admPanel = 0
+    additionalHeaders = Content-type:text/plain
+    debug = 0
+  }
+  10 < tt_content.list.20.helfenkannjeder_list
+}

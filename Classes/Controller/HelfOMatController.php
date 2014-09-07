@@ -86,6 +86,39 @@ class Tx_HelfenKannJeder_Controller_HelfOMatController
 	 *			2 => no
 	 */
 	public function groupResultAction(Tx_HelfenKannJeder_Domain_Model_HelfOMat $helfOMat, $answer) {
+		$organisations = $this->calculateGroupResult($answer);
+
+		$this->view->assign("answer", $answer);
+		$this->view->assign("helfOMat", $helfOMat);
+		$this->view->assign('normGradeToMax', 1/100);
+		$this->view->assign("organisations", $organisations);
+	}
+
+
+	/**
+	 * @param array $answer
+	 *		This is from the structure {questionId} => answer, where the questionId is the unique
+	 *		identifier from the question and the answer is an integer between 0 and 2, where
+	 *			0 => neutral
+	 *			1 => yes
+	 *			2 => no
+	 */
+	public function jsonGroupResultAction($answer) {
+		$organisations = $this->calculateGroupResult($answer);
+
+		return json_encode($organisations);
+	}
+
+	/**
+	 * @param array $answer
+	 *		This is from the structure {questionId} => answer, where the questionId is the unique
+	 *		identifier from the question and the answer is an integer between 0 and 2, where
+	 *			0 => neutral
+	 *			1 => yes
+	 *			2 => no
+	 * @return array	Array of organisations
+	 */
+	private function calculateGroupResult($answer) {
 		list($persLat, $persLng, $age) = $this->parseCookie();
 
 		list($organisationsNear, $matrices) = $this->groupRepository->findOrganisationMatricesNearLatLng($persLat, $persLng, $age);
@@ -109,12 +142,7 @@ class Tx_HelfenKannJeder_Controller_HelfOMatController
 				}
 			}
 		}
-
-
-		$this->view->assign("answer", $answer);
-		$this->view->assign("helfOMat", $helfOMat);
-		$this->view->assign('normGradeToMax', 1/100);
-		$this->view->assign("organisations", $organisations);
+		return $organisations;
 	}
 
 	/**

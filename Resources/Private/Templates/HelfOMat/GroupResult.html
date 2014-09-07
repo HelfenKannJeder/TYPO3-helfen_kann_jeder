@@ -10,17 +10,26 @@ window.onload = function () {
 	tx_helfenkannjeder_set_organisation(playlist);
 }
 </script>
+<f:section name="Thumbs">
+<f:image src="{f:uri.resource(path:'Images/{name}.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: '', else: 'none')};" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-yes"  />
+<f:image src="{f:uri.resource(path:'Images/{name}Gray.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: 'none', else: '')};cursor:pointer;" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" onclick="helfenKannJederChangeHelfOMatQuestion({question.uid},{num});" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-no"  />
+</f:section>
+
 <div style="padding:16px;margin-bottom: 50px">
+<f:form action="jsonGroupResult" id="tx-helfenkannjeder-helfomat-form" pageType="1410087872">
 	<table style="width:100%">
 {qu:storage.sort(objectStorage: helfOMat.questions, sortBy: 'sort', as: 'helfOMatQuestions')}
 <f:for each="{helfOMatQuestions}" as="question">
 		<tr>
-			<td>{question.question}</td>
-			<td><f:image src="{f:uri.resource(path:'Images/Yes{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 1\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_yes')}" width="20" /></td>
-			<td><f:image src="{f:uri.resource(path:'Images/Neutral{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 0\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" /></td>
-			<td><f:image src="{f:uri.resource(path:'Images/No{f:if(condition: \'{hkj:storage.at(storage: answer, index:question.uid)} == 2\', then: \'\', else: \'Gray\')}.png')}" alt="{f:translate(key: 'helfomat_question_no')}" width="20" /></td>
+			<td>{question.question}
+				<f:form.select class="tx-helfenkannjeder-helfomat-question-options" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-select" name="answer[{question.uid}]" options="{0: '{f:translate(key: \'helfomat_question_neutral\')}', 1: '{f:translate(key: \'helfomat_question_yes\')}', 2: '{f:translate(key: \'helfomat_question_no\')}'}" value="{hkj:storage.at(storage: answer, index:question.uid)}" style="display:none" />
+			</td>
+			<td><f:render section="Thumbs" arguments="{answer: answer, question: question, name: 'Yes', num: 1}" /></td>
+			<td><f:render section="Thumbs" arguments="{answer: answer, question: question, name: 'Neutral', num: 0}" /></td>
+			<td><f:render section="Thumbs" arguments="{answer: answer, question: question, name: 'No', num: 2}" /></td>
 		</tr>
 </f:for>
 	</table>
+</f:form>
 </div>
 <f:render partial="Organisation/ResultList" arguments="{visible: 1, param: organisations, resultBar: 1, normGradeToMax: normGradeToMax, survey: 'http://www.surveymonkey.com/s/3DDBJZG'}" />

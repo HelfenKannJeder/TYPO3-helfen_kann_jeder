@@ -197,4 +197,3 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 	}
 }
 ?>
-
