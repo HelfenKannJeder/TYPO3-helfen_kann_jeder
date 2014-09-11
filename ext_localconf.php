@@ -20,7 +20,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 		'Organisation' => 'index,show,general,generalSend,group,groupSend,workinghour,workinghourSend,picture,pictureSend,matrix,statusChange',
 		'UserSettings' => 'edit,save',
 		'Cron' => 'execute',
-		'HelfOMat' => 'result,groupResult,detail',
+		'HelfOMat' => 'result,groupResult,detail,jsonGroupResult',
 		'SupportMaster' => 'reenableScreeningOrganisation',
 	)
 );
