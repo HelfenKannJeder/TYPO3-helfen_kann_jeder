@@ -137,22 +137,16 @@ plugin.tx_qumessaging.persistence.classes.Tx_HelfenKannJeder_Domain_Model_Suppor
 #}
 
 page.includeJS.helfen_kann_jeder = EXT:helfen_kann_jeder/Resources/Public/Scripts/generator.js
-page.includeJS.helfen_kann_jeder_register = EXT:helfen_kann_jeder/Resources/Public/Scripts/register.js
 ##page.includeJS.jquery_min_js = EXT:helfen_kann_jeder/Resources/Public/Scripts/jquery.min.js
 page.includeJS.tooltip = EXT:helfen_kann_jeder/Resources/Public/Scripts/tooltip.js
-page.includeJS.draganddrop = EXT:helfen_kann_jeder/Resources/Public/Scripts/draganddrop.js
 page.includeJS.helfen_kann_jeder_location = EXT:helfen_kann_jeder/Resources/Public/Scripts/Location.js
 
-###page.includeJS.browserplus = http://bp.yahooapis.com/2.4.21/browserplus-min.js
+# todo only registration
+page.includeJS.draganddrop = EXT:helfen_kann_jeder/Resources/Public/Scripts/draganddrop.js
+page.includeJS.helfen_kann_jeder_register = EXT:helfen_kann_jeder/Resources/Public/Scripts/register.js
 
-page.includeJS.yahooDomEvent = EXT:helfen_kann_jeder/Resources/Public/Scripts/yahoo-dom-event.js
-page.includeJS.yahooAnimationMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/animation-min.js
-page.includeJS.yahooContainerMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/container-min.js
-page.includeJS.yahooMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/yahoo-min.js
-page.includeJS.yahooDomMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/dom-min.js
-page.includeJS.yahooEventMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/event-min.js
-page.includeJS.yahooElementMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/element-min.js
-page.includeJS.yahooUploaderMin = EXT:helfen_kann_jeder/Resources/Public/Scripts/uploader-min.js
+
+###page.includeJS.browserplus = http://bp.yahooapis.com/2.4.21/browserplus-min.js
 
 page.includeJS.googleMaps = http://maps.google.de/maps/api/js?sensor=true&language=de&region=DE
 page.includeJS.googleMaps.external = 1
