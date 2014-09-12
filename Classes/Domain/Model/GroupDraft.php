@@ -21,20 +21,6 @@ class Tx_HelfenKannJeder_Domain_Model_GroupDraft extends Tx_HelfenKannJeder_Doma
 	protected $contactpersons;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_EmployeeDraft>
-	 *	Persons of this institute.
-	 * @lazy
-	 */
-	protected $employees;
-
-
-	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_AddressDraft>
-	 * @lazy
-	 */
-	protected $addresses;
-
-	/**
 	 * @var Tx_HelfenKannJeder_Domain_Model_Group
 	 * @lazy
 	 */

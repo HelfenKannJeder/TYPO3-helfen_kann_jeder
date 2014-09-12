@@ -1,11 +1,11 @@
 {namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
 <div class="helfen_kann_jeder_overview_detail">
 	<div class="helfen_kann_jeder_overview_detail_images">
-		<hkj:image.all path="{imageFolder}" src="{organisation.pictures}" alt="Organisation pictures" maxWidth="140c" maxHeight="140c" rel="lightbox[organisation]" lightboxHeight="600m" lightboxWidth="600m" />&nbsp;
+		<hkj:image.all path="{imageFolder}" src="{organisation.pictures}" alt="Organisation pictures" maxWidth="140" rel="lightbox[organisation]" lightboxHeight="600m" lightboxWidth="600m" />&nbsp;
 		<f:if condition="{edit}==1"><f:link.action action="{editLink.picture}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
 	</div>
 	<div class="helfen_kann_jeder_overview_text">
-		<div style="float:right"><hkj:image.first path="{imageFolder}" src="{organisation.logo}" alt="Logo" maxWidth="140c" maxHeight="140c" /></div>
+		<div style="float:right"><hkj:image.first path="{imageFolder}" src="{organisation.logo}" alt="Logo" maxWidth="140" maxHeight="140" /></div>
 		<h1>{organisation.name}
 		<f:if condition="{edit}==1"><f:link.action action="{editLink.general}" arguments="{args}"><f:image src="{f:uri.resource(path:'Images/pencil.png')}" alt="{f:translate(key: 'organisation_edit')}" /></f:link.action></f:if>
 		</h1>
