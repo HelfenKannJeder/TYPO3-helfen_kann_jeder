@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Service_ExcelService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class ExcelService implements \TYPO3\CMS\Core\SingletonInterface {
 	private $error;
 	private $spreedsheet;
 	private $matrix;
@@ -7,7 +9,7 @@ class Tx_HelfenKannJeder_Service_ExcelService implements t3lib_Singleton {
 	private $activityRepository;
 
 	public function clear() {
-		$this->matrix = new Tx_HelfenKannJeder_Domain_Model_Matrix();
+		$this->matrix = new \Querformatik\HelfenKannJeder\Domain\Model\Matrix();
 	}
 
 	public function load($document) {
@@ -33,8 +35,8 @@ class Tx_HelfenKannJeder_Service_ExcelService implements t3lib_Singleton {
 
 	public function toMatrix() {
 		if (!($this->spreedsheet instanceof Spreadsheet_Excel_Reader
-			&& $this->activityfieldRepository instanceof Tx_HelfenKannJeder_Domain_Repository_ActivityFieldRepository
-			&& $this->activityRepository instanceof Tx_HelfenKannJeder_Domain_Repository_ActivityRepository)) {
+			&& $this->activityfieldRepository instanceof \Querformatik\HelfenKannJeder\Domain\Repository\ActivityFieldRepository
+			&& $this->activityRepository instanceof \Querformatik\HelfenKannJeder\Domain\Repository\ActivityRepository)) {
 			$this->error = "Not all data loaded!";
 			return false;
 		}
@@ -95,7 +97,7 @@ class Tx_HelfenKannJeder_Service_ExcelService implements t3lib_Singleton {
 					$part = $this->spreedsheet->val($num, $num2);
 					$activityfield = $activityfieldsOrdered[$num2];
 					if ($part == 1 || $part == 2) {
-						$matrixfield = new Tx_HelfenKannJeder_Domain_Model_MatrixField($matrix, null, $activity, $activityfield, $part);
+						$matrixfield = new \Querformatik\HelfenKannJeder\Domain\Model\MatrixField($matrix, null, $activity, $activityfield, $part);
 						$this->matrix->addMatrixfield($matrixfield);
 					}
 				}

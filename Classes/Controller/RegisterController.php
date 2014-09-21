@@ -1,17 +1,19 @@
 <?php
-class Tx_HelfenKannJeder_Controller_RegisterController
-	extends Tx_HelfenKannJeder_Controller_AbstractOrganisationController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class RegisterController
+	extends AbstractOrganisationController {
 	/**
-	 * @var Tx_Extbase_Persistence_ManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * injectPersistenceManager
 	 *
-	 * @param Tx_Extbase_Persistence_ManagerInterface $persistenceManager
+	 * @param \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager
 	 */
-	public function injectPersistenceManager(Tx_Extbase_Persistence_ManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 
@@ -38,10 +40,10 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	protected $steps = array(10, 20, 21, 30, 31, 32, 33, 40, 50, 60, 70, 80);
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('Tx_HelfenKannJeder_Service_AccessControlService'); // Singleton
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 		$this->frontendUser = $this->accessControlService->getFrontendUser();
 
-		$this->registerOrganisationProgressRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_RegisterOrganisationProgressRepository');
+		$this->registerOrganisationProgressRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\RegisterOrganisationProgressRepository');
 		if ($this->accessControlService->hasLoggedInFrontendUser()) {
 			$this->registerOrganisationProgress = $this->registerOrganisationProgressRepository->findOneByFeuser($this->frontendUser);
 		} else {
@@ -49,27 +51,27 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		}
 
 
-		$this->supportService = $this->objectManager->get('Tx_HelfenKannJeder_Service_SupportService');
+		$this->supportService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\SupportService');
 		$this->supportService->setDefaultSupporter($this->settings["supporterDefault"]);
-		$this->addressDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_AddressDraftRepository');
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
-		$this->organisationTypeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationTypeRepository');
-		$this->workinghourDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_WorkinghourDraftRepository');
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
-		$this->groupDraftRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
-		$this->frontendUserRepository = $this->objectManager->get('Tx_Extbase_Domain_Repository_FrontendUserRepository');
-		$this->frontendUserGroupRepository = $this->objectManager->get('Tx_Extbase_Domain_Repository_FrontendUserGroupRepository');
-		$this->activityRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityRepository');
-		$this->activityfieldRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityFieldRepository');
+		$this->addressDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\AddressDraftRepository');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
+		$this->organisationTypeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationTypeRepository');
+		$this->workinghourDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\WorkinghourDraftRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
+		$this->groupDraftRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+		$this->frontendUserRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserRepository');
+		$this->frontendUserGroupRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserGroupRepository');
+		$this->activityRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityRepository');
+		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
 
-		$this->mailService = $this->objectManager->get('Tx_QuBase_Service_MailService');
+		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
-		$this->googleMapsService = $this->objectManager->get('Tx_HelfenKannJeder_Service_GoogleMapsService');
+		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
 		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
 		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 
-		$this->matrixService = $this->objectManager->get('Tx_HelfenKannJeder_Service_MatrixService');
+		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 
 		if ($this->request->hasArgument("stepBack")) {
 			$this->stepBack = true;
@@ -80,7 +82,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	function errorAction() {
-		if ($this->stepBack == true && $this->registerOrganisationProgress instanceof Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress
+		if ($this->stepBack == true && $this->registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
 			&& $this->actionMethodName == "sendstep".$this->registerOrganisationProgress->getFinisheduntil()."Action") {
 			$currentStep = substr($this->actionMethodName,8,2);
 			$positionStep = array_search($currentStep, $this->steps)-1;
@@ -112,10 +114,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	protected function registerPartialValidatorForArgument($argumentName) {
 		if ($this->request->hasArgument($argumentName)) {
 			// Initialize the extended validator resolver.
-			$extendedValidatorResolver = $this->objectManager->get('Tx_HelfenKannJeder_Validation_ExtendedValidatorResolver');
-			// TODO: Next two lines necessary?
-			//$extendedValidatorResolver->injectObjectManager($this->objectManager); // Singleton
-			//$extendedValidatorResolver->injectReflectionService(t3lib_div::makeInstance('Tx_Extbase_Reflection_Service')); // Singleton
+			$extendedValidatorResolver = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Validation\\ExtendedValidatorResolver');
 
 			// Load all parameter validators and pick the one for the current argument, as this is the base validator.
 			$parameterValidators = $this->validatorResolver->buildMethodArgumentsValidatorConjunctions(get_class($this), $this->actionMethodName);
@@ -134,8 +133,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	protected function registerHandleProveRegisterOrganisationType($registerOrganisationType) {
-		if (!($registerOrganisationType instanceof Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress
-			&& $this->registerOrganisationProgress instanceof Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress
+		if (!($registerOrganisationType instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
+			&& $this->registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
 			&& $registerOrganisationType->getSessionid() == $this->registerOrganisationProgress->getSessionid()
 			&& $registerOrganisationType->getUid() == $this->registerOrganisationProgress->getUid()
 			&& $registerOrganisationType->getFinisheduntil() < 40)) {
@@ -151,7 +150,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		if ($registerOrganisationProgress == null) {
 			$registerOrganisationProgress = $this->registerOrganisationProgress;
 		}
-		if ($registerOrganisationProgress instanceof Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress) {
+		if ($registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress) {
 			if ($organisation == null) {
 				$organisation = $registerOrganisationProgress->getOrganisation();
 			}
@@ -160,8 +159,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 				return true;
 			}
 
-			if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
-				&& $organisation->getOrganisationtype() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationType
+			if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
+				&& $organisation->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 				&& $this->accessControlService->isLoggedIn($registerOrganisationProgress->getFeuser())
 				&& $this->accessControlService->isLoggedIn($organisation->getFeuser())) {
 				return true;
@@ -174,7 +173,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @return void
 	 * @ignorevalidation $registerOrganisationProgress
 	 */
@@ -189,7 +188,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		if ($registerOrganisationProgress != null) {
 			$this->registerHandleProveRegisterOrganisationType($registerOrganisationProgress);
 		} else {
-			$registerOrganisationProgress = new Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress($this->accessControlService->getSessionId());
+			$registerOrganisationProgress = new \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress($this->accessControlService->getSessionId());
 			$registerOrganisationProgress->setLaststep(10);
 			$registerOrganisationProgress->setFinisheduntil(10);
                         
@@ -215,7 +214,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @return void
 	 */
 	public function sendstep10Action($registerOrganisationProgress) {
@@ -234,7 +233,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
@@ -246,8 +245,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		$this->registerHandleProveRegisterOrganisationType($registerOrganisationProgress);
 		$registerOrganisationProgress->setLaststep(20);
 
-		$dummyObject = new Tx_HelfenKannJeder_Domain_Model_OrganisationType();
-		$dummyObject->setName(Tx_Extbase_Utility_Localization::translate('register_step2_please_choose', 'HelfenKannJeder'));
+		$dummyObject = new \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType();
+		$dummyObject->setName(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step2_please_choose', 'HelfenKannJeder'));
 
 		$organisationTypes = $this->organisationTypeRepository->findByRegisterable(1);
 		$organisationTypesList = array();
@@ -267,7 +266,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
@@ -289,29 +288,29 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 			return;
 		}
 
-		if (!($registerOrganisationProgress->getOrganisationtype() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationType)) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_missing_organisationtype', 'HelfenKannJeder'));
+		if (!($registerOrganisationProgress->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType)) {
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_missing_organisationtype', 'HelfenKannJeder'));
 			$errors = true;
 		}
 
 		if (!is_numeric($registerOrganisationProgress->getCity()) || strlen($registerOrganisationProgress->getCity()) != 5) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_wrong_zipcode', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_wrong_zipcode', 'HelfenKannJeder'));
 			$errors = true;
 		}
 
 		if (!preg_match("/^[A-Za-z\-0-9]+$/si", $registerOrganisationProgress->getUsername())) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_invalid_username', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_invalid_username', 'HelfenKannJeder'));
 			$errors = true;
 		}
 
 		if (!preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si",
 				$registerOrganisationProgress->getMail())) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_invalid_mail', 'HelfenKannJeder').$registerOrganisationProgress->getMail());
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_invalid_mail', 'HelfenKannJeder').$registerOrganisationProgress->getMail());
 			$errors = true;
 		}
 
 		if ($registerOrganisationProgress->getSurname() == "" || $registerOrganisationProgress->getPrename() == "") {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_missing_name', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_missing_name', 'HelfenKannJeder'));
 			$errors = true;
 		}
 
@@ -333,9 +332,9 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 				}
 			} else */
 			if ($this->frontendUserRepository->countByUsername($username) > 0) {
-				$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step3_error_missing_department', 'HelfenKannJeder')
+				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_missing_department', 'HelfenKannJeder')
 							.$registerOrganisationProgress->getSupporter()->getName()
-							.Tx_Extbase_Utility_Localization::translate('register_step3_error_missing_department_mail', 'HelfenKannJeder')
+							.\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_missing_department_mail', 'HelfenKannJeder')
 							.$registerOrganisationProgress->getSupporter()->getEMail().".");
 				$errors = true;
 				$redirectTo = "showstep20";
@@ -349,7 +348,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 //			$this->redirect($redirectTo, NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 		} else {
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step3_error_nothing_found', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_nothing_found', 'HelfenKannJeder'));
 			$errors = true;
 		}
 
@@ -369,14 +368,14 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 				&& !($registerOrganisationProgress->getPassword() == ""
 				&& $registerOrganisationProgress->getPassword2() == ""
 				&& $registerOrganisationProgress->getPasswordSaved())) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step31_error_password_to_short', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_password_to_short', 'HelfenKannJeder'));
 			$errors = true;
 			$registerOrganisationProgress->setPassword("");
 			$registerOrganisationProgress->setPassword2("");
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 		}
 		if ($percentMax >= 80) {
-			$this->flashMessageContainer->add(sprintf(Tx_Extbase_Utility_Localization::translate('register_step31_error_password_match_word', 'HelfenKannJeder'), $similarMax));
+			$this->flashMessageContainer->add(sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_password_match_word', 'HelfenKannJeder'), $similarMax));
 			$errors = true;
 			$registerOrganisationProgress->setPassword("");
 			$registerOrganisationProgress->setPassword2("");
@@ -388,7 +387,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 				&& !($registerOrganisationProgress->getPassword() == ""
 				&& $registerOrganisationProgress->getPassword2() == ""
 				&& $registerOrganisationProgress->getPasswordSaved())) {
-			$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step31_error_passwords_not_match', 'HelfenKannJeder'));
+			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_passwords_not_match', 'HelfenKannJeder'));
 			$errors = true;
 			$registerOrganisationProgress->setPassword("");
 			$registerOrganisationProgress->setPassword2("");
@@ -405,14 +404,14 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 			$registerOrganisationProgress->setPasswordSaved(true);
 
 			if ($this->frontendUserRepository->countByUsername($registerOrganisationProgress->getUsername()) > 0) {
-				$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step31_error_user_exists', 'HelfenKannJeder'));
+				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_user_exists', 'HelfenKannJeder'));
 				$registerOrganisationProgress->setPassword("");
 				$registerOrganisationProgress->setPassword2("");
 				$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 				$this->redirect("showstep20", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 			} else {
 				// Register User, this step is not reversable!
-				$feUser = new Tx_Extbase_Domain_Model_FrontendUser($registerOrganisationProgress->getUsername(), $registerOrganisationProgress->getPassword());
+				$feUser = new \TYPO3\CMS\Extbase\Domain\Model\FrontendUser($registerOrganisationProgress->getUsername(), $registerOrganisationProgress->getPassword());
 				$feUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings["registerProgressUserGroup"]));
                                 $feUser->setZip($registerOrganisationProgress->getCity());
                                 $feUser->setName($registerOrganisationProgress->getPrename()." ".$registerOrganisationProgress->getSurname());
@@ -428,13 +427,13 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 //				$this->accessControlService->setFrontendUserUid($feUser->getUid());
 				$linkToContinue = $this->uriBuilder->setTargetPageUid($this->settings["registerOrganisationStepsPart2"])->uriFor("sendstep32", array("registerOrganisationProgress"=>$registerOrganisationProgress, "hash"=>$randomHash));
 
-				$mailHeadline = Tx_Extbase_Utility_Localization::translate('register_step31_mail_headline', 'HelfenKannJeder');
-				$mailContent = Tx_Extbase_Utility_Localization::translate('register_step31_mail_content', 'HelfenKannJeder');
+				$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_mail_headline', 'HelfenKannJeder');
+				$mailContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_mail_content', 'HelfenKannJeder');
 				$mailContent = sprintf($mailContent, $linkToContinue, $registerOrganisationProgress->getUsername());
 
 				$mailRecipients = $this->mailService->send($registerOrganisationProgress->getMail(), $mailHeadline, $mailContent);
 				if ($mailRecipients <= 0) {
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step31_error_mail_server_connection_failed', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_mail_server_connection_failed', 'HelfenKannJeder'));
 				}
 
 				$registerOrganisationProgress->setFinisheduntil(32);
@@ -449,7 +448,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
@@ -476,7 +475,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @param string $hash
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
@@ -501,7 +500,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
@@ -519,7 +518,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
@@ -536,8 +535,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @param array $errorFields
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
@@ -545,7 +544,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	 * @return void
 	 */
 	public function showstep40Action($registerOrganisationProgress = null, $organisation = null, $errorFields = array()) {
-		if (!($registerOrganisationProgress instanceof Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress)) {
+		if (!($registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress)) {
 			$registerOrganisationProgress = $this->registerOrganisationProgress;
 		}
 		// prove owner of registerOrganisationProgress
@@ -554,7 +553,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		if ($organisation == null) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 			if ($organisation == null) {
-				$organisation = new Tx_HelfenKannJeder_Domain_Model_OrganisationDraft();
+				$organisation = new \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft();
 				$organisation->setCrdate(time());
 				$organisation->setFeuser($registerOrganisationProgress->getFeuser());
 				$organisation->setName($registerOrganisationProgress->getOrganisationname());
@@ -597,8 +596,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @dontverifyrequesthash
@@ -637,8 +636,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @param array $errorFields
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
@@ -677,8 +676,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -708,8 +707,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @param array $errorFields
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
@@ -746,8 +745,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @dontverifyrequesthash
@@ -777,8 +776,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -818,8 +817,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -848,8 +847,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -878,8 +877,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -908,8 +907,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -954,8 +953,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -990,20 +989,20 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 				if (!$groupExists) {
 					$this->frontendUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings["registeredUserGroup"]));
 				}
-				$logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
+				$logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 				$logService->insert("User requested confirmation after self registration.", $organisation);
 				$organisation->setRequest(1);
 				$organisation->setRequesttime(time());
 				$this->organisationDraftRepository->update($organisation);
 
-				$mailHeadline = Tx_Extbase_Utility_Localization::translate('register_step80_mail_headline', 'HelfenKannJeder');
-				$mailContent = Tx_Extbase_Utility_Localization::translate('register_step80_mail_content', 'HelfenKannJeder');
+				$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step80_mail_headline', 'HelfenKannJeder');
+				$mailContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step80_mail_content', 'HelfenKannJeder');
 				$this->mailService->send($registerOrganisationProgress->getMail(), $mailHeadline, $mailContent);
 				// TODO mail an supporter
 				$supporter = $organisation->getSupporter();
-				if ($supporter instanceof Tx_HelfenKannJeder_Domain_Model_Supporter && $supporter->getEmail() != "") {
-					$mailHeadline = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.afterRequest.headline', 'HelfenKannJeder'), $organisation->getName());
-					$mailContent = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
+				if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter && $supporter->getEmail() != "") {
+					$mailHeadline = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.headline', 'HelfenKannJeder'), $organisation->getName());
+					$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 					$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 				}
 
@@ -1015,8 +1014,8 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress $registerOrganisationProgress
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $registerOrganisationProgress
 	 * @ignorevalidation $organisation
 	 * @return void
@@ -1037,7 +1036,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 
 		$activities = $activities->toArray();
 		foreach ($activities as $key => $activity) {
-			if (!($activity instanceof Tx_HelfenKannJeder_Domain_Model_Activity) || !in_array($activity->getUid(), $activityList)) {
+			if (!($activity instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) || !in_array($activity->getUid(), $activityList)) {
 //				echo "ok";
 				unset($activities[$key]);
 			}
@@ -1067,7 +1066,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 * @param string $hash
 	 * @return void
 	 */
@@ -1076,7 +1075,7 @@ class Tx_HelfenKannJeder_Controller_RegisterController
 		if ($organisationDraft->getControlHash() == $hash) {
 			$organisationDraft->setRemindCount(-1);
 			$this->organisationDraftRepository->update($organisationDraft);
-			$logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
+			$logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 			$logService->insert("The organisation want no more remind mails.", $organisationDraft);
 			$this->view->assign("noRemind", true);
 		} else {

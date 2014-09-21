@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,8 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-12-02
  */
-class Tx_HelfenKannJeder_Domain_Model_GroupTemplate
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class GroupTemplate extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+
 	/**
 	 * @var string
 	 */
@@ -36,7 +38,7 @@ class Tx_HelfenKannJeder_Domain_Model_GroupTemplate
 	protected $maximumAge;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Matrix
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Matrix
 	 */
 	protected $matrix;
 

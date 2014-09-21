@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Validator;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-01-17
  */
-abstract class Tx_HelfenKannJeder_Domain_Validator_OrganisationAbstractValidator
-	extends Tx_Extbase_Validation_Validator_AbstractValidator {
+abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator {
 	const LIMIT_LONGEST_WORD_LENGTH = 50;
 	const LIMIT_MAX_STRING_LENGTH = 50;
 
@@ -54,7 +55,7 @@ abstract class Tx_HelfenKannJeder_Domain_Validator_OrganisationAbstractValidator
 
 	protected function addError($message, $code, $values = null) {
 		if ($values == null) $values = array();
-		$newMessage = Tx_Extbase_Utility_Localization::translate($message, 'HelfenKannJeder', $values);
+		$newMessage = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($message, 'HelfenKannJeder', $values);
 		if (empty($newMessage)) {
 			$newMessage = $message." (".$code.")";
 		}

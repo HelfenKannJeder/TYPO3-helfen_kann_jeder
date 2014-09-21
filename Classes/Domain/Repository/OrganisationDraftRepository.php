@@ -1,12 +1,13 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository
-	extends Tx_Extbase_Persistence_Repository {
-	public function findBySupporterAndRequest(Tx_HelfenKannJeder_Domain_Model_Supporter $supporter) {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class OrganisationDraftRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+	public function findBySupporterAndRequest(\Querformatik\HelfenKannJeder\Domain\Model\Supporter $supporter) {
 		$query = $this->createQuery();
 		return $query->matching(
 				$query->equals('supporter', $supporter)
 			)
-			->setOrderings(array('request' => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING, 'requesttime' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING))
+			->setOrderings(array('request' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING, 'requesttime' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING))
 			->execute();
 	}
 

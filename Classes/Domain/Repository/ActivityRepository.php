@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_ActivityRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class ActivityRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	public function findByMatchingSearchParameter($word) {
 
 		$query = $this->createQuery();

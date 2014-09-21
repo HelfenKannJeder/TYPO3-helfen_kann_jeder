@@ -1,18 +1,19 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Storage_SortViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Storage;
+
+class SortViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 	protected $sortBy = "";
 	protected $sortType = "";
 
 	/**
-	 * @param Tx_Extbase_Persistence_ObjectStorage $storage 
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $storage 
 	 * @param string $property The property to sort by. 
 	 * @param string $direction The direction to sort by (ASC or DESC).
-	 * @return Tx_Extbase_Persistence_ObjectStorage The object sotrted.
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage The object sotrted.
 	 */
 	public function render($storage, $property, $direction = "ASC") {
 		$direction = strtolower($direction);
-		if ($storage instanceof Tx_Extbase_Persistence_ObjectStorage) {
+		if ($storage instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage) {
 			$storage = $storage->toArray();
 			$this->sortBy = "get".ucfirst($property);
 			$this->sortType = $direction;

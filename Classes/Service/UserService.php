@@ -1,7 +1,9 @@
 <?php
-class Tx_HelfenKannJeder_Service_UserService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class UserService implements \TYPO3\CMS\Core\SingletonInterface {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_UserRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\UserRepository
 	 * @inject
 	 */
 	protected $userRepository;
@@ -9,7 +11,7 @@ class Tx_HelfenKannJeder_Service_UserService implements t3lib_Singleton {
 	public function getBySessionId($session) {
 		$users = $this->userRepository->findBySession($session);
 		if (count($users) == 0) {
-			$user = new Tx_HelfenKannJeder_Domain_Model_User();
+			$user = new \Querformatik\HelfenKannJeder\Domain\Model\User();
 			$user->setSession($session);
 			$ip = explode(".", $_SERVER["REMOTE_ADDR"]);
 			$ip[2] = $ip[3] = 0;

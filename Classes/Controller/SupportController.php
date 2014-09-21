@@ -1,17 +1,19 @@
 <?php
-class Tx_HelfenKannJeder_Controller_SupportController
-	extends Tx_HelfenKannJeder_Controller_AbstractOrganisationController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class SupportController
+	extends AbstractOrganisationController {
 	/**
-	 * @var Tx_Extbase_Persistence_ManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * injectPersistenceManager
 	 *
-	 * @param Tx_Extbase_Persistence_ManagerInterface $persistenceManager
+	 * @param \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager
 	 */
-	public function injectPersistenceManager(Tx_Extbase_Persistence_ManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 
@@ -27,18 +29,18 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	protected $mailService;
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('Tx_HelfenKannJeder_Service_AccessControlService'); // Singleton
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 		$this->frontendUser = $this->accessControlService->getFrontendSupporter();
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
-		$this->logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
-		$this->employeeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository');
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
-		$this->groupDraftRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
-		$this->groupRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupRepository');
-		$this->groupRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
-		$this->mailService = $this->objectManager->get('Tx_QuBase_Service_MailService');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
+		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
+		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
+		$this->groupDraftRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
+		$this->groupRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
+		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
 	}
 
@@ -75,7 +77,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 
 			$methodsWalkedThrough[] = $srcObject->__toString();
 
-			if (!($destObject instanceof $destClass) && !($destObject instanceof Tx_Extbase_Persistence_LazyLoadingProxy && $destObject->getUid() != 0)) {
+			if (!($destObject instanceof $destClass) && !($destObject instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy && $destObject->getUid() != 0)) {
 				$destObject = new $destClass();
 				$destObject->setReference($srcObject);
 				$srcObject->setReference($destObject);
@@ -84,8 +86,8 @@ class Tx_HelfenKannJeder_Controller_SupportController
 			$srcMethods = get_class_methods($srcClass);
 			$destMethods = get_class_methods($destClass);
 
-			$dataMapper = $this->objectManager->get('Tx_Extbase_Persistence_Mapper_DataMapper');
-			$reflectionService = $this->objectManager->get('Tx_Extbase_Reflection_Service');
+			$dataMapper = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Mapper\\DataMapper');
+			$reflectionService = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Reflection\\ReflectionService');
 
 			$dataMap = $dataMapper->getDataMap($srcClass);
 			$classSchema = $reflectionService->getClassSchema($srcClass);
@@ -99,11 +101,11 @@ class Tx_HelfenKannJeder_Controller_SupportController
 					$columnMap = $dataMap->getColumnMap($srcMethodAttribute);
 					$propertyData = $classSchema->getProperty($srcMethodAttribute);
 
-					if ($columnMap instanceof Tx_Extbase_Persistence_Mapper_ColumnMap) {
+					if ($columnMap instanceof \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap) {
 						$getterResult = call_user_func(array(&$srcObject, $srcMethod));
 						switch ($columnMap->getTypeOfRelation()) {
-							case Tx_Extbase_Persistence_Mapper_ColumnMap::RELATION_HAS_MANY:
-							case Tx_Extbase_Persistence_Mapper_ColumnMap::RELATION_HAS_AND_BELONGS_TO_MANY:
+							case \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap::RELATION_HAS_MANY:
+							case \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap::RELATION_HAS_AND_BELONGS_TO_MANY:
 								$destMethodAdd = substr($destMethodAdd, 0, -1);
 								if (!in_array($destMethodAdd, $destMethods)) {
 									$destMethodAdd = substr($destMethodAdd, 0, -1);
@@ -122,7 +124,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 											}
 
 											if (!$alreadyAdded) {
-												if ($newCreatedObject instanceof Tx_Extbase_Persistence_LazyLoadingProxy) {
+												if ($newCreatedObject instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy) {
 													$newCreatedObject = $newCreatedObject->_loadRealInstance();
 												}
 												call_user_func(array(&$destObject, $destMethodAdd), $newCreatedObject);
@@ -151,7 +153,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 										foreach ($getterResultNewObject as $getterResultNewObjectEntry) {
 											$ref = $getterResultNewObjectEntry->getReference();
 											$refOrg = $ref;
-											if ($ref instanceof Tx_Extbase_Persistence_LazyLoadingProxy) {
+											if ($ref instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy) {
 												$ref = $ref->_loadRealInstance();
 											}
 											if (!($ref instanceof $propertyData["elementType"]) || !in_array($refOrg->__toString(), $getterResultStrings)) {
@@ -161,7 +163,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 									}
 								}
 								break;
-							case Tx_Extbase_Persistence_Mapper_ColumnMap::RELATION_HAS_ONE:
+							case \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap::RELATION_HAS_ONE:
 								if (in_array($destMethodSet, $destMethods)) {
 									$newName = $this->buildNewClassName($srcClass, $destClass, $propertyData["type"]);
 									if (class_exists($newName)) {
@@ -172,9 +174,9 @@ class Tx_HelfenKannJeder_Controller_SupportController
 									}
 								}
 								break;
-							case Tx_Extbase_Persistence_Mapper_ColumnMap::RELATION_BELONGS_TO_MANY:
+							case \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap::RELATION_BELONGS_TO_MANY:
 								break;
-							case Tx_Extbase_Persistence_Mapper_ColumnMap::RELATION_NONE:
+							case \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\ColumnMap::RELATION_NONE:
 								if (in_array($destMethodSet, $destMethods)) {
 									call_user_func(array(&$destObject, $destMethodSet), $getterResult);
 								}
@@ -198,7 +200,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function test2liveAction($organisationDraft) {
 		if ($organisationDraft->getSupporter() != $this->frontendUser) {
@@ -208,11 +210,11 @@ class Tx_HelfenKannJeder_Controller_SupportController
 
 		$organisationDraft->setRequest(2);
 		$organisationDraft->setRequesttime(time());
-		$destObject = $this->syncObject("Tx_HelfenKannJeder_Domain_Model_OrganisationDraft", "Tx_HelfenKannJeder_Domain_Model_Organisation", $organisationDraft);
+		$destObject = $this->syncObject("\\Querformatik\\HelfenKannJeder\\Domain\\Model\\OrganisationDraft", "\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Organisation", $organisationDraft);
 		$this->organisationDraftRepository->update($organisationDraft);
 		if ($organisationDraft->getFeuser()->getEmail() != "") {
-			$mailHeadline = Tx_Extbase_Utility_Localization::translate('mail.organisation.requestSucceed.headline', 'HelfenKannJeder');
-			$mailContent = sprintf(Tx_Extbase_Utility_Localization::translate('mail.organisation.requestSucceed.content', 'HelfenKannJeder'), $organisationDraft->getFeuser()->getFirstName());
+			$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.organisation.requestSucceed.headline', 'HelfenKannJeder');
+			$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.organisation.requestSucceed.content', 'HelfenKannJeder'), $organisationDraft->getFeuser()->getFirstName());
 			$this->mailService->send($organisationDraft->getFeuser()->getEmail(), $mailHeadline, $mailContent);
 			$this->mailService->send("valentin.zickner@helfenkannjeder.de", $mailHeadline, $mailContent); // TODO: Maybe this should specified in the settings.
 		}
@@ -227,17 +229,17 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_Organisation $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation
 	 */
 	public function live2testAction($organisation) {
-/*		$destObject = $this->syncObject("Tx_HelfenKannJeder_Domain_Model_Organisation", "Tx_HelfenKannJeder_Domain_Model_OrganisationDraft", &$organisation);
+/*		$destObject = $this->syncObject("\Querformatik\HelfenKannJeder\Domain\Model\Organisation", "\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft", &$organisation);
 		$this->organisationRepository->update($organisation);
 		$this->persistenceManager->persistAll();
 		$this->logService->insert("The organisation was recopied to workspace.", $organisation->getReference());*/
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function diffAction($organisationDraft) {
 		if ($organisationDraft->getSupporter() != $this->frontendUser) {
@@ -257,15 +259,15 @@ class Tx_HelfenKannJeder_Controller_SupportController
 		$this->view->assign('groupsDraft', $this->groupDraftRepository->findByOrganisationUid($organisationDraft->getUid()));
 
 		$organisation = $organisationDraft->getReference();
-		if ($organisation instanceof Tx_Extbase_Persistence_LazyLoadingProxy) {
+		if ($organisation instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy) {
 			$organisation = $organisation->_loadRealInstance();
 		}
 		$this->view->assign('organisation', $organisation);
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
+		if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
 			$this->view->assign('employees', $this->employeeRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 			$this->view->assign('groups', $this->groupRepository->findByOrganisationUid($organisation->getUid()));
 		}
-/*		$organisationDiff = new Tx_HelfenKannJeder_Domain_Model_OrganisationDraft();
+/*		$organisationDiff = new \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft();
 		$organisationDiff->setName("<span style='color:red'>test</span>");
 		$this->view->assign('organisationDiff', $organisationDiff);*/
 //		$this->view->assign('employeesDiff', $this->employeeDraftRepository->findByOrganisationUidWithStatement($organisationDraft->getUid()));
@@ -273,7 +275,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function viewAction($organisationDraft) {
 		if ($organisationDraft->getSupporter() != $this->frontendUser) {
@@ -294,7 +296,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function backAction($organisationDraft) {
 		if ($organisationDraft->getSupporter() != $this->frontendUser) {
@@ -310,7 +312,7 @@ class Tx_HelfenKannJeder_Controller_SupportController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function denyAction($organisationDraft) {
 		if ($organisationDraft->getSupporter() != $this->frontendUser) {
@@ -323,8 +325,8 @@ class Tx_HelfenKannJeder_Controller_SupportController
 		$this->organisationDraftRepository->update($organisationDraft);
 
 		if ($organisationDraft->getFeuser()->getEmail() != "") {
-			$mailHeadline = Tx_Extbase_Utility_Localization::translate('mail.organisation.requestDeny.headline', 'HelfenKannJeder');
-			$mailContent = sprintf(Tx_Extbase_Utility_Localization::translate('mail.organisation.requestDeny.content', 'HelfenKannJeder'), $organisationDraft->getFeuser()->getFirstName());
+			$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.organisation.requestDeny.headline', 'HelfenKannJeder');
+			$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.organisation.requestDeny.content', 'HelfenKannJeder'), $organisationDraft->getFeuser()->getFirstName());
 			$this->mailService->send($organisationDraft->getFeuser()->getEmail(), $mailHeadline, $mailContent);
 		}
 

@@ -1,16 +1,18 @@
 <?php
-class Tx_HelfenKannJeder_Controller_OverviewController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class OverviewController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $organisationRepository;
 	protected $employeeRepository;
 	protected $groupRepository;
 
 	public function initializeAction() {
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
-		$this->organisationRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->organisationRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 
-		$this->employeeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository');
-		$this->groupRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupRepository');
+		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
+		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
 	}
 
 	/**
@@ -43,10 +45,10 @@ class Tx_HelfenKannJeder_Controller_OverviewController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_Organisation $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation
 	 * @return void
 	 */
-	public function detailAction(Tx_HelfenKannJeder_Domain_Model_Organisation $organisation) {
+	public function detailAction(\Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation) {
 		$this->view->assign('organisation', $organisation);
 		$this->view->assign('employees', $this->employeeRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 		$this->view->assign('groups', $this->groupRepository->findByOrganisationUid($organisation->getUid()));

@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_Controller_MatrixController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class MatrixController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $accessControlService;
 	protected $matrixService;
 	protected $matrixRepository;
@@ -9,37 +11,37 @@ class Tx_HelfenKannJeder_Controller_MatrixController
 	protected $excelService;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * injectPersistenceManager
 	 *
-	 * @param Tx_Extbase_Persistence_ManagerInterface $persistenceManager
+	 * @param \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager
 	 */
-	public function injectPersistenceManager(Tx_Extbase_Persistence_ManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('Tx_HelfenKannJeder_Service_AccessControlService');
-		$this->matrixService = $this->objectManager->get('Tx_HelfenKannJeder_Service_MatrixService');
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service_AccessControlService');
+		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 
-		$this->matrixRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_MatrixRepository');
+		$this->matrixRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\MatrixRepository');
 
-		$this->activityRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityRepository');
-		$this->activityRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->activityRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityRepository');
+		$this->activityRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 
-		$this->activityfieldRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityFieldRepository');
-		$this->activityfieldRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
+		$this->activityfieldRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_Organisation $organisation The matrix to edit
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation The matrix to edit
 	 * @return void
 	 */
-	public function viewAction(Tx_HelfenKannJeder_Domain_Model_Organisation $organisation) {
+	public function viewAction(\Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation) {
 		$activities = $this->activityRepository->findAll();
 		$activityfields = $this->activityfieldRepository->findAll();
 		$this->view->assign('activityfields', $activityfields);
@@ -53,7 +55,7 @@ class Tx_HelfenKannJeder_Controller_MatrixController
 
 		$activities = $activities->toArray();
 		foreach ($activities as $key => $activity) {
-			if (!($activity instanceof Tx_HelfenKannJeder_Domain_Model_Activity) || !in_array($activity->getUid(), $activityList)) {
+			if (!($activity instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) || !in_array($activity->getUid(), $activityList)) {
 //				echo "ok";
 				unset($activities[$key]);
 			}
@@ -65,10 +67,10 @@ class Tx_HelfenKannJeder_Controller_MatrixController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_ActivityField $activityfield The activity field
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\ActivityField $activityfield The activity field
 	 * @return void
 	 */
-	public function columnAction(Tx_HelfenKannJeder_Domain_Model_ActivityField $activityfield) {
+	public function columnAction(\Querformatik\HelfenKannJeder\Domain\Model\ActivityField $activityfield) {
 		$this->view->assign('activityfield', $activityfield);
 		$this->view->assign('width', 20);
 		$this->view->assign('height', 250);
@@ -86,7 +88,7 @@ class Tx_HelfenKannJeder_Controller_MatrixController
 	 * @return void
 	 */
 	public function initializeImportAction() {
-		$this->excelService = $this->objectManager->get('Tx_HelfenKannJeder_Service_ExcelService');
+		$this->excelService = $this->objectManager->get('\Querformatik\HelfenKannJeder\Service\ExcelService');
 		$this->excelService->setActivityfieldRepository($this->activityfieldRepository);
 	}
 

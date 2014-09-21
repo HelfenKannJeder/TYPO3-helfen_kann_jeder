@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * HelfenKannJeder Project
  *
@@ -9,21 +11,20 @@
  *    HelfenKannJeder e.V.
  * @date: 2013-11-09
  */
-class Tx_HelfenKannJeder_Domain_Model_GroupOfGroupTemplate
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class GroupOfGroupTemplate extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
 	protected $name;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate>
 	 * @lazy
 	 */
 	protected $groupTemplates;
 
 	public function __construct() {
-		$this->groupTemplates = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groupTemplates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function getName() {

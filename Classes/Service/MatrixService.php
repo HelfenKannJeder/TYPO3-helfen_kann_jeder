@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Service_MatrixService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class MatrixService implements \TYPO3\CMS\Core\SingletonInterface {
 	private $activityList;
 	private $matrix;
 
@@ -17,15 +19,15 @@ class Tx_HelfenKannJeder_Service_MatrixService implements t3lib_Singleton {
 	public function buildOrganisationMatrix( $organisation) {
 		$matrixA = array();
 		$activityList = array();
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_Organisation
-			|| $organisation instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft) {
+		if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation
+			|| $organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft) {
 			foreach ($organisation->getGroups() as $group) {
 				$matrix = $group->getMatrix();
-				if ($matrix instanceof Tx_HelfenKannJeder_Domain_Model_Matrix) {
+				if ($matrix instanceof \Querformatik\HelfenKannJeder\Domain\Model\Matrix) {
 					foreach ($matrix->getMatrixfields() as $matrixfield) {
 						if ($matrixfield > 0) {
-							if ($matrixfield->getActivityfield() instanceof Tx_HelfenKannJeder_Domain_Model_Activityfield &&
-								$matrixfield->getActivity() instanceof Tx_HelfenKannJeder_Domain_Model_Activity) {
+							if ($matrixfield->getActivityfield() instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activityfield &&
+								$matrixfield->getActivity() instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) {
 								$activityfield = $matrixfield->getActivityfield()->getUid();
 								$activity = $matrixfield->getActivity()->getUid();
 								if (!isset($matrixA[$activityfield])) {

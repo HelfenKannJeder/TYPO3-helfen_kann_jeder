@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-11-28
  */
-class Tx_HelfenKannJeder_Domain_Model_OrganisationDraft extends Tx_HelfenKannJeder_Domain_Model_Organisation {
+class OrganisationDraft extends Organisation {
 
 
 	/**
@@ -32,13 +34,13 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationDraft extends Tx_HelfenKannJed
 	public static $REQUEST_SCREENING_BY_SUPPORTER = 3;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_EmployeeDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft>
 	 * @lazy
 	 */
 	protected $contactpersons;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_EmployeeDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft>
 	 *	Persons of this institute.
 	 * @lazy
 	 * @cascade remove
@@ -46,25 +48,25 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationDraft extends Tx_HelfenKannJed
 	protected $employees;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_AddressDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft
 	 */
 	protected $defaultaddress;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_AddressDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\AddressDraft>
 	 * @lazy
 	 * @cascade remove
 	 */
 	protected $addresses;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\GroupDraft>
 	 * @lazy
 	 */
 	protected $groups;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_WorkinghourDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\WorkinghourDraft>
 	 * @lazy
 	 */
 	protected $workinghours;
@@ -80,12 +82,12 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationDraft extends Tx_HelfenKannJed
 	protected $requesttime;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Supporter
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Supporter
 	 */
 	protected $supporter;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 * @lazy
 	 */
 	protected $reference;

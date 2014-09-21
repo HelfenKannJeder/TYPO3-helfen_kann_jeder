@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	public function findNearLatLng($lat, $lng, $age=18) {
 		$query = $this->createQuery();
@@ -113,7 +114,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupRepository
 	        $query = $this->createQuery();
 		return $query->matching(
 			$query->equals('organisation',$organisationUid))
-				->setOrderings( array('sort' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING) )
+				->setOrderings( array('sort' => \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
 				->execute();
 	}
 

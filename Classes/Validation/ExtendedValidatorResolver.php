@@ -1,8 +1,9 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Validation;
 /* 
  * @author Sebastian Kurfürst
  */
-class Tx_HelfenKannJeder_Validation_ExtendedValidatorResolver extends Tx_Extbase_Validation_ValidatorResolver {
+class ExtendedValidatorResolver extends \TYPO3\CMS\Extbase\Validation\ValidatorResolver {
 	/**
 	 * Builds a base validator conjunction for the given data type.
 	 *
@@ -12,7 +13,7 @@ class Tx_HelfenKannJeder_Validation_ExtendedValidatorResolver extends Tx_Extbase
 	 *
 	 *
 	 * @param string $dataType The data type to build the validation conjunction for. Needs to be the fully qualified object name.
-	 * @return Tx_Extbase_Validation_Validator_ConjunctionValidator The validator conjunction or NULL
+	 * @return \TYPO3\CMS\Extbase\Validation\Validator\ConjunctionValidator The validator conjunction or NULL
 	 */
 	public function buildBaseValidatorConjunctionWithRequestData($dataType, $rawRequest) {
 		// Model based validator
@@ -34,7 +35,7 @@ class Tx_HelfenKannJeder_Validation_ExtendedValidatorResolver extends Tx_Extbase
 					foreach ($parsedAnnotation['validators'] as $validatorConfiguration) {
 						$newValidator = $this->createValidator($validatorConfiguration['validatorName'], $validatorConfiguration['validatorOptions']);
 						if ($newValidator === NULL) {
-							throw new Tx_Extbase_Validation_Exception_NoSuchValidator('Invalid validate annotation in ' . $dataType . '::' . $classPropertyName . ': Could not resolve class name for  validator "' . $validatorConfiguration['validatorName'] . '".', 1241098027);
+							throw new \TYPO3\CMS\Extbase\Validation\Exception\NoSuchValidatorException('Invalid validate annotation in ' . $dataType . '::' . $classPropertyName . ': Could not resolve class name for  validator "' . $validatorConfiguration['validatorName'] . '".', 1241098027);
 						}
 						$objectValidator->addPropertyValidator($classPropertyName, $newValidator);
 						$validatorCount ++;

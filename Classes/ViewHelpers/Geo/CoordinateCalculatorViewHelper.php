@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Geo_CoordinateCalculatorViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Geo;
+
+class CoordinateCalculatorViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 
 	/**
 	 * @param integer $coordinate First value.

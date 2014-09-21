@@ -1,4 +1,4 @@
-{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+{namespace hkj=Querformatik\HelfenKannJeder\ViewHelpers}
 <f:for each="{contactpersons}" as="contactperson" iteration="cp_iteration">
 	<f:if condition="{contactperson.pictures}">
 		<div class="helfen_kann_jeder_overview_detail_contactperson_picture"><hkj:image.first path="uploads/tx_helfenkannjeder/" src="{contactperson.pictures}" alt="Picture" width="90c" height="90c" /></div>

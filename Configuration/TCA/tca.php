@@ -196,7 +196,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation',
 			'config' => array(
 				'type' => 'select',
-				'foreign_class' => 'Tx_HelfenKannJeder_Domain_Model_Organisation',
+				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Organisation',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
 				'foreign_table_where' => 'AND tx_helfenkannjeder_domain_model_organisation.is_dummy=1',
 				'items' => array(
@@ -637,7 +637,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.supporter',
 			'config' => array(
 				'type' => 'select',
-				'foreign_class' => 'Tx_HelfenKannJeder_Domain_Model_Supporter',
+				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
 				'foreign_table' => 'fe_users',
 				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Tx_HelfenKannJeder_Domain_Model_Supporter"',
 				'items' => array(
@@ -3632,7 +3632,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.supporter',
 			'config' => array(
 				'type' => 'select',
-				'foreign_class' => 'Tx_HelfenKannJeder_Domain_Model_Supporter',
+				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
 				'foreign_table' => 'fe_users',
 				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Tx_HelfenKannJeder_Domain_Model_Supporter"',
 				'items' => array(

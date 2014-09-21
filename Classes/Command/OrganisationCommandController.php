@@ -1,17 +1,19 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Command;
+
 /**
  * Remind controller
  */
-class Tx_HelfenKannJeder_Command_OrganisationCommandController extends Tx_Extbase_MVC_Controller_CommandController {
+class OrganisationCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandController {
 
 	/**
-	 * @var Tx_Extbase_Configuration_ConfigurationManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
 	 * @inject
 	 */
 	protected $configurationManager;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_GroupRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\GroupRepository
 	 * @inject
 	 */
 	protected $groupRepository;

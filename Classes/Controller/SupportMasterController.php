@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_Controller_SupportMasterController
-	extends Tx_HelfenKannJeder_Controller_AbstractOrganisationController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class SupportMasterController
+	extends AbstractOrganisationController {
 	protected $supportService;
 	protected $googleMapsService;
 	protected $organisationTypeRepository;
@@ -14,22 +16,22 @@ class Tx_HelfenKannJeder_Controller_SupportMasterController
 	protected $registerOrganisationProgressRepository;
 
 	public function initializeAction() {
-		$this->supportService = $this->objectManager->get('Tx_HelfenKannJeder_Service_SupportService');
-		$this->googleMapsService = $this->objectManager->get('Tx_HelfenKannJeder_Service_GoogleMapsService');
-		$this->organisationTypeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationTypeRepository');
-		$this->supporterRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_SupporterRepository');
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
-		$this->employeeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository');
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
-		$this->groupRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupRepository');
-		$this->registerOrganisationProgressRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_RegisterOrganisationProgressRepository');
+		$this->supportService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\SupportService');
+		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
+		$this->organisationTypeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationTypeRepository');
+		$this->supporterRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\SupporterRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
+		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
+		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
+		$this->registerOrganisationProgressRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\RegisterOrganisationProgressRepository');
 	}
 
 	/**
 	 * @param string $zipcode Zipcode to search for.
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationType $organisationType Organisation to search for
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType $organisationType Organisation to search for
 	 */
 	public function indexAction($zipcode=null, $organisationType=null) {
 		$this->view->assign("zipcode", $zipcode);
@@ -53,7 +55,7 @@ class Tx_HelfenKannJeder_Controller_SupportMasterController
 	 */
 	public function mailtestAction($mail=null) {
 		if ($mail != null) {
-			$mailService = $this->objectManager->get('Tx_QuBase_Service_MailService');
+			$mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 			$recipients = $mailService->send($mail, "[HKJ-WWW] Test", "Test Nachricht");
 			$this->view->assign('recipients', $recipients);
 		}
@@ -72,7 +74,7 @@ class Tx_HelfenKannJeder_Controller_SupportMasterController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 */
 	public function diffAction($organisationDraft) {
 		$this->view->assign('organisationDraft', $organisationDraft);
@@ -81,7 +83,7 @@ class Tx_HelfenKannJeder_Controller_SupportMasterController
 
 		$organisation = $organisationDraft->getReference();
 		$this->view->assign('organisation', $organisation);
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
+		if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
 			$this->view->assign('employees', $this->employeeRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 			$this->view->assign('groups', $this->groupRepository->findByOrganisationUid($organisation->getUid()));
 		}

@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Validator;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,34 +10,30 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-01-16
  */
-class Tx_HelfenKannJeder_Domain_Validator_OrganisationEmployeeValidator
-	extends Tx_HelfenKannJeder_Domain_Validator_OrganisationAbstractValidator {
+class OrganisationEmployeeValidator extends OrganisationAbstractValidator {
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 */
-	public function isValid($organisation) {
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft) {
-			$returnValue = true;
+	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
+		$returnValue = true;
 
-			foreach ($organisation->getEmployees() as $employee) {
-				$employeeValid = $this->isValidEmployee($employee);
-				$returnValue &= $employeeValid;
-				if (!$employeeValid)
-					$this->addInvalidField('employee', $employee->getUid(), '');
-			}
-
-			return $returnValue;
+		foreach ($organisation->getEmployees() as $employee) {
+			$employeeValid = $this->isValidEmployee($employee);
+			$returnValue &= $employeeValid;
+			if (!$employeeValid)
+				$this->addInvalidField('employee', $employee->getUid(), '');
 		}
-		return false;
+
+		return $returnValue;
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_EmployeeDraft $employee
+	 * @param \Querformatik\HelfenKannJeder\EmployeeDraft $employee
 	 */
-	public function isValidEmployee($employee) {
+	public function isValidEmployee(\Querformatik\HelfenKannJeder\EmployeeDraft $employee) {
 		$returnValue = true;
-		if ($employee instanceof Tx_HelfenKannJeder_Domain_Model_EmployeeDraft && !$employee->getIscontact()) {
+		if (!$employee->getIscontact()) {
 			if (trim($employee->getPrename()) == "") {
 				$this->addError('error_organisation_employee_person_missing_prename', 1327013197);
 				$this->addInvalidField('employee', $employee->getUid(), 'prename');

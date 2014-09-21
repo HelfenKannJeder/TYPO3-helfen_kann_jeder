@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Storage_ContainsViewHelper
-	extends Tx_Fluid_ViewHelpers_IfViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Storage;
+
+class ContainsViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\IfViewHelper {
 
 	/**
 	 * @param mixed $storage The object to search in.
@@ -8,7 +9,7 @@ class Tx_HelfenKannJeder_ViewHelpers_Storage_ContainsViewHelper
 	 * @return boolean contains or not
 	 */
 	public function render($storage = NULL, $object = NULL) {
-		return ($storage instanceof Tx_Extbase_Persistence_ObjectStorage && $storage->contains($object)) || (is_array($storage) && in_array($object, $storage));
+		return ($storage instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage && $storage->contains($object)) || (is_array($storage) && in_array($object, $storage));
 	}
 }
 ?>

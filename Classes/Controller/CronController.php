@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_Controller_CronController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class CronController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 				// TODO: Dynamic by typoscript settings
 	protected $passphrase = "Yhc_vjr5b7h0IXYVSABWV1YLwsPXpo9YrhnlQOlUZpDo30co0E_rNQiZB8A8anJ5";
 	protected $mailService;
@@ -8,13 +10,13 @@ class Tx_HelfenKannJeder_Controller_CronController
 	protected $organisationDraftRepository;
 
 	public function initializeAction() {
-		$this->mailService = $this->objectManager->get('Tx_QuBase_Service_MailService');
+		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
 				// TODO: Dynamic by typoscript settings
 		$this->mailService->setAdditionalHeader("Bcc: valentin.zickner@helfenkannjeder.de");
-		$this->logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
+		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
 	}
 
 	/**
@@ -42,8 +44,8 @@ class Tx_HelfenKannJeder_Controller_CronController
 			$feUser = $organisationDraft->getFeuser();
 			$sendTo .= $organisationDraft->getName()."\n";
 
-			$mailHeadline = Tx_Extbase_Utility_Localization::translate('mail_reminder_organisation_register_headline', 'HelfenKannJeder');
-			$mailContent = Tx_Extbase_Utility_Localization::translate('mail_reminder_organisation_register_content', 'HelfenKannJeder');
+			$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail_reminder_organisation_register_headline', 'HelfenKannJeder');
+			$mailContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail_reminder_organisation_register_content', 'HelfenKannJeder');
 			$linkToRemoveFromList = $this->uriBuilder->setTargetPageUid($this->settings["registerOrganisationStepsPart2"])->uriFor("doNotRemindMe", array("organisationDraft"=>$organisationDraft, "hash"=>$organisationDraft->getControlHash()), "Register");
 			$mailContent = sprintf($mailContent, $feUser->getFirstName()." ".$feUser->getLastName(), date("d.m.Y", $organisationDraft->getCrDate()), $organisationDraft->getName(), $linkToRemoveFromList);
 			$this->mailService->send($feUser->getEmail(), $mailHeadline, $mailContent);

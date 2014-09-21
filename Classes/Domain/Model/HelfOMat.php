@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-06-15
  */
-class Tx_HelfenKannJeder_Domain_Model_HelfOMat
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class HelfOMat extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
@@ -21,7 +22,7 @@ class Tx_HelfenKannJeder_Domain_Model_HelfOMat
 	protected $description;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_HelfOMatQuestion>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\HelfOMatQuestion>
 	 */
 	protected $questions;
 
@@ -48,7 +49,7 @@ class Tx_HelfenKannJeder_Domain_Model_HelfOMat
 	public static $METHOD_GROUP = 1;
 
 	public function __construct() {
-		$this->questions = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->questions = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setName($name) {

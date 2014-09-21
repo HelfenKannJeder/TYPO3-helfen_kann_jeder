@@ -1,70 +1,70 @@
 <?php
 if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
-$extensionName = t3lib_div::underscoredToUpperCamelCase($_EXTKEY);
+$extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($_EXTKEY);
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'List', //
 	'HelfenKannJeder'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'GeneratorList', //
 	'Generator'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'MapList', //
 	'Map'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'OverviewList', //
 	'Overview'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'CitysignList',
 	'Citysign'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'PictureList', //
 	'Picture'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'EmployeeList', //
 	'Employee'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'EmployeeDetail', //
 	'Employee Details'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'TestList', //
 	'Test'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'BackerList', //
 	'Backer'
 );
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY, // Extension-Key
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'Location', //
 	'Location'
 );
@@ -73,7 +73,7 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 	/**
 	 * Registers a Backend Module
 	 */
-	Tx_Extbase_Utility_Extension::registerModule(
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
 		$_EXTKEY,
 		'web',    // Make module a submodule of 'web'
 		'helfenkannjeder',    // Submodule key

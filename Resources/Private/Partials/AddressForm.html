@@ -1,4 +1,4 @@
-{namespace hkj=Tx_HelfenKannJeder_ViewHelpers}
+{namespace hkj=Querformatik\HelfenKannJeder\ViewHelpers}
 <div class="organisationAddressHeadline {hkj:isValid(errors: errorFields, object: 'address', id: address.uid, property: '')} {f:if(condition:'{address.uid} == {organisation.defaultaddress.uid}', then:'organisationAddressHeadlineDefault')}" id="organisationAddressNum_{num}" onclick="register_organisation_object_detail_show(this);"{f:if(condition: '{invisible} == 1', then: ' style="display:none"')}>
 <div style="float:right;cursor:pointer" onclick="if (window.confirm('{f:translate(key: 'organisation_address_delete_question')}')) register_organisation_object_delete(this);" onmouseover="register_organisation_object_delete_button_over(this);" onmouseout="register_organisation_object_delete_button_out(this);"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_delete.png')}" alt="Delete" /></div>
 <div style="float:right;cursor:pointer"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_edit.png')}" alt="Edit" /></div>

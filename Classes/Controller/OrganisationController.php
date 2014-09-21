@@ -1,34 +1,35 @@
 <?php
-class Tx_HelfenKannJeder_Controller_OrganisationController
-	extends Tx_HelfenKannJeder_Controller_AbstractOrganisationController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class OrganisationController extends AbstractOrganisationController {
 	/**
 	 * organisationDraftRepository
 	 *
-	 * @var Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
 	 */
 	protected $organisationDraftRepository;
 
 	/**
 	 * injectOrganisationDraftRepository
 	 *
-	 * @param Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository $organisationDraftRepository
+	 * @param \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository $organisationDraftRepository
 	 * @return void
 	 */
-	public function injectOrganisationDraftRepository(Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository $organisationDraftRepository) {
+	public function injectOrganisationDraftRepository(\Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository $organisationDraftRepository) {
 		$this->organisationDraftRepository = $organisationDraftRepository;
 	}
 
 	/**
-	 * @var Tx_Extbase_Persistence_ManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * injectPersistenceManager
 	 *
-	 * @param Tx_Extbase_Persistence_ManagerInterface $persistenceManager
+	 * @param \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager
 	 */
-	public function injectPersistenceManager(Tx_Extbase_Persistence_ManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 
@@ -53,33 +54,33 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	protected $organisationUids;
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('Tx_HelfenKannJeder_Service_AccessControlService'); // Singleton
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 
-		$this->registerOrganisationProgressRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_RegisterOrganisationProgressRepository');
+		$this->registerOrganisationProgressRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\RegisterOrganisationProgressRepository');
 		$this->registerOrganisationProgress = $this->registerOrganisationProgressRepository->findByCurrentSession($this->accessControlService->getSessionId(),1800);
 
-		$this->matrixService = $this->objectManager->get('Tx_HelfenKannJeder_Service_MatrixService');
+		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 
-		$this->organisationTypeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationTypeRepository');
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
+		$this->organisationTypeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationTypeRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
 
-		$this->employeeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository');
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
+		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
 
-		$this->frontendUserRepository = $this->objectManager->get('Tx_Extbase_Domain_Repository_FrontendUserRepository');
-		$this->frontendUserGroupRepository = $this->objectManager->get('Tx_Extbase_Domain_Repository_FrontendUserGroupRepository');
+		$this->frontendUserRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserRepository');
+		$this->frontendUserGroupRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserGroupRepository');
 		$this->frontendUser = $this->accessControlService->getFrontendUser();
 
-		$this->activityRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityRepository');
-		$this->activityfieldRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityFieldRepository');
+		$this->activityRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityRepository');
+		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
 
-		$this->googleMapsService = $this->objectManager->get('Tx_HelfenKannJeder_Service_GoogleMapsService');
+		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
 		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
 		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 
-		$this->mailService = $this->objectManager->get('Tx_QuBase_Service_MailService');
+		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
-		$this->logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
+		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 
 		$this->organisationUids = array();
 		$this->organisations = $this->organisationDraftRepository->findByFeuser($this->frontendUser->getUid());
@@ -108,10 +109,10 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @return void
 	 */
-	public function showAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation) {
+	public function showAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -152,11 +153,11 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @param array $errorFields Error fields from the save action.
 	 * @return void
 	 */
-	public function generalAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation, $errorFields = array()) {
+	public function generalAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation, $errorFields = array()) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -179,12 +180,12 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @ignorevalidation $organisation
 	 * @dontverifyrequesthash
 	 * @return void
 	 */
-	public function generalSendAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation) {
+	public function generalSendAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -215,11 +216,11 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @param array $errorFields Error fields from the save action.
 	 * @return void
 	 */
-	public function workinghourAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation, $errorFields = array()) {
+	public function workinghourAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation, $errorFields = array()) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -240,7 +241,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $organisation
 	 * @dontverifyrequesthash
 	 * @return void
@@ -269,11 +270,11 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @param array $errorFields Error fields from the save action.
 	 * @return void
 	 */
-	public function groupAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation, $errorFields = array()) {
+	public function groupAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation, $errorFields = array()) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -298,7 +299,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $organisation
 	 * @dontverifyrequesthash
 	 * @return void
@@ -328,11 +329,11 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation The organisation to show
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation The organisation to show
 	 * @param array $errorFields Error fields from the save action.
 	 * @return void
 	 */
-	public function pictureAction(Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation, $errorFields = array()) {
+	public function pictureAction(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation, $errorFields = array()) {
 		if (!in_array($organisation->getUid(), $this->organisationUids)) {
 			$this->redirect('index'); return;
 		}
@@ -360,7 +361,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
@@ -388,7 +389,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @param integer $newStatus
 	 * @return void
 	 */
@@ -411,9 +412,9 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 				$organisation->setRequesttime(time());
 
 				$supporter = $organisation->getSupporter();
-				if ($supporter instanceof Tx_HelfenKannJeder_Domain_Model_Supporter && $supporter->getEmail() != "") {
-					$mailHeadline = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.afterRequest.headline', 'HelfenKannJeder'), $organisation->getName());
-					$mailContent = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
+				if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter && $supporter->getEmail() != "") {
+					$mailHeadline = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.headline', 'HelfenKannJeder'), $organisation->getName());
+					$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 					$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 				}
 				$this->logService->insert("The organisation added a publishing request.", $organisation);
@@ -432,9 +433,9 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 
 		if ($sendmail) {
 			$supporter = $organisation->getSupporter();
-			if ($supporter instanceof Tx_HelfenKannJeder_Domain_Model_Supporter && $supporter->getEmail() != "") {
-				$mailHeadline = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.removedRequest.headline', 'HelfenKannJeder'), $organisation->getName());
-				$mailContent = sprintf(Tx_Extbase_Utility_Localization::translate('mail.supporter.removedRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
+			if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter && $supporter->getEmail() != "") {
+				$mailHeadline = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.removedRequest.headline', 'HelfenKannJeder'), $organisation->getName());
+				$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.removedRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 				$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 			}
 			$this->logService->insert("The organisation removed a publishing request.", $organisation);
@@ -446,7 +447,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
@@ -468,7 +469,7 @@ class Tx_HelfenKannJeder_Controller_OrganisationController
 
 		$activities = $activities->toArray();
 		foreach ($activities as $key => $activity) {
-			if (!($activity instanceof Tx_HelfenKannJeder_Domain_Model_Activity) || !in_array($activity->getUid(), $activityList)) {
+			if (!($activity instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) || !in_array($activity->getUid(), $activityList)) {
 //				echo "ok";
 				unset($activities[$key]);
 			}

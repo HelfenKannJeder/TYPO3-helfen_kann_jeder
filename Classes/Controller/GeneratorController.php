@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Controller_GeneratorController
-	extends Tx_HelfenKannJeder_Controller_AbstractSearchController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class GeneratorController extends AbstractSearchController {
 	protected $organisationRepository;
 	protected $matrixRepository;
 	protected $groupRepository;
@@ -9,24 +10,24 @@ class Tx_HelfenKannJeder_Controller_GeneratorController
 	protected $activityfieldRepository;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_UserRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\UserRepository
 	 * @inject
 	 */
 	protected $userRepository;
 
 	public function initializeAction() {
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
-		$this->matrixRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_MatrixRepository');
-		$this->groupRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupRepository');
-		$this->matrixFieldRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_MatrixFieldRepository');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->matrixRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\MatrixRepository');
+		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
+		$this->matrixFieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\MatrixFieldRepository');
 
-		$this->activityRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityRepository');
-		$this->activityRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->activityRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityRepository');
+		$this->activityRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 
-		$this->activityfieldRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_ActivityFieldRepository');
-		$this->activityfieldRepository->setDefaultOrderings(array('name'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
+		$this->activityfieldRepository->setDefaultOrderings(array('name'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 
-		$this->userService = $this->objectManager->get('Tx_HelfenKannJeder_Service_UserService');
+		$this->userService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\UserService');
 	}
 
 	/**
@@ -62,10 +63,10 @@ class Tx_HelfenKannJeder_Controller_GeneratorController
 
 		if ($typeChange == "activity" || $typeChange == "activityfield") {
 			if ($typeChange == "activity") {
-				$userdo = new Tx_HelfenKannJeder_Domain_Model_UserdoActivity();
+				$userdo = new \Querformatik\HelfenKannJeder\Domain\Model\UserdoActivity();
 				$userdo->setActivity($newId);
 			} else {
-				$userdo = new Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield();
+				$userdo = new \Querformatik\HelfenKannJeder\Domain\Model\UserdoActivityfield();
 				$userdo->setActivityfield($newId);
 			}
 			$userdo->setStatus($newStatus);
@@ -98,7 +99,7 @@ class Tx_HelfenKannJeder_Controller_GeneratorController
 
 		$user = $this->userService->getBySessionId(session_id());
 
-		$userdo = new Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch();
+		$userdo = new \Querformatik\HelfenKannJeder\Domain\Model\UserdoActivitysearch();
 		$userdo->setInput($search);
 		$userdo->setResult(count($activities));
 		$userdo->setUser($user);

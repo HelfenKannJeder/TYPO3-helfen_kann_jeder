@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Condition_BackerListBreakViewHelper
-	extends Tx_Fluid_ViewHelpers_IfViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Condition;
+
+class BackerListBreakViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\IfViewHelper {
 
 	/**
 	 * @param mixed $num The number to prove

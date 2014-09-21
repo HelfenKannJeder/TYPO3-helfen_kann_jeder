@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_SupporterRepository
-	extends Tx_Extbase_Domain_Repository_FrontendUserRepository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class SupporterRepository extends \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository {
 	function findByUsergroups($groups) {
 		$query = $this->createQuery();
 		$constraint = array();

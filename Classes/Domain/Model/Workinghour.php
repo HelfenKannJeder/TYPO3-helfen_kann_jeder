@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,10 +10,10 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-07-06
  */
-class Tx_HelfenKannJeder_Domain_Model_Workinghour
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Workinghour
+		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
 	protected $organisation;
 
@@ -41,12 +43,12 @@ class Tx_HelfenKannJeder_Domain_Model_Workinghour
 	protected $stoptimeminute;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Group>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Group>
 	 */
 	protected $groups;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Address
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Address
 	 */
 	protected $address;
 
@@ -56,13 +58,13 @@ class Tx_HelfenKannJeder_Domain_Model_Workinghour
 	protected $addition;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_WorkinghourDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\WorkinghourDraft
 	 * @lazy
 	 */
 	protected $reference;
 
 	public function __construct() {
-		$this->groups = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setOrganisation($organisation) {

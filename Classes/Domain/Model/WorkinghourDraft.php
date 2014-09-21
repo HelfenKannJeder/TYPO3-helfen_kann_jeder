@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,25 +10,24 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-01-11
  */
-class Tx_HelfenKannJeder_Domain_Model_WorkinghourDraft
-		extends Tx_HelfenKannJeder_Domain_Model_Workinghour {
+class WorkinghourDraft extends Workinghour {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 */
 	protected $organisation;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupDraft>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\GroupDraft>
 	 */
 	protected $groups;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_AddressDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft
 	 */
 	protected $address;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Workinghour
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Workinghour
 	 * @lazy
 	 */
 	protected $reference;

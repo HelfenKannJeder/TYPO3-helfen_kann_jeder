@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,8 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Tx_HelfenKannJeder_Domain_Model_Activity
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Activity
+		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
@@ -21,12 +23,12 @@ class Tx_HelfenKannJeder_Domain_Model_Activity
 	protected $description;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_ActivityField>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\ActivityField>
 	 */
 	protected $activityFields;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Word>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Word>
 	 */
 	protected $words;
 
@@ -36,8 +38,8 @@ class Tx_HelfenKannJeder_Domain_Model_Activity
 	protected $keywords;
 
 	public function __construct($name) {
-		$this->activityFields = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->words = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->activityFields = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->words = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->setName($name);
 	}
 

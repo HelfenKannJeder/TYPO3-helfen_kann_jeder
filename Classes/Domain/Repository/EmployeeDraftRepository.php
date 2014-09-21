@@ -1,9 +1,10 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository
-	extends Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class EmployeeDraftRepository extends EmployeeRepository {
 
 	public function findByOrganisationAndUid($organisation, $uid) {
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
+		if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
 			$organisationUid = $organisation->getUid();
 		} else if (is_int($organisation)) {
 			$organisationUid = $organisation;
@@ -33,7 +34,7 @@ class Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository
 				)
 			)
 		)
-				->setOrderings( array('prename' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING) )
+				->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
 				->execute();
 	}
 }

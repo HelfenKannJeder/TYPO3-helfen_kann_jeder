@@ -1,6 +1,14 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Diff_TextViewHelper
-	extends Tx_Fluid_ViewHelpers_IfViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Diff;
+
+class TextViewHelper
+	extends \TYPO3\CMS\Fluid\ViewHelpers\IfViewHelper {
+
+	/**
+	 * @var Querformatik\HelfenKannJeder\Service\HtmlDiffService
+	 * @inject
+	 */
+	protected $diffService;
 
 	/**
 	 * @param string $old The old reference text
@@ -12,24 +20,7 @@ class Tx_HelfenKannJeder_ViewHelpers_Diff_TextViewHelper
 			$new = $this->renderChildren();
 		}
 
-		$diffService = t3lib_div::makeInstance('Tx_HelfenKannJeder_Service_HtmlDiffService');
-
-		return $diffService->diff($old, $new);
-/*
-		// TODO implement php diff function!
-		$oldArray = explode("\n", $old);
-		$newArray = explode("\n", $new);
-		$diff = new Text_Diff('auto', array($oldArray, $newArray));
-		$renderer = new Text_Diff_Renderer_inline(
-			array(
-				'ins_prefix' => '<span class="diff_text_added">',
-				'ins_suffix' => '</span>',
-				'del_prefix' => '<span class="diff_text_removed">',
-				'del_suffix' => '</span>',
-			)
-		);
-
-		return $renderer->render($diff);*/
+		return $this->diffService->diff($old, $new);
 	}
 }
 ?>

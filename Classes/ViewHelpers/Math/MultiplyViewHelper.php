@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Math_MultiplyViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Math;
+
+class MultiplyViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 
 	/**
 	 * @param mixed $a First value.

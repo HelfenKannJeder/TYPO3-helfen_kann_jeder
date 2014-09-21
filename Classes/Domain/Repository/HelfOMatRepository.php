@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,6 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-06-15
  */
-class Tx_HelfenKannJeder_Domain_Repository_HelfOMatRepository
-		extends Tx_Extbase_Persistence_Repository {
+class HelfOMatRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 }
 ?>

@@ -1,16 +1,18 @@
 <?php
-class Tx_HelfenKannJeder_Controller_EmployeeController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class EmployeeController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $organisationRepository;
 	protected $employeeRepository;
 	protected $configurationManager;
 	protected $contentObject;
 
 	public function initializeAction() {
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
-		$this->employeeRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeRepository');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
 
-		$this->configurationManager = $this->objectManager->get("Tx_Extbase_Configuration_ConfigurationManager");
+		$this->configurationManager = $this->objectManager->get("\\TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManager");
 		$this->contentObject = $this->configurationManager->getContentObject();
 	}
 
@@ -26,10 +28,10 @@ class Tx_HelfenKannJeder_Controller_EmployeeController
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_Employee $employee Employee to display
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Employee $employee Employee to display
 	 * @return void
 	 */
-	public function detailAction(Tx_HelfenKannJeder_Domain_Model_Employee $employee) {
+	public function detailAction(\Querformatik\HelfenKannJeder\Domain\Model\Employee $employee) {
 		$this->view->assign('employee', $employee);
 	}
 
@@ -58,7 +60,7 @@ class Tx_HelfenKannJeder_Controller_EmployeeController
 			$imageInfo = $this->contentObject->getImgResource($src, $setup);
 			$GLOBALS['TSFE']->lastImageInfo = $imageInfo;
 			if (!is_array($imageInfo)) {
-				throw new Tx_Fluid_Core_ViewHelper_Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
+				throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
 			}
 			$GLOBALS['TSFE']->imagesOnPage[] = $imageInfo[3];
 			return $imageInfo[3];

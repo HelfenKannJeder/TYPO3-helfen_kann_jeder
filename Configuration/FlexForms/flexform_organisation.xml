@@ -43,7 +43,7 @@
 									</numIndex>
 									<numIndex index="7" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xml:tx_helfenkannjeder_action_helfomat</numIndex>
-										<numIndex index="1">HelfOMat->quiz;HelfOMat->result;HelfOMat->groupResult;HelfOMat->detail</numIndex>
+										<numIndex index="1">HelfOMat->quiz;HelfOMat->groupResult</numIndex>
 									</numIndex>
 									<numIndex index="8" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xml:tx_helfenkannjeder_action_location</numIndex>

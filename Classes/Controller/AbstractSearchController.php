@@ -1,11 +1,13 @@
 <?php
-class Tx_HelfenKannJeder_Controller_AbstractSearchController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class AbstractSearchController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $gradeMin = null;
 	protected $gradeMax = null;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Service_GoogleMapsService
+	 * @var \Querformatik\HelfenKannJeder\Service\GoogleMapsService
 	 * @inject
 	 */
 	protected $googleMapsService;
@@ -26,8 +28,9 @@ class Tx_HelfenKannJeder_Controller_AbstractSearchController
 
 			$organisationObj = $this->organisationRepository->findByUid($organisation["organisation"]);
 
-			if ($organisationObj instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
-				if ($organisationObj->getOrganisationtype() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationType) {
+			// TODO: Rewrite with visitor pattern
+			if ($organisationObj instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
+				if ($organisationObj->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType) {
 					if (($persLat == 0 && $persLng == 0) || $organisationsNear[$organisation['organisation']]['is_dummy'] == 1) {
 						$distance = -1;
 					} else {

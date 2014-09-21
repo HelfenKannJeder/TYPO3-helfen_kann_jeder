@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Storage_CountByMethodViewHelper
-	extends Tx_Fluid_ViewHelpers_IfViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Storage;
+
+class CountByMethodViewHelper
+	extends \TYPO3\CMS\Fluid\ViewHelpers\IfViewHelper {
 
 	/**
 	 * @param mixed $storage The object to search in.
@@ -11,14 +13,13 @@ class Tx_HelfenKannJeder_ViewHelpers_Storage_CountByMethodViewHelper
 	 */
 	public function render($storage, $method, $methodResult = NULL, $sum = NULL) {
 		$sumItems = 0;
-		if ($storage instanceof Tx_Extbase_Persistence_ObjectStorage) {
+		if ($storage instanceof \TYPO3\CMS\Extbase\Persistence\ObjectStorage) {
 			foreach ($storage as $item) {
 				$result = call_user_func(array(&$item, $method));
 				if ($result == $methodResult) $sumItems++;
 			}
 		}
 		return $sumItems != $sum;
-//		return ($storage instanceof Tx_Extbase_Persistence_ObjectStorage && $storage->contains($object)) || (is_array($storage) && in_array($object, $storage));
 	}
 }
 ?>

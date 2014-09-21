@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Service_GoogleMapsService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class GoogleMapsService implements \TYPO3\CMS\Core\SingletonInterface {
 	protected $googleServer = "";
 	protected $googleApiKey = "";
 
@@ -14,7 +16,7 @@ class Tx_HelfenKannJeder_Service_GoogleMapsService implements t3lib_Singleton {
 	/**
 	 * Mail service
 	 *
-	 * @var Tx_QuBase_Service_MailService
+	 * @var \Tx_QuBase_Service_MailService
 	 * @inject
 	 */
 	protected $mailService;

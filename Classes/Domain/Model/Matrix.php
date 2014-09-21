@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen KAnn Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-05-13
  */
-class Tx_HelfenKannJeder_Domain_Model_Matrix extends Tx_Extbase_DomainObject_AbstractEntity {
+class Matrix extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 * 	Name of the matrix
@@ -16,23 +18,23 @@ class Tx_HelfenKannJeder_Domain_Model_Matrix extends Tx_Extbase_DomainObject_Abs
 	protected $name = '';
 
 	/**
-	 * @var Tx_Extbase_Domain_Model_FrontendUser
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
 	 */
 	protected $feuser;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
 	protected $organisation;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_MatrixField>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\MatrixField>
 	 * @cascade remove
 	 */
 	protected $matrixfields;
 
 	public function __construct() {
-		$this->matrixfields = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->matrixfields = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setName($name) {
@@ -65,7 +67,7 @@ class Tx_HelfenKannJeder_Domain_Model_Matrix extends Tx_Extbase_DomainObject_Abs
 
 	public function getMatrixfield($activityfield, $activity) {
 		foreach ($this->matrixfields as $field) {
-			if ($field instanceof Tx_HelfenKannJeder_Domain_Model_MatrixField
+			if ($field instanceof MatrixField
 				&& $field->getActivity()->getUid() == $activity
 				&& $field->getActivityfield()->getUid() == $activityfield) {
 				return $field;
@@ -79,7 +81,7 @@ class Tx_HelfenKannJeder_Domain_Model_Matrix extends Tx_Extbase_DomainObject_Abs
 	}
 
 	public function removeMatrixfield($matrixfield) {
-		$storage = new Tx_Extbase_Persistence_ObjectStorage();
+		$storage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$storage->attach($matrixfield);
 		$this->matrixfields->removeAll($storage);
 	}

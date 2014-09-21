@@ -1,4 +1,6 @@
 <?php
+namespace \Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-06-19
  */
-class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_DomainObject_AbstractEntity {
+class OrganisationType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var integer
@@ -62,13 +64,13 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 	protected $pseudo;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupTemplateCategory>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\GroupTemplateCategory>
 	 * @lazy
 	 */
 	protected $groupTemplateCategories;
 
 	/**
-	 * @var Tx_Extbase_Domain_Model_FrontendUserGroup
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup
 	 */
 	protected $fegroup;
 
@@ -83,13 +85,13 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 	protected $hideInResult;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 * @lazy
 	 */
 	protected $dummyOrganisation;
 
 	public function __construct() {
-		$this->groupTemplateCategories = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groupTemplateCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setName($name) {
@@ -188,7 +190,7 @@ class Tx_HelfenKannJeder_Domain_Model_OrganisationType extends Tx_Extbase_Domain
 		return $this->hideInResult;
 	}
 
-	public function setDummyOrganisation(Tx_HelfenKannJeder_Domain_Model_Organisation $dummyOrganisation) {
+	public function setDummyOrganisation(Organisation $dummyOrganisation) {
 		$this->dummyOrganisation = $dummyOrganisation;
 	}
 

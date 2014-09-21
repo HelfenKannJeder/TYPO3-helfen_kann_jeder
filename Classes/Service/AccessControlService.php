@@ -1,14 +1,16 @@
 <?php
-class Tx_HelfenKannJeder_Service_AccessControlService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class AccessControlService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_SupporterRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\SupporterRepository
 	 * @inject
 	 */
 	protected $supporterRepository;
 
 	/**
-	 * @var Tx_Extbase_Domain_Repository_FrontendUserRepository
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
 	 * @inject
 	 */
 	protected $feUserRepository;

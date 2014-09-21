@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-09-22
  */
-class Tx_HelfenKannJeder_Domain_Model_Backer
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Backer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */

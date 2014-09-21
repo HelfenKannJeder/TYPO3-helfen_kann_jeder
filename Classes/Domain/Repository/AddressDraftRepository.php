@@ -1,5 +1,6 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_AddressDraftRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class AddressDraftRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_RegisterOrganisationProgressRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class RegisterOrganisationProgressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	public function findByCurrentSession($sessionId, $lifetime) {
 	        $query = $this->createQuery();
 		return $query->matching(

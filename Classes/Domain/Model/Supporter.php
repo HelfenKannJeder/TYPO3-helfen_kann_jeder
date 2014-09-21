@@ -1,5 +1,6 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Model_Supporter
-		extends Tx_Extbase_Domain_Model_FrontendUser {
+namespace \Querformatik\HelfenKannJeder\Domain\Model;
+
+class Supporter extends \TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 }
 ?>

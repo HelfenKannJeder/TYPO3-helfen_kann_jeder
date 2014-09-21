@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_View_Matrix_Column extends Tx_Extbase_MVC_View_AbstractView {
+namespace Querformatik\HelfenKannJeder\View\Matrix;
+
+class Column extends \TYPO3\CMS\Extbase\Mvc\View\AbstractView {
 	public function render() {
 		if (!isset($this->variables["width"])) $this->variables["width"] = 1;
 		if (!isset($this->variables["height"])) $this->variables["height"] = 1;

@@ -1,16 +1,17 @@
 <?php
-class Tx_HelfenKannJeder_Controller_BackerController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class BackerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	protected $backerRepository;
 
 	public function initializeAction() {
-		$this->backerRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_BackerRepository');
-		$this->backerRepository->setDefaultOrderings(array('since'=>Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		$this->backerRepository = $this->objectManager->get('\Querformatik\HelfenKannJeder\Domain\Repository\BackerRepository');
+		$this->backerRepository->setDefaultOrderings(array('since'=>\TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
 	}
 
 	/**
-	 * @param Tx_HelfenKannJeder_Domain_Model_Backer $backer The backer to display
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Backer $backer The backer to display
 	 * @return void
 	 */
 	public function indexAction($backer = null) {

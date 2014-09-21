@@ -1,20 +1,21 @@
 <?php
-class Tx_HelfenKannJeder_Controller_UserSettingsController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class UserSettingsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $accessControlService;
 	protected $logService;
 	protected $frontendUserRepository;
 	protected $frontendUser;
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('Tx_HelfenKannJeder_Service_AccessControlService');
-		$this->logService = $this->objectManager->get('Tx_HelfenKannJeder_Service_LogService');
-		$this->frontendUserRepository = $this->objectManager->get('Tx_Extbase_Domain_Repository_FrontendUserRepository');
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService');
+		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
+		$this->frontendUserRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserRepository');
 		$this->frontendUser = $this->accessControlService->getFrontendUser();
 	}
 
 	/**
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $frontendUser
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $frontendUser
 	 * @return void
 	 */
 	public function editAction($frontendUser = null) {
@@ -27,25 +28,25 @@ class Tx_HelfenKannJeder_Controller_UserSettingsController
 	}
 
 	/**
-	 * @param Tx_Extbase_Domain_Model_FrontendUser $frontendUser
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $frontendUser
 	 * @return void
 	 */
-	public function saveAction(Tx_Extbase_Domain_Model_FrontendUser $frontendUser) {
+	public function saveAction(\TYPO3\CMS\Extbase\Domain\Model\FrontendUser $frontendUser) {
 		if ($frontendUser->getUid() == $this->frontendUser->getUid() &&
 			$frontendUser->getUsername() == $this->frontendUser->getUsername()) {
 
 			$error = false;
 			if (strlen($frontendUser->getFirstName()) < 2) {
-				$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('usersetting.firstname.toShort', 'HelfenKannJeder'));
+				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.firstname.toShort', 'HelfenKannJeder'));
 				$error = true;
 			}
 			if (strlen($frontendUser->getLastName()) < 2) {
-				$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('usersetting.lastname.toShort', 'HelfenKannJeder'));
+				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.lastname.toShort', 'HelfenKannJeder'));
 				$error = true;
 			}
 			if (!preg_match("/^[A-Zäöü0-9._%+-]+@[A-Zäöü0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si",
 					$frontendUser->getEmail())) {
-				$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_registerorganisationprogress_invalid_mail', 'HelfenKannJeder').$frontendUser->getEmail());
+				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_invalid_mail', 'HelfenKannJeder').$frontendUser->getEmail());
 				$error = true;
 			}
 
@@ -56,15 +57,15 @@ class Tx_HelfenKannJeder_Controller_UserSettingsController
 				if (strlen($password1) == strlen($password2) && strlen($password2) == 0) {
 					// do nothing
 				} else if (strlen($password1) < 8) {
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('usersetting.password.toShort', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.password.toShort', 'HelfenKannJeder'));
 					$error = true;
 				} else if ($password1 != $password2) {
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('usersetting.password.notMatch', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.password.notMatch', 'HelfenKannJeder'));
 					$error = true;
 				} else if (!$error) {
 					$this->logService->insert("User changed the field password.");
 					$frontendUser->setPassword($password1);
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('usersetting.password.changed', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.password.changed', 'HelfenKannJeder'));
 				}
 			}
 

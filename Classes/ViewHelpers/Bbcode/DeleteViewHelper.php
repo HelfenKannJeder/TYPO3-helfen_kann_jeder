@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Bbcode_DeleteViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Bbcode;
+
+class DeleteViewHelper
+	extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 
 	/**
 	 * @param mixed $text First value.

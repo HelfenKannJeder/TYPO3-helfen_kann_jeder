@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_IsValidViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace \Querformatik\HelfenKannJeder\ViewHelpers;
+
+class IsValidViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 
 
 	/**

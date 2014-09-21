@@ -1,8 +1,9 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository
-	extends Tx_HelfenKannJeder_Domain_Repository_GroupRepository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class GroupDraftRepository extends GroupRepository {
 	public function findByOrganisationAndTemplate($organisation, $template) {
-		if ($organisation instanceof Tx_HelfenKannJeder_Domain_Model_Organisation) {
+		if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
 			$organisationUid = $organisation->getUid();
 		} else if (is_int($organisation)) {
 			$organisationUid = $organisation;
@@ -10,7 +11,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository
 			return false;
 		}
 
-		if ($template instanceof Tx_HelfenKannJeder_Domain_Model_GroupTemplate) {
+		if ($template instanceof \Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate) {
 			$templateUid = $template->getUid();
 		} else if (is_int($template)) {
 			$templateUid = $template;
@@ -24,7 +25,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository
 					$query->equals('organisation',$organisationUid),
 					$query->equals('template',$templateUid)
 				))
-				->setOrderings( array('sort' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING) )
+				->setOrderings( array('sort' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
 				->execute();
 	}
 
@@ -33,7 +34,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository
 		if ($organisation != null) {
 			$groupList = $this->findByOrganisation($organisation);
 			foreach ($groupList as $group) {
-				if ($group->getTemplate() instanceof Tx_HelfenKannJeder_Domain_Model_GroupTemplate) {
+				if ($group->getTemplate() instanceof \Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate) {
 					$groupListByTemplate[$group->getTemplate()->getUid()] = $group;
 				}
 			}
@@ -45,7 +46,7 @@ class Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository
 	        $query = $this->createQuery();
 		return $query->matching(
 			$query->equals('organisation',$organisationUid))
-				->setOrderings( array('sort' => Tx_Extbase_Persistence_Query::ORDER_ASCENDING) )
+				->setOrderings( array('sort' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
 				->execute();
 	}
 }

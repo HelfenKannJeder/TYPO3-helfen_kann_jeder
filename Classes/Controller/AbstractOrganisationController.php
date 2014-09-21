@@ -1,20 +1,21 @@
 <?php
-class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	protected $objectManager;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * injectPersistenceManager
 	 *
-	 * @param Tx_Extbase_Persistence_ManagerInterface $persistenceManager
+	 * @param \TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager
 	 */
-	public function injectPersistenceManager(Tx_Extbase_Persistence_ManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 
@@ -68,10 +69,10 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	 * ADDRESSES
 	 */
 	protected function initializeStoreAddresses() {
-		$this->addressDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_AddressDraftRepository');
+		$this->addressDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\AddressDraftRepository');
 
 		// Init google maps
-		$this->googleMapsService = $this->objectManager->get('Tx_HelfenKannJeder_Service_GoogleMapsService');
+		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
 		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
 		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 	}
@@ -91,7 +92,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 
 				if (empty($addressData["id"]) && $addressData["delete"] != "1" &&
 					!empty($addressData["street"]) && !empty($addressData["city"])) {
-					$address = new Tx_HelfenKannJeder_Domain_Model_AddressDraft();
+					$address = new \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft();
 					$address->setStreet($addressData["street"]);
 					$address->setCity($addressData["city"]);
 					$address->setZipcode($addressData["zipcode"]);
@@ -99,14 +100,12 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 					$address->setTelephone($addressData["telephone"]);
 					$address->setWebsite($addressData['website']);
 					$address->validate($this->googleMapsService);
-					//if ($address->validate($this->googleMapsService) !== true)
-//						$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step40_error_address_not_found', 'HelfenKannJeder'));
 					$address->setOrganisation($organisation);
 					$organisation->addAddress($address);
 				} else {
 					$address = $this->addressDraftRepository->findOneByUid($addressData["id"]);
-					if ($address instanceof Tx_HelfenKannJeder_Domain_Model_AddressDraft &&
-						$address->getOrganisation() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft &&
+					if ($address instanceof \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft &&
+						$address->getOrganisation() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft &&
 						$address->getOrganisation()->getUid() == $organisation->getUid()) {
 
 						if ($addressData["delete"] == "1") {
@@ -119,8 +118,6 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 								$address->setCity($addressData["city"]);
 								$address->setZipcode($addressData["zipcode"]);
 								$address->validate($this->googleMapsService);
-								//if ($address->validate($this->googleMapsService) !== true)
-								//	$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('register_step40_error_address_not_found', 'HelfenKannJeder'));
 							}
 							$address->setAddressappendix($addressData["addressappendix"]);
 							$address->setTelephone($addressData["telephone"]);
@@ -137,12 +134,12 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 
 		$this->persistenceManager->persistAll();
 
-		if (!($defaultaddressObject instanceof Tx_HelfenKannJeder_Domain_Model_AddressDraft)) {
+		if (!($defaultaddressObject instanceof \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft)) {
 			$defaultaddressObject = $this->addressDraftRepository->findOneByUid($defaultaddress);
 		}
 		
-		if ($defaultaddressObject instanceof Tx_HelfenKannJeder_Domain_Model_AddressDraft
-			&& $defaultaddressObject->getOrganisation() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+		if ($defaultaddressObject instanceof \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft
+			&& $defaultaddressObject->getOrganisation() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 			&& $defaultaddressObject->getOrganisation()->getUid() == $organisation->getUid()) {
 			$organisation->setDefaultaddress($defaultaddressObject);
 			$organisation->setLongitude($defaultaddressObject->getLongitude());
@@ -154,7 +151,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	 * EMPLOYEES
 	 */ 
 	protected function initializeStoreEmployees() {
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
 	}
 
 	protected function storeEmployees(&$organisation) {
@@ -163,7 +160,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 			foreach ($employees as $employeeNum => $employeeData) {
 				if (empty($employeeData["id"]) && $employeeData["delete"] != "1" &&
 					!(empty($employeeData["surname"]) || empty($employeeData["prename"]))) {
-					$employee = new Tx_HelfenKannJeder_Domain_Model_EmployeeDraft();
+					$employee = new \Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft();
 					$employee->setSurname($employeeData["surname"]);
 					$employee->setPrename($employeeData["prename"]);
 					$employee->setRank($employeeData["rank"]);
@@ -181,8 +178,8 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 					$organisation->addEmployee($employee);
 				} else {
 					$employee = $this->employeeDraftRepository->findOneByUid($employeeData["id"]);
-					if ($employee instanceof Tx_HelfenKannJeder_Domain_Model_EmployeeDraft &&
-						$employee->getOrganisation() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft &&
+					if ($employee instanceof \Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft &&
+						$employee->getOrganisation() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft &&
 						$employee->getOrganisation()->getUid() == $organisation->getUid()) {
 						if ($employeeData["delete"] == "1") {
 							$this->employeeDraftRepository->remove($employee);
@@ -225,8 +222,8 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	 * GROUPS
 	 */
 	protected function initializeStoreGroups() {
-		$this->employeeDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_EmployeeDraftRepository');
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
+		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
 	}
 
 	protected function storeGroups($organisation) {
@@ -255,7 +252,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 					}
                         
 					if ($groupObjectCreate) {
-						$groupObject = new Tx_HelfenKannJeder_Domain_Model_GroupDraft();
+						$groupObject = new \Querformatik\HelfenKannJeder\Domain\Model\GroupDraft();
 						$groupObject->setTemplate($groupTemplate);
 						$groupObject->setOrganisation($organisation);
 					}
@@ -281,7 +278,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 					}
                         
 					if (!is_null($groupObject)) {
-						if (!$groupObjectCreate && !$groupObjectWanted && $groupObject instanceof Tx_HelfenKannJeder_Domain_Model_GroupDraft) {
+						if (!$groupObjectCreate && !$groupObjectWanted && $groupObject instanceof \Querformatik\HelfenKannJeder\Domain\Model\GroupDraft) {
 							$this->groupDraftRepository->remove($groupObject);
 						} else if ($groupObjectCreate && $groupObjectWanted) {
                         				$groupObject->setSort($groupNum++);
@@ -296,7 +293,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 
 			$this->persistenceManager->persistAll();
 			foreach ($organisation->getGroups() as $groupObject) {
-				if (!($groupObject->getTemplate() instanceof Tx_HelfenKannJeder_Domain_Model_GroupTemplate)) {
+				if (!($groupObject->getTemplate() instanceof \Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate)) {
 					$this->groupDraftRepository->remove($groupObject);
 				}
 			}
@@ -319,8 +316,8 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	 * WORKINGHOURS
 	 */
 	protected function initializeStoreWorkinghours() {
-		$this->groupDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_GroupDraftRepository');
-		$this->workinghourDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_WorkinghourDraftRepository');
+		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
+		$this->workinghourDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\WorkinghourDraftRepository');
 	}
 
 	protected function storeWorkinghours($organisation) {
@@ -329,7 +326,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 			foreach ($workinghours as $workinghourData) {
 				if (empty($workinghourData["id"]) && $workinghourData["delete"] != "1" &&
 					!empty($workinghourData["day"])) {
-					$workinghour = new Tx_HelfenKannJeder_Domain_Model_WorkinghourDraft();
+					$workinghour = new \Querformatik\HelfenKannJeder\Domain\Model\WorkinghourDraft();
 					$workinghour->setOrganisation($organisation);
 					$workinghour->setDay(            $workinghourData["day"]);
 					$workinghour->setStarttimehour(  $workinghourData["starttimehour"]);
@@ -350,8 +347,8 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 					$this->workinghourDraftRepository->add($workinghour);
 				} else {
 					$workinghour = $this->workinghourDraftRepository->findOneByUid($workinghourData["id"]);
-					if ($workinghour instanceof Tx_HelfenKannJeder_Domain_Model_WorkinghourDraft &&
-						$workinghour->getOrganisation() instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationDraft &&
+					if ($workinghour instanceof \Querformatik\HelfenKannJeder\Domain\Model\WorkinghourDraft &&
+						$workinghour->getOrganisation() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft &&
 						$workinghour->getOrganisation()->getUid() == $organisation->getUid()) {
 						if ($workinghourData["delete"] == "1") {
 							$this->workinghourDraftRepository->remove($workinghour);
@@ -384,27 +381,27 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	/*
 	 * IMAGE HANDLING
 	 */
-	// Should use Tx_QuBase_Controller_AbstractController->handleSingleFile
+	// Should use \\Tx_QuBase_Controller_AbstractController->handleSingleFile
 	protected function handleSingleImage($file, $objectType, $objectNum, $attribute) {
 		if (isset($file["name"][$objectType][$objectNum][$attribute])) {
 			switch ($file["error"][$objectType][$objectNum][$attribute]) {
 				case  UPLOAD_ERR_INI_SIZE:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_image_size_ini', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_image_size_ini', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_FORM_SIZE:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_image_size_form', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_image_size_form', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_PARTIAL:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_internal_problem_partial', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_internal_problem_partial', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_NO_TMP_DIR:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_internal_problem_tmp_dir', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_internal_problem_tmp_dir', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_CANT_WRITE:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_internal_problem_write', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_internal_problem_write', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_EXTENSION:
-					$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_internal_problem_extension', 'HelfenKannJeder'));
+					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_internal_problem_extension', 'HelfenKannJeder'));
 					break;
 				case  UPLOAD_ERR_NO_FILE:
 					break;
@@ -413,7 +410,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 
 					if ($imageInfo == false || !in_array($imageInfo[2], array(IMAGETYPE_JPEG, IMAGETYPE_PNG))) {
 						// TODO error
-						$this->flashMessageContainer->add(Tx_Extbase_Utility_Localization::translate('error_organisation_upload_failed_wrong_image_type', 'HelfenKannJeder'));
+						$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_organisation_upload_failed_wrong_image_type', 'HelfenKannJeder'));
 						return "";
 					}
 
@@ -435,13 +432,13 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	 * @return void
 	 */
 	public function initializeUploadAction() {
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
 	}
 
 	/**
 	 * Handles uploads from plupload component.
 	 *
-	 * @param Tx_HelfenKannJeder_Domain_Model_OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
 	 * @param string $session
 	 * @ignorevalidation $organisation
 	 * @return string
@@ -522,7 +519,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	}
 
 	protected function initializeStorePictures() {
-		$this->organisationDraftRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository');
+		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
 	}
 
 	protected function storePictures($organisation) {
@@ -572,7 +569,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 		if (!empty($department)) {
 			$username .= "-".$department;
 			$organisationname = trim($organisationname);
-			$organisationname .= ", ".Tx_Extbase_Utility_Localization::translate('organisation_department', 'HelfenKannJeder')." ".$department;
+			$organisationname .= ", ".\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('organisation_department', 'HelfenKannJeder')." ".$department;
 		}
 		$username = utf8_decode(strtolower($username));
 		$username = preg_replace_callback("/([^a-z-0-9])/si", array(&$this, "changeSpecialChars"), $username);
@@ -613,7 +610,7 @@ class Tx_HelfenKannJeder_Controller_AbstractOrganisationController
 	}
 
 	protected function callValidator($name, $object, $prefix = "", $match = 0) {
-		$className = "Tx_HelfenKannJeder_Domain_Validator_".$name."Validator";
+		$className = "\\Querformatik\\HelfenKannJeder\\Domain\\Validator\\".$name."Validator";
 		if (class_exists($className)) {
 			$validator = new $className();
 			$validator->setMatch($match);

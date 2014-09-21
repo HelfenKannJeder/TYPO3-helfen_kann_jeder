@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen KAnn Jeder" Project
  *
@@ -8,26 +10,25 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-05-13
  */
-class Tx_HelfenKannJeder_Domain_Model_MatrixField
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class MatrixField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Matrix
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Matrix
 	 */
 	protected $matrix;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 *	The organisation of this layer.
 	 */
 	protected $organisation;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Activity
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Activity
 	 */
 	protected $activity;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_ActivityField
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\ActivityField
 	 */
 	protected $activityfield;
 

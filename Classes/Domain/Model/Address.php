@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,10 +10,9 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-08-17
  */
-class Tx_HelfenKannJeder_Domain_Model_Address
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
 	protected $organisation;
 
@@ -56,7 +57,7 @@ class Tx_HelfenKannJeder_Domain_Model_Address
 	protected $website;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_AddressDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft
 	 * @lazy
 	 */
 	protected $reference;
@@ -123,7 +124,8 @@ class Tx_HelfenKannJeder_Domain_Model_Address
 	}
 
 	public function setTelephone($telephone) {
-		$normService = t3lib_div::makeInstance('Tx_HelfenKannJeder_Service_NormService');
+		// TODO: Fix phone number service to inject
+		$normService = t3lib_div::makeInstance('\Querformatik\HelfenKannJeder\Service\NormService');
 		$telephone = $normService->phoneNumber($telephone);
 		$this->telephone = $telephone;
 	}
@@ -132,6 +134,7 @@ class Tx_HelfenKannJeder_Domain_Model_Address
 		return $this->getStreet()."\n".(($this->getZipcode() == 0)?"":$this->getZipcode())." ".$this->getCity();
 	}
 
+	// TODO: Out source to validate class
 	public function validate($googleMapsService) {
 		$listedCitys = $googleMapsService->calculateCityAndDepartment("Germany, ".$this->getAddress());
 /*		echo $this->getAddress()."<br />";

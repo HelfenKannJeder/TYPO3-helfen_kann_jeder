@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Tx_HelfenKannJeder_Domain_Model_ActivityField
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class ActivityField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
@@ -21,18 +22,18 @@ class Tx_HelfenKannJeder_Domain_Model_ActivityField
 	protected $description;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_ActivityFieldLayer>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\ActivityFieldLayer>
 	 */
 	protected $activityFieldLayers;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Activity>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Activity>
 	 */
 	protected $activities;
 
 	public function __construct() {
-		$this->activityFieldLayers = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->activities = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->activityFieldLayers = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->activities = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setName($name) {

@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen KAnn Jeder" Project
  *
@@ -8,10 +10,10 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Tx_HelfenKannJeder_Domain_Model_Employee
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class \Querformatik\HelfenKannJeder\Domain\Model\Employee
+		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
 	protected $organisation; 
 
@@ -87,15 +89,10 @@ class Tx_HelfenKannJeder_Domain_Model_Employee
 	protected $iscontact = 0;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_EmployeeDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft
 	 * @lazy
 	 */
 	protected $reference;
-
-	public function __construct() {
-/*		$this->setSurname($surname);
-		$this->setPrename($prename);*/
-	}
 
 	public function getOrganisation() {
 		return $this->organisation;
@@ -202,7 +199,8 @@ class Tx_HelfenKannJeder_Domain_Model_Employee
 	}
 
 	public function setTelephone($telephone) {
-		$normService = t3lib_div::makeInstance('Tx_HelfenKannJeder_Service_NormService');
+		// TODO: This should not in the model
+		$normService = t3lib_div::makeInstance('\\Querformatik\\HelfenKannJeder\\Service\\NormService');
 		$telephone = $normService->phoneNumber($telephone);
 		$this->telephone = $telephone;
 	}
@@ -212,7 +210,8 @@ class Tx_HelfenKannJeder_Domain_Model_Employee
 	}
 
 	public function setMobilephone($mobilephone) {
-		$normService = t3lib_div::makeInstance('Tx_HelfenKannJeder_Service_NormService');
+		// TODO: This should not in the model
+		$normService = t3lib_div::makeInstance('\\Querformatik\\HelfenKannJeder\\Service\\NormService');
 		$mobilephone = $normService->phoneNumber($mobilephone);
 		$this->mobilephone = $mobilephone;
 	}

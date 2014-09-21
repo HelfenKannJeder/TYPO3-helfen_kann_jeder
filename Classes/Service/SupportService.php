@@ -1,14 +1,16 @@
 <?php
-class Tx_HelfenKannJeder_Service_SupportService implements t3lib_Singleton {
+namespace Querformatik\HelfenKannJeder\Service;
+
+class SupportService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_SupporterRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\SupporterRepository
 	 * @inject
 	 */
 	private $supporterRepository;
 
 	/**
-	 * @var Tx_Extbase_Domain_Repository_FrontendUserGroupRepository
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserGroupRepository
 	 * @inject
 	 */
 	private $frontendUserGroupRepository;
@@ -25,8 +27,8 @@ class Tx_HelfenKannJeder_Service_SupportService implements t3lib_Singleton {
 		$this->allSupporter = array();
 		$this->searchedGroups = array();
 		$searchIds = array($supporterGroupId);
-		if ($organisationtype instanceof Tx_HelfenKannJeder_Domain_Model_OrganisationType
-			&& $organisationtype->getFegroup() instanceof Tx_Extbase_Domain_Model_FrontendUserGroup) {
+		if ($organisationtype instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
+			&& $organisationtype->getFegroup() instanceof \TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup) {
 			$searchIds[] = $organisationtype->getFegroup()->getUid();
 		}
 		if (is_array($location) && count($location) > 0) {
@@ -55,7 +57,7 @@ class Tx_HelfenKannJeder_Service_SupportService implements t3lib_Singleton {
 			$supporter = null;
 		}
 
-		if (!($supporter instanceof Tx_HelfenKannJeder_Domain_Model_Supporter)) {
+		if (!($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter)) {
 			$supporter = $this->supporterRepository->findByUid($this->defaultSupporter);
 		}
 		return $supporter;

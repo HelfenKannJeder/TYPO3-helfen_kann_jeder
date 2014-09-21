@@ -1,4 +1,6 @@
 <?php
+namespace \Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,10 +10,10 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Tx_HelfenKannJeder_Domain_Model_Group
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Organisation
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
 	protected $organisation;
 
@@ -46,23 +48,23 @@ class Tx_HelfenKannJeder_Domain_Model_Group
 	protected $maximumAge;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Matrix
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Matrix
 	 */
 	protected $matrix;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_GroupTemplate
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate
 	 */
 	protected $template;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Employee>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Employee>
 	 * @lazy
 	 */
 	protected $contactpersons;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_GroupDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\GroupDraft
 	 * @lazy
 	 */
 	protected $reference;
@@ -73,7 +75,7 @@ class Tx_HelfenKannJeder_Domain_Model_Group
 	protected $sort;
 
 	public function __construct() {
-		$this->contactpersons = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->contactpersons = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setName($name) {

@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Be_Link_PagePathViewHelper extends Tx_Fluid_ViewHelpers_Be_AbstractBackendViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Be\Link;
+
+class PagePathViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Be\AbstractBackendViewHelper {
 	/**
 	 * Get the fullpath to a fe-page from backend. Used with the extension pagepath from Dimitry Dulepov
 	 * @param integer $pageId

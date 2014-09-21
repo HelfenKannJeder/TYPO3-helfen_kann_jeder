@@ -1,9 +1,10 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Geo_DistanceViewHelper
-	extends Tx_Fluid_ViewHelpers_BaseViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Geo;
+
+class DistanceViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 
 	/**
-	 * @var Tx_HelfenKannJeder_Service_GoogleMapsService
+	 * @var \Querformatik\HelfenKannJeder\Service\GoogleMapsService
 	 * @inject
 	 */
 	protected $googleMapsService;

@@ -1,18 +1,14 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Model_Word
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
+class Word extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
 	protected $word;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Wordpart>
-	 */
-//	protected $wordparts;
-
-	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Activity
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Activity
 	 */
 	protected $activity;
 
@@ -22,7 +18,6 @@ class Tx_HelfenKannJeder_Domain_Model_Word
 	protected $percent;
 
 	public function __construct() {
-//		$this->wordparts = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	public function getWord() {
@@ -32,15 +27,7 @@ class Tx_HelfenKannJeder_Domain_Model_Word
 	public function setWord($word) {
 		$this->word = $word;
 	}
-/*
-	public function addWordpart($wordpart) {
-		$this->wordparts->attach($wordpart);
-	}
 
-	public function getWordparts() {
-		return $this->wordparts;
-	}
-*/
 	public function getActivity() {
 		return $this->activity;
 	}

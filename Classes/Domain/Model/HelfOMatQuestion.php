@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,10 +10,10 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-06-15
  */
-class Tx_HelfenKannJeder_Domain_Model_HelfOMatQuestion
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class HelfOMatQuestion
+		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_HelfOMat
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\HelfOMat
 	 */
 	protected $helfomat;
 
@@ -26,45 +28,25 @@ class Tx_HelfenKannJeder_Domain_Model_HelfOMatQuestion
 	protected $description;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Activity>
-	 */
-	protected $positive;
-
-	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Activity>
-	 */
-	protected $negative;
-
-	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Activity>
-	 */
-	protected $positivenot;
-
-	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Activity>
-	 */
-	protected $negativenot;
-
-	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupOfGroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<GroupOfGroupTemplate>
 	 * @lazy
 	 */
 	protected $groupPositive;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupOfGroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<GroupOfGroupTemplate>
 	 * @lazy
 	 */
 	protected $groupNegative;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupOfGroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<GroupOfGroupTemplate>
 	 * @lazy
 	 */
 	protected $groupPositivenot;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupOfGroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<GroupOfGroupTemplate>
 	 * @lazy
 	 */
 	protected $groupNegativenot;
@@ -75,15 +57,10 @@ class Tx_HelfenKannJeder_Domain_Model_HelfOMatQuestion
 	protected $sort;
 
 	public function __construct() {
-		$this->positive = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->negative = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->positivenot = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->negativenot = new Tx_Extbase_Persistence_ObjectStorage();
-
-		$this->groupPositive = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->groupNegative = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->groupPositivenot = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->groupNegativenot = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groupPositive = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->groupNegative = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->groupPositivenot = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->groupNegativenot = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setHelfomat($helfomat) {
@@ -110,69 +87,7 @@ class Tx_HelfenKannJeder_Domain_Model_HelfOMatQuestion
 		return $this->description;
 	}
 
-	public function setPositive($positive) {
-		$this->positive = $positive;
-	}
 
-	public function getPositive() {
-		return $this->positive;
-	}
-
-	public function addPositive($positive) {
-		$this->positive->attach($positive);
-	}
-
-	public function removePositive($positive) {
-		$this->positive->detach($positive);
-	}
-
-	public function setNegative($negative) {
-		$this->negative = $negative;
-	}
-
-	public function getNegative() {
-		return $this->negative;
-	}
-
-	public function addNegative($negative) {
-		$this->negative->attach($negative);
-	}
-
-	public function removeNegative($negative) {
-		$this->negative->detach($negative);
-	}
-
-	public function setPositivenot($positivenot) {
-		$this->positivenot = $positivenot;
-	}
-
-	public function getPositivenot() {
-		return $this->positivenot;
-	}
-
-	public function addPositivenot($positivenot) {
-		$this->positivenot->attach($positivenot);
-	}
-
-	public function removePositivenot($positivenot) {
-		$this->positivenot->detach($positivenot);
-	}
-
-	public function setNegativenot($negativenot) {
-		$this->negativenot = $negativenot;
-	}
-
-	public function getNegativenot() {
-		return $this->negativenot;
-	}
-
-	public function addNegativenot($negativenot) {
-		$this->negativenot->attach($negativenot);
-	}
-
-	public function removeNegativenot($negativenot) {
-		$this->negativenot->detach($negativenot);
-	}
 
 	public function setGroupPositive($groupPositive) {
 		$this->groupPositive = $groupPositive;

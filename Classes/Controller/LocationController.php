@@ -1,6 +1,8 @@
 <?php
-class Tx_HelfenKannJeder_Controller_LocationController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class LocationController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	public function indexAction() {
 	}

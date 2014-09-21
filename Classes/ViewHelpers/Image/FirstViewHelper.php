@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Image_FirstViewHelper
-	extends Tx_Fluid_ViewHelpers_ImageViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Image;
+
+class FirstViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Service\ImageService
@@ -68,7 +69,7 @@ class Tx_HelfenKannJeder_ViewHelpers_Image_FirstViewHelper
 			$imageInfo = $this->contentObject->getImgResource($src, $setup);
 			$GLOBALS['TSFE']->lastImageInfo = $imageInfo;
 			if (!is_array($imageInfo)) {
-				throw new Tx_Fluid_Core_ViewHelper_Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
+				throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
 			}
 			$imageInfo[3] = t3lib_div::png_to_gif_by_imagemagick($imageInfo[3]);
 			$GLOBALS['TSFE']->imagesOnPage[] = $imageInfo[3];

@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,14 +10,14 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-08-19
  */
-class Tx_HelfenKannJeder_Domain_Model_Userdo extends Tx_Extbase_DomainObject_AbstractValueObject {
+class Userdo extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
 	/**
 	 * @var integer
 	 */
 	protected $timestamp;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_User
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\User
 	 */
 	protected $user;
 

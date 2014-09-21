@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,14 +10,14 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-11-29
  */
-class Tx_HelfenKannJeder_Domain_Model_AddressDraft extends Tx_HelfenKannJeder_Domain_Model_Address {
+class AddressDraft extends Address {
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 */
 	protected $organisation;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Address
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Address
 	 * @lazy
 	 */
 	protected $reference;

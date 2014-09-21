@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,20 +10,20 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-04-11
  */
-class Tx_HelfenKannJeder_Domain_Model_Log
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class Log
+		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
 	protected $message;
 
 	/**
-	 * @var Tx_Extbase_Domain_Model_FrontendUser
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
 	 */
 	protected $feuser;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 */
 	protected $organisation;
 

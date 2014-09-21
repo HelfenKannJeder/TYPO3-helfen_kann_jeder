@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-10-07
  */
-class Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress extends Tx_Extbase_DomainObject_AbstractEntity {
+class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var integer
 	 */
@@ -26,7 +28,7 @@ class Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress extends Tx_Ex
 	protected $agreement = false;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationType
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 	 * @validate NotEmpty
 	 */
 	protected $organisationtype = null;
@@ -107,7 +109,7 @@ class Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress extends Tx_Ex
 	protected $feuser = null;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 */
 	protected $organisation = null;
 
@@ -127,7 +129,7 @@ class Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress extends Tx_Ex
 	protected $mailHash = "";
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Supporter
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Supporter
 	 */
 	protected $supporter;
 
@@ -145,7 +147,7 @@ class Tx_HelfenKannJeder_Domain_Model_RegisterOrganisationProgress extends Tx_Ex
 	 * captcha
 	 *
 	 * @var string
-	 * @validate Tx_CaptchaViewhelper_Validation_Validator_CaptchaValidator
+	 * @validate \Tx_CaptchaViewhelper_Validation_Validator_CaptchaValidator
 	 */
 	protected $captcha;  
 

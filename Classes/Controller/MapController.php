@@ -1,10 +1,12 @@
 <?php
-class Tx_HelfenKannJeder_Controller_MapController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class MapController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $organisationRepository;
 
 	public function initializeAction() {
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
 	}
 
 	/**

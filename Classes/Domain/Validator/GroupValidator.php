@@ -1,8 +1,9 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Validator_GroupValidator
-	extends Tx_Extbase_Validation_Validator_AbstractValidator {
+namespace Querformatik\HelfenKannJeder\Domain\Validator;
+
+class GroupValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator {
 	public function isValid($group) {
-		if (! $group instanceof Tx_HelfenKannJeder_Domain_Model_Group) {
+		if (! $group instanceof \Querformatik\HelfenKannJeder\Domain\Model\Group) {
 			$this->addError('The given Object is not a group.', 1307884111);
 			return FALSE;
 		}

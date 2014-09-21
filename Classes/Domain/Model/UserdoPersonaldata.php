@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-08-19
  */
-class Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata extends Tx_HelfenKannJeder_Domain_Model_Userdo {
+class UserdoPersonaldata extends Userdo {
 	/**
 	 * @var string
 	 */

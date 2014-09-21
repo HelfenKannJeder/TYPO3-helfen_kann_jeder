@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Controller_StatisticController extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class StatisticController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	/**
 	 * @var integer
 	 */
@@ -14,7 +16,7 @@ class Tx_HelfenKannJeder_Controller_StatisticController extends Tx_Extbase_MVC_C
 	 */
 	protected function initializeAction() {
 		$this->pageId = intval(t3lib_div::_GP('id'));
-		$this->userdoActivitysearchRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_UserdoActivitysearchRepository');
+		$this->userdoActivitysearchRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\UserdoActivitysearchRepository');
 	}
 
 	public function indexAction() {

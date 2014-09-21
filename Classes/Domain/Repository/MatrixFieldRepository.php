@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_MatrixFieldRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class MatrixFieldRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 
 	/**

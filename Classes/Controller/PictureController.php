@@ -1,12 +1,14 @@
 <?php
-class Tx_HelfenKannJeder_Controller_PictureController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+namespace Querformatik\HelfenKannJeder\Controller;
+
+class PictureController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $organisationRepository;
 	protected $configurationManager;
 	protected $contentObject;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_OrganisationTypeRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationTypeRepository
 	 * @inject
 	 */
 	protected $organisationTypeRepository;
@@ -18,9 +20,9 @@ class Tx_HelfenKannJeder_Controller_PictureController
 	protected $imageService;
 
 	public function initializeAction() {
-		$this->organisationRepository = $this->objectManager->get('Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository');
+		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
 
-		$this->configurationManager = $this->objectManager->get("Tx_Extbase_Configuration_ConfigurationManager");
+		$this->configurationManager = $this->objectManager->get("\\TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManager");
 		$this->contentObject = $this->configurationManager->getContentObject();
 	}
 

@@ -1,11 +1,13 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Command;
+
 /**
  * Remind controller
  */
-class Tx_HelfenKannJeder_Command_RemindCommandController extends Tx_Extbase_MVC_Controller_CommandController {
+class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandController {
 
 	/**
-	 * @var Tx_Extbase_Configuration_ConfigurationManagerInterface
+	 * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
 	 * @inject
 	 */
 	protected $configurationManager;
@@ -17,13 +19,13 @@ class Tx_HelfenKannJeder_Command_RemindCommandController extends Tx_Extbase_MVC_
 	protected $mailService;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Service_LogService
+	 * @var \Querformatik\HelfenKannJeder\Service\LogService
 	 * @inject
 	 */
 	protected $logService;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Repository_OrganisationDraftRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
 	 * @inject
 	 */
 	protected $organisationDraftRepository;
@@ -36,7 +38,7 @@ class Tx_HelfenKannJeder_Command_RemindCommandController extends Tx_Extbase_MVC_
 	 * @internal
 	 */
 	private function initCommand($storagePid, $administratorMail = null) {
-		$frameworkConfiguration = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
+		$frameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
 		$persistenceConfiguration = array(
 			'persistence' => array(
 				'storagePid' => $storagePid,
@@ -50,9 +52,11 @@ class Tx_HelfenKannJeder_Command_RemindCommandController extends Tx_Extbase_MVC_
 				)
 			),
 		);
+		$persistenceConfiguration['persistence']['classes']['\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter']
+					= $persistenceConfiguration['persistence']['classes']['Tx_HelfenKannJeder_Domain_Model_Supporter'];
 		$this->configurationManager->setConfiguration(array_merge($frameworkConfiguration, $persistenceConfiguration));
 
-		$this->settings = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'HelfenKannJeder', 'List');
+		$this->settings = $this->configurationManager->getConfiguration( \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'HelfenKannJeder', 'List');
 
 		$this->mailService->setFrom($this->settings["mailFrom"]);
 

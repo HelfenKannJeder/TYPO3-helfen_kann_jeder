@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository
-	extends Tx_Extbase_Persistence_Repository {
+namespace Querformatik\HelfenKannJeder\Domain\Repository;
+
+class OrganisationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	public function findByUids($uids) {
 		$query = $this->createQuery();
 		$constraints = array();
@@ -11,14 +12,6 @@ class Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository
 
 	public function findNearLatLngCount ($lat, $lng, $age=18) {
 		$query = $this->createQuery();
-/*
-		$query = $query->matching($query->logicalAnd(
-			$query->greaterThanOrEqual('latitude', $lat-0.5),
-			$query->lessThanOrEqual('latitude', $lat+0.5),
-			$query->greaterThanOrEqual('longitude', $lng-0.5),
-			$query->lessThanOrEqual('longitude', $lng+0.5)
-		));
-		$query = $query->setOrderings(array("latitude" => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));*/
 		$statement = "
 			SELECT
 				COUNT(DISTINCT t1.uid) AS num
@@ -49,14 +42,6 @@ class Tx_HelfenKannJeder_Domain_Repository_OrganisationRepository
 
 	public function findNearLatLng($lat, $lng, $age=18) {
 		$query = $this->createQuery();
-/*
-		$query = $query->matching($query->logicalAnd(
-			$query->greaterThanOrEqual('latitude', $lat-0.5),
-			$query->lessThanOrEqual('latitude', $lat+0.5),
-			$query->greaterThanOrEqual('longitude', $lng-0.5),
-			$query->lessThanOrEqual('longitude', $lng+0.5)
-		));
-		$query = $query->setOrderings(array("latitude" => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));*/
 		$statement = "
 			SELECT
 				t1.*

@@ -1,6 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_ViewHelpers_Storage_AtViewHelper
-	extends Tx_Fluid_ViewHelpers_IfViewHelper {
+namespace Querformatik\HelfenKannJeder\ViewHelpers\Storage;
+
+class AtViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\IfViewHelper {
 
 	/**
 	 * @param mixed $storage The object to search in.

@@ -1,10 +1,12 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Controller;
+
 // TODO: Class rewrite
-class Tx_HelfenKannJeder_Controller_CitysignController
-	extends Tx_Extbase_MVC_Controller_ActionController {
+class CitysignController
+	extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * @var Tx_HelfenKannJeder_Service_UserService
+	 * @var \Querformatik\HelfenKannJeder\Service\UserService
 	 * @inject
 	 */
 	protected $userRepository;
@@ -20,7 +22,7 @@ class Tx_HelfenKannJeder_Controller_CitysignController
 
 		$user = $this->userService->getBySessionId(session_id());
 
-		$userdo = new Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata();
+		$userdo = new \Querformatik\HelfenKannJeder\Domain\Model\UserdoPersonaldata();
 		$userdo->setAddress($arguments["address"]);
 		$userdo->setStreet($arguments["street"]);
 		$userdo->setCity($arguments["city"]);

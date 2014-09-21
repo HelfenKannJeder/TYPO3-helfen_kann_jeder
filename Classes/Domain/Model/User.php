@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-08-19
  */
-class Tx_HelfenKannJeder_Domain_Model_User extends Tx_Extbase_DomainObject_AbstractEntity {
+class User extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
@@ -30,13 +32,13 @@ class Tx_HelfenKannJeder_Domain_Model_User extends Tx_Extbase_DomainObject_Abstr
 	protected $browser;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Userdo>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Userdo>
 	 * @lazy
 	 */
 	protected $actions;
 
 	public function __construct() {
-		$this->actions = new Tx_Extbase_Persistence_objectStorage();
+		$this->actions = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function setSession($session) {

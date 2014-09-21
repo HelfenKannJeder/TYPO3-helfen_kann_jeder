@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,8 +10,8 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-12-02
  */
-class Tx_HelfenKannJeder_Domain_Model_GroupTemplateCategory
-		extends Tx_Extbase_DomainObject_AbstractEntity {
+class GroupTemplateCategory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+
 	/**
 	 * @var string
 	 */
@@ -21,12 +23,12 @@ class Tx_HelfenKannJeder_Domain_Model_GroupTemplateCategory
 	protected $description;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationType
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 	 */
 	protected $organisationtype;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_GroupTemplate>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\GroupTemplate>
 	 */
 	protected $groupTemplates;
 
@@ -36,7 +38,7 @@ class Tx_HelfenKannJeder_Domain_Model_GroupTemplateCategory
 	protected $sort;
 
 	public function __construct() {
-		$this->groupTemplates = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groupTemplates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function getName() {

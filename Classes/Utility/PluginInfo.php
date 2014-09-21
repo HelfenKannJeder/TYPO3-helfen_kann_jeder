@@ -1,5 +1,7 @@
 <?php
-class Tx_HelfenKannJeder_Utility_PluginInfo {
+namespace Querformatik\HelfenKannJeder\Utility;
+
+class PluginInfo {
 	/**
 	 * Main Function
 	 *

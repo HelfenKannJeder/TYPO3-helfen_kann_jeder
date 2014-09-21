@@ -1,4 +1,6 @@
 <?php
+namespace Querformatik\HelfenKannJeder\Domain\Model;
+
 /**
  * "Helfen Kann Jeder" Project
  *
@@ -8,7 +10,7 @@
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObject_AbstractEntity {
+class Organisation extends \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
 	/**
 	 * @var integer
 	 * 	Date of creation
@@ -28,7 +30,7 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	protected $description = '';
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationType
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 	 * 	Type of the organisation
 	 */
 	protected $organisationtype;
@@ -94,26 +96,26 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	protected $feuser;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Workinghour>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Workinghour>
 	 * @lazy
 	 */
 	protected $workinghours;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Group>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Group>
 	 * 	Special groups of the organisation.
 	 * @lazy
 	 */
 	protected $groups;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Employee>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Employee>
 	 * @lazy
 	 */
 	protected $contactpersons;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Employee>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Employee>
 	 *	Persons of this institute.
 	 * @lazy
 	 * @cascade remove
@@ -121,7 +123,7 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	protected $employees;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Matrix>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Matrix>
 	 * @lazy
 	 * @cascade remove
 	 * @deprecated
@@ -129,19 +131,19 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	protected $matrices;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_Address
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Address
 	 */
 	protected $defaultaddress;
 
 	/**
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_HelfenKannJeder_Domain_Model_Address>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Address>
 	 * @lazy
 	 * @cascade remove
 	 */
 	protected $addresses;
 
 	/**
-	 * @var Tx_HelfenKannJeder_Domain_Model_OrganisationDraft
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 * @lazy
 	 */
 	protected $reference;
@@ -157,12 +159,12 @@ class Tx_HelfenKannJeder_Domain_Model_Organisation extends Tx_Extbase_DomainObje
 	protected $isDummy;
 
 	public function __construct() {
-		$this->groups = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->workinghours = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->employees = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->matrices = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->contactpersons = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->addresses = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->workinghours = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->employees = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->matrices = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->contactpersons = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+		$this->addresses = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	public function getCrdate() {
