@@ -1,5 +1,5 @@
 <?php
-namespace \Querformatik\HelfenKannJeder\ViewHelpers;
+namespace Querformatik\HelfenKannJeder\ViewHelpers;
 
 class IsValidViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\BaseViewHelper {
 

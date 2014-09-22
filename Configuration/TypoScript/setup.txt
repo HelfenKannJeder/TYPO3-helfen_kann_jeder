@@ -35,9 +35,9 @@ config.tx_extbase.persistence.classes {
 # compatiblity typoscript end
 
 config.tx_extbase.persistence.classes {
-	Tx_Extbase_Domain_Model_FrontendUser {
+	TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 		subclasses {
-			Tx_HelfenKannJeder_Domain_Model_Supporter = Tx_HelfenKannJeder_Domain_Model_Supporter
+			Querformatik\HelfenKannJeder\Domain\Model\Supporter = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 		}
 	}
 }
@@ -93,34 +93,34 @@ plugin.tx_helfenkannjeder {
 
 	persistence{
                 classes {
-			Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata {
+			Querformatik\HelfenKannJeder\Domain\Model\UserdoPersonaldata {
 				mapping {
 					tableName = tx_helfenkannjeder_domain_model_userdo
-					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\UserdoPersonaldata
 				}
 			}
-			Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch {
+			Querformatik\HelfenKannJeder\Domain\Model\UserdoActivitysearch {
 				mapping {
 					tableName = tx_helfenkannjeder_domain_model_userdo
-					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\UserdoActivitysearch
 				}
 			}
-			Tx_HelfenKannJeder_Domain_Model_UserdoActivity {
+			Querformatik\HelfenKannJeder\Domain\Model\UserdoActivity {
 				mapping {
 					tableName = tx_helfenkannjeder_domain_model_userdo
-					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivity
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\UserdoActivity
 				}
 			}
-			Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield {
+			Querformatik\HelfenKannJeder\Domain\Model\UserdoActivityfield {
 				mapping {
 					tableName = tx_helfenkannjeder_domain_model_userdo
-					recordType = Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\UserdoActivityfield
 				}
 			}
-			Tx_HelfenKannJeder_Domain_Model_Supporter {
+			Querformatik\HelfenKannJeder\Domain\Model\Supporter {
 				mapping {
 					tableName = fe_users
-					recordType = Tx_HelfenKannJeder_Domain_Model_Supporter
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 				}
 			}
 		}
@@ -129,12 +129,7 @@ plugin.tx_helfenkannjeder {
 
 module.tx_helfenkannjeder < plugin.tx_helfenkannjeder
 
-plugin.tx_qumessaging.persistence.classes.Tx_HelfenKannJeder_Domain_Model_Supporter < plugin.tx_helfenkannjeder.persistence.classes.Tx_HelfenKannJeder_Domain_Model_Supporter
-#plugin.tx_qumessaging.persistence.classes.Tx_HelfenKannJeder_Domain_Model_OrganisationDraft {
-#	mapping {
-#		tableName = tx_helfenkannjeder_domain_model_organisationdraft
-#	}
-#}
+plugin.tx_qumessaging.persistence.classes.Querformatik\HelfenKannJeder\Domain\Model\Supporter < plugin.tx_helfenkannjeder.persistence.classes.Querformatik\HelfenKannJeder\Domain\Model\Supporter
 
 page.includeJS.helfen_kann_jeder = EXT:helfen_kann_jeder/Resources/Public/Scripts/generator.js
 ##page.includeJS.jquery_min_js = EXT:helfen_kann_jeder/Resources/Public/Scripts/jquery.min.js

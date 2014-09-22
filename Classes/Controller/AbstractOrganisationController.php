@@ -19,6 +19,11 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 		$this->persistenceManager = $persistenceManager;
 	}
 
+	/**
+	 * @var \Querformatik\HelfenKannJeder\Service\NormService
+	 * @inject
+	 */
+	protected $normService;
 
 	// Repositories
 	protected $addressDraftRepository;
@@ -97,7 +102,7 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 					$address->setCity($addressData["city"]);
 					$address->setZipcode($addressData["zipcode"]);
 					$address->setAddressappendix($addressData["addressappendix"]);
-					$address->setTelephone($addressData["telephone"]);
+					$address->setTelephone($this->normService->phoneNumber($addressData["telephone"]));
 					$address->setWebsite($addressData['website']);
 					$address->validate($this->googleMapsService);
 					$address->setOrganisation($organisation);
@@ -120,7 +125,7 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 								$address->validate($this->googleMapsService);
 							}
 							$address->setAddressappendix($addressData["addressappendix"]);
-							$address->setTelephone($addressData["telephone"]);
+							$address->setTelephone($this->normService->phoneNumber($addressData["telephone"]));
 							$address->setWebsite($addressData['website']);
 							$this->addressDraftRepository->update($address);
 						}
@@ -166,8 +171,8 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 					$employee->setRank($employeeData["rank"]);
 					$employee->setMotivation($employeeData["motivation"]);
 					$employee->setMail($employeeData["mail"]);
-					$employee->setTelephone($employeeData["telephone"]);
-					$employee->setMobilephone($employeeData["mobilephone"]);
+					$employee->setTelephone($this->normService->phoneNumber($employeeData["telephone"]));
+					$employee->setMobilephone($this->normService->phoneNumber($employeeData["mobilephone"]));
 					$employee->setIscontact($employeeData["iscontact"]);
 
 					$newPicture = $this->handleSingleImage($_FILES["tx_helfenkannjeder_list"], "employees", $employeeNum, "pictures");
@@ -189,8 +194,8 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 							$employee->setRank($employeeData["rank"]);
 							$employee->setMotivation($employeeData["motivation"]);
 							$employee->setMail($employeeData["mail"]);
-							$employee->setTelephone($employeeData["telephone"]);
-							$employee->setMobilephone($employeeData["mobilephone"]);
+							$employee->setTelephone($this->normService->phoneNumber($employeeData["telephone"]));
+							$employee->setMobilephone($this->normService->phoneNumber($employeeData["mobilephone"]));
 							$employee->setIscontact($employeeData["iscontact"]);
 
 							if (isset($employeeData["picturesdelete"]) && $employeeData["picturesdelete"] == 1) {
@@ -414,13 +419,13 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 						return "";
 					}
 
-					$basicFileFunctions = $this->objectManager->get('t3lib_basicFileFunctions');
+					$basicFileFunctions = $this->objectManager->get('\\TYPO3\\CMS\\Core\\Utility\\File\\BasicFileUtility');
 
 					$file['name'][$objectType][$objectNum][$attribute] = preg_replace('/[^\w\._]+/', '_', $file['name'][$objectType][$objectNum][$attribute]);
 					$fileName = $basicFileFunctions->getUniqueName($file['name'][$objectType][$objectNum][$attribute],
-						t3lib_div::getFileAbsFileName('uploads/tx_helfenkannjeder/')); // TODO dynamic
+						\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName('uploads/tx_helfenkannjeder/')); // TODO dynamic
  
-					t3lib_div::upload_copy_move($file['tmp_name'][$objectType][$objectNum][$attribute], $fileName);
+					\TYPO3\CMS\Core\Utility\GeneralUtility::upload_copy_move($file['tmp_name'][$objectType][$objectNum][$attribute], $fileName);
 					return basename($fileName);
 			}
 		} else {

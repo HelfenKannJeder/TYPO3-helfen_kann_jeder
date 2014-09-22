@@ -28,6 +28,12 @@ class SupportController
 	protected $groupRepository;
 	protected $mailService;
 
+	/**
+	 * @var Etobi\CoreAPI\Service\CacheApiService
+	 * @inject
+	 */
+	protected $cacheApiService;
+
 	public function initializeAction() {
 		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 		$this->frontendUser = $this->accessControlService->getFrontendSupporter();
@@ -221,10 +227,7 @@ class SupportController
 		$this->logService->insert("The organisation was send to live.", $organisationDraft);
 		$this->persistenceManager->persistAll();
 
-		// TODO: Prove TYPO3 6.0 compatiblity
-		$tce = t3lib_div::makeInstance('t3lib_TCEmain');
-		$tce->clear_cacheCmd(7);  // TODO: Load by typoscript, ID of the page for which to clear the cache
-		$tce->clear_cacheCmd(9);
+		$this->cacheApiService->clearPageCache(); // TODO: Is this enouth?: https://github.com/TYPO3-coreapi/ext-coreapi/blob/master/Classes/Service/CacheApiService.php
 		$this->redirect("index");
 	}
 

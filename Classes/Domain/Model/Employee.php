@@ -10,8 +10,7 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class \Querformatik\HelfenKannJeder\Domain\Model\Employee
-		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
@@ -199,9 +198,6 @@ class \Querformatik\HelfenKannJeder\Domain\Model\Employee
 	}
 
 	public function setTelephone($telephone) {
-		// TODO: This should not in the model
-		$normService = t3lib_div::makeInstance('\\Querformatik\\HelfenKannJeder\\Service\\NormService');
-		$telephone = $normService->phoneNumber($telephone);
 		$this->telephone = $telephone;
 	}
 
@@ -210,9 +206,6 @@ class \Querformatik\HelfenKannJeder\Domain\Model\Employee
 	}
 
 	public function setMobilephone($mobilephone) {
-		// TODO: This should not in the model
-		$normService = t3lib_div::makeInstance('\\Querformatik\\HelfenKannJeder\\Service\\NormService');
-		$mobilephone = $normService->phoneNumber($mobilephone);
 		$this->mobilephone = $mobilephone;
 	}
 

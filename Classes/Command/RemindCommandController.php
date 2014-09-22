@@ -43,17 +43,15 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 			'persistence' => array(
 				'storagePid' => $storagePid,
 				'classes' => array(
-					'Tx_HelfenKannJeder_Domain_Model_Supporter' => array(
+					'Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter' => array(
 						'mapping' => array(
 							'tableName' => 'fe_users',
-							'recordType' => 'Tx_HelfenKannJeder_Domain_Model_Supporter',
+							'recordType' => 'Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
 						)
 					)
 				)
 			),
 		);
-		$persistenceConfiguration['persistence']['classes']['\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter']
-					= $persistenceConfiguration['persistence']['classes']['Tx_HelfenKannJeder_Domain_Model_Supporter'];
 		$this->configurationManager->setConfiguration(array_merge($frameworkConfiguration, $persistenceConfiguration));
 
 		$this->settings = $this->configurationManager->getConfiguration( \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'HelfenKannJeder', 'List');

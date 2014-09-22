@@ -1,5 +1,5 @@
 <?php
-namespace \Querformatik\HelfenKannJeder\Domain\Model;
+namespace Querformatik\HelfenKannJeder\Domain\Model;
 
 /**
  * "Helfen Kann Jeder" Project

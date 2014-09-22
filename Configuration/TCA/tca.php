@@ -639,7 +639,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 				'type' => 'select',
 				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
 				'foreign_table' => 'fe_users',
-				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Tx_HelfenKannJeder_Domain_Model_Supporter"',
+				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter"',
 				'items' => array(
 					array('---', 0),
 				),
@@ -3041,10 +3041,10 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 				'type' => 'select',
 				'items' => array(
 					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.type.0', '0'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata', 'Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch', 'Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivity', 'Tx_HelfenKannJeder_Domain_Model_UserdoActivity'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield', 'Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoPersonaldata'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivitysearch'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivity', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivity'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivityfield'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -3164,10 +3164,10 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 	),
 	'types' => array(
 		'0' => array('showitem' => 'user, timestamp, type'),
-		'Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata' => array('showitem' => 'user, timestamp, type, address, street, city, zipcode, longitude, latitude, response, age'),
-		'Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch' => array('showitem' => 'user, timestamp, type, input, result'),
-		'Tx_HelfenKannJeder_Domain_Model_UserdoActivity' => array('showitem' => 'user, timestamp, type, activity, status'),
-		'Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield' => array('showitem' => 'user, timestamp, type, activityfield, status'),
+		'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoPersonaldata' => array('showitem' => 'user, timestamp, type, address, street, city, zipcode, longitude, latitude, response, age'),
+		'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivitysearch' => array('showitem' => 'user, timestamp, type, input, result'),
+		'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivity' => array('showitem' => 'user, timestamp, type, activity, status'),
+		'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivityfield' => array('showitem' => 'user, timestamp, type, activityfield, status'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => '')
@@ -3634,7 +3634,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 				'type' => 'select',
 				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
 				'foreign_table' => 'fe_users',
-				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Tx_HelfenKannJeder_Domain_Model_Supporter"',
+				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter"',
 				'items' => array(
 					array('---', 0),
 				),

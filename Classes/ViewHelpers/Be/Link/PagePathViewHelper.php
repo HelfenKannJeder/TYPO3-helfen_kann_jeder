@@ -9,12 +9,12 @@ class PagePathViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\Be\AbstractBackend
 	 * @return mixed
 	 */
 	public function render($pageId = NULL, $parameters = array()) {
-		if (t3lib_extMgm::isLoaded('pagepath', TRUE)) {
-			require_once(t3lib_extMgm::extPath('pagepath', 'class.tx_pagepath_api.php'));
+		if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('pagepath', TRUE)) {
+			require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('pagepath', 'class.tx_pagepath_api.php'));
 			if (NULL === $pageId) {
 				$pageId = $this->renderChildren();
 			}
-			return tx_pagepath_api::getPagePath($pageId, $parameters);
+			return \tx_pagepath_api::getPagePath($pageId, $parameters);
 		}
 		return NULL;
 	}

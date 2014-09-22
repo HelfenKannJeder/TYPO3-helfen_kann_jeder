@@ -124,9 +124,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	public function setTelephone($telephone) {
-		// TODO: Fix phone number service to inject
-		$normService = t3lib_div::makeInstance('\Querformatik\HelfenKannJeder\Service\NormService');
-		$telephone = $normService->phoneNumber($telephone);
 		$this->telephone = $telephone;
 	}
 

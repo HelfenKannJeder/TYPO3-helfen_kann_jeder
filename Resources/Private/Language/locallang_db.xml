@@ -7,7 +7,7 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter">Tx_HelfenKannJeder_Domain_Model_Supporter</label>
+			<label index="fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter">HelfenKannJeder Supporter</label>
 			<label index="tx_helfenkannjeder_domain_model_activity">Activity</label>
 			<label index="tx_helfenkannjeder_domain_model_activity.description">Description</label>
 			<label index="tx_helfenkannjeder_domain_model_activity.keywords">Keywords</label>

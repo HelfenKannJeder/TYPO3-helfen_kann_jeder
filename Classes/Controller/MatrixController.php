@@ -25,7 +25,7 @@ class MatrixController
 	}
 
 	public function initializeAction() {
-		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service_AccessControlService');
+		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService');
 		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 
 		$this->matrixRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\MatrixRepository');
@@ -88,7 +88,7 @@ class MatrixController
 	 * @return void
 	 */
 	public function initializeImportAction() {
-		$this->excelService = $this->objectManager->get('\Querformatik\HelfenKannJeder\Service\ExcelService');
+		$this->excelService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\ExcelService');
 		$this->excelService->setActivityfieldRepository($this->activityfieldRepository);
 	}
 

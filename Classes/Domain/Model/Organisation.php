@@ -10,7 +10,7 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Organisation extends \TYPO3\CMS\Extbase\Persistence\ObjectStorage {
+class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var integer
 	 * 	Date of creation

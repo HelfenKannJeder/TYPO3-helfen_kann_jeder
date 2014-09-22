@@ -15,7 +15,7 @@ class StatisticController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 	 * @return void
 	 */
 	protected function initializeAction() {
-		$this->pageId = intval(t3lib_div::_GP('id'));
+		$this->pageId = intval(\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('id'));
 		$this->userdoActivitysearchRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\UserdoActivitysearchRepository');
 	}
 

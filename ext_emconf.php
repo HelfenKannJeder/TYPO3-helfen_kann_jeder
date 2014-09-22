@@ -17,7 +17,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Valentin Zickner',
 	'author_company' => 'Querformatik UG (haftungsbeschraenkt) and Technisches Hilfswerk Karlsruhe',
 	'author_email' => 'zickner@querformatik.de',
-	'dependencies' => 'extbase,fluid,captcha_viewhelper',
+	'dependencies' => 'extbase,fluid,captcha_viewhelper,coreapi',
 	'state' => 'stable',
 	'clearCacheOnLoad' => 1,
 	'version' => '2.0.2',
@@ -29,6 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'mvc_extjs' => '0.1.1-0.0.0',
 			'captcha_viewhelper' => '0.0.0',
 			'pagepath' => '0.0.0',
+			'coreapi' => '0.0.0',
 		),
 		'conflicts' => array(
 		),

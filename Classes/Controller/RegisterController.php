@@ -487,6 +487,9 @@ class RegisterController
 
 		$feUser = $registerOrganisationProgress->getFeuser();
 
+		echo "ok:".$feUser;
+		exit();
+
 		if ($registerOrganisationProgress->getMailHash() == $hash && $feUser != null) {
 			$this->accessControlService->setFrontendUserUid($feUser->getUid());
 			$registerOrganisationProgress->setMailHash("");

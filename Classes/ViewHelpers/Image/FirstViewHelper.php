@@ -71,10 +71,10 @@ class FirstViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 			if (!is_array($imageInfo)) {
 				throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
 			}
-			$imageInfo[3] = t3lib_div::png_to_gif_by_imagemagick($imageInfo[3]);
+			$imageInfo[3] = \TYPO3\CMS\Core\Utility\GeneralUtility::png_to_gif_by_imagemagick($imageInfo[3]);
 			$GLOBALS['TSFE']->imagesOnPage[] = $imageInfo[3];
                         
-			$imageSource = $GLOBALS['TSFE']->absRefPrefix . t3lib_div::rawUrlEncodeFP($imageInfo[3]);
+			$imageSource = $GLOBALS['TSFE']->absRefPrefix . \TYPO3\CMS\Core\Utility\GeneralUtility::rawUrlEncodeFP($imageInfo[3]);
 
 			if (TYPO3_MODE === 'BE') {
 				$imageSource = '../' . $imageSource;

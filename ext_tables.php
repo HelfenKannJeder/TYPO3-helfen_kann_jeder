@@ -74,7 +74,7 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 	 * Registers a Backend Module
 	 */
 	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-		$_EXTKEY,
+		'Querformatik.' .$_EXTKEY,
 		'web',    // Make module a submodule of 'web'
 		'helfenkannjeder',    // Submodule key
 		'after:list', // Position
@@ -110,8 +110,8 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation_type.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation_type.gif'
 							// source: http://de.fotolia.com/id/12600401
 	)
 );
@@ -134,8 +134,8 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'versioningWS'			=> TRUE,
 		'origUid'			=> 't3_origuid',
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation.gif'
 							// source: http://de.fotolia.com/id/12600401
 	)
 );
@@ -159,8 +159,8 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_group.gif',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_group.gif',
 		'sortby'			=> 'sort'
 	)
 );
@@ -184,8 +184,8 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplatecategory.gif',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplatecategory.gif',
 		'sortby'			=> 'sort',
 	)
 );
@@ -206,8 +206,8 @@ $TCA['tx_helfenkannjeder_domain_model_groupofgrouptemplate'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/GroupOfGroupTemplate.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_groupofgrouptemplate.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/GroupOfGroupTemplate.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_groupofgrouptemplate.gif'
 	),
 );
 
@@ -228,8 +228,8 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplate.gif',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplate.gif',
 		'sortby'			=> 'sort',
 	)
 );
@@ -250,8 +250,8 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfield.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfield.gif'
 	)
 );
 
@@ -273,8 +273,8 @@ $TCA['tx_helfenkannjeder_domain_model_activityfieldlayer'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfieldlayer.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfieldlayer.gif'
 	)
 );
 
@@ -294,8 +294,8 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activity.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activity.gif'
 	)
 );
 
@@ -317,8 +317,8 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_employee.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_employee.gif'
 	)
 );
 $TCA['tx_helfenkannjeder_domain_model_employeedraft'] = $TCA['tx_helfenkannjeder_domain_model_employee'];
@@ -342,8 +342,8 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_interested_person.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_interested_person.gif'
 	)
 );
 
@@ -365,8 +365,8 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrixfield.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrixfield.gif'
 	)
 );
 
@@ -386,8 +386,8 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrix.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrix.gif'
 		
 	)
 );
@@ -408,8 +408,8 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_workinghour.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_workinghour.gif'
 		
 	)
 );
@@ -432,8 +432,8 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
 		
 	)
 );
@@ -454,8 +454,8 @@ $TCA['tx_helfenkannjeder_domain_model_wordpart'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
 		
 	)
 );
@@ -478,8 +478,8 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_address.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_address.gif'
 		
 	)
 );
@@ -505,8 +505,8 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_user.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_user.gif'
 		
 	)
 );
@@ -530,8 +530,8 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_userdo.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_userdo.gif'
 		
 	)
 );
@@ -554,8 +554,8 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_backer.gif',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_backer.gif',
 		'sortby'			=> 'sort'
 		
 	)
@@ -579,8 +579,8 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_registerorganisationprogress.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_registerorganisationprogress.gif'
 		
 	)
 );
@@ -603,8 +603,8 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_log.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_log.gif'
 		
 	)
 );
@@ -625,8 +625,8 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/HelfOMat.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_helfomat.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/HelfOMat.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_helfomat.gif'
 	),
 );
 
@@ -647,23 +647,23 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> t3lib_extMgm::extPath($_EXTKEY).'Configuration/TCA/HelfOMatQuestion.php',
-		'iconfile'			=> t3lib_extMgm::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_helfomatquestion.gif'
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/HelfOMatQuestion.php',
+		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_helfomatquestion.gif'
 	),
 );
 
-t3lib_div::loadTCA('fe_users');
+\TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('fe_users');
 if (is_array($TCA['fe_users']['columns']['tx_extbase_type'])) {
         $TCA['fe_users']['types']['Tx_HelfenKannJeder_Domain_Model_Supporter'] = $TCA['fe_users']['types']['0'];
-        array_push($TCA['fe_users']['columns']['tx_extbase_type']['config']['items'], array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter', 'Tx_HelfenKannJeder_Domain_Model_Supporter'));
+        array_push($TCA['fe_users']['columns']['tx_extbase_type']['config']['items'], array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter'));
 }
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'HelfenKannJeder Setup');
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/DefaultStyles', 'HelfenKannJeder CSS Styles (optional)');
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/HelfOMat', 'HelfenKannJeder HelfOMat');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'HelfenKannJeder Setup');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/DefaultStyles', 'HelfenKannJeder CSS Styles (optional)');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/HelfOMat', 'HelfenKannJeder HelfOMat');
 
 $pluginSignature = strtolower($extensionName) . '_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform,recursive';
-t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_organisation.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_organisation.xml');
 ?>
