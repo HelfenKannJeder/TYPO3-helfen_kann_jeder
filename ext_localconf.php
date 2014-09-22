@@ -9,7 +9,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 		'Support' => 'index,diff,live2test,test2live,view,deny,back',
 		'Organisation' => 'index,show,general,generalSend,group,groupSend,workinghour,workinghourSend,picture,pictureSend,matrix,changeStatus',
 		'UserSettings' => 'edit,save',
-		'Cron' => 'execute',
 		'HelfOMat' => 'quiz,groupResult,jsonGroupResult',
 		'SupportMaster' => 'reenableScreeningOrganisation',
 		'Location' => 'index'
@@ -19,7 +18,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 		'Support' => 'index,diff,live2test,test2live,view,deny,back',
 		'Organisation' => 'index,show,general,generalSend,group,groupSend,workinghour,workinghourSend,picture,pictureSend,matrix,statusChange',
 		'UserSettings' => 'edit,save',
-		'Cron' => 'execute',
 		'HelfOMat' => 'groupResult,jsonGroupResult',
 		'SupportMaster' => 'reenableScreeningOrganisation',
 	)

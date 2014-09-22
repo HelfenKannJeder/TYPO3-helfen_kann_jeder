@@ -120,5 +120,32 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 			}
 		}
 	}
+
+	/**
+	 * Remind users to complete their registration.
+	 *
+	 * @param integer $storagePid Id where to read the data from
+	 * @param string $administratorMail Mail of the administrator to use as bcc.
+	 * @return void
+	 */
+	public function userForCompleteRegistrationCommand($storagePid, $administratorMail = null) {
+		$sendTo = "";
+		foreach ($this->organisationDraftRepository->findUncompeletedRegistrations() as $organisationDraft) {
+			$feUser = $organisationDraft->getFeuser();
+			$sendTo .= $organisationDraft->getName()."\n";
+
+			$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail_reminder_organisation_register_headline', 'HelfenKannJeder');
+			$mailContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail_reminder_organisation_register_content', 'HelfenKannJeder');
+			$linkToRemoveFromList = $this->uriBuilder->setTargetPageUid($this->settings["registerOrganisationStepsPart2"])->uriFor("doNotRemindMe", array("organisationDraft"=>$organisationDraft, "hash"=>$organisationDraft->getControlHash()), "Register");
+			$mailContent = sprintf($mailContent, $feUser->getFirstName()." ".$feUser->getLastName(), date("d.m.Y", $organisationDraft->getCrDate()), $organisationDraft->getName(), $linkToRemoveFromList);
+			$this->mailService->send($feUser->getEmail(), $mailHeadline, $mailContent);
+			$organisationDraft->setRemindLast(time());
+			$organisationDraft->setRemindCount($organisationDraft->getRemindCount()+1);
+			$this->organisationDraftRepository->update($organisationDraft);
+			$this->logService->insert("Reminded organisation to complete registration", $organisationDraft);
+		}
+		if (empty($sendTo)) $sendTo = "Nobody!";
+		$this->view->assign("sendTo", $sendTo);
+	}
 }
 ?>

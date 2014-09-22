@@ -31,10 +31,6 @@
 				<source>Organisation edit</source>
 				<target>Organisation bearbeiten</target>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_action_cron" xml:space="preserve" approved="yes">
-				<source>Cron</source>
-				<target>Cron</target>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_action_helfomat" xml:space="preserve" approved="yes">
 				<source>Helf-O-Mat</source>
 				<target>Helf-O-Mat</target>

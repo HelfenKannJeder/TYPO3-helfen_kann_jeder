@@ -37,10 +37,6 @@
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_user_settings</numIndex>
 										<numIndex index="1">UserSettings->edit;UserSettings->save</numIndex>
 									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_cron</numIndex>
-										<numIndex index="1">Cron->execute</numIndex>
-									</numIndex>
 									<numIndex index="7" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_helfomat</numIndex>
 										<numIndex index="1">HelfOMat->quiz;HelfOMat->groupResult</numIndex>

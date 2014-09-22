@@ -24,9 +24,6 @@
 			<trans-unit id="tx_helfenkannjeder_action_organisation_edit" xml:space="preserve">
 				<source>Organisation edit</source>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_action_cron" xml:space="preserve">
-				<source>Cron</source>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_action_helfomat" xml:space="preserve">
 				<source>Helf-O-Mat</source>
 			</trans-unit>
