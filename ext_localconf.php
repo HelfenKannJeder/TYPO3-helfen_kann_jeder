@@ -111,8 +111,8 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
  * Hooking for PluginInfo
  */
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['helfenkannjeder_list']['helfenkannjeder'] =
-	'EXT:helfen_kann_jeder/Classes/Utility/PluginInfo.php:\\Querformatik\\HelfenKannJeder\\Utility\\PluginInfo->getInfo';
+	'EXT:helfen_kann_jeder/Classes/Utility/PluginInfo.php:Querformatik\\HelfenKannJeder\\Utility\\PluginInfo->getInfo';
 
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = '\\Querformatik\\HelfenKannJeder\\Command\\RemindCommandController';
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = '\\Querformatik\\HelfenKannJeder\\Command\\OrganisationCommandController';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = 'Querformatik\\HelfenKannJeder\\Command\\RemindCommandController';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = 'Querformatik\\HelfenKannJeder\\Command\\OrganisationCommandController';
 ?>

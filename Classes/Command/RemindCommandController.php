@@ -13,7 +13,7 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 	protected $configurationManager;
 
 	/**
-	 * @var Tx_QuBase_Service_MailService
+	 * @var \Tx_QuBase_Service_MailService
 	 * @inject
 	 */
 	protected $mailService;
