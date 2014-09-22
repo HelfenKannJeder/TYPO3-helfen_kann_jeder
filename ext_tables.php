@@ -88,7 +88,7 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 		array(
 			'access' => 'user,group',
 			'icon'   => 'EXT:'.$_EXTKEY.'/Resources/Public/Icons/icon_helfen_kann_jeder_backend_module.gif',
-			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml',
+			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xlf',
 			'navigationComponentId' => 'typo3-pagetree',
 		)
 	);
@@ -96,7 +96,7 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 
 $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -118,7 +118,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -141,11 +141,11 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 );
 
 $TCA['tx_helfenkannjeder_domain_model_organisationdraft'] = $TCA['tx_helfenkannjeder_domain_model_organisation'];
-$TCA['tx_helfenkannjeder_domain_model_organisationdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationdraft';
+$TCA['tx_helfenkannjeder_domain_model_organisationdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationdraft';
 
 $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -166,11 +166,11 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 );
 
 $TCA['tx_helfenkannjeder_domain_model_groupdraft'] = $TCA['tx_helfenkannjeder_domain_model_group'];
-$TCA['tx_helfenkannjeder_domain_model_groupdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_groupdraft';
+$TCA['tx_helfenkannjeder_domain_model_groupdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_groupdraft';
 
 $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplatecategory',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplatecategory',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -192,7 +192,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_groupofgrouptemplate'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_groupedgrouptemplate',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_groupedgrouptemplate',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -214,7 +214,7 @@ $TCA['tx_helfenkannjeder_domain_model_groupofgrouptemplate'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -236,7 +236,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfield',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfield',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -257,7 +257,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_activityfieldlayer'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer',
 		'label'				=> 'activityfield',
 		'label_alt'			=> 'grade',
 		'label_alt_force'		=> true,
@@ -280,7 +280,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfieldlayer'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activity',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -301,7 +301,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee',
 		'label'				=> 'surname',
 		'label_alt'			=> 'prename',
 		'label_alt_force'		=> true,
@@ -322,11 +322,11 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 	)
 );
 $TCA['tx_helfenkannjeder_domain_model_employeedraft'] = $TCA['tx_helfenkannjeder_domain_model_employee'];
-$TCA['tx_helfenkannjeder_domain_model_employeedraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employeedraft';
+$TCA['tx_helfenkannjeder_domain_model_employeedraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employeedraft';
 
 $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person',
 		'label'				=> 'sessionid',
 		'label_alt'			=> 'prename',
 		'label_alt_force'		=> true,
@@ -349,7 +349,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield',
 		'label'				=> 'matrix',
 		'label_alt'			=> 'activity, activityfield, grade',
 		'label_alt_force'		=> true,
@@ -372,7 +372,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrix',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrix',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -394,7 +394,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour',
 		'label'				=> 'day',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -414,11 +414,11 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 	)
 );
 $TCA['tx_helfenkannjeder_domain_model_workinghourdraft'] = $TCA['tx_helfenkannjeder_domain_model_workinghour'];
-$TCA['tx_helfenkannjeder_domain_model_workinghourdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghourdraft';
+$TCA['tx_helfenkannjeder_domain_model_workinghourdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghourdraft';
 
 $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word',
 		'label'				=> 'word',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -440,7 +440,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 /*
 $TCA['tx_helfenkannjeder_domain_model_wordpart'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_wordpart',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_wordpart',
 		'label'				=> 'part',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -462,7 +462,7 @@ $TCA['tx_helfenkannjeder_domain_model_wordpart'] = array(
 */
 $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address',
 		'label'				=> 'city',
 		'label_alt'			=> 'street',
 		'label_alt_force'		=> true,
@@ -485,11 +485,11 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 );
 
 $TCA['tx_helfenkannjeder_domain_model_addressdraft'] = $TCA['tx_helfenkannjeder_domain_model_address'];
-$TCA['tx_helfenkannjeder_domain_model_addressdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_addressdraft';
+$TCA['tx_helfenkannjeder_domain_model_addressdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_addressdraft';
 
 $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user',
 		'label'				=> 'session',
 		'label_alt'			=> 'browser',
 		'label_alt_force'		=> true,
@@ -513,7 +513,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo',
 		'label'				=> 'user',
 		'label_alt'			=> 'timestamp',
 		'label_alt_force'		=> true,
@@ -538,7 +538,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer',
 		'label'				=> 'surname',
 		'label_alt'			=> 'prename, company',
 		'label_alt_force'		=> true,
@@ -563,7 +563,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress',
 		'label'				=> 'organisationtype',
 		'label_alt'			=> 'city, department',
 		'label_alt_force'		=> true,
@@ -587,7 +587,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_log',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log',
 		'label'				=> 'feuser',
 		'label_alt'			=> 'message',
 		'label_alt_force'		=> true,
@@ -611,7 +611,7 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat',
 		'label'				=> 'name',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -632,7 +632,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion',
+		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion',
 		'label'				=> 'question',
 		'tstamp'			=> 'tstamp',
 		'crdate'			=> 'crdate',
@@ -655,7 +655,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 \TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('fe_users');
 if (is_array($TCA['fe_users']['columns']['tx_extbase_type'])) {
         $TCA['fe_users']['types']['Tx_HelfenKannJeder_Domain_Model_Supporter'] = $TCA['fe_users']['types']['0'];
-        array_push($TCA['fe_users']['columns']['tx_extbase_type']['config']['items'], array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter'));
+        array_push($TCA['fe_users']['columns']['tx_extbase_type']['config']['items'], array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter'));
 }
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'HelfenKannJeder Setup');
@@ -665,5 +665,5 @@ if (is_array($TCA['fe_users']['columns']['tx_extbase_type'])) {
 $pluginSignature = strtolower($extensionName) . '_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform,recursive';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_organisation.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_organisation.xlf');
 ?>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-09-22T17:40:55Z" product-name="helfen_kann_jeder">
+		<header/>
+		<body>
+			<trans-unit id="tx_helfenkannjeder_action_default" xml:space="preserve" approved="yes">
+				<source>Default action</source>
+				<target>Standard Aktion</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register" xml:space="preserve" approved="yes">
+				<source>Register part 1</source>
+				<target>Registrieren Teil 1</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register_continue" xml:space="preserve" approved="yes">
+				<source>Register part 3</source>
+				<target>Registrieren Teil 3</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register_step33" xml:space="preserve" approved="yes">
+				<source>Register part 2</source>
+				<target>Registrieren Teil 2</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_support" xml:space="preserve" approved="yes">
+				<source>Support</source>
+				<target>Support</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_user_settings" xml:space="preserve" approved="yes">
+				<source>User settings</source>
+				<target>User settings</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_organisation_edit" xml:space="preserve" approved="yes">
+				<source>Organisation edit</source>
+				<target>Organisation bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_cron" xml:space="preserve" approved="yes">
+				<source>Cron</source>
+				<target>Cron</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_helfomat" xml:space="preserve" approved="yes">
+				<source>Helf-O-Mat</source>
+				<target>Helf-O-Mat</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_location" xml:space="preserve" approved="yes">
+				<source>Location</source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_register_session_lifetime" xml:space="preserve" approved="yes">
+				<source>Session Lifetime (in seconds)</source>
+				<target>Session Lebenszeit (in Sekunden)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

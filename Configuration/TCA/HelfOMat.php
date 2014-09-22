@@ -55,7 +55,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -65,7 +65,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -75,7 +75,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 		),
 		'questions' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.questions',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.questions',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_helfomatquestion',
@@ -89,19 +89,19 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 		),
 		'used' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.used',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.used',
 			'config' => array(
 				'type' => 'passthrough'
 			)
 		),
 		'method' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.method',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.method',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.method.0', 0),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomat.method.1', 1),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.method.0', 0),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat.method.1', 1),
 				),
 			)
 		),

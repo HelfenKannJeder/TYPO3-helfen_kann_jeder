@@ -9,7 +9,7 @@
 				<el>
 					<settings.sessionLifetime>
 						<TCEforms>
-							<label>LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xml:tx_helfenkannjeder_register_session_lifetime</label>
+							<label>LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_register_session_lifetime</label>
 							<config>
 								<type>input</type>
 								<size>2</size>

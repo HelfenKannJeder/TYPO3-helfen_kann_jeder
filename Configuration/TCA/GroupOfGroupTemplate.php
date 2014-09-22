@@ -55,7 +55,7 @@ $TCA['tx_helfenkannjeder_domain_model_groupofgrouptemplate'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_groupofgrouptemplate.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_groupofgrouptemplate.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -65,7 +65,7 @@ $TCA['tx_helfenkannjeder_domain_model_groupofgrouptemplate'] = array(
 		),
 		'group_templates' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_groupofgrouptemplate.group_templates',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_groupofgrouptemplate.group_templates',
 			'config' => array(
 				'type' => 'passthrough',
 			)

@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-22T17:40:47Z" product-name="helfen_kann_jeder">
+		<header/>
+		<body>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_HelfenKannJeder_Domain_Model_Supporter" xml:space="preserve">
+				<source>HelfenKannJeder Supporter</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activity" xml:space="preserve">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activity.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activity.keywords" xml:space="preserve">
+				<source>Keywords</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activity.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activity.words" xml:space="preserve">
+				<source>Words</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfield" xml:space="preserve">
+				<source>Activity Field</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfield.activities" xml:space="preserve">
+				<source>Activities</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfield.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfield.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer" xml:space="preserve">
+				<source>Activity Field Layer</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.activityfield" xml:space="preserve">
+				<source>Activity Field</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade" xml:space="preserve">
+				<source>Grade</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step0" xml:space="preserve">
+				<source>Secondary</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step1" xml:space="preserve">
+				<source>Primary</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_addressdraft" xml:space="preserve">
+				<source>Address Draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.addressappendix" xml:space="preserve">
+				<source>Address appendix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.street" xml:space="preserve">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.telephone" xml:space="preserve">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.zipcode" xml:space="preserve">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.website" xml:space="preserve">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_address.reference" xml:space="preserve">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer" xml:space="preserve">
+				<source>Backer</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.company" xml:space="preserve">
+				<source>Organisation/Company</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.degree" xml:space="preserve">
+				<source>Aegrotat degree</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.picture" xml:space="preserve">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.prename" xml:space="preserve">
+				<source>Prename</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.since" xml:space="preserve">
+				<source>Since</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.status" xml:space="preserve">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.surname" xml:space="preserve">
+				<source>Surname</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.thumbnail" xml:space="preserve">
+				<source>Thumbnail</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.type.0" xml:space="preserve">
+				<source>No information</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.type.1" xml:space="preserve">
+				<source>ideal</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_backer.type.2" xml:space="preserve">
+				<source>financial</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee" xml:space="preserve">
+				<source>Employee</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.birthday" xml:space="preserve">
+				<source>Birthday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.headline" xml:space="preserve">
+				<source>Headline (empty for name)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.is_contact" xml:space="preserve">
+				<source>Is contact</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.is_contact.public_contact" xml:space="preserve">
+				<source>Public contact</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.mail" xml:space="preserve">
+				<source>Mail</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.mobilephone" xml:space="preserve">
+				<source>Mobilephone</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.motivation" xml:space="preserve">
+				<source>Motivation (empty for no extra site)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.pictures" xml:space="preserve">
+				<source>Pictures</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.prename" xml:space="preserve">
+				<source>Prename</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.rank" xml:space="preserve">
+				<source>Rank</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.street" xml:space="preserve">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.surname" xml:space="preserve">
+				<source>Surname</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.teaser" xml:space="preserve">
+				<source>Teaser (max 160 chars)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.telephone" xml:space="preserve">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employee.reference" xml:space="preserve">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_employeedraft" xml:space="preserve">
+				<source>Employee draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group" xml:space="preserve">
+				<source>Group</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.contactpersons" xml:space="preserve">
+				<source>Contact persons</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.grouptemplate" xml:space="preserve">
+				<source>Group template</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.matrix" xml:space="preserve">
+				<source>Matrix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.maximum_age" xml:space="preserve">
+				<source>Maximum age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.minimum_age" xml:space="preserve">
+				<source>Minimum age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.street" xml:space="preserve">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.website" xml:space="preserve">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.workinghours" xml:space="preserve">
+				<source>Working hours</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.zipcode" xml:space="preserve">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_group.reference" xml:space="preserve">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_groupdraft" xml:space="preserve">
+				<source>Group draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate" xml:space="preserve">
+				<source>Group template</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.grouptemlatecategory" xml:space="preserve">
+				<source>Group template category</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.isdefault" xml:space="preserve">
+				<source>Is default</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.isoptional" xml:space="preserve">
+				<source>Is optional</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.isfeature" xml:space="preserve">
+				<source>Is feature</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.matrix" xml:space="preserve">
+				<source>Matrix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.maximum_age" xml:space="preserve">
+				<source>Maximum age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.minimum_age" xml:space="preserve">
+				<source>Minimum age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.suggestion" xml:space="preserve">
+				<source>End-User Description Suggestion</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplate.group_of_group_template" xml:space="preserve">
+				<source>Group of group template</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplatecategory" xml:space="preserve">
+				<source>Group template category</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplatecategory.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplatecategory.grouptemplates" xml:space="preserve">
+				<source>Group templates</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplatecategory.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_grouptemplatecategory.organisationtype" xml:space="preserve">
+				<source>Organisation type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person" xml:space="preserve">
+				<source>Interested Person</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.activities" xml:space="preserve">
+				<source>Activities</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.age" xml:space="preserve">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.ip" xml:space="preserve">
+				<source>IP</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.last_activity" xml:space="preserve">
+				<source>Last activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.organisations" xml:space="preserve">
+				<source>Organisations</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_interested_person.sessionid" xml:space="preserve">
+				<source>Session ID</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrix" xml:space="preserve">
+				<source>Matrix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrix.feuser" xml:space="preserve">
+				<source>Frontend User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrix.matrixfields" xml:space="preserve">
+				<source>Matrix Fields</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrix.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrix.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield" xml:space="preserve">
+				<source>Matrix Field</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.activity" xml:space="preserve">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.activityfield" xml:space="preserve">
+				<source>Activity Field</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.grade" xml:space="preserve">
+				<source>Grade</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.grade.step0" xml:space="preserve">
+				<source>Secondary</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.grade.step1" xml:space="preserve">
+				<source>Primary</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.matrix" xml:space="preserve">
+				<source>Matrix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_matrixfield.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.crdate" xml:space="preserve">
+				<source>Creation date</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.tstamp" xml:space="preserve">
+				<source>Change date</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.activityfieldlayers" xml:space="preserve">
+				<source>Activitiy Fields</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.addressappendix" xml:space="preserve">
+				<source>Address appendix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.addresses" xml:space="preserve">
+				<source>Addresses</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.contactperson" xml:space="preserve">
+				<source>Contact person</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.contactpersons" xml:space="preserve">
+				<source>Contact persons</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.defaultaddress" xml:space="preserve">
+				<source>Default Addresses</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.employees" xml:space="preserve">
+				<source>Employees</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.feuser" xml:space="preserve">
+				<source>Frontend User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.groups" xml:space="preserve">
+				<source>Groups</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.logo" xml:space="preserve">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.matrices" xml:space="preserve">
+				<source>Matrices</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.nationalassociation" xml:space="preserve">
+				<source>National association</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.pictures" xml:space="preserve">
+				<source>Pictures</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.reference" xml:space="preserve">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.request" xml:space="preserve">
+				<source>Request</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.request.0" xml:space="preserve">
+				<source>Still waiting</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.request.1" xml:space="preserve">
+				<source>Asked for activation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.request.2" xml:space="preserve">
+				<source>Activated</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.request.3" xml:space="preserve">
+				<source>Screening by supporter</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.requesttime" xml:space="preserve">
+				<source>Requested at</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.street" xml:space="preserve">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.supporter" xml:space="preserve">
+				<source>Supporter</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.telephone" xml:space="preserve">
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.type.Tx_HelfenKannJeder_Domain_Model_Organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.type.Tx_HelfenKannJeder_Domain_Model_OrganisationDraft" xml:space="preserve">
+				<source>Organisation draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.umbrellaorganisation" xml:space="preserve">
+				<source>Umbrella organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.website" xml:space="preserve">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.workinghours" xml:space="preserve">
+				<source>Workinghours</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.hash" xml:space="preserve">
+				<source>Random hash</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.zipcode" xml:space="preserve">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.remind_last" xml:space="preserve">
+				<source>Last remind</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.remind_count" xml:space="preserve">
+				<source>Remind count</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationdraft" xml:space="preserve">
+				<source>Organisation draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype" xml:space="preserve">
+				<source>Organisation Type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.acronym" xml:space="preserve">
+				<source>Acronym</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.fegroup" xml:space="preserve">
+				<source>Group</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.grouptemplatecategories" xml:space="preserve">
+				<source>Group Template Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.namedisplay" xml:space="preserve">
+				<source>Display name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.picture" xml:space="preserve">
+				<source>Picture</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.teaser" xml:space="preserve">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.pseudo" xml:space="preserve">
+				<source>Pseudo</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.group" xml:space="preserve">
+				<source>Frontend user group</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.logos" xml:space="preserve">
+				<source>Logo suggestions</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.registerable" xml:space="preserve">
+				<source>Registerable</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.hide_in_result" xml:space="preserve">
+				<source>Hide in result</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation" xml:space="preserve">
+				<source>Dummy organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress" xml:space="preserve">
+				<source>Register organisation progress</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.agreement" xml:space="preserve">
+				<source>Accepted agreements</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.crdate" xml:space="preserve">
+				<source>Created</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.department" xml:space="preserve">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.feuser" xml:space="preserve">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.finisheduntil" xml:space="preserve">
+				<source>Finished until</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.laststep" xml:space="preserve">
+				<source>Last step</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.latitude" xml:space="preserve">
+				<source>Latitiude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.mail" xml:space="preserve">
+				<source>Mail</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.mail_hash" xml:space="preserve">
+				<source>Mail Hash</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.modified" xml:space="preserve">
+				<source>Modified</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationname" xml:space="preserve">
+				<source>Organisation name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationtype" xml:space="preserve">
+				<source>Organisation type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.password" xml:space="preserve">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.password2" xml:space="preserve">
+				<source>Password repeat</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.sessionid" xml:space="preserve">
+				<source>Session ID</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.supporter" xml:space="preserve">
+				<source>Supporter</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.typeacronym" xml:space="preserve">
+				<source>Organisation type acronym</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.typedescription" xml:space="preserve">
+				<source>Organisation type description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.typename" xml:space="preserve">
+				<source>Organisation type name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_registerorganisationprogress.username" xml:space="preserve">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_user" xml:space="preserve">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_user.actions" xml:space="preserve">
+				<source>Actions</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_user.browser" xml:space="preserve">
+				<source>Browser</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_user.lastactivity" xml:space="preserve">
+				<source>Last activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_user.session" xml:space="preserve">
+				<source>Session</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo" xml:space="preserve">
+				<source>User Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.activity" xml:space="preserve">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.activityfield" xml:space="preserve">
+				<source>Activityfield</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.age" xml:space="preserve">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.input" xml:space="preserve">
+				<source>Input</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.response" xml:space="preserve">
+				<source>Response</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.result" xml:space="preserve">
+				<source>Result</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.status" xml:space="preserve">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.street" xml:space="preserve">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.timestamp" xml:space="preserve">
+				<source>Timestamp</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivity" xml:space="preserve">
+				<source>Selected activities</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield" xml:space="preserve">
+				<source>Selected activity field</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch" xml:space="preserve">
+				<source>Activity search</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata" xml:space="preserve">
+				<source>Personal data</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.user" xml:space="preserve">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_userdo.zipcode" xml:space="preserve">
+				<source>Zipcode</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_word" xml:space="preserve">
+				<source>Word</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_word.activity" xml:space="preserve">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_word.word" xml:space="preserve">
+				<source>Word</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_word.wordparts" xml:space="preserve">
+				<source>Word parts</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_wordpart" xml:space="preserve">
+				<source>Wordpart</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_wordpart.complete" xml:space="preserve">
+				<source>Complete</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_wordpart.part" xml:space="preserve">
+				<source>Part</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_wordpart.position" xml:space="preserve">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_wordpart.word" xml:space="preserve">
+				<source>Word</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour" xml:space="preserve">
+				<source>Working hour</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.addition" xml:space="preserve">
+				<source>Addition</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.address.none_special" xml:space="preserve">
+				<source>No special address</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day" xml:space="preserve">
+				<source>Day</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.friday" xml:space="preserve">
+				<source>Friday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.monday" xml:space="preserve">
+				<source>Monday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.saturday" xml:space="preserve">
+				<source>Saturday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.sunday" xml:space="preserve">
+				<source>Sunday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.thursday" xml:space="preserve">
+				<source>Thursday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.tuesday" xml:space="preserve">
+				<source>Tuesday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.day.wednesday" xml:space="preserve">
+				<source>Wednesday</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.groups" xml:space="preserve">
+				<source>Groups</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.starttimehour" xml:space="preserve">
+				<source>Start time hour</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.starttimeminute" xml:space="preserve">
+				<source>Start time minute</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.stoptimehour" xml:space="preserve">
+				<source>Stop time hour</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.stoptimeminute" xml:space="preserve">
+				<source>Stop time minute</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghour.reference" xml:space="preserve">
+				<source>Reference</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_workinghourdraft" xml:space="preserve">
+				<source>Working hour draft</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_log" xml:space="preserve">
+				<source>Log</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_log.crdate" xml:space="preserve">
+				<source>Created at</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_log.feuser" xml:space="preserve">
+				<source>Frontend User</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_log.organisation" xml:space="preserve">
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_log.message" xml:space="preserve">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat" xml:space="preserve">
+				<source>Helf-O-Mat</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.questions" xml:space="preserve">
+				<source>Questions</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.used" xml:space="preserve">
+				<source>Used</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.method" xml:space="preserve">
+				<source>Method</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.method.0" xml:space="preserve">
+				<source>Matrix</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomat.method.1" xml:space="preserve">
+				<source>Group</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion" xml:space="preserve">
+				<source>Helf-O-Mat Question</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.helfomat" xml:space="preserve">
+				<source>Helf-O-Mat</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.question" xml:space="preserve">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.description" xml:space="preserve">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.positive" xml:space="preserve">
+				<source>Positive (YES)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.negative" xml:space="preserve">
+				<source>Negative (YES)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.positivenot" xml:space="preserve">
+				<source>Positive (NOT)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.negativenot" xml:space="preserve">
+				<source>Negative (NOT)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.group_positive" xml:space="preserve">
+				<source>Group Positive (YES)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.group_negative" xml:space="preserve">
+				<source>Group Negative (YES)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.group_positivenot" xml:space="preserve">
+				<source>Group Positive (NOT)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_helfomatquestion.group_negativenot" xml:space="preserve">
+				<source>Group Negative (NOT)</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_groupedgrouptemplate" xml:space="preserve">
+				<source>Group of group template</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_groupofgrouptemplate.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_domain_model_groupofgrouptemplate.group_templates" xml:space="preserve">
+				<source>Group templates</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

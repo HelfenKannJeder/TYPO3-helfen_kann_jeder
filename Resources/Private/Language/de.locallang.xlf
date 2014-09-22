@@ -1,0 +1,1985 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-09-22T17:40:33Z" product-name="helfen_kann_jeder">
+		<header/>
+		<body>
+			<trans-unit id="loog_also_in" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>... auch in </target>
+			</trans-unit>
+			<trans-unit id="about" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Über</target>
+			</trans-unit>
+			<trans-unit id="backer_financial" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Financial</target>
+			</trans-unit>
+			<trans-unit id="backer_ideal" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ideal</target>
+			</trans-unit>
+			<trans-unit id="backer_since" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Unterstützer seit </target>
+			</trans-unit>
+			<trans-unit id="backer_special_thanks_to" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Special thanks to</target>
+			</trans-unit>
+			<trans-unit id="backer_thanks_to" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Vielen Dank für die Unterstützung an...</target>
+			</trans-unit>
+			<trans-unit id="error.1361959228" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte bestätige die Bedingungen.</target>
+			</trans-unit>
+			<trans-unit id="error.170320111501" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Sicherheitscode ist falsch, bitte versuche es nocheinmal.</target>
+			</trans-unit>
+			<trans-unit id="register_captcha_prefix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Um SPAM vorzubeugen, bitten wir Dich, den Text, der rechts abgebildet ist, in das nachfolgende Feld einzugeben:</target>
+			</trans-unit>
+			<trans-unit id="register_captcha_suffix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Solltest du hierbei Probleme haben, wende dich bitte an unseren Support.</target>
+			</trans-unit>
+			<trans-unit id="register_upload_picture" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hochladen</target>
+			</trans-unit>
+			<trans-unit id="citysign_ask_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Um die Ergebnisse für Dich anzupassen, benötigen wir noch Dein Alter: </target>
+			</trans-unit>
+			<trans-unit id="citysign_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Damit wir Dir passende Möglichkeiten in Deiner Nähe vorschlagen können, benötigen wir neben Deinem Alter Deinen Ort. Bei Deiner Anschrift reicht Deine PLZ, wenn Du möchtest, kannst Du zur näheren Eingrenzung auch Ort, Straße, ggf. Hausnummer von Deiner Wohnung oder Arbeit angeben.
+
+Hinweis: Zum jetzigen Zeitpunkt befindet sich das Portal in der Anfangs-Phase, so dass für Deinen Ort ggf. noch keine Ergebnisse geliefert werden.
+
+Bitte beachte auch unsere </target>
+			</trans-unit>
+			<trans-unit id="citysign_description_dataprivacy" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Datenschutzbestimmungen</target>
+			</trans-unit>
+			<trans-unit id="citysign_error_not_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Anschrift konnte leider nicht gefunden werden. Bitte stelle sicher, dass Du Straße und Deinen Ort angibst.</target>
+			</trans-unit>
+			<trans-unit id="citysign_error_not_ka" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Entweder konnte Deine Adresse nicht gefunden werden oder in Deiner Region sind noch keine Mitmachmöglichkeiten erfasst, weil die Plattform erst vor Kurzem für alle Organisationen geöffnet wurde. Falls Du HelfenKannJeder.de nur ausprobieren möchtest, gib als Anschrift einfach &quot;Karlsruhe&quot; ein.</target>
+			</trans-unit>
+			<trans-unit id="citysign_error_technical" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es ist ein technischer Fehler aufgetreten. Wir bitten Dich dies zu entschuldigen. Bitte wende Dich an das HelfenKannJeder-Team über die Seite &quot;Kontakt&quot;. Details: </target>
+			</trans-unit>
+			<trans-unit id="citysign_input_field" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte Adresse eingeben: Ort, (Straße) ...</target>
+			</trans-unit>
+			<trans-unit id="citysign_submit_button" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>OK</target>
+			</trans-unit>
+			<trans-unit id="citysign_your_position" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hier ist Deine Heimatadresse.</target>
+			</trans-unit>
+			<trans-unit id="edit_organisation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Organisation bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="error_registerorganisationprogress_missing_name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du musst Deinen Vor- und Nachnamen angeben.</target>
+			</trans-unit>
+			<trans-unit id="error_registerorganisationprogress_missing_organisationtype" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es muss ein Dachverband angegeben werden.</target>
+			</trans-unit>
+			<trans-unit id="error_registerorganisationprogress_wrong_zipcode" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die angegebene Postleitzahl ist ungültig.</target>
+			</trans-unit>
+			<trans-unit id="error_registerorganisationprogress_invalid_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die angegebene E-Mail-Adresse ist ungültig.</target>
+			</trans-unit>
+			<trans-unit id="error_registerorganisationprogress_invalid_username" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Benutzername enthält ungültige Zeichen. Dieser darf nur a-z, 0-9 und einen Bindestrich enthalten. Andere Zeichen sind nicht erlaubt.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_address_no_addresses_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gebe mindestens eine Adresse Deiner Organisation an.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_address_no_default_address" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es ist keine Standardadresse festgelegt.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_address_not_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Adresse %s, %s konnte nicht gefunden werden.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_appendix_to_long" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Adresszusatz der Adresse %s %s ist mit %d Zeichen von %d erlaubten Zeichen zu lang.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_city_out_of_range" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Ort in der die &quot;%s&quot; Straße ist, hat eine ungültige Länge.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_invalid_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Ansprechpartner %s %s hat eine ungültig formatierte E-Mail-Adresse angegeben (Beispiel: info@example.com).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_invalid_mobilephone_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Ansprechpartner %s %s hat eine ungültig formatierte Mobilfunknummer angegeben (Beispiel: 0175 1234567).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_invalid_phone_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Ansprechpartner %s %s hat eine ungültig formatierte Telefonnummer angegeben (Beispiel: 0721 1234567).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_missing_contact_possibility" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Ansprechpartner %s %s sollte eine Kontaktmöglichkeit (entweder E-Mail-Adresse oder Telefonnummer) haben.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_missing_prename" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt einen Ansprechpartner, bei dem kein Vorname angegeben ist.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_contact_person_missing_surname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt einen Ansprechpartner, bei dem kein Nachname angegeben ist.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_name_empty" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib den Namen deiner Organisation an.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_name_longest_word_to_long" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das längste Wort des Namens hat %d Zeichen, darf allerdings nur %d Zeichen haben!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_description_empty" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte beschreibe Deine Organisation. Dies hilft dem Nutzer sich besser zu orientieren und Details über Deine Organisation zu erfahren.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_description_longest_word_to_long" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das längste Wort hat %d Zeichen, darf allerdings nur %d Zeichen haben!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_employee_invalid_mobilephone_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bei dem Mitmacher &quot;%s&quot; ist eine ungültige Mobilfunknummer angegeben (Beispiel für richtiges Format: 0175 1234567).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_employee_invalid_phone_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bei dem Mitmacher &quot;%s&quot; ist eine ungültige Telefonnummer angegeben (bitte nach dem Format 0721 1234567 eingeben).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_employee_person_missing_motivation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bei dem Mitmacher &quot;%s&quot; ist kein Text mit seiner Motivation zum Mitmachen angegeben.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_employee_person_missing_prename" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt einen Mitmacher, bei dem kein Vorname angegeben ist.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_invalid_website" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die angegebene Webseite der Einheit &quot;%s&quot; ist ungültig, bitte beachte, dass Du http:// voranstellen musst.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_maximum_age_not_a_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Höchstalter der Einheit &quot;%s&quot; ist keine Zahl!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_maximum_age_out_of_range" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Höchstalter der Einheit &quot;%s&quot; ist außerhalb des möglichen Gültigkeitsbereich (zwischen %d und %d)!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_minimum_age_greater_than_maximum_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bei der Einheit &quot;%s&quot; ist das Mindestalter (%d) größer als das Höchstalter (%d)!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_minimum_age_not_a_number" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Mindestalter der Einheit &quot;%s&quot; ist keine Zahl!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_minimum_age_out_of_range" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Mindestalter der Einheit &quot;%s&quot; ist außerhalb des möglichen Gültigkeitsbereich (zwischen %d und %d)!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_missing_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte beschreibe die Einheit &quot;%s&quot;!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_missing_maximum_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib das Höchstalter für die Einheit &quot;%s&quot; an!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_group_missing_minimum_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib das Mindestalter für die Einheit &quot;%s&quot; an!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_invalid_url" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die angegebene Webseite ist ungültig, bitte stelle ein http:// der Seite voran.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_no_contact_persons" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du musst mindestens einen Ansprechpartner festlegen.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_no_groups" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du musst mindestens eine Einheit zu Deiner Organisation hinzufügen, sonst kann Deine Organisation nicht gefunden werden!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_no_logo" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte wähle ein Logo aus!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_no_workinghours" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib mindestens eine Dienstzeit an!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_not_in_range_of_main_address" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Postleitzahl %05d ist zu weit von der ursprünglich eingegebenen Postleitzahl %05d entfernt.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_not_valid_phonenumber" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Adresse %s %s hat eine ungültige formatierte Telefonnummer (Beispiel: 0721 1234567).</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_not_valid_time_period" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Zeitspanne %02d:%02d bis %02d:%02d ist ungültig, da der Startzeitpunkt vor dem Endzeitpunkt liegt.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_picture_not_a_image" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Eines der Bilder enthält einen Fehler und kann nicht verarbeitet werden, bitte lösche es es aus der Liste.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_picture_not_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Eines der Bilder konnte leider nicht mehr gefunden werden, bitte lösche es es aus der Liste.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_picture_to_small" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Für eine optimale Darstellungsqualität müssen Bilder eine Mindestgröße von 600x600 Pixel haben.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_pictures_empty" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du musst mindestens ein Bild für Deine Organisation hochladen.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_street_out_of_range" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Name der Straße im Ort &quot;%s&quot; hat eine ungültige Länge.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_image_size_form" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Hochladen eines Bildes ist aufgrund der zu hohen Dateigröße fehlgeschlagen! (Formularfehler)</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_image_size_ini" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Hochladen eines Bildes ist aufgrund der zu hohen Dateigröße (max. 10 MB) fehlgeschlagen!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_internal_problem_extension" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072803</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_internal_problem_partial" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Upload ist fehlgeschlagen, bitte probieren es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072754</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_internal_problem_tmp_dir" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072771</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_internal_problem_write" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Upload ist fehlgeschlagen, bitte probiere es noch einmal. Sollte es nicht klappen, wende Dich bitte an den Support und nenne diese Fehlermeldung: 1327072788</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_failed_wrong_image_type" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Hochladen ist fehlgeschlagen, es dürfen nur Bilder vom Typ PNG oder JPG hochgeladen werden.</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_workinghours_no_day_given" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt eine Dienstzeit, die keinen Tag angegeben hat!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_workinghours_not_all_time_values_should_be_null" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt eine Dienstzeit, der keine Uhrzeit zugewiesen wurde!</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_zipcode_out_of_range" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Postleitzahl des Ortes &quot;%s&quot; muss genau fünf Zeichen lang sein.</target>
+			</trans-unit>
+			<trans-unit id="organisation_upload_types" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder (png und jpg)</target>
+			</trans-unit>
+			<trans-unit id="organisation_upload_status_start" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Starte...</target>
+			</trans-unit>
+			<trans-unit id="organisation_upload_status_failed" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Fehlgeschlagen</target>
+			</trans-unit>
+			<trans-unit id="organisation_upload_status_wait" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Warte</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_size" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es ist bei einigen Dateien ein Fehler aufgetreten, bitte prüfe die Bildgröße:</target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_general" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es ist ein Fehler aufgetreten, für weitere Informationen bitte die Administratoren kontaktieren, mit folgenden Informationen: </target>
+			</trans-unit>
+			<trans-unit id="error_organisation_upload_file" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Eine Datei konnte nicht vollständig erkannt werden und wurde übersprungen.</target>
+			</trans-unit>
+			<trans-unit id="generator_error_nothing_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Leider konnten wir kein passendes Ergebnis finden.</target>
+			</trans-unit>
+			<trans-unit id="generator_first" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>1.</target>
+			</trans-unit>
+			<trans-unit id="generator_first_list" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Liste</target>
+			</trans-unit>
+			<trans-unit id="generator_first_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wähle im ersten Schritt bis zu fünf verschiedene Tätigkeiten, die Du gerne machen würdest. Du kannst auch ein Stichwort eingeben (z. B. &quot;tauchen&quot;).</target>
+			</trans-unit>
+			<trans-unit id="generator_list_all" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>List all</target>
+			</trans-unit>
+			<trans-unit id="generator_no_organisation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Leider konnten keine Hilfsorganisationen in unmittelbarer Nähe gefunden werden. Dies bedeutet jedoch nicht, dass keine Mitmachmöglichkeiten vorhanden sind. Die Plattform befindet sich im Aufbau und eine Registrierung der Organisationen in Deinem Ort ist noch nicht erfolgt. Das Rathaus/Bürgerbüro kann in der Regel jedoch Auskunft über die Möglichkeiten ehrenamtlichen Engagements mitteilen.</target>
+			</trans-unit>
+			<trans-unit id="generator_please_choose" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte wählen</target>
+			</trans-unit>
+			<trans-unit id="generator_searching" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Suche läuft...</target>
+			</trans-unit>
+			<trans-unit id="generator_second" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>2.</target>
+			</trans-unit>
+			<trans-unit id="generator_second_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Manche Tätigkeiten werden durch die Hilfsorganisationen in verschiedenen Einsatzbereichen geleistet. Durch die optionale Eingrenzung dieser kannst Du die Auswahl der für Dich infrage kommenden Organisationen weiter verfeinern.</target>
+			</trans-unit>
+			<trans-unit id="generator_second_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wähle optional zur Verfeinerung der Suchergebnisse Deine Wunsch-Einsatzbereiche für Deine gewählte(n) Tätigkeit(en) aus.</target>
+			</trans-unit>
+			<trans-unit id="generator_sentence_first" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ich möchte...</target>
+			</trans-unit>
+			<trans-unit id="generator_sentence_second" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>... und im Einsatz sein bei...</target>
+			</trans-unit>
+			<trans-unit id="generator_sentence_third" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deshalb passt zu mir:</target>
+			</trans-unit>
+			<trans-unit id="generator_third" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dein Ergebnis</target>
+			</trans-unit>
+			<trans-unit id="generator_third_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hier werden die örtlichen Organisationen aufgelistet, die am ehesten Deinen Vorlieben entsprechen.</target>
+			</trans-unit>
+			<trans-unit id="generator_distance_unit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>km</target>
+			</trans-unit>
+			<trans-unit id="generator_distance_tooltip" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Entfernung von Deinem Wohnort (Luftlinie).</target>
+			</trans-unit>
+			<trans-unit id="generator_grade_unit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>%</target>
+			</trans-unit>
+			<trans-unit id="generator_grade_tooltip" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ein Ergebnis von 100% bedeutet, dass Du in der angebotenen Organisation alle Deine gewünschten Tätigkeiten möglich sind. Kleinere Prozentzahlen weisen darauf hin, dass die Organisation Deine Tätigkeit entweder nicht schwerpunktmäßig erfüllt oder, solltest Du mehrere Tätigkeiten ausgewählt haben, nicht alle hier angeboten werden.</target>
+			</trans-unit>
+			<trans-unit id="legend" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Legende</target>
+			</trans-unit>
+			<trans-unit id="matrix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Matrix</target>
+			</trans-unit>
+			<trans-unit id="matrix_no_activity_field" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Kein Tätigkeitsgebiet</target>
+			</trans-unit>
+			<trans-unit id="matrix_primary_activity_field" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Haupttätigkeit</target>
+			</trans-unit>
+			<trans-unit id="matrix_secondary_activity_field" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nebentätigkeit</target>
+			</trans-unit>
+			<trans-unit id="new_organisation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Neue Organisation</target>
+			</trans-unit>
+			<trans-unit id="organisation_address_add_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Weitere Adresse hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_address_default" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Standardadresse</target>
+			</trans-unit>
+			<trans-unit id="organisation_address_default_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Diese Adresse zur Standardadresse machen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_address_default_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du kannst eine Adresse als Standardadresse festlegen. Dies sollte die erste Adresse sein, mit der ein neuer Interessent in Verbindung kommt. Für Dienste können noch weitere Adressen hinzugefügt werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_addressappendix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Adresszusatz</target>
+			</trans-unit>
+			<trans-unit id="organisation_addressappendix_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Zusätzliche Angabe, die für den Benutzer wichtig ist (Nebengebäude, Etage, ...).</target>
+			</trans-unit>
+			<trans-unit id="organisation_addresses" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Organisationsanschriften und Treffpunkte</target>
+			</trans-unit>
+			<trans-unit id="organisation_city" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="organisation_city_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Stadt zu der Adresse. Diese wird überprüft, ob sie mit der Postleitzahl übereinstimmt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_contactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner und Mitmacher</target>
+			</trans-unit>
+			<trans-unit id="organisation_delete_logo" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Logo löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_department" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="organisation_do_you_really_want_to_delete_this_group" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Möchtest Du wirklich diese Einheit/Gruppe/Abteilung löschen?</target>
+			</trans-unit>
+			<trans-unit id="organisation_edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_add_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Weiteren Ansprechpartner/Mitmacher hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_birthday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Geburtstag</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_city" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>City</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Funktion</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson_no" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mitmacher</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson_complete" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner der gesamten Organisation</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson_group" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner einer Einheit</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner der gesamten Organisation</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_contactperson_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hierdurch kann eine Person als Ansprechpartner für die gesamte Organisation gemacht werden. Ansprechpartner für andere Organisationen können später noch festgelegt werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_delete_picture" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bild löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_mail_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, mehrere Kontaktmöglichkeiten anzugeben.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_mobilephone_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, mehrere Kontaktmöglichkeiten anzugeben.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_motivation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Warum mache ich mit</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_motivation_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Motivation soll eine kurze Beschreibung des Mitmachers sein, wieso er bei der Hilfsorganisation dabei ist.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_pictures_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ein Bild des Mitmachers/Ansprechpartners schafft einen persönlicheren Bezug und senkt die Hemmschwelle des Interessenten, die Organisation zu kontaktieren. Mitmacher müssen ein Bild bereitstellen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_prename_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner und Mitmacher müssen ihren Vornamen angeben.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_rank" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dienstgrad</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_rank_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Für einen Ansprechpartner kann hier ein Dienstgrad oder eine Beschreibung der Funktion innerhalb der Organisation angegeben werden, bei Mitmachern wird dieser ignoriert.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_street" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Street</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_surname_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Nachname ist für Mitmacher freiwillig, bei Ansprechpartnern muss dieser zwingend angegeben werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_telephone_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Für Ansprechpartner ist eines der Felder E-Mail, Telefon oder Handy Pflicht. Wir empfehlen, Interessenten mehrere Kontaktmöglichkeiten anzubieten.</target>
+			</trans-unit>
+			<trans-unit id="organisation_general" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Allgemeines zur Organisation</target>
+			</trans-unit>
+			<trans-unit id="organisation_generic" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Allgemein</target>
+			</trans-unit>
+			<trans-unit id="organisation_geodata" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Koordinaten</target>
+			</trans-unit>
+			<trans-unit id="organisation_geodata_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Position der Adresse wird automatisch ermittelt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheiten/Gruppen/Abteilungen</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_add" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_address" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_city" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_contactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_contactperson_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wenn der Ansprechpartner dieser Einheit von dem Organisations-Ansprechpartner abweicht, kann dieser hier angegeben werden. Sollte der Ansprechpartner hier nicht zur Auswahl aufgelistet werden, speichere den bisherigen Stand, gehe bitte zurück und lege unter &quot;Ansprechpartner und Mitmacher&quot; einen Ansprechpartner an, dessen Funktion Du dann von &quot;Mitmacher&quot; auf &quot;Ansprechpartner einer Einheit&quot; bitte änderst.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_delete" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_description_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hier kannst Du dem Interessenten ein paar kurze Informationen zu dieser Einheit geben. Du kannst gerne, sofern vorhanden, den vorgeschlagenen Text übernehmen oder überarbeiten. Hier kann auch auf Details, die diese Organisation in dieser Hinsicht von anderen Organisationen abhebt, hingewiesen werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_info_missing" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Diese Einheit ist noch nicht vollständig in unserem System erfasst. Das heißt für Dich, dass Du zwar angeben kannst, dass Deine Organisation in diesem Umfeld tätig ist, sie allerdings nicht über &quot;Was kann ich tun?&quot;-Anfrage von Interessenten gefunden wird. Wir würden uns freuen, wenn Du auf uns zukommst und uns hilfst, Deine Einheit in unser System aufzunehmen. Wir würden uns um Deine Kontaktaufnahme zu uns freuen (siehe Supporter auf der rechten Seite).</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_latitude_and_longitude" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Breiten- und Längengrad</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_matrix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Tätigkeitsmatrix</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_maximum_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Höchstalter</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_maximum_age_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Höchstalter wird dazu verwendet, diese Tätigkeiten bei &quot;Bei wem?&quot; der entsprechenden Altersklasse zuzuordnen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_minimum_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mindestalter</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_minimum_age_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Mindestalter wird dazu verwendet, diese Tätigkeiten bei &quot;Bei wem?&quot; der entsprechenden Altersklasse zuzuordnen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Neu</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_save" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_street" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Straße, HNr.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_website" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Webseite</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_website_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nur wenn diese Einheit eine eigene Webseite hat, wie z. B. eine Jugendgruppe, kann diese hier angegeben werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_workinghours" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Regelmäßige Termine</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_zipcode" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="organisation_logo" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Logo</target>
+			</trans-unit>
+			<trans-unit id="organisation_logo_upload" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Logo hochladen</target>
+			</trans-unit>
+			<trans-unit id="organisation_logo_choose" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>oder auswählen</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrices" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Matrizen</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrix_delete" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrix_edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Edit</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrix_name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrix_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_matrix_save" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="organisation_name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="organisation_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_upload" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder hochladen</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_sort" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder sortieren (mit gedrückter Maustaste positionieren) und löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte lade mindestens ein aussagekräftiges Bild deiner Organisation (z. B. von einer Übung oder einem Einsatz) hoch. Bitte beachte, dass die Bilder mindestens 600x600 Pixel groß und im JPG- oder PNG-Format vorliegen müssen.
+
+Dir ist bekannt, dass die unrechtmäßige Verwendung von durch Dritte geschützten Motiven kein Kavaliersdelikt ist und mit Geldstrafen geahndet werden kann.</target>
+			</trans-unit>
+			<trans-unit id="organisation_save" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="organisation_street" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Straße, HNr.</target>
+			</trans-unit>
+			<trans-unit id="organisation_street_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Angabe einer Straße ist ein Pflichtfeld und wird automatisch validiert.</target>
+			</trans-unit>
+			<trans-unit id="organisation_telephone" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="organisation_telephone_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Telefonnummer muss in dem Format &quot;Vorwahl Ortsrufnummer&quot; angegeben werden, also z. B. 01234 567890. Es sind nur Zahlen erlaubt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_website" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Webseite</target>
+			</trans-unit>
+			<trans-unit id="organisation_website_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib hier die Webseite Deiner Hilfsorganisation an. Diese muss mit http:// beginnen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_view" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansehen</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_add_new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Weiteren Termin hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_addition" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Zusatz</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_addition_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wenn der Dienst z. B. nur alle zwei Wochen oder in unregelmäßigen Abständen stattfindet, kann dies hier stichwortartig vermerkt werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_address" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_address_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Angabe des Ortes ermöglicht es dem Nutzer, sofern er Interesse hat, bei einem Dienst mal hereinzuschnuppern. Weitere Orte können unter Stammdaten erfasst werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wochentag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.friday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Freitag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.monday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Montag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.please_choose" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>-- Bitte wählen --</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.saturday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Samstag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.sunday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Sonntag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.thursday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Donnerstag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.tuesday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dienstag</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day.wednesday" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mittwoch</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_day_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seiner Terminplanung vereinbaren lässt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_groups" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_groups_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Sofern dieser Dienst nicht für alle Einheiten gilt, kann dies hier eingeschränkt werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_oclock" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Uhr</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_starttime" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Beginn</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_starttime_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seinem Terminkalender vereinbaren lässt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_stoptime" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ende</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_stoptime_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Durch Angabe des Wochentages und des Zeitraumes ist es dem Nutzer möglich, festzustellen, ob er an den Diensten überhaupt Zeit hat und ob diese sich mit seinem Terminkalender vereinbaren lässt.</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_until" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>bis</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghours" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Regelmäßig wiederkehrende Termine</target>
+			</trans-unit>
+			<trans-unit id="organisation_zipcode" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="organisation_zipcode_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Postleitzahl ist ein Pflichtfeld und es wird automatisch überprüft, ob sie zum Ort gehört. Des Weiteren muss die Postleitzahl in der Nähe von der im Schritt &quot;Konto erstellen&quot; angegebenen Postleitzahl sein.</target>
+			</trans-unit>
+			<trans-unit id="overview_age" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Jahre</target>
+			</trans-unit>
+			<trans-unit id="overview_all_groups" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Alle</target>
+			</trans-unit>
+			<trans-unit id="overview_all_organisations" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>&lt;&lt; zurück zur Organisationsübersicht</target>
+			</trans-unit>
+			<trans-unit id="overview_and" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>und</target>
+			</trans-unit>
+			<trans-unit id="overview_back" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>&lt;&lt; zurück</target>
+			</trans-unit>
+			<trans-unit id="overview_contactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="overview_employees" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wir sind dabei, weil...</target>
+			</trans-unit>
+			<trans-unit id="overview_group" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheit</target>
+			</trans-unit>
+			<trans-unit id="overview_groups" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheiten</target>
+			</trans-unit>
+			<trans-unit id="overview_location" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="overview_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>E-Mail-Adresse:</target>
+			</trans-unit>
+			<trans-unit id="overview_mainactivities" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Tätigkeitsschwerpunkte</target>
+			</trans-unit>
+			<trans-unit id="overview_mainactivities_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Darstellung der Organisationsschwerpunkte befindet sich </target>
+			</trans-unit>
+			<trans-unit id="overview_mainactivities_there" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>hier</target>
+			</trans-unit>
+			<trans-unit id="overview_matrix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>In der folgenden Tabelle wird dargestellt, welche Tätigkeiten die Hilfsorganisation, </target>
+			</trans-unit>
+			<trans-unit id="overview_matrix2" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>, in dem jeweiligen Einsatzbereich erbringt. Tätigkeiten, die in keinem Bereich erbracht werden, werden nicht dargestellt.
+
+Legende:</target>
+			</trans-unit>
+			<trans-unit id="overview_matrix_no_activity" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Tätigkeit wird nicht erbracht</target>
+			</trans-unit>
+			<trans-unit id="overview_matrix_primary_activity" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Haupttätigkeit (Schwerpunkt) in dem jeweiligen Bereich</target>
+			</trans-unit>
+			<trans-unit id="overview_matrix_secondary_activity" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nebentätigkeit</target>
+			</trans-unit>
+			<trans-unit id="overview_mobilephone" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mobil:</target>
+			</trans-unit>
+			<trans-unit id="overview_telefax" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Fax:</target>
+			</trans-unit>
+			<trans-unit id="overview_telephone" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Tel.:</target>
+			</trans-unit>
+			<trans-unit id="overview_distance" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Entfernung ca. </target>
+			</trans-unit>
+			<trans-unit id="overview_distance_unit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target> km</target>
+			</trans-unit>
+			<trans-unit id="overview_without" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Alle außer</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_clock" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Uhr</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_1" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Montag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_2" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dienstag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_3" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mittwoch</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_4" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Donnerstag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_5" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Freitag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_6" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Samstag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_day_7" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Sonntag</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghour_addition" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hinweis</target>
+			</trans-unit>
+			<trans-unit id="overview_workinghours" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Regelmäßige Termine</target>
+			</trans-unit>
+			<trans-unit id="read_more" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>(mehr...)</target>
+			</trans-unit>
+			<trans-unit id="register_correct_mistakes" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es gibt noch Fehler in Deinen Angaben, bitte korrigiere diese, anschließend findest Du hier den Button um Deine Organisation einzutragen.</target>
+			</trans-unit>
+			<trans-unit id="register_destroy_data" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wenn Du auf diese Seite springst, gehen aktuelle nicht gespeicherte Daten auf dieser Seite verloren. Möchtest Du dennoch fortfahren?</target>
+			</trans-unit>
+			<trans-unit id="register_force_page_change" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Fehlermeldungen vorerst ignorieren.</target>
+			</trans-unit>
+			<trans-unit id="register_incorrect_fields" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es fehlt noch:</target>
+			</trans-unit>
+			<trans-unit id="register_last_step" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>« Zurück</target>
+			</trans-unit>
+			<trans-unit id="register_next_endup" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Eintrag zur Validierung und Veröffentlichung beantragen</target>
+			</trans-unit>
+			<trans-unit id="register_next_step" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Weiter »</target>
+			</trans-unit>
+			<trans-unit id="register_abort" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abbrechen</target>
+			</trans-unit>
+			<trans-unit id="register_new_user" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Benutzer anlegen</target>
+			</trans-unit>
+			<trans-unit id="register_right_contactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="register_right_login" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Anmeldung</target>
+			</trans-unit>
+			<trans-unit id="register_right_logout" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abmelden und später fortfahren</target>
+			</trans-unit>
+			<trans-unit id="register_right_username" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Benutzername</target>
+			</trans-unit>
+			<trans-unit id="register_save_step" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="register_step1" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Rechtliches</target>
+			</trans-unit>
+			<trans-unit id="register_step1_checkbox_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte bestätige, dass Du berechtigt bist, die Organisation anzumelden.</target>
+			</trans-unit>
+			<trans-unit id="register_step1_checkbox_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="register_step1_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Rechtlicher Hinweis zur Registrierung</target>
+			</trans-unit>
+			<trans-unit id="register_step1_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dies ist das Registrierungsportal von HelfenKannJeder.de. Hier hast Du die Möglichkeit, Deine Hilfsorganisation selber zu erfassen - Du musst dazu von Deiner Organisation berechtigt sein. In der jetzigen Phase können nur Organisationen innerhalb Baden-Württembergs sich registrieren - ein bundesweiter Einsatz ist zukünftig vorgesehen. Den Registrierungsprozess kannst Du jederzeit abbrechen und zu einem späteren Zeitpunkt fortsetzen. Allerdings wird Deine Organisation erst nach Überprüfung Deiner Angaben durch uns nur dann freigeschaltet, wenn Du alle notwendigen Angaben hinterlegt hast. Vor der Freischaltung ist Deine Organisation auf HelfenKannJeder.de nicht auffindbar. Bitte zögere nicht, bei Problemen Hilfe anzufordern - ein persönlicher Ansprechpartner wird Dir genannt, sobald Du Deine Anmeldedaten hinterlegt hast. Sollten bereits Schwierigkeiten bei einem Schritt davor auftreten, besteht die Möglichkeit, das HelfenKannJeder.de-Team über das Kontaktformular erreichen. Da wir HelfenKannJeder.de ausschließlich ehrenamtlich betreiben, habe bitte dafür Verständnis, dass Freischaltungen etwas Zeit in Anspruch nehmen können. Möchtest Du uns z. B. als Supporter unterstützen, Kritik oder Verbesserungsvorschläge unterbreiten? Wir freuen uns auf Deine Nachricht an uns.</target>
+			</trans-unit>
+			<trans-unit id="register_step2" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Konto erstellen</target>
+			</trans-unit>
+			<trans-unit id="register_step21_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Detailangabe über den Dachverband</target>
+			</trans-unit>
+			<trans-unit id="register_step21_label_acronym" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abkürzung</target>
+			</trans-unit>
+			<trans-unit id="register_step21_label_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="register_step21_label_name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="register_step21_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Leider können wir Deine Organisation nicht finden, da diese noch nicht in unserer Datenbank hinterlegt ist. Bitte nimm Kontakt zu uns auf, so dass wir diese eintragen können.</target>
+			</trans-unit>
+			<trans-unit id="register_step2_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Konto erstellen</target>
+			</trans-unit>
+			<trans-unit id="register_step2_label_organisationtype" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dachverband</target>
+			</trans-unit>
+			<trans-unit id="register_step2_please_choose" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>-- Bitte wählen --</target>
+			</trans-unit>
+			<trans-unit id="register_step2_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>In diesem Schritt werden die grundlegenden Eigenschaften Deines Benutzerkontos abgefragt. Diese können im Nachhinein, abgesehen von Deinem Passwort, nur noch durch einen Supporter angepasst werden. Nach diesem Schritt erhältst Du zur Prüfung Deiner Eingaben eine E-Mail, die Du bestätigen musst.</target>
+			</trans-unit>
+			<trans-unit id="register_step3" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Anmeldedaten</target>
+			</trans-unit>
+			<trans-unit id="register_step30_calculated" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wird automatisch berechnet</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_city" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Postleitzahl (PLZ)</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_city_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Gib hier bitte die Postleitzahl des Ortes Deiner Organisation an. Anhand dieser wird ein Vorschlag für Deinen Anmeldenamen erstellt.</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_department" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abteilung (optional)</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_department_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Sollte es in Deiner Stadt mehrere Organisationen Deines Dachverbandes geben, ergänze bitte den Ortsnamen um den Namen Deiner Abteilung (Abteilung: Ortsteilname, Ortsgruppenname, ...).</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_organisationname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Organisationsname</target>
+			</trans-unit>
+			<trans-unit id="register_step30_label_organisationname_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dieser wird automatisch aus den bisher getätigten Angaben berechnet.</target>
+			</trans-unit>
+			<trans-unit id="register_step30_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Als Nächstes benötigen wir die Postleitzahl (PLZ) des Ortes Deiner Hilfsorganisation. Hat Dein Ort mehrere Teilorte, kannst Du optional eine Abteilung (=Ortsteilname, Ortsgruppenname, ...) angeben. Anschließend wird geprüft, ob Deine Hilfsorganisation bereits registriert ist und Deine Anmeldedaten automatisch generiert.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_ending_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>
+An dieser Stelle schließt Du die Registrierung Deines Benutzerkontos ab. Anschließend hast Du die Möglichkeit, die Stammdaten Deiner Organisation zu erfassen. Bitte halte dazu ein paar Bilder bereit. Der Dachverband und Ort der Organisation kann beim Absenden dieses Formulars nicht mehr geändert werden!
+</target>
+			</trans-unit>
+			<trans-unit id="register_step31_error_password_match_word" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Passwort wird nicht akzeptiert, da einfach zu erraten (zu ähnlich zu &quot;%s&quot;).</target>
+			</trans-unit>
+			<trans-unit id="register_step31_error_password_to_short" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das gewählte Passwort ist zu kurz (benötigte Mindestlänge: acht Zeichen).</target>
+			</trans-unit>
+			<trans-unit id="register_step31_error_passwords_not_match" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Passwörter stimmen nicht überein.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_error_user_exists" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Hilfsorganisation ist bereits registriert. Vielleicht hast Du versehentlich die Zurücktaste Deines Browsers gedrückt? Wenn Du noch keine E-Mail bekommen haben solltest, wenden Dich bitte an den Support.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_city" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Postleitzahl (PLZ)</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>E-Mail-Adresse</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_mail_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gib, sofern verfügbar, an dieser Stelle nicht Deine private oder eine personalisierte E-Mail-Adresse an, sondern idealerweise eine allgemeine, die Deiner Organisation gehört (z. B. info@deine-organisation.de). Hierdurch erleichtert sich für uns die Freischaltung und Benachrichtigungen von uns erreichen Deinen Nachfolger oder Deine Vertretung automatisch.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_organisationtype" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dachverband</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_password" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Passwort</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_password_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Zu Deinem eigenen Schutz wähle an dieser Stelle bitte ein schwer zu erratendes Kennwort mit einer Mindestlänge von acht Zeichen.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_password_repeat" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>wiederholen</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_surname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dein Name</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_prename" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dein Vorname</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_username" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Benutzername</target>
+			</trans-unit>
+			<trans-unit id="register_step31_label_username_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte verwende, wenn möglich, den vorgeschlagenen Anmeldenamen. Dieser kann an dieser Stelle von Dir bei Bedarf geändert werden, sollte z. B. Deine Ortsbezeichnung nicht korrekt sein. Nach diesem Schritt ist keine Änderung mehr möglich. Der Anmeldename erscheint nicht öffentlich und wird nur plattformintern verwendet.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_mail_content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Vielen Dank für Ihre Registrierung bei HelfenKannJeder.de! Das HelfenKannJeder.de-Team freut sich, dass Du Deine Hilfsorganisation registriert hast. Um mit dem Eintragen Deiner Organisationsdaten fortzufahren, klicke bitte auf den nachfolgenden Link:
+%s
+
+Dein Benutzername lautet: %s
+
+Wir meinen, dass es effizienter ist, wenn alle Hilfsorganisationen nicht nur im Einsatz zusammenarbeiten, sondern auch gemeinsam für neue Mitmacher ohne die Schaffung von Konkurrenzsituationen werben. Dies klappt zum Beispiel in Karlsruhe hervorragend, wo das Portal seinen Ursprung hat. Wir würden uns daher freuen, wenn Du HelfenKannJeder.de auch anderen Organisationen in Deiner Stadt weiterempfiehlst, um das Spektrum der Vielzahl an Mitmachmöglichkeiten in den verschiedenen Hilfsorganisationen für Interessenten transparent zu gestalten. 
+
+Wir wünschen Dir neue motivierte Mitmacher für Deine Organisation.
+
+Bei Fragen schaue bitte in die FAQ (http://helfenkannjeder.de/faq/) oder wende Dich an den Support (siehe Kontaktformular).
+
+Viele Grüße,
+
+Dein HelfenKannJeder.de-Team
+(http://helfenkannjeder.de/team/)
+
+PS: Wir würden uns freuen, wenn Du uns auf Facebook oder Twitter folgst und damit auf dem Laufenden bleibst:
+Facebook: http://www.facebook.com/HelfenKannJeder
+Twitter https://twitter.com/#!/HelfenKannJeder</target>
+			</trans-unit>
+			<trans-unit id="register_step31_mail_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Registrierung auf HelfenKannJeder.de</target>
+			</trans-unit>
+			<trans-unit id="register_step31_starting_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>In diesem Schritt erhältst Du nochmals einen Überblick über Deine bereits angegebenen Daten. Nun musst Du bitte noch eine E-Mail-Adresse und ein Passwort wählen. Sollten die hier angegebenen Daten nicht korrekt sein, gehe bitte zurück und nehme entsprechende Korrekturen vor. Nach diesem Schritt erhältst Du eine E-Mail zur Verifizierung der Richtigkeit Deiner E-Mail-Adresse.</target>
+			</trans-unit>
+			<trans-unit id="register_step32_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Glückwunsch! Der erste Teil der Registrierung ist nun abgeschlossen. In wenigen Minuten erhältst Du eine E-Mail, in der ein Link zur Fortsetzung der Registrierung enthalten ist. Solltest Du innerhalb von wenigen Stunden keine E-Mail bekommen -bitte schaue ggf. auch in den Ordner für SPAM-Mails-, wende Dich bitte an den Support (siehe Spalte rechts).
+
+Wir würden uns sehr freuen, wenn sich die Karlsruher Idee der gemeinsamen Personalsuche durch alle Hilfsorganisationen auch in Deiner Region Gefallen findet. Deshalb wäre es nett, wenn Du unser fast ausschließlich in ehrenamtlicher Arbeit entstandenes und auch zukünftig nichtkommerzielles Portal Deinen Bekannten, Freunden und Kollegen anderer Hilfsorganisationen empfiehlst. Natürlich freuen wir uns auch, wenn Du die Plattform z. B. durch eine Mitarbeit als Supporter unterstützt. 
+
+Solltest Du Probleme bei der Registrierung haben, kontaktiere unseren Support. Fast alle Supportmitarbeiter sind ehrenamtlich für die Plattform tätig und selber bei einer Hilfsorganisation dabei. Soweit möglich, versuchen wir Dir bei Problemen einen persönlichen Support-Mitarbeiter aus Deiner Organisation zu vermitteln.</target>
+			</trans-unit>
+			<trans-unit id="register_step33_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dein Benutzerkonto wurde erfolgreich freigeschaltet. Du kannst nun mit der Registrierung Deiner Hilfsorganisation fortfahren.
+
+Solltest Du einmal nicht weiter kommen, zögere bitte nicht und wende Dich an unseren Support (siehe Randspalte).</target>
+			</trans-unit>
+			<trans-unit id="register_step3_error_missing_department" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dieser Benutzername existiert bereits. Falls du Deinen Organisationsnamen als Benutzername gewählt hast, überprüfe bitte, ob Deine Organisation sich bereits registriert hat. Falls mehrere Organisationen in Deinem Ort existieren unter dem selben Dachverband, gebe eine Abteilung zur Unterscheidung an. Sollte dies nicht möglich sein, wende Dich bitte an Deinen Supporter, </target>
+			</trans-unit>
+			<trans-unit id="register_step3_error_missing_department_mail" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>, E-Mail: </target>
+			</trans-unit>
+			<trans-unit id="register_step3_error_nothing_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Eine Nutzung der Plattform ist zurzeit nur innerhalb von Baden-Württemberg möglich - hier konnte Dein Ort nicht ermittelt werden. Bitte überprüfe Deine Eingabe oder wende Dich an den Support.</target>
+			</trans-unit>
+			<trans-unit id="register_step4" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Stammdaten</target>
+			</trans-unit>
+			<trans-unit id="register_step40_error_address_not_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Adresse konnte nicht eindeutig zugeordnet werden. Bitte ergänze Deine Angaben.</target>
+			</trans-unit>
+			<trans-unit id="register_step40_map" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="organisaton_employee_teaser_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es muss mindestens ein Ansprechpartner erfasst werden, an den sich Interessierte wenden können.
+Weiterhin besteht optional die Möglichkeit, bereits in Deiner Hilfsorganisation Mitwirkende mit ihrem Foto und einem kurzen Text vorzustellen, um Interessierten Deine Hilfsorganisation persönlicher erscheinen zu lassen. Mitmacher können auch noch später durch Dich ergänzt werden.
+
+Als Anregung für Mitmacher-Statements schau doch mal auf </target>
+			</trans-unit>
+			<trans-unit id="organisaton_employee_teaser_text_and" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>und</target>
+			</trans-unit>
+			<trans-unit id="register_step5" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheiten</target>
+			</trans-unit>
+			<trans-unit id="register_step6" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Termine</target>
+			</trans-unit>
+			<trans-unit id="register_step7" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_add_files" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dateien hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_drag_files_here" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ziehe die Dateien hier hin</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_file_extension_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dateiendungs-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_file_size_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dateigrößen-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_filename" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dateiname</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_files_queued" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>%d Dateien in der Warteschlange.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_generic_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Allgemeiner Fehler beim Hochladen.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_http_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>HTTP-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_init_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Initialisierungs-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_io_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ein-/Ausgabe-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_na" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nicht verfügbar</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_no_flash" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ihr Browser hat keine Flash-, Silverlight-, Gears-, BrowserPlus- oder HTML5-Unterstützung.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_security_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Sicherheits-Fehler.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_select_files" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder auswählen</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_select_files_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dateien zur Warteschlange hinzufügen und Start drücken.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_size" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Größe</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_start_upload" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Starten des Uploads...</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_start_uploading_queue" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Warteschlange hochladen</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_status" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_stop_current_upload" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hochladen anhalten</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_stop_upload" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Stoppen des Hochladens.</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_uploaded_files" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>%d/%d Dateien sind hochgeladen</target>
+			</trans-unit>
+			<trans-unit id="register_step70_upload_you_must_at_least_upload_one_file" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es muss mindestens ein aussagekräftiges Bild Deiner Organisation hochgeladen werden.</target>
+			</trans-unit>
+			<trans-unit id="register_step8" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Abschließen</target>
+			</trans-unit>
+			<trans-unit id="register_step80_mail_content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo,
+
+wir danken Dir für Deine Registrierung auf HelfenKannJeder.de! Deine Daten werden noch von einem unserer Supporter geprüft und anschließend freigeschaltet. Du erhältst dann über E-Mail Bescheid.
+
+Du würdest uns übrigens einen großen Gefallen machen, wenn Du HelfenKannJeder.de an Kollegen befreundeter Hilfsorganisationen weiterempfiehlst.
+
+Zur Verbesserung der Plattform würden wir uns freuen, Deine Meinung zu hören - wir haben dazu fünf Fragen vorbereitet. Deine Antworten behandeln wir selbstverständlich vertraulich und, sofern Du uns Deine Kontaktdaten nicht mitteilst, anonymisiert: http://www.surveymonkey.com/s/QXBS5PK
+
+Das HelfenKannJeder.de-Team wünscht Dir viel Erfolg bei der Gewinnung neuer Mitmacher!</target>
+			</trans-unit>
+			<trans-unit id="register_step80_mail_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Registrierung auf HelfenKannJeder.de</target>
+			</trans-unit>
+			<trans-unit id="register_step90_edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Zum Bearbeiten fortfahren.</target>
+			</trans-unit>
+			<trans-unit id="register_step90_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>
+Vielen Dank für Deine Registrierung!
+
+Diese ist nun vollständig und einer unserer ehrenamtlich tätigen Supporter wird Deine Seite in Kürze freischalten. 
+Sollte Dir vor der Freischaltung dennoch etwas aufgefallen sein, was nicht ganz passt, kannst Du dies mit dem unten stehenden Link ändern.
+
+Sobald Deine Seite freigeschaltet ist, wirst von uns per E-Mail benachrichtigt.</target>
+			</trans-unit>
+			<trans-unit id="register_supporter" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Support</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_section_description" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte wähle hier aus, über welche Gruppen/Einheiten und (Sonder-)Ausstattung Ihr verfügt und wo Ihr Euch spezialisiert habt. Bitte beachte, dass diese Angaben
+sowohl vollständig sein sollen, da jeder Gruppe/Einheit/Ausstattung entsprechende Tätigkeiten durch das System intern zugeordnet sind. Interessierte potenzielle Mitmacher, die solche Tätigkeiten suchen, erhalten dann Eure Organisation vorgeschlagen. Als auch der Wahrheit entsprechen müssen - sollte z. B. auf Eurer Homepage nicht ersichtlich sein, dass Ihr die angegebenen Gruppen/Ausstattungen habt, wird die Veröffentlichung Deiner Organisation abgelehnt.</target>
+			</trans-unit>
+			<trans-unit id="matrix_edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_address_delete_question" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Möchtest Du diese Adresse wirklich löschen?</target>
+			</trans-unit>
+			<trans-unit id="organisation_description_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Diese Beschreibung soll dem Interessenten einen ersten Eindruck von Deiner Organisation vermitteln. Der Text sollte kurz und aussagekräftig sein.</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_delete_question" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wollen Sie diesen Ansprechpartner/Mitmacher wirklich löschen?</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_mobilephone" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mobiltelefon</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_pictures" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_prename" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_surname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="organisation_employee_telephone" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="organisation_geodata.new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Berechnung erfolgt nach dem Speichern.</target>
+			</trans-unit>
+			<trans-unit id="organisation_geodata.failed" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Berechnung schlug fehl, bitte korrigiere sie, sollte sie so stimmen, wende dich bitte an den Support.</target>
+			</trans-unit>
+			<trans-unit id="organisation_name_help" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Name Deiner Hilfsorganisation wird aufgrund einheitlicher Vergabe automatisch bestimmt, wenn in dem Namen fehler sind, kannst Du diesen allerdings noch anpassen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_delete" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Löschen</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_delete_question" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Möchtest Du dieses Bild wirklich löschen?</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_delete_question" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Möchtest Du diesen Termin wirklich löschen?</target>
+			</trans-unit>
+			<trans-unit id="no_organisation_found" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es konnte leider keine passende Organisation gefunden werden.</target>
+			</trans-unit>
+			<trans-unit id="edit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationInformation" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Allgemeine Informationen</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationAddress" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Adressen</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationEmployee" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Mitmacher</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationContactperson" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationGroup" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Gruppen</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationWorkinghour" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dienstzeiten</target>
+			</trans-unit>
+			<trans-unit id="error_message_category.OrganisationPicture" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="organisation_edit_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Organisation bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_back_without_saving" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>« Verwerfen und Zurück</target>
+			</trans-unit>
+			<trans-unit id="organisation_back" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>« Zurück</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.0" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Diese Organisation kann frei bearbeitet werden. Durck Klick auf die Stifte kannst Du die einzelnen Abschnitte der Organisation bearbeiten. Wenn du fertig bist, kannst Du die Daten hier freigeben, anschließend werden sie noch von einem unserer Supporter geprüft und freigegeben.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.0.error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wir bitten Dich, noch alle angegebenen Fehler zu beseitigen, da sonst keine Veröffentlichung möglich ist.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.0.request" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Falls Du fertig mit dem Bearbeiten bist, kannst Du hier die angegebenen Daten zur Freischaltung beantragen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.0.request_confirm" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bist Du Dir sicher, dass die Daten so nun alle stimmen?</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.1" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Diese Orgnisation ist zum Freischalten vorgesehen.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.1.request" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wenn du noch einen Fehler gefunden hast, kannst Du hier nocheinmal die Organisation bearbeiten.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.1.request_confirm" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bist Du Dir sicher, dass Du die Organisation nochmal bearbeiten möchtest?</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.2" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Organisation wird, so wie Du sie hier siehst, veröffentlicht. Änderungen können im Bearbeitungsmodus vorgenommen werden.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.2.request" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>In den Bearbeitungsmodus wechseln.</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text.3" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Anpassungen werden gerade von einem unserer Supporter gesichtet, bitte gedulde Dich etwas, bis Du Deine Daten wieder anpassen kannst. Sollte diese Meldung über einen längeren Zeitraum erscheinen, wende Dich bitte an den Support.</target>
+			</trans-unit>
+			<trans-unit id="organisation_error" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Noch vorhandene Fehler</target>
+			</trans-unit>
+			<trans-unit id="organisation_settings" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="organisation_general_settings" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Allgemeine Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="organisation_group_settings" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Einheiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_workinghour_settings" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Dienstzeiten</target>
+			</trans-unit>
+			<trans-unit id="organisation_picture_settings" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="organisation_mode_user_text_request_button_bold" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ich habe alles fertig, veröffentlicht nun meine Organisation!</target>
+			</trans-unit>
+			<trans-unit id="register_step10_term_of_use_prefix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ja, ich akzeptiere die </target>
+			</trans-unit>
+			<trans-unit id="register_step10_term_of_use" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nutzungsbedingungen</target>
+			</trans-unit>
+			<trans-unit id="register_step10_and" xml:space="preserve" approved="yes">
+				<source></source>
+				<target> und die </target>
+			</trans-unit>
+			<trans-unit id="register_step10_privacy" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Datenschutzbestimmungen</target>
+			</trans-unit>
+			<trans-unit id="register_step10_term_of_use_suffix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target> und bin berechtigt, meine Organisation hier anzumelden.</target>
+			</trans-unit>
+			<trans-unit id="usersetting.firstname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="usersetting.lastname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="usersetting.username" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Benutzername</target>
+			</trans-unit>
+			<trans-unit id="usersetting.password" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Passwort</target>
+			</trans-unit>
+			<trans-unit id="usersetting.password_repeat" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>wiederholen</target>
+			</trans-unit>
+			<trans-unit id="usersetting.email" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="usersetting.submit" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="usersetting.firstname.toShort" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Vorname ist zu kurz, dieser muss mindestens zwei Zeichen haben.</target>
+			</trans-unit>
+			<trans-unit id="usersetting.lastname.toShort" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Der Nachname ist zu kurz, dieser muss mindestens zwei Zeichen haben.</target>
+			</trans-unit>
+			<trans-unit id="usersetting.password.toShort" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Passwort ist zu kurz, dieser muss mindestens acht Zeichen haben.</target>
+			</trans-unit>
+			<trans-unit id="usersetting.password.notMatch" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Passwörter stimmen nicht überein.</target>
+			</trans-unit>
+			<trans-unit id="usersetting.password.changed" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Passwort wurde geändert.</target>
+			</trans-unit>
+			<trans-unit id="support.requestnum.0" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>In Bearbeitung</target>
+			</trans-unit>
+			<trans-unit id="support.requestnum.1" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Warte auf Aktivierung</target>
+			</trans-unit>
+			<trans-unit id="support.requestnum.2" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Aktiviert</target>
+			</trans-unit>
+			<trans-unit id="support.requestnum.3" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Gesperrt von Dir</target>
+			</trans-unit>
+			<trans-unit id="support.organisationdraft.name" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Organisationsname</target>
+			</trans-unit>
+			<trans-unit id="support.organisationdraft.tstamp" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Letzte Änderung</target>
+			</trans-unit>
+			<trans-unit id="support.feuser.username" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Benutzername</target>
+			</trans-unit>
+			<trans-unit id="support.feuser.realname" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ansprechpartner</target>
+			</trans-unit>
+			<trans-unit id="support.sendMessage" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nachricht schreiben</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.view" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.view.new" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Neue Ansicht</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.view.diff" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Unterschiede anzeigen (BETA)</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.back" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Zurück</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.confirm" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Freischalten</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.confirm.realy" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wirklich freischalten?</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.deny" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Verweigern (Begründung erforderlich!)</target>
+			</trans-unit>
+			<trans-unit id="support.organisation.deny.realy" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wirklich verweigern?</target>
+			</trans-unit>
+			<trans-unit id="mail.supporter.afterRequest.headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>[HKJ-WWW] Freischaltungsanfrage von %s</target>
+			</trans-unit>
+			<trans-unit id="mail.supporter.afterRequest.content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo %s,
+
+es liegt eine neue Freischaltungsanfrage von %s vor. Wir bitten dich, zeitnah diese zu beurteilen und freizugeben.
+
+Vielen Dank im Voraus
+
+Das HelfenKannJeder.de-Administrationsteam</target>
+			</trans-unit>
+			<trans-unit id="mail.supporter.removedRequest.headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>[HKJ-WWW] Rückzug einer Freischaltungsanfrage von %s</target>
+			</trans-unit>
+			<trans-unit id="mail.supporter.removedRequest.content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo %s,
+
+die Hilfsorganisation %s hat die Beantragung der Freischaltung zurückgezogen.
+
+Viele Grüße
+
+Das HelfenKannJeder.de-Administrationsteam</target>
+			</trans-unit>
+			<trans-unit id="mail.organisation.requestSucceed.headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Organisation wurde veröffentlicht</target>
+			</trans-unit>
+			<trans-unit id="mail.organisation.requestSucceed.content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo %s,
+
+Deine Hilfsorganisation wurde soeben auf HelfenKannJeder.de freigeschaltet. Änderungen kannst Du selber vornehmen, indem Du Dich auf HelfenKannJeder.de mit Deinem Zugangsdaten anmeldest. Bitte halte den Datenbestand immer aktuell - nichts ist für interessierte Mitmacher frustrierender, als ein veralteter Datenbestand oder nicht mehr vorhandene Ansprechpartner. Bis die Änderungen sichtbar werden, kann es teilweise bis zu 24 Stunden dauern.
+
+Wir wünschen Dir viel Glück beim Werben von neuen Mitmachern!
+Bitte empfehle uns (z. B. auf Facebook unter http://www.facebook.com/HelfenKannJeder) an befreundete Organisationen weiter - nur wenn die Plattform rege genutzt wird, haben sich die vielen Stunden teils ehrenamtliche Programmierung auch gelohnt :-)
+
+Viele Grüße,
+
+Das HelfenKannJeder.de-Team (http://helfenkannjeder.de/team/)
+(welches selber in verschiedenen Hilfsorganisationen tätig ist)
+
+P. S.: Gerne schicken wir Dir, so lange der Vorrat reicht, kostenlos Handzettel und Plakate. Teile uns bitte die gewünschte Menge und das Plakat-Format (A0 oder A1) per E-Mail an info@helfenkannjeder.de mit.
+Das Plakat sieht so aus: http://helfenkannjeder.de/plakat/</target>
+			</trans-unit>
+			<trans-unit id="mail.organisation.requestDeny.headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Organisation konnten wir leider noch nicht veröffentlichen</target>
+			</trans-unit>
+			<trans-unit id="mail.organisation.requestDeny.content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo %s,
+
+leider können wir Deine Hilfsorganisation mit den von Dir erfassen Daten so nicht veröffentlichen. Ein genauer Grund wird Dir getrennt von dieser E-Mail von dem zuständigen Supporter mitgeteilt. Solltest Du keine weitere E-Mail erhalten oder Du der Ablehnung nicht einverstanden sein, wende Dich bitte an info@helfenkannjeder.de, damit wir eine Lösung finden können.
+
+Vielen Dank im Voraus
+
+Das HelfenKannJeder.de-Team (http://helfenkannjeder.de/team/)</target>
+			</trans-unit>
+			<trans-unit id="group_template_feature" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>(Ausstattungsmerkmal)</target>
+			</trans-unit>
+			<trans-unit id="info_text_workinghour" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Um Interessenten mitzuteilen, wann Ihr Euch in der Regel trefft, kannst Du hier die entsprechenden Termine erfassen.
+Wenn verschiedene Gruppen zu unterschiedlichen Zeiten sich treffen, hast Du die Möglichkeit, einen weiteren Termin zu
+ergänzen (Plus-Zeichen bei &quot;Weiteren Termin hinzufügen&quot;) und ein Häkchen für die entsprechenden Gruppen zu setzen
+(Bitte Häkchen entfernen für alle Gruppen, bei denen dieser Termin nicht gilt).
+Sollte sich die Gruppe nicht an der Hauptadresse treffen, besteht die Möglichkeit, eine alternative Adresse für den
+Treffpunkt auszuwählen. Wenn die gewünschte Adresse nicht erscheint, gehe auf den Auswahlpunkt &quot;Sammdaten&quot; zurück
+und füge unter &quot;Organisationsanschriften und Treffpunkte&quot; eine neue Anschrift hinzu.</target>
+			</trans-unit>
+			<trans-unit id="info_text_register_endup" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>So sieht der Interessent Deine Organisation später. Du hast die Möglichkeit, die Daten an dieser Stelle zu ändern, indem Du das Symbol mit dem Stift anklickst.</target>
+			</trans-unit>
+			<trans-unit id="info_text_register_endup_warning" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Die Registrierung ist noch nicht fertig. Bitte drücke noch auf den Knopf am Seitenende, um eine Veröffentlichung zu beantragen.</target>
+			</trans-unit>
+			<trans-unit id="mail_reminder_organisation_register_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Organisation auf HelfenKannJeder.de</target>
+			</trans-unit>
+			<trans-unit id="mail_reminder_organisation_register_content" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Hallo %s,
+
+Du hast am %s begonnen, Deine Hilfsorganisation %s auf HelfenKannJeder.de zu registrieren. Leider ist Deine Registrierung noch unvollständig und somit Deine Organisation für Interessenten noch nicht sichtbar.
+
+Wir würden uns freuen, wenn Du deine Hilfsorganisation vollständig registrierst - melde Dich dazu einfach mit Deinen Anmeldedaten auf helfenkannjeder.de an. Wenn es bei der Registrierung Schwierigkeiten gab, kontaktiere uns bitte, so dass wir Dir weiterhelfen und die Plattform verbessern können - über Deine E-Mail an info@helfenkannjeder.de freuen wir uns!
+
+Viele Grüße
+
+Valentin Zickner
+im Namen des HelfenKannJeder.de-Teams (http://helfenkannjeder.de/team/)
+
+PS: Falls du keine Erinnerungen mehr von uns erhalten möchtest, kannst Du auf nachfolgenden Link klicken:
+http://helfenkannjeder.de/%s</target>
+			</trans-unit>
+			<trans-unit id="no_remind_true" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du wirst nicht mehr an die Registrierung erinnert.</target>
+			</trans-unit>
+			<trans-unit id="no_remind_false" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Das Austragen aus unserer Erinnerungsliste ist leider fehlgeschlagen. Bitte melde Dich bei valentin.zickner@helfenkannjeder.de.</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Frage</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question_from" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>von</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question_yes" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question_no" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question_neutral" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Egal</target>
+			</trans-unit>
+			<trans-unit id="helfomat_question_result" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ergebnis</target>
+			</trans-unit>
+			<trans-unit id="resultlist_survey_prefix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Lob oder Kritik? Hilf uns den Helf-O-Mat </target>
+			</trans-unit>
+			<trans-unit id="resultlist_survey_link" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>zu verbessern</target>
+			</trans-unit>
+			<trans-unit id="resultlist_survey_suffix" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>.</target>
+			</trans-unit>
+			<trans-unit id="register_guide" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Anleitung zur Registrierung</target>
+			</trans-unit>
+			<trans-unit id="register_guide_text" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bist Du noch unschlüssig, ob Du dich registrieren sollst? Willst Du wissen, was Dich erwartet? Hier findest Du Antworten darauf.</target>
+			</trans-unit>
+			<trans-unit id="register_step31_error_mail_server_connection_failed" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Es liegt ein interner Fehler vor. Der Schritt konnte nicht vollständig ausgeführt werden. Wende Dich bitte an webmaster@helfenkannjeder.de und sende uns (gerne auch ohne weitere Kommentare) diese Fehlermeldung.</target>
+			</trans-unit>
+			<trans-unit id="living_place" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Wohnort</target>
+			</trans-unit>
+			<trans-unit id="filter_result" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Ergebnisse eingrenzen</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

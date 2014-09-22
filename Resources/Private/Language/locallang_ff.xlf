@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-22T17:40:55Z" product-name="helfen_kann_jeder">
+		<header/>
+		<body>
+			<trans-unit id="tx_helfenkannjeder_action_default" xml:space="preserve">
+				<source>Default action</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register" xml:space="preserve">
+				<source>Register part 1</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register_continue" xml:space="preserve">
+				<source>Register part 3</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_register_step33" xml:space="preserve">
+				<source>Register part 2</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_support" xml:space="preserve">
+				<source>Support</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_user_settings" xml:space="preserve">
+				<source>User settings</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_organisation_edit" xml:space="preserve">
+				<source>Organisation edit</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_cron" xml:space="preserve">
+				<source>Cron</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_helfomat" xml:space="preserve">
+				<source>Helf-O-Mat</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_location" xml:space="preserve">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_register_session_lifetime" xml:space="preserve">
+				<source>Session Lifetime (in seconds)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

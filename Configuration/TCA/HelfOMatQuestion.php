@@ -55,7 +55,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'helfomat' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.helfomat',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.helfomat',
 			'config' => array(
 				'type' => 'select',
 				'size' => 1,
@@ -68,7 +68,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'question' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.question',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.question',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -78,7 +78,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -88,7 +88,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'positive' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.positive',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.positive',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -108,7 +108,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'negative' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.negative',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.negative',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -128,7 +128,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'positivenot' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.positivenot',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.positivenot',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -148,7 +148,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'negativenot' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.negativenot',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.negativenot',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -168,7 +168,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'group_positive' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.group_positive',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.group_positive',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -188,7 +188,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'group_negative' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.group_negative',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.group_negative',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -208,7 +208,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'group_positivenot' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.group_positivenot',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.group_positivenot',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -228,7 +228,7 @@ $TCA['tx_helfenkannjeder_domain_model_helfomatquestion'] = array(
 		),
 		'group_negativenot' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_helfomatquestion.group_negativenot',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomatquestion.group_negativenot',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,

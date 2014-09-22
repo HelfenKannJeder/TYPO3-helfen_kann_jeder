@@ -55,7 +55,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -65,7 +65,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'namedisplay' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.namedisplay',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.namedisplay',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -75,7 +75,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'acronym' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.acronym',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.acronym',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -85,7 +85,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -95,7 +95,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'picture' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.picture',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.picture',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -111,7 +111,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'teaser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.teaser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.teaser',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -127,7 +127,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'logos' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.logos',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.logos',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -143,14 +143,14 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'pseudo' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.pseudo',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.pseudo',
 			'config' => array(
 				'type' => 'check'
 			)
 		),
 		'group_template_categories' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.grouptemplatecategories',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.grouptemplatecategories',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_grouptemplatecategory',
@@ -164,7 +164,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'fegroup' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.group',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.group',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUserGroup',
@@ -179,21 +179,21 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		),
 		'registerable' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.registerable',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.registerable',
 			'config' => array(
 				'type' => 'check'
 			)
 		),
 		'hide_in_result' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.hide_in_result',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.hide_in_result',
 			'config' => array(
 				'type' => 'check'
 			)
 		),
 		'dummy_organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.dummy_organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Organisation',
@@ -269,21 +269,21 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'crdate' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.crdate',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.crdate',
 			'config' => array(
 				'type' => 'none'
 			)
 		),
 		'tstamp' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.tstamp',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.tstamp',
 			'config' => array(
 				'type' => 'none'
 			)
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -293,7 +293,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -303,7 +303,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'organisationtype' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.type',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.type',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationtype',
@@ -316,7 +316,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'website' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.website',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.website',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -326,7 +326,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'street' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.street',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.street',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -336,7 +336,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -346,7 +346,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'zipcode' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.zipcode',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.zipcode',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -356,7 +356,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'umbrellaorganisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.umbrellaorganisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.umbrellaorganisation',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -366,7 +366,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'nationalassociation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.nationalassociation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.nationalassociation',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -376,7 +376,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'addressappendix' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.addressappendix',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.addressappendix',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -386,7 +386,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'longitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.longitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.longitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -394,7 +394,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'latitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.latitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.latitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -402,7 +402,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'telephone' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.telephone',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.telephone',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -412,7 +412,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 /*		'mobilephone' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.mobilephone',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.mobilephone',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -422,7 +422,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),*/
 		'defaultaddress' => array( // TODO
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.defaultaddress',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.defaultaddress',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_address',
@@ -437,7 +437,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'addresses' => array( // TODO
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.addresses',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.addresses',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_address',
@@ -450,7 +450,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'logo' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.logo',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.logo',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -466,7 +466,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'pictures' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.pictures',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.pictures',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -482,7 +482,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'feuser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.feuser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.feuser',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUser',
@@ -519,7 +519,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 /*		'activityfieldlayers' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.activityfieldlayers',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.activityfieldlayers',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_activityfieldlayer',
@@ -528,7 +528,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),*/
 		'groups' => array( // TODO
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.groups',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.groups',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_group',
@@ -542,7 +542,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'workinghours' => array( // TODO
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.workinghours',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.workinghours',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_workinghour',
@@ -556,7 +556,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'contactpersons' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.contactpersons',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.contactpersons',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -574,7 +574,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 /*		'contactperson' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.contactperson',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.contactperson',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_employee',
@@ -589,7 +589,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),*/
 		'employees' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.employees',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.employees',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_employee',
@@ -599,7 +599,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'matrices' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.matrices',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.matrices',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_matrix',
@@ -608,14 +608,14 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'request' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.request',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.request',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.request.0', 0),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.request.1', 1),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.request.2', 2),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.request.3', 3),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.request.0', 0),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.request.1', 1),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.request.2', 2),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.request.3', 3),
 				),
 				'wizards' => array(
 				),
@@ -624,7 +624,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'requesttime' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.requesttime',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.requesttime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 12,
@@ -634,7 +634,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'supporter' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.supporter',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.supporter',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
@@ -649,7 +649,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'hash' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.hash',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.hash',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -659,7 +659,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'reference' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.reference',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.reference',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationdraft',
@@ -674,7 +674,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'remind_last' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.remind_last',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.remind_last',
 			'config' => array(
 				'type' => 'input',
 				'size' => 12,
@@ -684,7 +684,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'remind_count' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.remind_count',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.remind_count',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -694,7 +694,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'is_dummy' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisation.is_dummy',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.is_dummy',
 			'config' => array(
 				'type' => 'check'
 			)
@@ -780,7 +780,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -790,7 +790,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -800,7 +800,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'workinghours' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.workinghours',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.workinghours',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -810,7 +810,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'website' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.website',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.website',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -820,7 +820,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'minimum_age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.minimum_age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.minimum_age',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -830,7 +830,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'maximum_age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.maximum_age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.maximum_age',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -840,7 +840,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'matrix' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.matrix',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.matrix',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_matrix',
@@ -855,7 +855,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'street' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.street',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.street',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -864,7 +864,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -873,7 +873,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'zipcode' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.zipcode',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.zipcode',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -883,7 +883,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'longitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.longitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.longitude',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -893,7 +893,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'latitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.latitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.latitude',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -903,7 +903,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -917,7 +917,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'template' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.grouptemplate',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.grouptemplate',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_grouptemplate',
@@ -931,7 +931,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'contactpersons' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.contactpersons',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.contactpersons',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -949,7 +949,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		),
 		'reference' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_group.reference',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_group.reference',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_groupdraft',
@@ -1036,7 +1036,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplatecategory.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplatecategory.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1046,7 +1046,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplatecategory.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplatecategory.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1056,7 +1056,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		),
 		'organisationtype' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplatecategory.organisationtype',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplatecategory.organisationtype',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationtype',
@@ -1070,7 +1070,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		),
 		'group_templates' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplatecategory.grouptemplates',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplatecategory.grouptemplates',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_grouptemplate',
@@ -1150,7 +1150,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1160,7 +1160,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1170,7 +1170,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'suggestion' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.suggestion',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.suggestion',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1180,7 +1180,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'minimum_age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.minimum_age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.minimum_age',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -1190,7 +1190,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'maximum_age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.maximum_age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.maximum_age',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -1200,7 +1200,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'matrix' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.matrix',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.matrix',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_matrix',
@@ -1215,7 +1215,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'grouptemplatecategory' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.grouptemplatecategory',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.grouptemplatecategory',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_grouptemplatecategory',
@@ -1229,7 +1229,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'group_of_group_template' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.group_of_group_template',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.group_of_group_template',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_groupofgrouptemplate',
@@ -1243,21 +1243,21 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		),
 		'isdefault' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.isdefault',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.isdefault',
 			'config' => array(
 				'type' => 'check'
 			)
 		),
 		'isoptional' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.isoptional',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.isoptional',
 			'config' => array(
 				'type' => 'check'
 			)
 		),
 		'isfeature' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_grouptemplate.isfeature',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_grouptemplate.isfeature',
 			'config' => array(
 				'type' => 'check'
 			)
@@ -1330,7 +1330,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfield.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfield.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1340,7 +1340,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfield.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfield.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1350,7 +1350,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'activities' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfield.activities',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfield.activities',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -1431,7 +1431,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'activityfield' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer.activityfield',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer.activityfield',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_activityfield',
@@ -1445,7 +1445,7 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -1481,12 +1481,12 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		),
 		'grade' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer.grade',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer.grade',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step0', 0),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step1', 1),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step0', 0),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step1', 1),
 				),
 			)
 		),
@@ -1554,7 +1554,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activity.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1564,7 +1564,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activity.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1574,7 +1574,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		),
 		'keywords' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activity.keywords',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity.keywords',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1584,7 +1584,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		),
 		'words' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_activity.words',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity.words',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_word',
@@ -1660,7 +1660,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -1696,14 +1696,14 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'iscontact' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.is_contact',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.is_contact',
 			'config' => array(
 				'type' => 'passthrough',
 			)
 		),
 		'rank' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.rank',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.rank',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1713,7 +1713,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'surname' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.surname',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.surname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1723,7 +1723,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'prename' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.prename',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.prename',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1733,7 +1733,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'teaser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.teaser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.teaser',
 			'config' => array(
 				'type' => 'input',
 				'size' => 160,
@@ -1743,7 +1743,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'headline' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.headline',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.headline',
 			'config' => array(
 				'type' => 'input',
 				'size' => 160,
@@ -1753,7 +1753,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'motivation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.motivation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.motivation',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -1763,7 +1763,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'birthday' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.birthday',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.birthday',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -1773,7 +1773,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'pictures' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.pictures',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.pictures',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -1789,7 +1789,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'mail' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.mail',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.mail',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1799,7 +1799,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'telephone' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.telephone',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.telephone',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1809,7 +1809,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'mobilephone' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.mobilephone',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.mobilephone',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1819,7 +1819,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'street' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.street',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.street',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1829,7 +1829,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1839,7 +1839,7 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		),
 		'reference' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_employee.reference',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.reference',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_employeedraft',
@@ -1922,7 +1922,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'organisations' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.organisation',
 			'config' => array(
 				'type' => 'select',
 				'size' => 10,
@@ -1938,7 +1938,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'activities' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.activities',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.activities',
 			'config' => array(
 				'type' => 'select',
 				'size' => 10,
@@ -1954,7 +1954,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'ip' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.ip',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.ip',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1964,7 +1964,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'sessionid' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.sessionid',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.sessionid',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1974,7 +1974,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'last_activity' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.last_activity',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.last_activity',
 			'config' => array(
 				'type' => 'input',
 				'size' => 12,
@@ -1984,7 +1984,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.age',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -1993,7 +1993,7 @@ $TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_interested_person.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2064,7 +2064,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		),
 		'matrix' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.matrix',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.matrix',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_matrix',
@@ -2078,7 +2078,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -2092,7 +2092,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		),
 		'activity' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.activity',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.activity',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_activity',
@@ -2106,7 +2106,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		),
 		'activityfield' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.activityfield',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.activityfield',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_activityfield',
@@ -2120,12 +2120,12 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		),
 		'grade' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.grade',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.grade',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.grade.step0', 1),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrixfield.grade.step1', 2),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.grade.step0', 1),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrixfield.grade.step1', 2),
 				),
 			)
 		),
@@ -2192,7 +2192,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		),
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrix.name',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrix.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2202,7 +2202,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrix.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrix.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -2216,7 +2216,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		),
 		'feuser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrix.feuser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrix.feuser',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUser',
@@ -2253,7 +2253,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		),
 		'matrixfields' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_matrix.matrixfields',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_matrix.matrixfields',
 			'config' => array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_matrixfield',
@@ -2323,7 +2323,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		),
 		'word' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.word',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.word',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2333,7 +2333,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		),
 //		'wordparts' => array(
 //			'exclude' => 0,
-//			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.wordparts',
+//			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.wordparts',
 //			'config' => array(
 /*				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -2347,7 +2347,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 //		),
 		'activity' => array( // TODO
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.activity',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.activity',
 			'config' => array(
 			)
 		),
@@ -2414,13 +2414,13 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		),
 		'word' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.word',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.word',
 			'config' => array(
 			)
 		),
 		'part' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.part',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.part',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2430,7 +2430,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		),
 		'position' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.position',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.position',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2440,7 +2440,7 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		),
 		'complete' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_word.complete',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.complete',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2511,7 +2511,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -2546,24 +2546,24 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'day' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
 					array('---', 0),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.monday', 1),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.tuesday', 2),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.wednesday', 3),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.thursday', 4),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.friday', 5),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.saturday', 6),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.day.sunday', 7),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.monday', 1),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.tuesday', 2),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.wednesday', 3),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.thursday', 4),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.friday', 5),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.saturday', 6),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.day.sunday', 7),
 				),
 			)
 		),
 		'starttimehour' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.starttimehour',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.starttimehour',
 			'config' => array(
 				'type' => 'input',
 				'eval' => 'int',
@@ -2571,7 +2571,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'starttimeminute' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.starttimeminute',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.starttimeminute',
 			'config' => array(
 				'type' => 'input',
 				'eval' => 'int',
@@ -2579,7 +2579,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'stoptimehour' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.stoptimehour',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.stoptimehour',
 			'config' => array(
 				'type' => 'input',
 				'eval' => 'int',
@@ -2587,7 +2587,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'stoptimeminute' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.stoptimeminute',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.stoptimeminute',
 			'config' => array(
 				'type' => 'input',
 				'eval' => 'int',
@@ -2595,7 +2595,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'addition' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.addition',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.addition',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -2605,7 +2605,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'groups' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.groups',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.groups',
 			'config' => array(
 				'type' => 'select',
 				'size' => 30,
@@ -2623,7 +2623,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		),
 		'address' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.address',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.address',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table_where' => '',
@@ -2631,14 +2631,14 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 				'wizards' => array(
 				),
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.address.none_special',0)
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.address.none_special',0)
 				),
 				'suppress_icons' => 1,
 			)
 		),
 		'reference' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_workinghour.reference',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_workinghour.reference',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_workinghourdraft',
@@ -2724,7 +2724,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
@@ -2759,7 +2759,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'addressappendix' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.addressappendix',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.addressappendix',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2769,7 +2769,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'street' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.street',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.street',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2779,7 +2779,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2789,7 +2789,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'zipcode' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.zipcode',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.zipcode',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -2799,7 +2799,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'longitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.longitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.longitude',
 			'config' => array(
 				'type' => 'passthrough',
 				'size' => 10,
@@ -2809,7 +2809,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'latitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.latitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.latitude',
 			'config' => array(
 				'type' => 'passthrough',
 				'size' => 10,
@@ -2819,7 +2819,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'telephone' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.telephone',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.telephone',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2829,7 +2829,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'reference' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.reference',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.reference',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_addressdraft',
@@ -2844,7 +2844,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		),
 		'website' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_address.website',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address.website',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -2920,7 +2920,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		),
 		'session' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user.session',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user.session',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -2928,7 +2928,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		),
 		'lastactivity' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user.lastactivity',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user.lastactivity',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -2936,7 +2936,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		),
 		'ip' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user.ip',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user.ip',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -2944,7 +2944,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		),
 		'browser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user.browser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user.browser',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -2952,7 +2952,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		),
 		'actions' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_user.actions',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user.actions',
 			'config' => array(
 				'type' => 'none',
 			)
@@ -3020,7 +3020,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'user' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.user',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.user',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3028,7 +3028,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'timestamp' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.timestamp',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.timestamp',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3036,15 +3036,15 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'type' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.type.0', '0'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoPersonaldata'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivitysearch'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivity', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivity'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivityfield'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type.type.0', '0'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoPersonaldata', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoPersonaldata'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivitysearch', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivitysearch'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivity', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivity'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.type.Tx_HelfenKannJeder_Domain_Model_UserdoActivityfield', 'Querformatik\\HelfenKannJeder\\Domain\\Model\\UserdoActivityfield'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -3053,7 +3053,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'address' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.address',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.address',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3061,7 +3061,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'street' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.street',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.street',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3071,7 +3071,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3081,7 +3081,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'zipcode' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.zipcode',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.zipcode',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -3091,7 +3091,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'longitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.longitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.longitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 10,
@@ -3099,7 +3099,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'latitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.latitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.latitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 10,
@@ -3107,7 +3107,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'response' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.response',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.response',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3115,7 +3115,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'age' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.age',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.age',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3123,7 +3123,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'input' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.input',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.input',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3131,7 +3131,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'result' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.result',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.result',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3139,7 +3139,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'activity' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.activity',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.activity',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3147,7 +3147,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'activityfield' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.activityfield',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.activityfield',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3155,7 +3155,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		),
 		'status' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_userdo.status',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo.status',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3228,7 +3228,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'degree' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.degree',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.degree',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3238,7 +3238,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'prename' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.prename',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.prename',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3248,7 +3248,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'surname' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.surname',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.surname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3258,7 +3258,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'company' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.company',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.company',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3268,7 +3268,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'status' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.status',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.status',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3278,7 +3278,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'thumbnail' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.thumbnail',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.thumbnail',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -3294,7 +3294,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'picture' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_organisationtype.picture',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisationtype.picture',
 			'config' => array(
 				'type' => 'group',
 				'internal_type' => 'file',
@@ -3310,13 +3310,13 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'type' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.type',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.type',
 			'config' => array(
 				'type' => 'select',
 				'items' => array(
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.type.0', '0'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.type.1', '1'),
-					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.type.2', '2'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.type.0', '0'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.type.1', '1'),
+					array('LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.type.2', '2'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -3325,7 +3325,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.description',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.description',
 			'config' => array(
 				'type' => 'text',
 				'size' => 30,
@@ -3333,7 +3333,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		),
 		'since' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_backer.since',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_backer.since',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -3404,14 +3404,14 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'crdate' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.crdate',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.crdate',
 			'config' => array(
 				'type' => 'none'
 			)
 		),
 		'modified' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.modified',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.modified',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3420,7 +3420,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'sessionid' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.sessionid',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.sessionid',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3430,14 +3430,14 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'agreement' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.agreement',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.agreement',
 			'config' => array(
 				'type' => 'check',
 			)
 		),
 		'organisationtype' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationtype',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationtype',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationtype',
@@ -3450,7 +3450,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'typename' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.typename',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.typename',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3460,7 +3460,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'typeacronym' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.typeacronym',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.typeacronym',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3470,7 +3470,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'typedescription' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.typedescription',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.typedescription',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
@@ -3480,7 +3480,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'city' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.city',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.city',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3490,7 +3490,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'longitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.longitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.longitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3498,7 +3498,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'latitude' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.latitude',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.latitude',
 			'config' => array(
 				'type' => 'none',
 				'size' => 30,
@@ -3506,7 +3506,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'department' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.department',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.department',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3516,7 +3516,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'organisationname' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationname',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisationname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3526,7 +3526,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'username' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.username',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.username',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3536,7 +3536,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'password' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.password',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.password',
 			'config' => array(
 				'type' => 'passthrough',
 				'size' => 30,
@@ -3546,7 +3546,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'password2' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.password2',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.password2',
 			'config' => array(
 				'type' => 'passthrough',
 				'size' => 30,
@@ -3556,14 +3556,14 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'password_saved' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.password_saved',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.password_saved',
 			'config' => array(
 				'type' => 'check',
 			)
 		),
 		'mail' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.mail',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.mail',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3573,7 +3573,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'feuser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.feuser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.feuser',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUser',
@@ -3588,7 +3588,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationdraft',
@@ -3601,7 +3601,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'laststep' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.laststep',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.laststep',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3610,7 +3610,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'finisheduntil' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.finisheduntil',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.finisheduntil',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3619,7 +3619,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'mail_hash' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.mail_hash',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.mail_hash',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3629,7 +3629,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'supporter' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.supporter',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.supporter',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => '\\Querformatik\\HelfenKannJeder\\Domain\\Model\\Supporter',
@@ -3644,7 +3644,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'prename' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.prename',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.prename',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3654,7 +3654,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		),
 		'surname' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_registerorganisationprogress.surname',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.surname',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -3725,14 +3725,14 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 		),
 		'crdate' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_log.crdate',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log.crdate',
 			'config' => array(
 				'type' => 'none'
 			)
 		),
 		'feuser' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_log.feuser',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log.feuser',
 			'config' => array(
 				'type' => 'select',
 				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUser',
@@ -3746,7 +3746,7 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 		),
 		'organisation' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_log.organisation',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log.organisation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisationdraft',
@@ -3759,7 +3759,7 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 		),
 		'message' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xml:tx_helfenkannjeder_domain_model_log.message',
+			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log.message',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,
