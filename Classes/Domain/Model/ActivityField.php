@@ -22,17 +22,11 @@ class ActivityField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $description;
 
 	/**
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\ActivityFieldLayer>
-	 */
-	protected $activityFieldLayers;
-
-	/**
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Activity>
 	 */
 	protected $activities;
 
 	public function __construct() {
-		$this->activityFieldLayers = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->activities = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
@@ -50,14 +44,6 @@ class ActivityField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	public function getDescription() {
 		return $this->description;
-	}
-
-	public function addActivityFieldLayer($activityFieldLayer) {
-		$this->activityFieldLayers->attach($activityFieldLayer);
-	}
-
-	public function getActivityFieldLayers() {
-		return $this->activityFieldLayers;
 	}
 
 	public function addActivity($activity) {

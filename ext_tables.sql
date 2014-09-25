@@ -57,7 +57,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_organisation (
 	logo blob,
 	pictures blob,
 	feuser int(11) DEFAULT '0' NOT NULL,
-	activityfieldlayers int(11) DEFAULT '0' NOT NULL,
 	groups int(11) DEFAULT '0' NOT NULL,
 	workinghours int(11) DEFAULT '0' NOT NULL,
 	employees int(11) DEFAULT '0' NOT NULL,
@@ -115,7 +114,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_organisationdraft (
 	logo blob,
 	pictures blob,
 	feuser int(11) DEFAULT '0' NOT NULL,
-	activityfieldlayers int(11) DEFAULT '0' NOT NULL,
 	groups int(11) DEFAULT '0' NOT NULL,
 	workinghours int(11) DEFAULT '0' NOT NULL,
 	employees int(11) DEFAULT '0' NOT NULL,
@@ -339,30 +337,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_activity (
 );
 
 #
-# Table structure for table "tx_helfenkannjeder_domain_model_activityfieldlayer"
-#
-CREATE TABLE tx_helfenkannjeder_domain_model_activityfieldlayer (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	activityfield int(11) DEFAULT '0' NOT NULL,
-	organisation int(11) DEFAULT '0' NOT NULL,
-	grade int(11) DEFAULT '0' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-#
 # Table structure for table "tx_helfenkannjeder_domain_model_employee"
 #
 CREATE TABLE tx_helfenkannjeder_domain_model_employee (
@@ -431,68 +405,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_employeedraft (
 	l18n_parent int(11) DEFAULT '0' NOT NULL,
 	l18n_diffsource mediumblob NOT NULL,
 	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-#
-# Table structure for table "tx_helfenkannjeder_domain_model_interestedperson"
-#
-CREATE TABLE tx_helfenkannjeder_domain_model_interestedperson (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	organisations int(11) DEFAULT '0' NOT NULL,
-	activities int(11) DEFAULT '0' NOT NULL,
-	ip varchar(256) DEFAULT '' NOT NULL,
-	sessionid varchar(256) DEFAULT '' NOT NULL,
-	last_activity int(11) DEFAULT '0' NOT NULL,
-	age int(11) DEFAULT '0' NOT NULL,
-	city varchar(256) DEFAULT '' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-CREATE TABLE tx_helfenkannjeder_interested_person_organisation_mm (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(3) unsigned DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-CREATE TABLE tx_helfenkannjeder_interested_person_activity_mm (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting int(11) unsigned DEFAULT '0' NOT NULL,
-	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(3) unsigned DEFAULT '0' NOT NULL,
 
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -691,31 +603,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_word (
 	PRIMARY KEY (uid),
 	KEY parent (pid)
 );
-
-#
-# Table structure for table "tx_helfenkannjeder_domain_model_wordpart"
-#
-#CREATE TABLE tx_helfenkannjeder_domain_model_wordpart (
-#	uid int(11) unsigned NOT NULL auto_increment,
-#	pid int(11) DEFAULT '0' NOT NULL,
-#
-#	word int(11) DEFAULT '0' NOT NULL,
-#	part varchar(2) DEFAULT '' NOT NULL,
-#	position int(11) DEFAULT '0' NOT NULL,
-#	complete int(11) DEFAULT '0' NOT NULL,
-#
-#	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-#	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-#	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-#	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-#	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-#	l18n_parent int(11) DEFAULT '0' NOT NULL,
-#	l18n_diffsource mediumblob NOT NULL,
-#	access_group int(11) DEFAULT '0' NOT NULL,
-#
-#	PRIMARY KEY (uid),
-#	KEY parent (pid)
-#);
 
 #
 # Table structure for table "tx_helfenkannjeder_domain_model_workinghour"

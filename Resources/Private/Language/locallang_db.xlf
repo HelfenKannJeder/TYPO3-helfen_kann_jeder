@@ -33,24 +33,6 @@
 			<trans-unit id="tx_helfenkannjeder_domain_model_activityfield.name" xml:space="preserve">
 				<source>Name</source>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer" xml:space="preserve">
-				<source>Activity Field Layer</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.activityfield" xml:space="preserve">
-				<source>Activity Field</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade" xml:space="preserve">
-				<source>Grade</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step0" xml:space="preserve">
-				<source>Secondary</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step1" xml:space="preserve">
-				<source>Primary</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.organisation" xml:space="preserve">
-				<source>Organisation</source>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_address" xml:space="preserve">
 				<source>Address</source>
 			</trans-unit>
@@ -362,9 +344,6 @@
 			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.tstamp" xml:space="preserve">
 				<source>Change date</source>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.activityfieldlayers" xml:space="preserve">
-				<source>Activitiy Fields</source>
 			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.addressappendix" xml:space="preserve">
 				<source>Address appendix</source>

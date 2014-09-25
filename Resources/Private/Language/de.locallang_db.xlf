@@ -43,30 +43,6 @@
 				<source>Name</source>
 				<target>Name</target>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer" xml:space="preserve" approved="yes">
-				<source>Activity Field Layer</source>
-				<target>Tätigkeitsfeldschwerpunkt</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.activityfield" xml:space="preserve" approved="yes">
-				<source>Activity Field</source>
-				<target>Tätigkeitsfeld</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade" xml:space="preserve" approved="yes">
-				<source>Grade</source>
-				<target>Schwerpunkt</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step0" xml:space="preserve" approved="yes">
-				<source>Secondary</source>
-				<target>Nebentätigkeit</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.grade.step1" xml:space="preserve" approved="yes">
-				<source>Primary</source>
-				<target>Haupttätigkeit</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_activityfieldlayer.organisation" xml:space="preserve" approved="yes">
-				<source>Organisation</source>
-				<target>Organisation</target>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_address" xml:space="preserve" approved="yes">
 				<source>Address</source>
 				<target>Adresse</target>
@@ -482,10 +458,6 @@
 			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.tstamp" xml:space="preserve" approved="yes">
 				<source>Change date</source>
 				<target>Änderungsdatum</target>
-			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.activityfieldlayers" xml:space="preserve" approved="yes">
-				<source>Activitiy Fields</source>
-				<target>Tätigkeitsfelder</target>
 			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_organisation.addressappendix" xml:space="preserve" approved="yes">
 				<source>Address appendix</source>
