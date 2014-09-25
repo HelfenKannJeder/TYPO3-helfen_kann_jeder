@@ -25,17 +25,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
-	'GeneratorList',
-	array(
-		'Generator' => 'index,ajaxorganisation,autocomplete',
-	),
-	array(
-		'Generator' => 'ajaxorganisation,autocomplete',
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
 	'MapList',
 	array(
 		'Map' => 'index,kml',

@@ -131,7 +131,6 @@ module.tx_helfenkannjeder < plugin.tx_helfenkannjeder
 
 plugin.tx_qumessaging.persistence.classes.Querformatik\HelfenKannJeder\Domain\Model\Supporter < plugin.tx_helfenkannjeder.persistence.classes.Querformatik\HelfenKannJeder\Domain\Model\Supporter
 
-page.includeJS.helfen_kann_jeder = EXT:helfen_kann_jeder/Resources/Public/Scripts/generator.js
 ##page.includeJS.jquery_min_js = EXT:helfen_kann_jeder/Resources/Public/Scripts/jquery.min.js
 page.includeJS.tooltip = EXT:helfen_kann_jeder/Resources/Public/Scripts/tooltip.js
 page.includeJS.helfen_kann_jeder_location = EXT:helfen_kann_jeder/Resources/Public/Scripts/Location.js
