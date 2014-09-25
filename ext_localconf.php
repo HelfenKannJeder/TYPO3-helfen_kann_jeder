@@ -11,7 +11,11 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 		'UserSettings' => 'edit,save',
 		'HelfOMat' => 'quiz,groupResult,jsonGroupResult',
 		'SupportMaster' => 'reenableScreeningOrganisation',
-		'Location' => 'index'
+		'Location' => 'index',
+		'Map' => 'index,kml',
+		'Overview' => 'index,detail',
+		'Matrix' => 'view,column',
+		'Backer' => 'index',
 	),
 	array(
 		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,upload,doNotRemindMe',
@@ -20,9 +24,27 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 		'UserSettings' => 'edit,save',
 		'HelfOMat' => 'groupResult,jsonGroupResult',
 		'SupportMaster' => 'reenableScreeningOrganisation',
+		'Overview' => 'index',
 	)
 );
 
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Querformatik.' .$_EXTKEY,
+	'Location',
+	array(
+		'Location' => 'index',
+	)
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Querformatik.' .$_EXTKEY,
+	'PictureList',
+	array(
+		'Picture' => 'index',
+	)
+);
+
+/** @deprecated */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
 	'MapList',
@@ -31,6 +53,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	)
 );
 
+/** @deprecated */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
 	'OverviewList',
@@ -43,27 +66,12 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	)
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'PictureList',
-	array(
-		'Picture' => 'index',
-	)
-);
-
+/** @deprecated */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
 	'BackerList',
 	array(
 		'Backer' => 'index',
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'Location',
-	array(
-		'Location' => 'index',
 	)
 );
 

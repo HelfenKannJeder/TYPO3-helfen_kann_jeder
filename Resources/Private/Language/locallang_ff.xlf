@@ -30,6 +30,15 @@
 			<trans-unit id="tx_helfenkannjeder_action_location" xml:space="preserve">
 				<source>Location</source>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_map" xml:space="preserve">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_overview" xml:space="preserve">
+				<source>Overview</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_backer" xml:space="preserve">
+				<source>Backer</source>
+			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_register_session_lifetime" xml:space="preserve">
 				<source>Session Lifetime (in seconds)</source>
 			</trans-unit>

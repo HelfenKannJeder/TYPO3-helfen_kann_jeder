@@ -45,6 +45,18 @@
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_location</numIndex>
 										<numIndex index="1">Location->index</numIndex>
 									</numIndex>
+									<numIndex index="9" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_map</numIndex>
+										<numIndex index="1">Map->index;Map->kml</numIndex>
+									</numIndex>
+									<numIndex index="10" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_overview</numIndex>
+										<numIndex index="1">Overview->index;Overview->detail;Matrix->view;Matrix->column</numIndex>
+									</numIndex>
+									<numIndex index="11" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_backer</numIndex>
+										<numIndex index="1">Backer->index</numIndex>
+									</numIndex>
 								</items>
 								<maxitems>1</maxitems>
 								<size>1</size>

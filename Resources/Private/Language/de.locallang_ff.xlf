@@ -39,6 +39,18 @@
 				<source>Location</source>
 				<target>Ort</target>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_map" xml:space="preserve" approved="yes">
+				<source>Map</source>
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_overview" xml:space="preserve" approved="yes">
+				<source>Overview</source>
+				<target>Organisationsübersicht</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_backer" xml:space="preserve" approved="yes">
+				<source>Backer</source>
+				<target>Unterstützer</target>
+			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_register_session_lifetime" xml:space="preserve" approved="yes">
 				<source>Session Lifetime (in seconds)</source>
 				<target>Session Lebenszeit (in Sekunden)</target>
