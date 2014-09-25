@@ -45,17 +45,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
-	'CitysignList',
-	array(
-		'Citysign' => 'index,edit,ajaxrememberaddress',
-	),
-	array(
-		'Citysign' => 'ajaxrememberaddress'
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
 	'PictureList',
 	array(
 		'Picture' => 'index',

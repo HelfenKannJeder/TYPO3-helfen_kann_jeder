@@ -2,7 +2,6 @@
 {namespace qu=Tx_QuBase_ViewHelpers}
 <script type="text/javascript">
 window.onload = function () {
-	citysignStartup(false, false);
 	var playlist = new Array();
 <f:for each="{organisations}" as="organisation" iteration="organisationIteration">
 	playlist[{organisationIteration.index}] = {organisation.organisationtype};
