@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	'Querformatik.' .$_EXTKEY,
 	'List',
 	array(
-		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,upload,doNotRemindMe',
+		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,doNotRemindMe',
 		'Support' => 'index,diff,live2test,test2live,view,deny,back',
 		'Organisation' => 'index,show,general,generalSend,group,groupSend,workinghour,workinghourSend,picture,pictureSend,matrix,changeStatus',
 		'UserSettings' => 'edit,save',
@@ -18,7 +18,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 		'Backer' => 'index',
 	),
 	array(
-		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,upload,doNotRemindMe',
+		'Register' => 'showstep10,sendstep10,showstep20,sendstep31,showstep32,sendstep32,showstep33,sendstep33,showstep40,sendstep40,showstep50,sendstep50,showstep60,sendstep60,showstep70,sendstep70,showstep71,sendstep71,showstep80,sendstep80,showstep81,showstep90,doNotRemindMe',
 		'Support' => 'index,diff,live2test,test2live,view,deny,back',
 		'Organisation' => 'index,show,general,generalSend,group,groupSend,workinghour,workinghourSend,picture,pictureSend,matrix,statusChange',
 		'UserSettings' => 'edit,save',

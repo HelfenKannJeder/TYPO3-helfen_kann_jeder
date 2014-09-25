@@ -19,11 +19,11 @@
 									</numIndex>
 									<numIndex index="1" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_register_continue</numIndex>
-										<numIndex index="1">Register->showstep40;Register->sendstep40;Register->showstep50;Register->sendstep50;Register->showstep60;Register->sendstep60;Register->showstep70;Register->sendstep70;Register->showstep71;Register->sendstep71;Register->showstep80;Register->sendstep80;Register->showstep81;Register->upload</numIndex>
+										<numIndex index="1">Register->showstep40;Register->sendstep40;Register->showstep50;Register->sendstep50;Register->showstep60;Register->sendstep60;Register->showstep70;Register->sendstep70;Register->showstep71;Register->sendstep71;Register->showstep80;Register->sendstep80;Register->showstep81</numIndex>
 									</numIndex>
 									<numIndex index="2" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_register_step33</numIndex>
-										<numIndex index="1">Register->sendstep32;Register->showstep33;Register->sendstep33;Register->showstep90;Register->upload;Register->doNotRemindMe</numIndex>
+										<numIndex index="1">Register->sendstep32;Register->showstep33;Register->sendstep33;Register->showstep90;Register->doNotRemindMe</numIndex>
 									</numIndex>
 									<numIndex index="3" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_support</numIndex>
