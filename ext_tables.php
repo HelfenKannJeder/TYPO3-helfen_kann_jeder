@@ -110,7 +110,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/OrganisationType.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation_type.gif'
 							// source: http://de.fotolia.com/id/12600401
 	)
@@ -134,7 +134,7 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 		),
 		'versioningWS'			=> TRUE,
 		'origUid'			=> 't3_origuid',
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Organisation.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_organisation.gif'
 							// source: http://de.fotolia.com/id/12600401
 	)
@@ -159,7 +159,7 @@ $TCA['tx_helfenkannjeder_domain_model_group'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Group.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_group.gif',
 		'sortby'			=> 'sort'
 	)
@@ -184,7 +184,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplatecategory'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/GroupTemplateCategory.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplatecategory.gif',
 		'sortby'			=> 'sort',
 	)
@@ -228,7 +228,7 @@ $TCA['tx_helfenkannjeder_domain_model_grouptemplate'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/GroupTemplate.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_grouptemplate.gif',
 		'sortby'			=> 'sort',
 	)
@@ -250,31 +250,8 @@ $TCA['tx_helfenkannjeder_domain_model_activityfield'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/ActivityField.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfield.gif'
-	)
-);
-
-$TCA['tx_helfenkannjeder_domain_model_activityfieldlayer'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activityfieldlayer',
-		'label'				=> 'activityfield',
-		'label_alt'			=> 'grade',
-		'label_alt_force'		=> true,
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activityfieldlayer.gif'
 	)
 );
 
@@ -294,7 +271,7 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Activity.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_activity.gif'
 	)
 );
@@ -317,35 +294,12 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Employee.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_employee.gif'
 	)
 );
 $TCA['tx_helfenkannjeder_domain_model_employeedraft'] = $TCA['tx_helfenkannjeder_domain_model_employee'];
 $TCA['tx_helfenkannjeder_domain_model_employeedraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employeedraft';
-
-$TCA['tx_helfenkannjeder_domain_model_interested_person'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_interested_person',
-		'label'				=> 'sessionid',
-		'label_alt'			=> 'prename',
-		'label_alt_force'		=> true,
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_interested_person.gif'
-	)
-);
 
 $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 	'ctrl' => array(
@@ -365,7 +319,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrixfield'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/MatrixField.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrixfield.gif'
 	)
 );
@@ -386,7 +340,7 @@ $TCA['tx_helfenkannjeder_domain_model_matrix'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Matrix.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_matrix.gif'
 		
 	)
@@ -408,7 +362,7 @@ $TCA['tx_helfenkannjeder_domain_model_workinghour'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Workinghour.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_workinghour.gif'
 		
 	)
@@ -432,34 +386,12 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Word.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
 		
 	)
 );
-/*
-$TCA['tx_helfenkannjeder_domain_model_wordpart'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_wordpart',
-		'label'				=> 'part',
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_word.gif'
-		
-	)
-);
-*/
+
 $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 	'ctrl' => array(
 		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_address',
@@ -478,7 +410,7 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Address.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_address.gif'
 		
 	)
@@ -505,7 +437,7 @@ $TCA['tx_helfenkannjeder_domain_model_user'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/User.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_user.gif'
 		
 	)
@@ -530,7 +462,7 @@ $TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/UserDo.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_userdo.gif'
 		
 	)
@@ -554,7 +486,7 @@ $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Backer.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_backer.gif',
 		'sortby'			=> 'sort'
 		
@@ -579,7 +511,7 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/RegisterOrganisationProgress.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_registerorganisationprogress.gif'
 		
 	)
@@ -603,7 +535,7 @@ $TCA['tx_helfenkannjeder_domain_model_log'] = array(
 		'enablecolumns'			=> array(
 			'disabled'		=> 'hidden'
 		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/tca.php',
+		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Log.php',
 		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_log.gif'
 		
 	)
