@@ -53,22 +53,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
-	'EmployeeList',
-	array(
-		'Employee' => 'index,detail',
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'EmployeeDetail',
-	array(
-		'Employee' => 'detail',
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
 	'BackerList',
 	array(
 		'Backer' => 'index',
