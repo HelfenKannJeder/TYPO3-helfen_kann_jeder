@@ -470,7 +470,6 @@ class OrganisationController extends AbstractOrganisationController {
 		$activities = $activities->toArray();
 		foreach ($activities as $key => $activity) {
 			if (!($activity instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) || !in_array($activity->getUid(), $activityList)) {
-//				echo "ok";
 				unset($activities[$key]);
 			}
 		}

@@ -5,14 +5,6 @@ class GroupRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	public function findNearLatLng($lat, $lng, $age=18) {
 		$query = $this->createQuery();
-/*		$constraints = array();
-
-		$query->matching($query->logicalAnd(
-			$query->greaterThanOrEqual('latitude', $lat-0.5),
-			$query->lessThanOrEqual('latitude', $lat+0.5),
-			$query->greaterThanOrEqual('longitude', $lng-0.5),
-			$query->lessThanOrEqual('longitude', $lng+0.5)
-		));*/
 		$statement = "
 			SELECT
 				t0.uid,

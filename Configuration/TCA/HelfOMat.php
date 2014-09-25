@@ -80,7 +80,6 @@ $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_helfomatquestion',
 				'foreign_field' => 'helfomat',
-//				'foreign_table_where' => 'ORDER BY tx_helfenkannjeder_domain_model_workinghour.day',
 				'appearance' => Array(
 					'collapseAll' => 1,
 					'expandSingle' => 1,

@@ -5,25 +5,25 @@ $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamel
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'List', //
+	'List',
 	'HelfenKannJeder'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'GeneratorList', //
+	'GeneratorList',
 	'Generator'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'MapList', //
+	'MapList',
 	'Map'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'OverviewList', //
+	'OverviewList',
 	'Overview'
 );
 
@@ -35,37 +35,37 @@ $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamel
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'PictureList', //
+	'PictureList',
 	'Picture'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'EmployeeList', //
+	'EmployeeList',
 	'Employee'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'EmployeeDetail', //
+	'EmployeeDetail',
 	'Employee Details'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'TestList', //
+	'TestList',
 	'Test'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'BackerList', //
+	'BackerList',
 	'Backer'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
-	'Location', //
+	'Location',
 	'Location'
 );
 

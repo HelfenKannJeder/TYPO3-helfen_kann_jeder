@@ -89,7 +89,6 @@ class AllViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 			$this->tag->addAttribute('width', $imageInfo[0]);
 			$this->tag->addAttribute('height', $imageInfo[1]);
 			if ($align != null) $this->tag->addAttribute('align', $align);
-//			$this->tag->addAttribute('rel', $rel);
 			if ($this->arguments['title'] === '') {
 				$this->tag->addAttribute('title', $this->arguments['alt']);
 			}

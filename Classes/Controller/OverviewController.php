@@ -41,7 +41,6 @@ class OverviewController
 		$this->view->assign('city', $city);
 		$this->view->assign('latitude', $latitude);
 		$this->view->assign('longitude', $longitude);
-//		$this->view->assign('organisations', $this->organisationRepository->findAll());
 	}
 
 	/**

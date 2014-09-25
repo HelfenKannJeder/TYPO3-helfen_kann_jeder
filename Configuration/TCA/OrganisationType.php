@@ -155,7 +155,6 @@ $TCA['tx_helfenkannjeder_domain_model_organisationtype'] = array(
 				'type' => 'inline',
 				'foreign_table' => 'tx_helfenkannjeder_domain_model_grouptemplatecategory',
 				'foreign_field' => 'organisationtype',
-//				'foreign_table_where' => 'ORDER BY tx_helfenkannjeder_domain_model_workinghour.day',
 				'appearance' => Array(
 					'collapseAll' => 1,
 					'expandSingle' => 1,

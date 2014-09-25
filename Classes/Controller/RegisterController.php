@@ -323,14 +323,6 @@ class RegisterController
 			$registerOrganisationProgress->setCity($name);
 			$registerOrganisationProgress->setLongitude($cityInfo["longitude"]);
 			$registerOrganisationProgress->setLatitude($cityInfo["latitude"]);
-/*			if ($this->stepBack) {
-				$organisationType = $registerOrganisationProgress->getOrganisationtype();
-				if ($organisationType->getPseudo()) {
-					$redirectTo = "showstep21";
-				} else {
-					$redirectTo = "showstep20";
-				}
-			} else */
 			if ($this->frontendUserRepository->countByUsername($username) > 0) {
 				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_missing_department', 'HelfenKannJeder')
 							.$registerOrganisationProgress->getSupporter()->getName()
@@ -345,7 +337,6 @@ class RegisterController
 				}
 			}
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-//			$this->redirect($redirectTo, NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 		} else {
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_nothing_found', 'HelfenKannJeder'));
@@ -424,7 +415,6 @@ class RegisterController
 				$registerOrganisationProgress->setFeuser($feUser);
 				$randomHash = $this->generateRandomHash();
                                 $registerOrganisationProgress->setMailHash($randomHash);
-//				$this->accessControlService->setFrontendUserUid($feUser->getUid());
 				$linkToContinue = $this->uriBuilder->setTargetPageUid($this->settings["registerOrganisationStepsPart2"])->uriFor("sendstep32", array("registerOrganisationProgress"=>$registerOrganisationProgress, "hash"=>$randomHash));
 
 				$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_mail_headline', 'HelfenKannJeder');
@@ -1009,7 +999,6 @@ class RegisterController
 					$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 				}
 
-//				$this->mailService->send($this->settings["mailAdmin"], "Neue Registrierung auf HelfenKannJeder.de!", "Test Content");
 				$this->redirect("showstep90", NULL, NULL, array(), $this->settings["registerOrganisationStepsPart2"], 0);
 			}
 		}
@@ -1040,7 +1029,6 @@ class RegisterController
 		$activities = $activities->toArray();
 		foreach ($activities as $key => $activity) {
 			if (!($activity instanceof \Querformatik\HelfenKannJeder\Domain\Model\Activity) || !in_array($activity->getUid(), $activityList)) {
-//				echo "ok";
 				unset($activities[$key]);
 			}
 		}

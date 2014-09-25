@@ -63,20 +63,6 @@ $TCA['tx_helfenkannjeder_domain_model_word'] = array(
 				'max' => 255
 			)
 		),
-//		'wordparts' => array(
-//			'exclude' => 0,
-//			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.wordparts',
-//			'config' => array(
-/*				'type' => 'select',
-				'foreign_table' => 'tx_helfenkannjeder_domain_model_organisation',
-				'foreign_table_where' => '',
-				'items' => array(
-					array('---', 0),
-				),
-				'wizards' => array(),
-				'suppress_icons' => 1,*/
-//			)
-//		),
 		'activity' => array( // TODO
 			'exclude' => 0,
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_word.activity',

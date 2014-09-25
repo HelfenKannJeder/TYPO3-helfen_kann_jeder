@@ -259,5 +259,4 @@ $TCA['tx_helfenkannjeder_domain_model_groupdraft']['columns']['contactpersons'][
 $TCA['tx_helfenkannjeder_domain_model_groupdraft']['columns']['contactpersons']['config']['foreign_table'] = 'tx_helfenkannjeder_domain_model_employeedraft';
 $TCA['tx_helfenkannjeder_domain_model_groupdraft']['columns']['contactpersons']['config']['MM'] = 'tx_helfenkannjeder_groupdraft_contactperson_mm';
 $TCA['tx_helfenkannjeder_domain_model_groupdraft']['columns']['reference']['config']['foreign_table'] = 'tx_helfenkannjeder_domain_model_group';
-//$TCA['tx_helfenkannjeder_domain_model_groupdraft']['types']['1']['showitem'] .= ', template';
 ?>

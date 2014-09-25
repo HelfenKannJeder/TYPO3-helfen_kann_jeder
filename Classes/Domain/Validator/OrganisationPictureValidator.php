@@ -21,10 +21,7 @@ class OrganisationPictureValidator extends OrganisationAbstractValidator {
 
 		$pictures = explode(",", $organisation->getPictures());
 
-		if (count($pictures) == 0 || trim($organisation->getPictures()) == "") {
-/*			$this->addError('error_organisation_pictures_empty', 1328038440);
-			$returnValue = false;*/
-		} else {
+		if (!(count($pictures) == 0 || trim($organisation->getPictures()) == "")) {
 			foreach ($pictures as $picture) {
 				if (!file_exists($this->match.$picture)) {
 					$this->addError('error_organisation_picture_not_found', 1328039058);

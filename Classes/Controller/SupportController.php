@@ -54,12 +54,10 @@ class SupportController
 	 * @return void
 	 */
 	public function indexAction() {
-//		$this->view->assign("organisations", $this->organisationRepository->findAll());
 		$organisationDraftItems = $this->organisationDraftRepository->findBySupporterAndRequest($this->frontendUser);
 		$organisationDraftItems = $organisationDraftItems->toArray();
 		usort($organisationDraftItems, array(&$this, "sortOrganisationDraftByRequest"));
 		$this->view->assign("organisationDrafts", $organisationDraftItems);
-		//$this->view->assign("organisationDrafts", $this->organisationDraftRepository->findBySupporterAndRequest($this->frontendUser));
 	}
 
 	protected function sortOrganisationDraftByRequest($a, $b) {
@@ -235,10 +233,6 @@ class SupportController
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation
 	 */
 	public function live2testAction($organisation) {
-/*		$destObject = $this->syncObject("\Querformatik\HelfenKannJeder\Domain\Model\Organisation", "\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft", &$organisation);
-		$this->organisationRepository->update($organisation);
-		$this->persistenceManager->persistAll();
-		$this->logService->insert("The organisation was recopied to workspace.", $organisation->getReference());*/
 	}
 
 	/**
@@ -270,11 +264,6 @@ class SupportController
 			$this->view->assign('employees', $this->employeeRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 			$this->view->assign('groups', $this->groupRepository->findByOrganisationUid($organisation->getUid()));
 		}
-/*		$organisationDiff = new \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft();
-		$organisationDiff->setName("<span style='color:red'>test</span>");
-		$this->view->assign('organisationDiff', $organisationDiff);*/
-//		$this->view->assign('employeesDiff', $this->employeeDraftRepository->findByOrganisationUidWithStatement($organisationDraft->getUid()));
-//		$this->view->assign('groupsDiff', $this->groupDraftRepository->findByOrganisationUid($organisationDraft->getUid()));
 	}
 
 	/**

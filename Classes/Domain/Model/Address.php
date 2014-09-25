@@ -134,9 +134,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	// TODO: Out source to validate class
 	public function validate($googleMapsService) {
 		$listedCitys = $googleMapsService->calculateCityAndDepartment("Germany, ".$this->getAddress());
-/*		echo $this->getAddress()."<br />";
-		print_r($listedCitys);
-		echo "<br /><br />";*/
 		if (count($listedCitys) >= 1) {
 			$cityInfo = $listedCitys[0];
 			$this->setZipcode($cityInfo["postal_code"]);

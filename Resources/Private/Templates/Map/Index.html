@@ -23,12 +23,10 @@ function initialize() {
   }
 
 
-//var infowindow = new google.maps.InfoWindow("Loading ...");
 var markers = new Array();
 var positions = new Array();
 function drawOrganisation(lat, lng, icon, name, description) {
 	obj = {};
-//        obj["map"] = hkjMap;
 
 	pos = lat+"#"+lng;
 	while (positions[pos] != null) {
@@ -47,7 +45,6 @@ function drawOrganisation(lat, lng, icon, name, description) {
 
 	google.maps.event.addListener(markers[i], 'click', function() {
 		location.href = this.html;
-//		infowindow.open(hkjMap, this);
 	});
 	fluster.addMarker(markers[i]);
 }

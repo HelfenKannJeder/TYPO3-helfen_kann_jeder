@@ -149,39 +149,6 @@ class MatrixFieldRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 						gradesum DESC
 					";
 
-/*
-			if (count($activitiesNot) > 0) {
-				$activitiesNotMapped = array();
-				foreach ($activitiesNot as $activitiesNotId) {
-					$acitivitiesNotMapped[$activityMapperArray[$activitiesNotId]] = 1;
-				}
-
-				$statement = "
-					SELECT
-						t0.organisation,
-						(SUM(
-							CASE
-								WHEN t0.grade>=50 THEN 100
-								ELSE t0.grade
-							END
-						)+100*(".count($acitivitiesNotMapped)."-SUM(t0.negat)))/".$maxsum." AS gradesum
-					FROM (".$fromLine.") AS t0
-					GROUP BY t0.organisation
-					ORDER BY gradesum DESC
-				";
-			} else {
-				$statement = "
-					SELECT
-						t0.organisation,
-						SUM(CASE WHEN t0.grade>=50 THEN 100
-						ELSE t0.grade END)/".$maxsum." AS gradesum
-					FROM (".$fromLine.") AS t0
-					GROUP BY t0.organisation
-					ORDER BY gradesum DESC
-				";
-			}*/
-
-			//if ($detail) 
 			$statement = $fromLine;
 		} else if (!is_array($activities) || count($activities) == 0) {
 			$fromLine = "

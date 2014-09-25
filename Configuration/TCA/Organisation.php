@@ -196,16 +196,6 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 				'max' => 255
 			)
 		),
-/*		'mobilephone' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.mobilephone',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim',
-				'max' => 255
-			)
-		),*/
 		'defaultaddress' => array( // TODO
 			'exclude' => 1,
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.defaultaddress',
@@ -278,40 +268,10 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 					array('---', 0),
 				),
 				'wizards' => array(
-/*					'_PADDING' => 1,
-					'_VERTICAL' => 1,
-					'edit' => array(
-						'type' => 'popup',
-						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
-						'icon' => 'edit2.gif',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-					),
-					'add' => array(
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'add.gif',
-						'params' => array(
-							'table' => 'fe_users',
-							'pid' => '###CURRENT_PID###',
-							'setValue' => 'prepend'
-						),
-						'script' => 'wizard_add.php',
-					),*/
 				),
 				'suppress_icons' => 1,
 			)
 		),
-/*		'activityfieldlayers' => array( // TODO
-			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.activityfieldlayers',
-			'config' => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_helfenkannjeder_domain_model_activityfieldlayer',
-				'foreign_field' => 'organisation',
-			)
-		),*/
 		'groups' => array( // TODO
 			'exclude' => 1,
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.groups',
@@ -358,21 +318,6 @@ $TCA['tx_helfenkannjeder_domain_model_organisation'] = array(
 				'suppress_icons' => 1,
 			)
 		),
-/*		'contactperson' => array( // TODO
-			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.contactperson',
-			'config' => array(
-				'type' => 'select',
-				'foreign_table' => 'tx_helfenkannjeder_domain_model_employee',
-				'foreign_table_where' => '',
-				'items' => array(
-					array('---', 0),
-				),
-				'wizards' => array(
-				),
-				'suppress_icons' => 1,
-			)
-		),*/
 		'employees' => array( // TODO
 			'exclude' => 0,
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_organisation.employees',

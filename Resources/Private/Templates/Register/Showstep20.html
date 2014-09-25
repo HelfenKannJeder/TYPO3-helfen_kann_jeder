@@ -146,11 +146,9 @@ function buildOrganisationName(city, department) {
 	}
 
 	if ($.trim(organisationType) != "" && $.trim(city) != "" && $.trim(city+department) != "") {
-//		document.getElementById("new_organisation_name").innerHTML = organisationType+" "+city+department;
 		generateOrganisationnameFromOrganisationname(organisationType+" "+city+departmentOld);
 		generateUsernameFromOrganisationname(organisationTypeName+" "+city+departmentOld);
 	} else {
-//		document.getElementById("new_organisation_name").innerHTML = calculatedText;
 		generateOrganisationnameFromOrganisationname('');
 		generateUsernameFromOrganisationname('');
 	}

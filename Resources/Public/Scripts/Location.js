@@ -46,9 +46,7 @@ function hkjChangeLocation(newLocation, errorId, errorClass) {
 
 					var currentSide = window.location.pathname.split("/");
 
-//					if (currentSide[1] == "bei-wem" || (currentSide[1] == "helf-o-mat" && window.location.search != '')) {
-						window.location.reload();
-//					}
+					window.location.reload();
 				} else {
 					$(errorId+"1").show();
 				}
