@@ -44,37 +44,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	)
 );
 
-/** @deprecated */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'MapList',
-	array(
-		'Map' => 'index,kml',
-	)
-);
-
-/** @deprecated */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'OverviewList',
-	array(
-		'Overview' => 'index,detail',
-		'Matrix' => 'view,column',
-	),
-	array(
-		'Overview' => 'index',
-	)
-);
-
-/** @deprecated */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'BackerList',
-	array(
-		'Backer' => 'index',
-	)
-);
-
 /**
  * Hooking for PluginInfo
  */
