@@ -1948,6 +1948,18 @@ http://helfenkannjeder.de/%s</target>
 				<source></source>
 				<target>Ergebnis</target>
 			</trans-unit>
+			<trans-unit id="helfomat_result_headline" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deshalb passt zu Dir ...</target>
+			</trans-unit>
+			<trans-unit id="helfomat_result_your_answers" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Deine Antworten</target>
+			</trans-unit>
+			<trans-unit id="helfomat_result_your_answers_change" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Du kannst Deine Antworten noch durch Klick auf die jeweils anderen Daumen anpassen. Anschließend wird das Ergebnis oben automatisch angepasst.</target>
+			</trans-unit>
 			<trans-unit id="resultlist_survey_prefix" xml:space="preserve" approved="yes">
 				<source></source>
 				<target>Lob oder Kritik? Hilf uns den Helf-O-Mat </target>

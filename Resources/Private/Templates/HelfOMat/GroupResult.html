@@ -10,13 +10,18 @@ window.onload = function () {
 }
 </script>
 <f:section name="Thumbs">
-<f:image src="{f:uri.resource(path:'Images/{name}.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: '', else: 'none')};" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-yes"  />
-<f:image src="{f:uri.resource(path:'Images/{name}Gray.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: 'none', else: '')};cursor:pointer;" alt="{f:translate(key: 'helfomat_question_neutral')}" width="20" onclick="helfenKannJederChangeHelfOMatQuestion({question.uid},{num});" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-no"  />
+<f:image src="{f:uri.resource(path:'Images/{name}.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: '', else: 'none')};" alt="{f:translate(key: 'helfomat_question_neutral')}" width="25" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-yes"  />
+<f:image src="{f:uri.resource(path:'Images/{name}Gray.png')}" style="display:{f:if(condition: '{hkj:storage.at(storage: answer, index:question.uid)} == {num}', then: 'none', else: '')};cursor:pointer;" alt="{f:translate(key: 'helfomat_question_neutral')}" width="25" onclick="helfenKannJederChangeHelfOMatQuestion({question.uid},{num});" id="tx-helfenkannjeder-helfomat-question-buttons-{question.uid}-image-{num}-no"  />
 </f:section>
 
-<div style="padding:16px;margin-bottom: 50px">
+<h2>{f:translate(key: 'helfomat_result_headline')}</h2>
+<f:render partial="Organisation/ResultList" arguments="{visible: 1, param: organisations, resultBar: 1, normGradeToMax: normGradeToMax, survey: 'http://www.surveymonkey.com/s/3DDBJZG'}" />
+
+<h2>{f:translate(key: 'helfomat_result_your_answers')}</h2>
+<f:translate key="helfomat_result_your_answers_change" />
+<div class="helfomat-result">
 <f:form action="jsonGroupResult" id="tx-helfenkannjeder-helfomat-form" pageType="1410087872">
-	<table style="width:100%">
+	<table style="width:100%" cellspacing="0">
 {qu:storage.sort(objectStorage: helfOMat.questions, sortBy: 'sort', as: 'helfOMatQuestions')}
 <f:for each="{helfOMatQuestions}" as="question">
 		<tr>
@@ -31,4 +36,3 @@ window.onload = function () {
 	</table>
 </f:form>
 </div>
-<f:render partial="Organisation/ResultList" arguments="{visible: 1, param: organisations, resultBar: 1, normGradeToMax: normGradeToMax, survey: 'http://www.surveymonkey.com/s/3DDBJZG'}" />

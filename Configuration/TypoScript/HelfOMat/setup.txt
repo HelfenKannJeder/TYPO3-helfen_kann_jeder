@@ -7,7 +7,7 @@ plugin.tx_helfenkannjeder {
 }
 
 page.includeJS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Scripts/HelfOMat.js
-page.includeCSS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/HelfOMat.css
+#page.includeCSS.helfenKannJederHelfOMat = EXT:helfen_kann_jeder/Resources/Public/Stylesheet/HelfOMat.css
 
 pageHelfOMatJsonAction = PAGE
 pageHelfOMatJsonAction {

@@ -86,7 +86,9 @@ function helfenKannJederChangeHelfOMatQuestion(uid, newValue) {
 				$('#organisation_searching').hide();
 				for (var i = 0; i < response.length; i++) {
 					var par = $('#organisation_' + i, $('.helfen_kann_jeder_generator_step3_organisations'));
-					$('.helfen_kann_jeder_generator_organisation_resultbar', par).width(parseInt(response[i]['grade']));
+					var grade = parseInt(response[i]['grade']);
+					$('.helfen_kann_jeder_generator_organisation_resultbar', par).width(parseInt(response[i]['grade'])*2)
+						.css({backgroundColor: 'rgb(' + parseInt((100-grade)*2.46) + ',' + parseInt(149+(100-grade)*0.37) + ',' + parseInt(grade*0.71) + ')'});
 					$('#organisation_' + i + '_link', par).attr('href', response[i]['link']);
 					$('#organisation_' + i + '_link', par).html(response[i]['name']);
 
