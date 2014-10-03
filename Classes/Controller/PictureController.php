@@ -15,7 +15,6 @@ class PictureController
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Service\ImageService
-	 * @inject
 	 */
 	protected $imageService;
 
@@ -24,6 +23,10 @@ class PictureController
 
 		$this->configurationManager = $this->objectManager->get("\\TYPO3\\CMS\\Extbase\\Configuration\\ConfigurationManager");
 		$this->contentObject = $this->configurationManager->getContentObject();
+
+		if (class_exists("\\TYPO3\\CMS\\Extbase\\Service\\ImageService")) {
+			$this->imageService = $this->objectManager->get("\\TYPO3\\CMS\\Extbase\\Service\\ImageService");
+		}
 	}
 
 	public function indexAction() {

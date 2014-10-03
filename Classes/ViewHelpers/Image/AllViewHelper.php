@@ -5,7 +5,6 @@ class AllViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Service\ImageService
-	 * @inject
 	 */
 	protected $imageService;
 
@@ -33,6 +32,10 @@ class AllViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 	 */
 	public function render($src, $width = NULL, $height = NULL, $minWidth = NULL, $minHeight = NULL, $maxWidth = NULL, $maxHeight = NULL, $path = NULL, $rel = NULL,
 					$lightboxHeight = NULL, $lightboxWidth = NULL, $align = NULL) {
+		if (class_exists("\\TYPO3\\CMS\\Extbase\\Service\\ImageService")) {
+			$this->imageService = $this->objectManager->get("\\TYPO3\\CMS\\Extbase\\Service\\ImageService");
+		}
+
 		if (empty($src)) {
 			return "";
 		}
