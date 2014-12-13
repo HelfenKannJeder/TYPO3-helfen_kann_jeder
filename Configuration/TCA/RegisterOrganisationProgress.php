@@ -227,9 +227,9 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_registerorganisationprogress.feuser',
 			'config' => array(
 				'type' => 'select',
-				'foreign_class' => 'Tx_Extbase_Domain_Model_FrontendUser',
+				'foreign_class' => '\\TYPO3\\CMS\\Extbase\\Domain\\Model\\FrontendUser',
 				'foreign_table' => 'fe_users',
-				'foreign_table_where' => 'AND fe_users.tx_extbase_type="Tx_Extbase_Domain_Model_FrontendUser"',
+				'foreign_table_where' => '',
 				'items' => array(
 					array('---', 0),
 				),

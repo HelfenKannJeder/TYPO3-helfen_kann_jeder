@@ -2,45 +2,24 @@
 config.tx_extbase {
 	persistence{
 		classes {
-			Tx_Extbase_Domain_Model_FrontendUser {
+			TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
 				mapping {
 					tableName = fe_users
-					recordType = Tx_Extbase_Domain_Model_FrontendUser
-					columns {
-						lockToDomain.mapOnProperty = lockToDomain
-					}
+				}
+				subclasses {
+					supporter = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 				}
 			}
-			Tx_Extbase_Domain_Model_FrontendUserGroup {
+			TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup {
 				mapping {
 					tableName = fe_groups
-					recordType = Tx_Extbase_Domain_Model_FrontendUserGroup
-					columns {
-						lockToDomain.mapOnProperty = lockToDomain
-					}
 				}
 			}
 		}
 	}
 }
 
-config.tx_extbase.persistence.classes {
-	Tx_Extbase_Domain_Model_FrontendUser {
-		mapping.recordType >
-	}
-	Tx_Extbase_Domain_Model_FrontendUserGroup {
-		mapping.recordType >
-	}
-}
 # compatiblity typoscript end
-
-config.tx_extbase.persistence.classes {
-	TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
-		subclasses {
-			Querformatik\HelfenKannJeder\Domain\Model\Supporter = Querformatik\HelfenKannJeder\Domain\Model\Supporter
-		}
-	}
-}
 
 plugin.tx_helfenkannjeder.settings.mail.reminder.supporter {
 	periodDays = 2
@@ -120,7 +99,7 @@ plugin.tx_helfenkannjeder {
 			Querformatik\HelfenKannJeder\Domain\Model\Supporter {
 				mapping {
 					tableName = fe_users
-					recordType = Querformatik\HelfenKannJeder\Domain\Model\Supporter
+#					recordType = Tx_HelfenKannJeder_Domain_Model_Supporter
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-{namespace captcha=Tx_CaptchaViewhelper_ViewHelpers}
+{namespace freeCap=SJBR\SrFreecap\ViewHelpers}
 <div id="helfen_kann_jeder_register_margin20">
 <div id="helfen_kann_jeder_register">
 <f:form class="helfen_kann_jeder_form" method="post" action="{actionSendMethod}"  name="{objectEditName}" object="{objectEdit}" arguments="{args}">
@@ -17,7 +17,7 @@
 {f:translate(key: 'register_step1_starting_text') -> f:format.nl2br()}<br />
 <br />
 <div class="labelForm">
-<div style="float:right"><captcha:captcha /> </div>
+<div class="freeCaptcha"><freeCap:image /><br /><freeCap:audio /></div>
 {f:translate(key: 'register_captcha_prefix')}<f:form.textfield property="captcha" /><br />
 {f:translate(key: 'register_captcha_suffix')}<br style="clear:both" />
 </div>

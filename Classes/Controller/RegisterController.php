@@ -28,6 +28,10 @@ class RegisterController
 	protected $organisationTypeRepository;
 	protected $workinghourDraftRepository;
 	protected $groupDraftRepository;
+	
+	/**
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
+	 */
 	protected $frontendUserRepository;
 	protected $frontendUserGroupRepository;
 	protected $activityRepository;
@@ -476,9 +480,6 @@ class RegisterController
 		}
 
 		$feUser = $registerOrganisationProgress->getFeuser();
-
-		echo "ok:".$feUser;
-		exit();
 
 		if ($registerOrganisationProgress->getMailHash() == $hash && $feUser != null) {
 			$this->accessControlService->setFrontendUserUid($feUser->getUid());

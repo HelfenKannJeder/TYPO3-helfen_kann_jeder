@@ -147,7 +147,7 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	 * captcha
 	 *
 	 * @var string
-	 * @validate \Tx_CaptchaViewhelper_Validation_Validator_CaptchaValidator
+	 * @validate \SJBR\SrFreecap\Validation\Validator\CaptchaValidator
 	 */
 	protected $captcha;  
 
