@@ -11,6 +11,14 @@
 				<source></source>
 				<target>Über</target>
 			</trans-unit>
+			<trans-unit id="backer_thanks_ideal_contribution" xml:space="preserve" approved="yes">
+				<source>For the ideal contribution we thanks to ...</source>
+				<target>Für die ideele Unterstützung danken wir ...</target>
+			</trans-unit>
+			<trans-unit id="backer_thanks_finance_contribution" xml:space="preserve" approved="yes">
+				<source>For the finance contribution we thanks to ...</source>
+				<target>Für die finanzielle Unterstützung danken wir ...</target>
+			</trans-unit>
 			<trans-unit id="backer_financial" xml:space="preserve" approved="yes">
 				<source></source>
 				<target>Financial</target>
