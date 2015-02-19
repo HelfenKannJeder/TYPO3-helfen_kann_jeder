@@ -15,10 +15,7 @@ class EmployeeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		return $query->matching(
 			$query->logicalAnd(
 				$query->equals('organisation',$organisationUid),
-				$query->logicalOr(
-					$query->logicalNot($query->equals('teaser', '')),
-					$query->logicalNot($query->equals('motivation', ''))
-				),
+				$query->logicalNot($query->equals('motivation', '')),
 				$query->logicalNot($query->equals('uid', 28))
 			)
 		)

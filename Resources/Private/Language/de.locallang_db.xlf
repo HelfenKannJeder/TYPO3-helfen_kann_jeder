@@ -207,10 +207,6 @@
 				<source>Surname</source>
 				<target>Nachname</target>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_employee.teaser" xml:space="preserve" approved="yes">
-				<source>Teaser (max 160 chars)</source>
-				<target>Teaser (max. 160 Zeichen)</target>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_employee.telephone" xml:space="preserve" approved="yes">
 				<source>Telephone</source>
 				<target>Telefon</target>

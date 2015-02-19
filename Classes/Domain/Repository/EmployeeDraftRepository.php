@@ -28,10 +28,7 @@ class EmployeeDraftRepository extends EmployeeRepository {
 		return $query->matching(
 			$query->logicalAnd(
 				$query->equals('organisation',$organisationUid),
-				$query->logicalOr(
-					$query->logicalNot($query->equals('teaser', '')),
-					$query->logicalNot($query->equals('motivation', ''))
-				)
+				$query->logicalNot($query->equals('motivation', ''))
 			)
 		)
 				->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )

@@ -126,16 +126,6 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 				'max' => 255
 			)
 		),
-		'teaser' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.teaser',
-			'config' => array(
-				'type' => 'input',
-				'size' => 160,
-				'eval' => 'trim',
-				'max' => 160
-			)
-		),
 		'headline' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_employee.headline',
@@ -250,8 +240,8 @@ $TCA['tx_helfenkannjeder_domain_model_employee'] = array(
 // TODO bilder, kontaktdaten
 	),
 	'types' => array(
-		'0' => array('showitem' => 'activityfield, organisation, rank, surname, prename, teaser, headline, motivation, birthday, pictures, mail, telephone, mobilephone, iscontact, reference'),
-		'1' => array('showitem' => 'sys_language_uid, hidden, activityfield, organisation, rank, surname, prename, teaser, headline, motivation, birthday, pictures, mail, street, city, reference'),
+		'0' => array('showitem' => 'activityfield, organisation, rank, surname, prename, headline, motivation, birthday, pictures, mail, telephone, mobilephone, iscontact, reference'),
+		'1' => array('showitem' => 'sys_language_uid, hidden, activityfield, organisation, rank, surname, prename, headline, motivation, birthday, pictures, mail, street, city, reference'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),

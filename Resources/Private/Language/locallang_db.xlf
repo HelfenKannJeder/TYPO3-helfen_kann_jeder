@@ -156,9 +156,6 @@
 			<trans-unit id="tx_helfenkannjeder_domain_model_employee.surname" xml:space="preserve">
 				<source>Surname</source>
 			</trans-unit>
-			<trans-unit id="tx_helfenkannjeder_domain_model_employee.teaser" xml:space="preserve">
-				<source>Teaser (max 160 chars)</source>
-			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_domain_model_employee.telephone" xml:space="preserve">
 				<source>Telephone</source>
 			</trans-unit>

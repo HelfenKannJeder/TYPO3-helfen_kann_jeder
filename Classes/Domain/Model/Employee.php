@@ -30,11 +30,6 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
-	protected $teaser = '';
-
-	/**
-	 * @var string
-	 */
 	protected $headline = '';
 
 	/**
@@ -131,14 +126,6 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	public function setRank($rank) {
 		$this->rank = $rank;
-	}
-
-	public function getTeaser() {
-		return $this->teaser;
-	}
-
-	public function setTeaser($teaser) {
-		$this->teaser = $teaser;
 	}
 
 	public function getHeadline() {
