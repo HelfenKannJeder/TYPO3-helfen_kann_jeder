@@ -67,6 +67,11 @@ plugin.tx_helfenkannjeder {
 			privacy = 81
 			messaging = 62
 			register.guide = 94
+			overview.detail = 9
+		}
+
+		config {
+			maxDistance = 20
 		}
 	}
 

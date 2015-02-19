@@ -17,52 +17,44 @@ class AbstractSearchController
 		$organisationTypes = array();
 
 		foreach ($organisationsVoting as $organisation) {
-			$prefix = strtolower('tx_' . $this->request->getControllerExtensionName() . '_' . 'overviewlist');
-			$arguments = array(
-				$prefix => array(
-					'action' => 'detail',
-					'controller' => 'Overview',
-					'organisation' => $organisation["organisation"]
-				)
-			);
+			$uid = $organisation['organisation'];
+			$organisationObj = $this->organisationRepository->findByUid($uid);
 
-			$organisationObj = $this->organisationRepository->findByUid($organisation["organisation"]);
+			if ($organisationObj instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation && 
+				$organisationObj->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType) {
 
-			// TODO: Rewrite with visitor pattern
-			if ($organisationObj instanceof \Querformatik\HelfenKannJeder\Domain\Model\Organisation) {
-				if ($organisationObj->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType) {
-					if (($persLat == 0 && $persLng == 0) || $organisationsNear[$organisation['organisation']]['is_dummy'] == 1) {
-						$distance = -1;
-					} else {
-						$distance = $this->googleMapsService->approxDistance(	$organisationsNear[$organisation["organisation"]][0],
-												$organisationsNear[$organisation["organisation"]][1],
-												$persLat, $persLng
-						);
-					}
-					$grade = round($organisation["gradesum"]);
-					if ($this->gradeMin == null || $grade < $this->gradeMin) {
-						$this->gradeMin = $grade;
-					}
-					if ($this->gradeMax == null || $grade > $this->gradeMax) {
-						$this->gradeMax = $grade;
-					}
+				$isDummy = $organisationsNear[$uid]['is_dummy'];
+				if (($persLat == 0 && $persLng == 0) || $isDummy == 1) {
+					$distance = -1;
+				} else {
+					$distance = $this->googleMapsService->approxDistance(	$organisationsNear[$uid][0],
+											$organisationsNear[$uid][1],
+											$persLat, $persLng
+					);
+				}
+				$grade = round($organisation["gradesum"]);
+				if ($this->gradeMin == null || $grade < $this->gradeMin) {
+					$this->gradeMin = $grade;
+				}
+				if ($this->gradeMax == null || $grade > $this->gradeMax) {
+					$this->gradeMax = $grade;
+				}
 
-					if ($distance <= 20 || $distance == -1) {
-						if ($organisationsNear[$organisation['organisation']]['is_dummy'] == 0) {
-							$organisationTypes[] = $organisationsNear[$organisation["organisation"]]['organisationtype'];
-						}
-						$organisations[] = array(
-                                                
-							"uid"=>$organisation["organisation"],
-							"name"=>$organisationObj->getName(),
-							"organisationtype"=>$organisationObj->getOrganisationtype()->getUid(),
-							"description"=>$organisationObj->getDescription(),
-							"grade"=>$grade,
-							"link"=>$this->uriBuilder->reset()->setTargetPageUid(9)->setArguments($arguments)->uriFor('', array()), // TODO dynamic
-							"distance"=> $distance,
-							'is_dummy' => $organisationsNear[$organisation['organisation']]['is_dummy']
-						);
+				if ($distance <= $this->settings['config']['maxDistance'] || $distance == -1) {
+					if ($isDummy == 0) {
+						$organisationTypes[] = $organisationsNear[$uid]['organisationtype'];
 					}
+					$organisations[] = array(
+						'uid' => $uid,
+						'name' => $organisationObj->getName(),
+						'organisationtype' => $organisationObj->getOrganisationtype()->getUid(),
+						'description' => $organisationObj->getDescription(),
+						'grade' => $grade,
+						'link' => $this->uriBuilder->reset()->setTargetPageUid($this->settings['page']['overview']['detail'])
+							->uriFor('detail', array('organisation' => $uid), 'Overview'),
+						'distance' => $distance,
+						'is_dummy' => $isDummy
+					);
 				}
 			}
 		}
