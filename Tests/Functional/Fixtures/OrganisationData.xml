@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+	<tx_helfenkannjeder_domain_model_organisationdraft>
+		<uid>6</uid>
+		<pid>1</pid>
+		<name>ASB Karlsruhe</name>
+		<description>Wir sind in den folgenden Bereichen tätig:\r\n\r\n[b]1. Sanitätsbetreuung[/b]\r\nDie Sanitätsbetreuung ist die geplante Betreuung von Veranstaltungen, bei denen auf Grund Ihrer Größe oder Art eine medizinische Versorgung erforderlich ist. \r\nSo ist bei Sportveranstaltungen oder Festen ausgebildetes Personal im Einsatz, das für die Sicherheit der Besucher zuständig ist. In eigens eingerichteten Sanitätsstationen werden verletzte oder erkrankte Menschen versorgt. Ist eine Weiterbehandlung in einem Krankenhaus erforderlich, kümmern sich die erfahrenen Helfer um den Abtransport und die Weiterversorgung.\r\n\r\n[b]2. Sanitätsdienst[/b]\r\nIm Falle einer Katastrophe, bei der es viele verletzte Menschen gibt, ist auch der Sanitätsdienst gefragt. Die Sanitäterinnen und Sanitäter kümmern sich um erkrankte oder verletzte Menschen, bauen Behandlungsplätze auf und stellen Rettungsfahrzeuge bereit. Sie alle sind ehrenamtlich aktiv und haben für ihre Tätigkeit eine entsprechende Fachdienstausbildung absolviert.\r\n\r\n[b]3. Schnell-Einsatz-Gruppe (SEG)[/b]\r\nSchnell-Einsatz-Gruppen (SEG) haben gegenüber den regulären Einheiten des Katastrophenschutzes eine deutlich kürzere Vorlaufzeit von der Alarmierung bis zum Eintreffen am Einsatzort. Schnelleinsatzgruppen mit Ausrichtung auf den Sanitätsdienst existieren bereits seit geraumer Zeit und an vielen Standorten in Deutschland.\r\n\r\nIn Karlsruhe stellt der ASB drei verschiedene Schnelleinsatzgruppen:\r\n[list][*]SEG Rettungsdienst (rettungsdienstlich ausgebildete Einsatzkräfte mit entsprechenden Fahrzeugen und Materialien des Rettungsdienstes zur Unterstützung und Ergänzung des Regelrettungsdienstes\r\n[*]SEG Betreuung (ausgebildete Helfer zur Betreuung von unverletzten Betroffenen und Angehörigen)\r\n[*]SEG Notarzt (Notärzte mit Assistenzpersonal für große Schadenslagen)[/list]\r\n\r\n[b]4. Notfallhilfe[/b]\r\nUm den Zeitraum zwischen einem Unfall und dem Eintreffen des Rettungsdienstes zu überbrücken werden First Responder eingesetzt. Mit qualifizierten Basismaßnahmen stabilisieren die erfahrenen Rettungs- und Sanitätsdienstmitarbeiter des ASB die Patienten und sorgen damit für eine optimale Versorgung im Notfall.\r\nDer ASB RV Karlsruhe hält im Albtal die Notfallhilfe Marxzell vor, deren Ausrückbereich Marxzell und die anhängigen Ortschaften umfasst. Auch die "Albtalstrecke", eine unfallträchtige, stark frequentierte Landesstraße befindet sich zum Teil im Zuständigkeitsbereich der Notfallhilfe Marxzell.\r\n\r\n[b]5. Rettungshundestaffel[/b]\r\nDie Rettungshunde des ASB sind bei der Suche nach Vermissten oder verunglückten Menschen unersetzlich. Jede Rettungshundestaffel wird von der Polizei alarmiert und kann innerhalb kürzester Zeit zu einer Suchaktion ausrücken.\r\nDer ASB Karlsruhe baut derzeit eine eigene Rettungshundestaffel auf.\r\n\r\n[b]6. Motorradstaffel[/b]\r\nWird schnelle Hilfe benötigt und ist aufgrund der örtlichen Gegebenheit ein Durchkommen mit Rettungswagen nur schwer möglich, wird die Motorradstaffel des ASB RV Karlsruhe eingesetzt. \r\nErfahrene Mitarbeiter des Rettungs- und Sanitätsdienstes unterstützen so den Regelrettungsdienst im Rahmen der Erstversorgung, aber auch die Sanitätsdienste bei Großveranstaltungen. Mit speziell ausgestatteten Motorrädern sind die Einsatzkräfte schnell bei den Patienten und können so eine qualifizierte Erstversorgung garantieren.\r\nDaneben sind die Motorräder für Logistikaufgaben und Erkundungsaufgaben geeignet und werden hierfür von der Rettungsleitstelle Karlsruhe gerne eingesetzt.\r\nDie Motorräder sind von März bis Oktober an den Wochenenden im Bereich der stark frequentierten Autobahnen und Bundesstraßen in der Region Karlsruhe unterwegs. In Zusammenarbeit mit der Autobahnpolizei leisten sie auch hier Erste Hilfe und sichern bis zum Eintreffen weiterer Kräfte Unfallstellen und/oder Pannenfahrzeuge ab.</description>
+		<organisationtype>1</organisationtype>
+		<website>http://www.asb.de/karlsruhe</website>
+		<longitude>8.468610</longitude>
+		<latitude>49.003780</latitude>
+		<contactpersons>1</contactpersons>
+		<logo>0x6173625f3130357836302e706e67</logo>
+		<pictures>0x48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31315f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31325f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31335f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31345f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31355f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31365f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f31375f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f315f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f325f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f335f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f345f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f355f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f365f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f375f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f385f2e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f395f2e6a70672c5f4d475f353536342e6a70672c494d475f373738345f426561726265697465745f426561726265697465745f426561726265697465742e6a70672c5f4d475f373434352e6a70672c494d475f383635362e6a70672c5f4d475f343332305f426561726265697465745f322e6a70672c5f4d475f303536382e6a70672c494d475f303539395f322e6a70672c494d475f303630335f322e6a70672c494d475f363932372e6a70672c5f4d475f363034332e6a70672c5f4d475f363939392e6a70672c5f4d475f373233352e6a70672c5f4d475f373130322e4a50472c5f4d475f373434355f312e6a70672c5f4d475f373331362e4a50472c5f4d475f393236362e4a50472c5f4d475f343735352e4a50472c494d475f353331302e4a50472c494d475f393337382e4a50472c494d475f393439312e4a50472c5f4d475f363034335f312e6a70672c5f4d475f373336382e4a50472c5f4d475f373439362e4a50472c5f4d475f383737362e4a50472c494d475f363230342e4a50472c494d475f343835382e4a50472c5f4d475f303236305f426561726265697465742e4a50472c5f4d475f303139325f426561726265697465742e4a50472c494d475f303630315f322e4a50472c5f4d475f303535382e4a5047</pictures>
+		<feuser>14</feuser>
+		<groups>12</groups>
+		<workinghours>1</workinghours>
+		<employees>4</employees>
+		<defaultaddress>11</defaultaddress>
+		<addresses>1</addresses>
+		<request>2</request>
+		<requesttime>1394210050</requesttime>
+		<supporter>37</supporter>
+	</tx_helfenkannjeder_domain_model_organisationdraft>
+	<tx_helfenkannjeder_domain_model_organisationdraft>
+		<uid>1</uid>
+		<pid>1</pid>
+		<name>THW Karlsruhe</name>
+		<description>Wir sind die Hilfsorganisation des Bundes und unterstützen die für die Gefahrenabwehr zuständigen Stellen auch mit Spezialgerät bei der Bekämpfung von Schadenslagen aller Art. Ein weiterer gesetzlicher Auftrag ist die Leistung von Hilfe im Zivilschutz. Unser Tätigkeitsgebiet beschränkt sich nicht nur auf Deutschland, so haben wir auf zahlreichen Einsätzen rund um den Globus humanitäre Hilfe leisten können. So haben Mitarbeiter des THW Karlsruhe beispielsweise in Ruanda und Somalia im Bürgerkriegsgebiet Hilfe geleistet. Ihrer besonderen Verantwortung als „humanitäre Botschafter“ Deutschlands sind sich die THW-Angehörigen bei ihrem Engagement im Ausland stets bewusst und schon der Nachwuchs wird bereits in jungen Jahren an diese besondere Rolle herangeführt. Mit der Teilnahme von THW-Jugendgruppen an internationalen Jugendbegegnungen oder dem tunesischen Zivilschutztag leisten schon die Jüngsten einen Beitrag zur Völkerverständigung.</description>
+		<organisationtype>10</organisationtype>
+		<website>http://www.thw-karlsruhe.de</website>
+		<longitude>8.352747</longitude>
+		<latitude>49.037659</latitude>
+		<contactpersons>1</contactpersons>
+		<logo>0x5448572d4c6f676f5f425265672e706e67</logo>
+		<pictures>0x5261646c616465725f323132342e6a70672c474b57315f313937352e6a70672c414754392e6a70672c5448575f46575f466c6f7269616e2e6a70672c4174656d73636875747a756562756e67312e6a70672c4272616e645a6f6f362e6a70672c45696e7361747a766f72626572656974756e675f766f6e5f6f62656e312e6a70672c4d576f6c5f4272616e645f4d616c736368332e6a70672c5261646c61646572312e6a70672c536175657273746f66666c616e7a65342e6a70672c556562756e675f5a75675f4174656d73636875747a312e6a70672c5a6f6f4b7269707065312e6a70672c617368342e6a70672c78796e74686961342e6a70672c556e696d6f675f313836392e6a7067</pictures>
+		<feuser>1</feuser>
+		<groups>9</groups>
+		<workinghours>3</workinghours>
+		<employees>9</employees>
+		<defaultaddress>1</defaultaddress>
+		<addresses>1</addresses>
+		<request>0</request>
+		<requesttime>1392369614</requesttime>
+		<supporter>37</supporter>
+	</tx_helfenkannjeder_domain_model_organisationdraft>
+</dataset>

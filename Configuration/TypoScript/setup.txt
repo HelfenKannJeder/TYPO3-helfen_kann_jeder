@@ -2,17 +2,15 @@
 config.tx_extbase {
 	persistence{
 		classes {
-			TYPO3\CMS\Extbase\Domain\Model\FrontendUser {
-				mapping {
-					tableName = fe_users
-				}
+			Extbase\Domain\Model\FrontendUser {
 				subclasses {
 					supporter = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 				}
 			}
-			TYPO3\CMS\Extbase\Domain\Model\FrontendUserGroup {
+			Querformatik\HelfenKannJeder\Domain\Model\Supporter {
 				mapping {
-					tableName = fe_groups
+					tableName = fe_users
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 				}
 			}
 		}

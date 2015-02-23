@@ -44,7 +44,7 @@ class AccessControlService implements \TYPO3\CMS\Core\SingletonInterface {
 	}
 
 	public function getFrontendUserUid() {
-		if ($this->hasLoggedInFrontendUser() && !empty($GLOBALS['TSFE']->fe_user->user['uid'])) {
+		if (!empty($GLOBALS['TSFE']->fe_user->user['uid'])) {
 			return intval($GLOBALS['TSFE']->fe_user->user['uid']);
 		}
 		return NULL;
@@ -75,7 +75,7 @@ class AccessControlService implements \TYPO3\CMS\Core\SingletonInterface {
 	}
 
 	public function hasLoggedInFrontendUser() {
-		return $GLOBALS['TSFE']->loginUser === 1 ? TRUE : FALSE;
+		return $GLOBALS['TSFE']->loginUser === TRUE || $GLOBALS['TSFE']->loginUser === 1 ? TRUE : FALSE;
 	}
 }
 ?>
