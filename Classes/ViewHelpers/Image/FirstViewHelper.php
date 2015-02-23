@@ -43,48 +43,18 @@ class FirstViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ImageViewHelper {
 			$src = substr($src, 0, strpos($src, ','));
 		}
 
-		if ($this->imageService != null) { // TODO: Clean code
-			$image = null;
-			$image = $this->imageService->getImage($src, $image, $treatIdAsReference);
-			$processingInstructions = array(
-				'width' => $width,
-				'height' => $height,
-				'minWidth' => $minWidth,
-				'minHeight' => $minHeight,
-				'maxWidth' => $maxWidth,
-				'maxHeight' => $maxHeight,
-			);
-			$processedImage = $this->imageService->applyProcessingInstructions($image, $processingInstructions);
-			$imageSource = $this->imageService->getImageUri($processedImage);
-		} else {
-			if (TYPO3_MODE === 'BE' && substr($src, 0, 3) === '../') {
-				$src = substr($src, 3);
-			}
-
-			$setup = array(
-				'width' => $width,
-				'height' => $height,
-				'minW' => $minWidth,
-				'minH' => $minHeight,
-				'maxW' => $maxWidth,
-				'maxH' => $maxHeight
-			);
-			$imageInfo = $this->contentObject->getImgResource($src, $setup);
-			$GLOBALS['TSFE']->lastImageInfo = $imageInfo;
-			if (!is_array($imageInfo)) {
-				throw new \TYPO3\CMS\Fluid\Core\ViewHelper\Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
-			}
-			$imageInfo[3] = \TYPO3\CMS\Core\Utility\GeneralUtility::png_to_gif_by_imagemagick($imageInfo[3]);
-			$GLOBALS['TSFE']->imagesOnPage[] = $imageInfo[3];
-                        
-			$imageSource = $GLOBALS['TSFE']->absRefPrefix . \TYPO3\CMS\Core\Utility\GeneralUtility::rawUrlEncodeFP($imageInfo[3]);
-
-			if (TYPO3_MODE === 'BE') {
-				$imageSource = '../' . $imageSource;
-				$this->resetFrontendEnvironment();
-			}
-		}
-
+		$image = null;
+		$image = $this->imageService->getImage($src, $image, $treatIdAsReference);
+		$processingInstructions = array(
+			'width' => $width,
+			'height' => $height,
+			'minWidth' => $minWidth,
+			'minHeight' => $minHeight,
+			'maxWidth' => $maxWidth,
+			'maxHeight' => $maxHeight,
+		);
+		$processedImage = $this->imageService->applyProcessingInstructions($image, $processingInstructions);
+		$imageSource = $this->imageService->getImageUri($processedImage);
 
 		$this->tag->addAttribute('src', $imageSource);
 		$this->tag->addAttribute('width', $imageInfo[0]);
