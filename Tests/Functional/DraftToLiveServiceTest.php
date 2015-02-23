@@ -7,11 +7,9 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 /**
  * Fractional test for support controller, see also http://wiki.typo3.org/Functional_testing
  */
-class SupportControllerTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
+class DraftToLiveServiceTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 
-	const VALUE_PageId = 89;
-	const VALUE_PageIdTarget = 90;
-	const VALUE_PageIdWebsite = 1;
+	const EXTENSION_PATH = 'typo3conf/ext/helfen_kann_jeder/';
 
 	/**
 	 * @var array
@@ -23,7 +21,7 @@ class SupportControllerTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 */
 	protected $testExtensionsToLoad = array(
 		'typo3conf/ext/qu_base',
-		'typo3conf/ext/helfen_kann_jeder',
+		self::EXTENSION_PATH,
 	);
 
 	/**
@@ -60,11 +58,11 @@ class SupportControllerTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 		$this->setUpFrontendRootPage(
 			1,
 			array(
-				'typo3conf/ext/helfen_kann_jeder/Tests/Functional/Fixtures/TypoScript.ts',
+				self::EXTENSION_PATH . 'Tests/Functional/Fixtures/TypoScript.ts',
 			)
 		);
 
-		$this->importDataSet(ORIGINAL_ROOT . 'typo3conf/ext/helfen_kann_jeder/Tests/Functional/Fixtures/OrganisationData.xml');
+		$this->importDataSet(ORIGINAL_ROOT . self::EXTENSION_PATH . 'Tests/Functional/Fixtures/OrganisationData.xml');
 
 		$this->objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
 		$this->persistentManager = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager');
@@ -77,11 +75,40 @@ class SupportControllerTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 		$this->assertSame(2, count($this->organisationDraftRepository->findAll()));
 	}
 
+	/**
+	 * Test the completeness of a new synchronisation
+	 *
+	 * @test
+	 */
 	public function testSyncObjects() {
 		$firstOrganisation = $this->organisationDraftRepository->findByUid(1);
 		$this->assertNotSame(null, $firstOrganisation);
 		$this->draftToLiveService->draft2live($firstOrganisation);
-		$this->assertSame(1, count($this->organisationRepository->findAll()));
+		$liveObjects = $this->organisationRepository->findAll();
+		$this->assertSame(1, count($liveObjects));
+
+		$draft = $this->organisationDraftRepository->findByUid(1);
+		$live = $draft->getReference();
+		$this->assertNotNull($live);
+
+		// Test
+		$this->assertEquals('THW Karlsruhe', $live->getName());
+		$this->assertEquals('49.037659', $live->getLatitude());
+		$this->assertEquals('8.352747', $live->getLongitude());
+		$this->assertEquals('http://www.thw-karlsruhe.de', $live->getWebsite());
+
+		$this->assertEquals($draft->getOrganisationtype(), $live->getOrganisationtype());
+
+		$this->assertEquals('THW', $live->getOrganisationtype()->getAcronym());
+
+		// Employees and contactperson
+		$this->assertEquals(2, count($live->getEmployees()));
+		$this->assertEquals(1, $live->getContactpersons()->count());
+
+		$contactperson = $live->getContactpersons()->current();
+		$this->assertEquals('Domjahn', $contactperson->getSurname());
+		$this->assertEquals('David', $contactperson->getPrename());
+		$this->assertEquals('nospam@helfenkannjeder.de', $contactperson->getMail());
 	}
 }
 ?>

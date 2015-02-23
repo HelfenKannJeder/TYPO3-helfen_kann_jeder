@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dataset>
+	<tx_helfenkannjeder_domain_model_organisationtype>
+		<uid>1</uid>
+		<pid>1</pid>
+		<name>Arbeiter-Samariter-Bund</name>
+		<acronym>ASB</acronym>
+		<picture>0x796c772d7075736870696e5f30312e706e67</picture>
+		<access_group>0</access_group>
+		<namedisplay>ASB</namedisplay>
+		<pseudo>0</pseudo>
+		<group_template_categories>6</group_template_categories>
+		<fegroup>4</fegroup>
+		<logos>0x4153425f4c565f42575f39347836302e706e672c6173625f3130357836305f30322e706e67</logos>
+		<registerable>1</registerable>
+		<hide_in_result>0</hide_in_result>
+		<teaser>0x48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f315f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f325f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f335f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f345f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f355f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f365f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f375f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f385f5f30312e6a70672c48656c66656e5f6b616e6e5f4a656465725f2d5f4153425f5f395f5f30312e6a7067</teaser>
+		<dummy_organisation>0</dummy_organisation>
+	</tx_helfenkannjeder_domain_model_organisationtype>
+	<tx_helfenkannjeder_domain_model_organisationtype>
+		<uid>10</uid>
+		<pid>1</pid>
+		<name>Technisches Hilfswerk</name>
+		<acronym>THW</acronym>
+		<picture>0x626c75652d7075736870696e2e706e67</picture>
+		<access_group>0</access_group>
+		<namedisplay>THW</namedisplay>
+		<pseudo>0</pseudo>
+		<group_template_categories>5</group_template_categories>
+		<fegroup>12</fegroup>
+		<logos>0x5448572d4c6f676f5f425265675f30312e706e672c36303070782d5448572e7376672e706e67</logos>
+		<registerable>1</registerable>
+		<hide_in_result>0</hide_in_result>
+		<teaser>0x30385f426f657267657270756d70655f30312e6a70672c343565725f57616e642d5f426f6872756e675f33305f5f5f30312e4a50472c3230303831325f5761676861657573656c5f44757263686272756368325f30312e6a70672c414754355f30312e6a70672c414754375f30312e6a70672c414754382e6a70672c414754395f30312e6a70672c617368345f30312e6a70672c4174656d73636875747a756562756e67315f30312e6a7067</teaser>
+		<dummy_organisation>0</dummy_organisation>
+	</tx_helfenkannjeder_domain_model_organisationtype>
 	<tx_helfenkannjeder_domain_model_organisationdraft>
 		<uid>6</uid>
 		<pid>1</pid>
@@ -44,4 +78,127 @@
 		<requesttime>1392369614</requesttime>
 		<supporter>37</supporter>
 	</tx_helfenkannjeder_domain_model_organisationdraft>
+
+	<tx_helfenkannjeder_domain_model_employeedraft>
+		<uid>1</uid>
+		<pid>6</pid>
+		<organisation>1</organisation>
+		<iscontact>1</iscontact>
+		<rank>Beauftragter für Öffentlichkeitsarbeit</rank>
+		<surname>Domjahn</surname>
+		<prename>David</prename>
+		<motivation>Viele Menschen, die mein Leben bereichern, hätte ich ohne das THW nie kennengelernt: Mit einem THW-Kollegen habe ich eine Firma gegründet, die im Februar 2011 zehn Jahre alt geworden ist und nun an die 40 Mitarbeiter hat. Seit meinem THW-Auslandseinsatz in Somalia weiß ich, wie gut es uns in Deutschland geht, und möchte das, was ich erhalten habe, der Gesellschaft gerne zurückgeben. Ich bin gerne beim THW, weil es hier ständig Neues zu entecken und zu erleben gibt.</motivation>
+		<birthday>-13478400</birthday>
+		<pictures>0x4461766964446f6d6a61686e5f34303939732e6a7067</pictures>
+		<mail>nospam@helfenkannjeder.de</mail>
+	</tx_helfenkannjeder_domain_model_employeedraft>
+	<tx_helfenkannjeder_domain_model_employeedraft>
+		<uid>7</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<iscontact>0</iscontact>
+		<surname>Zickner</surname>
+		<prename>Valentin</prename>
+		<motivation>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</motivation>
+		<birthday>0</birthday>
+	</tx_helfenkannjeder_domain_model_employeedraft>
+	<tx_helfenkannjeder_organisatondraft_contactperson_mm>
+		<uid_local>1</uid_local>
+		<uid_foreign>1</uid_foreign>
+	</tx_helfenkannjeder_organisatondraft_contactperson_mm>
+
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>1</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<name>1. Bergungsgruppe</name>
+		<website></website>
+		<workinghours></workinghours>
+		<description>Die 1. Bergungsgruppe (BG 1) rettet Menschen und Tiere und birgt Sachwerte aus Gefahrenlagen.\r\nSie führt Sicherungsarbeiten in Schadenstellen durch, leistet leichte\r\nRäumarbeiten und richtet Wege und Übergänge her. Ferner unterstützt sie technisch\r\nund personell die Fachgruppen des THW.</description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<contactpersons>0</contactpersons>
+		<template>0</template>
+		<sort>1</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>2</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<name>THW OV-Stab</name>
+		<description></description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<template>1</template>
+		<sort>2</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>3</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<name>2. Bergungsgruppe</name>
+		<description>Die 2. Bergungsgruppe (B 2) rettet Menschen und Tiere und birgt Sachwerte aus Gefahrenlagen. Sie führt Sicherungsarbeiten in Schadenstellen durch, leistet leichte Räumarbeiten und richtet Wege und Übergänge her.</description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<template>219</template>
+		<sort>3</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>4</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<name>Fachgruppe Wasserschaden/Pumpen</name>
+		<description>Die Fachgruppe Wasserschaden/Pumpen (FGr WP) führt zur Behebung und Eindämmung von Gefahren bei Überflutungen und Überschwemmungen größeren Ausmaßes Pump- und Lenzarbeiten durch, beseitigt Schmutz-/Abwasser aus Schadengebieten und bekämpft schädigend eindringendes Wasser (z.B. in Kellern, Kanalisation,Schutzräumen, Brunnen, Verkehrs-, anderen Anlagen öffentlichen Interesses usw.).</description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<template>0</template>
+		<sort>4</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>7</uid>
+		<pid>1</pid>
+		<organisation>1</organisation>
+		<name>THW-Jugend</name>
+		<description>Für Jugendliche die Spaß und Action lieben, technisch interessiert sind und dabei noch gute Freunde finden möchten, ist die THW-Jugend Karlsruhe genau das Richtige. Unter dem Motto "Spielend Helfen Lernen" können Mädchen und Jungen im Alter von zehn bis 18 Jahren in der THW-Jugend Mitglied werden. In einem sehr abwechslungsreichen Programm werden die Jugendlichen an die Technik des THW herangeführt, z.B. durch Ausbildung in Bereichen wie Stegebau, Transport von Verletzten, Ausleuchten von Einsatzstellen und anderen fachbezogenen Tätigkeiten.</description>
+		<minimum_age>10</minimum_age>
+		<maximum_age>17</maximum_age>
+		<contactpersons>1</contactpersons>
+		<template>5</template>
+		<sort>7</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>888</uid>
+		<pid>1</pid>
+		<organisation>6</organisation>
+		<name>Erste-Hilfe-Ausbildung</name>
+		<description>Du kannst Dich bei uns zum Erste Hilfe Ausbilder weiterqualifizieren. Nach Abschluß dieser Ausbildung und ggf. weiterere Fortbildungen bildest Du Ersthelfer in den folgenden Kursen aus:\r\n- Lebensrettende Sofortmaßnahmen (8 Stunden) \r\n- Erste-Hilfe-Lehrgang (16 Stunden) \r\n- Erste-Hilfe-Training (8 Stunden) \r\n- Erste-Hilfe-Aufbaulehrgang (24 Stunden) \r\n- Erste Hilfe bei Kindernotfällen (10 Stunden) \r\n- Herz-Lungen-Wiederbelebung (8 Stunden) \r\n- Medizinische Erstversorgung für Schüler (12 Stunden)\r\n- Ausbildung in Defibrillation (unterschiedlicher Stundenumfang)\r\n- Ausbildung zum Betriebssanitäter (68 und 32 Stunden)</description>
+		<minimum_age>10</minimum_age>
+		<maximum_age>99</maximum_age>
+		<template>138</template>
+		<sort>5</sort>
+		<reference>770</reference>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>889</uid>
+		<pid>1</pid>
+		<organisation>6</organisation>
+		<name>Sanitätsausbildung</name>
+		<description>Wir bilden unsere haupt- und ehrenamtlichen Mitarbeiter selbstverständlich selbst aus und bieten neben der sanitätsdienstlichen Ausbildung auch die Möglichkeit der Ausbildung zum(zur) Rettungssanitäter/in. </description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<template>139</template>
+		<sort>6</sort>
+		<reference>771</reference>
+	</tx_helfenkannjeder_domain_model_groupdraft>
+	<tx_helfenkannjeder_domain_model_groupdraft>
+		<uid>890</uid>
+		<pid>1</pid>
+		<organisation>6</organisation>
+		<name>Sanitätsdienst</name>
+		<description>Der Sanitätsdienst leistet der betroffenen Bevölkerung im Schadensgebiet Hilfe, führt ärztliche Sofortmaßnahmen zur Abwendung lebensbedrohlicher Zustände und zur Herstellung der Transportfähigkeit durch.\r\n \r\nEr rettet, sichtet, registriert und versorgt Patienten. Der Sanitätsdienst transportiert Patienten und unterstützt andere Einheiten. Bei größeren Schadenslagen betreibt der Sanitätsdienst zusammen mit dem Betreuungsdienst entsprechende Behandlungsplätze.</description>
+		<minimum_age>18</minimum_age>
+		<maximum_age>65</maximum_age>
+		<template>120</template>
+		<sort>7</sort>
+	</tx_helfenkannjeder_domain_model_groupdraft>
 </dataset>
