@@ -345,14 +345,6 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->groups->detach($group);
 	}
 
-	public function setContactperson($contactperson) {
-		$this->contactperson = $contactperson;
-	}
-
-	public function getContactperson() {
-		return $this->contactperson;
-	}
-
 	public function getEmployees() {
 		return clone $this->employees;
 	}
