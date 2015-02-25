@@ -25,10 +25,12 @@ class OrganisationCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\Co
 	protected $organisationDraftRepository;
 
 	/**
-	 * @var \Querformatik\HelfenKannJeder\Service\LogService
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
 	 * @inject
 	 */
-	protected $logService;
+	protected $logManager;
 
 	public function refreshHelfOMatCacheCommand() {
 		$this->groupRepository->generateQuestionOrganisationMappingCache();
@@ -49,7 +51,9 @@ class OrganisationCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\Co
 				$draftOrganisation->setRequesttime(time());
 				$draftOrganisation->setRequest(1);
 				$this->organisationDraftRepository->update($draftOrganisation);
-				$this->logService->insert("Reenabled organisation for edit by the user", $draftOrganisation);
+
+				$logger = $this->logManager->getLogger(__CLASS__);
+				$logger->info('Reenabled organisation for edit by the user', array($draftOrganisation));
 			}
 		}
 	}

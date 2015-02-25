@@ -1,6 +1,11 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Controller;
 
+/**
+ * Organisation Controller for modify an existing organisation object.
+ *
+ * @author Valentin Zickner
+ */
 class OrganisationController extends AbstractOrganisationController {
 	/**
 	 * organisationDraftRepository
@@ -53,6 +58,14 @@ class OrganisationController extends AbstractOrganisationController {
 	protected $organisations;
 	protected $organisationUids;
 
+	/**
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
+	 * @inject
+	 */
+	protected $logManager;
+
 	public function initializeAction() {
 		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 
@@ -78,7 +91,6 @@ class OrganisationController extends AbstractOrganisationController {
 
 		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
-		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 
 		$this->organisationUids = array();
 		$this->organisations = $this->organisationDraftRepository->findByFeuser($this->frontendUser->getUid());
@@ -415,7 +427,8 @@ class OrganisationController extends AbstractOrganisationController {
 					$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 					$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 				}
-				$this->logService->insert("The organisation added a publishing request.", $organisation);
+				$logger = $this->logManager->getLogger(__CLASS__);
+				$logger->info('The organisation added a publishing request.', array($organisation));
 			}
 		}
 		$sendmail = false;
@@ -436,7 +449,8 @@ class OrganisationController extends AbstractOrganisationController {
 				$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.removedRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 				$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 			}
-			$this->logService->insert("The organisation removed a publishing request.", $organisation);
+			$logger = $this->logManager->getLogger(__CLASS__);
+			$logger->info('The organisation removed a publishing request.', array($organisation));
 		}
 
 		$this->organisationDraftRepository->update($organisation);
@@ -489,4 +503,3 @@ class OrganisationController extends AbstractOrganisationController {
 	}
 
 }
-?>

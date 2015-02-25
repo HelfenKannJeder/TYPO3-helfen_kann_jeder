@@ -19,10 +19,12 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 	protected $mailService;
 
 	/**
-	 * @var \Querformatik\HelfenKannJeder\Service\LogService
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
 	 * @inject
 	 */
-	protected $logService;
+	protected $logManager;
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
@@ -116,7 +118,8 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 				}
 				$this->mailService->send($mail, $mailHeadline, $mailContent, $cc);
 
-				$this->logService->insert("Reminded supporter to activate organisation", $organisation);
+				$logger = $this->logManager->getLogger(__CLASS__);
+				$logger->info('Reminded supporter to activate organisation', array($organisation));
 			}
 		}
 	}
@@ -142,7 +145,8 @@ class RemindCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandC
 			$organisationDraft->setRemindLast(time());
 			$organisationDraft->setRemindCount($organisationDraft->getRemindCount()+1);
 			$this->organisationDraftRepository->update($organisationDraft);
-			$this->logService->insert("Reminded organisation to complete registration", $organisationDraft);
+			$logger = $this->logManager->getLogger(__CLASS__);
+			$logger->info('Reminded organisation to complete registration', array($organisationDraft));
 		}
 		if (empty($sendTo)) $sendTo = "Nobody!";
 		$this->view->assign("sendTo", $sendTo);

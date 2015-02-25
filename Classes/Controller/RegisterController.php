@@ -17,6 +17,14 @@ class RegisterController
 		$this->persistenceManager = $persistenceManager;
 	}
 
+	/**
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
+	 * @inject
+	 */
+	protected $logManager;
+
 	protected $accessControlService;
 	protected $frontendUser;
 	protected $registerOrganisationProgressRepository;
@@ -981,8 +989,8 @@ class RegisterController
 				if (!$groupExists) {
 					$this->frontendUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings["registeredUserGroup"]));
 				}
-				$logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
-				$logService->insert("User requested confirmation after self registration.", $organisation);
+				$logger = $this->logManager->getLogger(__CLASS__);
+				$logger->info('User requested confirmation after self registration.', array($organisation));
 				$organisation->setRequest(1);
 				$organisation->setRequesttime(time());
 				$this->organisationDraftRepository->update($organisation);
@@ -1065,8 +1073,8 @@ class RegisterController
 		if ($organisationDraft->getControlHash() == $hash) {
 			$organisationDraft->setRemindCount(-1);
 			$this->organisationDraftRepository->update($organisationDraft);
-			$logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
-			$logService->insert("The organisation want no more remind mails.", $organisationDraft);
+			$logger = $this->logManager->getLogger(__CLASS__);
+			$logger->info('The organisation want no more remind mails.', array($organisationDraft));
 			$this->view->assign("noRemind", true);
 		} else {
 			$this->view->assign("noRemind", false);

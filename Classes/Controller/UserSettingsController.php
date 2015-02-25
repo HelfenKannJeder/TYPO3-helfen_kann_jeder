@@ -3,13 +3,19 @@ namespace Querformatik\HelfenKannJeder\Controller;
 
 class UserSettingsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $accessControlService;
-	protected $logService;
 	protected $frontendUserRepository;
 	protected $frontendUser;
 
+	/**
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
+	 * @inject
+	 */
+	protected $logManager;
+
 	public function initializeAction() {
 		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService');
-		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 		$this->frontendUserRepository = $this->objectManager->get('\\TYPO3\\CMS\\Extbase\\Domain\\Repository\\FrontendUserRepository');
 		$this->frontendUser = $this->accessControlService->getFrontendUser();
 	}
@@ -63,7 +69,8 @@ class UserSettingsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.password.notMatch', 'HelfenKannJeder'));
 					$error = true;
 				} else if (!$error) {
-					$this->logService->insert("User changed the field password.");
+					$logger = $this->logManager->getLogger(__CLASS__);
+					$logger->info('User changed the field password.', array($frontendUser));
 					$frontendUser->setPassword($password1);
 					$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('usersetting.password.changed', 'HelfenKannJeder'));
 				}
@@ -71,14 +78,18 @@ class UserSettingsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 
 
 			if (!$error) {
+				$logger = $this->logManager->getLogger(__CLASS__);
 				if ($this->frontendUser->getFirstName() != $frontendUser->getFirstName()) {
-					$this->logService->insert("User changed first name from ".$this->frontendUser->getFirstName()." to ".$frontendUser->getFirstName());
+					$logger->info('User changed first name from ' . $this->frontendUser->getFirstName() . ' to '
+						. $frontendUser->getFirstName(), array($frontendUser));
 				}
 				if ($this->frontendUser->getLastName() != $frontendUser->getLastName()) {
-					$this->logService->insert("User changed last name from ".$this->frontendUser->getLastName()." to ".$frontendUser->getLastName());
+					$logger->info('User changed last name from ' . $this->frontendUser->getLastName() . ' to '
+						. $frontendUser->getLastName(), array($frontendUser));
 				}
 				if ($this->frontendUser->getEmail() != $frontendUser->getEmail()) {
-					$this->logService->insert("User changed mail from ".$this->frontendUser->getEmail()." to ".$frontendUser->getEmail());
+					$logger->info('User changed first mail from ' . $this->frontendUser->getEmail() . ' to '
+						. $frontendUser->getEmail(), array($frontendUser));
 				}
 
 				$this->frontendUserRepository->update($frontendUser);

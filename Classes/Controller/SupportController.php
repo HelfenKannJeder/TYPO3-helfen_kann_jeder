@@ -1,6 +1,11 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Controller;
 
+/**
+ * Support Controller is for Team Members to activate organisations.
+ *
+ * @author Valentin Zickner
+ */
 class SupportController
 	extends AbstractOrganisationController {
 	/**
@@ -21,7 +26,6 @@ class SupportController
 	protected $frontendUser;
 	protected $organisationRepository;
 	protected $organisationDraftRepository;
-	protected $logService;
 	protected $employeeDraftRepository;
 	protected $employeeRepository;
 	protected $groupDraftRepository;
@@ -34,12 +38,19 @@ class SupportController
 	 */
 	protected $draftToLiveService;
 
+	/**
+	 * Log manager to log it when mail sending failed.
+	 *
+	 * @var TYPO3\CMS\Core\Log\LogManager
+	 * @inject
+	 */
+	protected $logManager;
+
 	public function initializeAction() {
 		$this->accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService'); // Singleton
 		$this->frontendUser = $this->accessControlService->getFrontendSupporter();
 		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
 		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
-		$this->logService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\LogService');
 		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
 		$this->employeeRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeRepository');
 		$this->groupDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupDraftRepository');
@@ -85,7 +96,8 @@ class SupportController
 			$this->mailService->send($organisationDraft->getFeuser()->getEmail(), $mailHeadline, $mailContent);
 			$this->mailService->send("valentin.zickner@helfenkannjeder.de", $mailHeadline, $mailContent); // TODO: Maybe this should specified in the settings.
 		}
-		$this->logService->insert("The organisation was send to live.", $organisationDraft);
+		$logger = $this->logManager->getLogger(__CLASS__);
+		$logger->info('The organisation was send to live.', array($organisationDraft));
 //		$this->cacheApiService->clearPageCache(); // TODO: Is this enouth?: https://github.com/TYPO3-coreapi/ext-coreapi/blob/master/Classes/Service/CacheApiService.php
 		$this->redirect("index");
 	}
@@ -109,7 +121,8 @@ class SupportController
 			$organisationDraft->setRequest(3);
 			$organisationDraft->setRequesttime(time());
 			$this->organisationDraftRepository->update($organisationDraft);
-			$this->logService->insert("The organisation was locked by supporter (visit diff).", $organisationDraft);
+			$logger = $this->logManager->getLogger(__CLASS__);
+			$logger->info('The organisation was locked by supporter (visit diff).', array($organisationDraft));
 		}
 
 		$this->view->assign('organisationDraft', $organisationDraft);
@@ -140,7 +153,8 @@ class SupportController
 			$organisationDraft->setRequest(3);
 			$organisationDraft->setRequesttime(time());
 			$this->organisationDraftRepository->update($organisationDraft);
-			$this->logService->insert("The organisation was locked by supporter (visit view).", $organisationDraft);
+			$logger = $this->logManager->getLogger(__CLASS__);
+			$logger->info('The organisation was locked by supporter (visit view).', array($organisationDraft));
 		}
 
 		$this->view->assign('organisationDraft', $organisationDraft);
@@ -160,7 +174,8 @@ class SupportController
 		$organisationDraft->setRequest(1);
 		$organisationDraft->setRequesttime(time());
 		$this->organisationDraftRepository->update($organisationDraft);
-		$this->logService->insert("The organisation was unlocked by supporter.", $organisationDraft);
+		$logger = $this->logManager->getLogger(__CLASS__);
+		$logger->info('The organisation was unlocked by supporter.', array($organisationDraft));
 		$this->redirect("index");
 	}
 
@@ -183,8 +198,8 @@ class SupportController
 			$this->mailService->send($organisationDraft->getFeuser()->getEmail(), $mailHeadline, $mailContent);
 		}
 
-		$this->logService->insert("The organisation was not published by the supporter.", $organisationDraft);
+		$logger = $this->logManager->getLogger(__CLASS__);
+		$logger->info('The organisation was not published by the supporter.', array($organisationDraft));
 		$this->redirect("write", "Message", "QuMessaging", array("writeTo" => $organisationDraft->getFeuser()), $this->settings["page"]["messaging"]);
 	}
 }
-?>
