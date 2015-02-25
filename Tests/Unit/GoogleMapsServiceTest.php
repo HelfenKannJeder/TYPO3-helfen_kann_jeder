@@ -5,8 +5,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Fractional test for support controller, see also
- * http://wiki.typo3.org/Functional_testing
+ * Unit test for google maps service
  *
  * @author Valentin Zickner
  */

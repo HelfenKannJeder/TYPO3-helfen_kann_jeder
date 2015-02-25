@@ -5,7 +5,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Fractional test for support controller, see also http://wiki.typo3.org/Functional_testing
+ * Functional test for DraftToLiveService,
+ * see also http://wiki.typo3.org/Functional_testing
  */
 class DraftToLiveServiceTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 
@@ -38,18 +39,21 @@ class DraftToLiveServiceTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
 	 */
-	protected $organisationDraftRepository;
+	protected $draftRepository;
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationRepository
 	 */
-	protected $organisationRepository;
+	protected $liveRepository;
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Service\DraftToLiveService
 	 */
 	protected $draftToLiveService;
 
+	/**
+	 * @return void
+	 */
 	public function setUp() {
 		parent::setUp();
 
@@ -66,28 +70,35 @@ class DraftToLiveServiceTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 
 		$this->objectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
 		$this->persistentManager = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager');
-		$this->organisationDraftRepository = $this->objectManager->get('Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
-		$this->organisationRepository = $this->objectManager->get('Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
+		$this->draftRepository =
+			$this->objectManager->get('Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
+		$this->liveRepository =
+			$this->objectManager->get('Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
 		$this->draftToLiveService = $this->objectManager->get('Querformatik\\HelfenKannJeder\\Service\\DraftToLiveService');
 	}
 
+	/**
+	 * @test
+	 * @return void
+	 */
 	public function testCountDraftObjects() {
-		$this->assertSame(2, count($this->organisationDraftRepository->findAll()));
+		$this->assertSame(2, count($this->draftRepository->findAll()));
 	}
 
 	/**
 	 * Test the completeness of a new synchronisation
 	 *
 	 * @test
+	 * @return void
 	 */
 	public function testSyncObjects() {
-		$firstOrganisation = $this->organisationDraftRepository->findByUid(1);
-		$this->assertNotSame(null, $firstOrganisation);
+		$firstOrganisation = $this->draftRepository->findByUid(1);
+		$this->assertNotSame(NULL, $firstOrganisation);
 		$this->draftToLiveService->draft2live($firstOrganisation);
-		$liveObjects = $this->organisationRepository->findAll();
+		$liveObjects = $this->liveRepository->findAll();
 		$this->assertSame(1, count($liveObjects));
 
-		$draft = $this->organisationDraftRepository->findByUid(1);
+		$draft = $this->draftRepository->findByUid(1);
 		$live = $draft->getReference();
 		$this->assertNotNull($live);
 
@@ -111,4 +122,3 @@ class DraftToLiveServiceTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 		$this->assertEquals('nospam@helfenkannjeder.de', $contactperson->getMail());
 	}
 }
-?>
