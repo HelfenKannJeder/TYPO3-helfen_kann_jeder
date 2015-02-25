@@ -12,8 +12,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class DraftToLiveService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
-	 * @var
-	 * 	\Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
 	 * @inject
 	 */
 	protected $draftRepository;
@@ -27,8 +26,7 @@ class DraftToLiveService implements \TYPO3\CMS\Core\SingletonInterface {
 	/**
 	 * Copy an OrganisationDraft object to the corresponding Organisation object.
 	 *
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
-	 * 			$organisationDraft
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft
 	 * @return void
 	 */
 	public function draft2live(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisationDraft) {
