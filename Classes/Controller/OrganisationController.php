@@ -75,8 +75,6 @@ class OrganisationController extends AbstractOrganisationController {
 		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
 
 		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
-		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
-		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 
 		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);

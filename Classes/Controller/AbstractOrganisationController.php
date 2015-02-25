@@ -78,8 +78,6 @@ class AbstractOrganisationController extends \TYPO3\CMS\Extbase\Mvc\Controller\A
 
 		// Init google maps
 		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
-		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
-		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 	}
 
 	protected function storeAddresses(&$organisation) {

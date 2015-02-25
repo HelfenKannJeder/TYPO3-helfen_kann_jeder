@@ -33,6 +33,25 @@ class GoogleMapsServiceTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	}
 
 	/**
+	 * Test the convertion of an address to an latitude and longitude
+	 *
+	 * @test
+	 * @return void
+	 */
+	public function testCalculateCityAndDepartment() {
+		$addresses = $this->googleMapsService->calculateCityAndDepartment('Gruenhutstr. 9, 76187 Karlsruhe');
+		$this->assertEquals(1, count($addresses));
+
+		$address = current($addresses);
+		$this->assertEquals(49.038276, $address['latitude']);
+		$this->assertEquals(8.351941, $address['longitude']);
+		$this->assertEquals('Karlsruhe', $address['locality']);
+		$this->assertEquals('BW', $address['administrative_area_level_1_short']);
+		$this->assertEquals('Deutschland', $address['country']);
+		$this->assertEquals('DE', $address['country_short']);
+	}
+
+	/**
 	 * Test the approx distance method.
 	 *
 	 * @test

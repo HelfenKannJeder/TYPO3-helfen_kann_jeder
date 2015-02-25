@@ -72,8 +72,6 @@ class RegisterController
 		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
 		$this->mailService->setFrom($this->settings["mailFrom"]);
 		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
-		$this->googleMapsService->setGoogleServer($this->settings["googleMapsServer"]);
-		$this->googleMapsService->setGoogleApiKey($this->settings["googleMapsApiKey"]);
 
 		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 

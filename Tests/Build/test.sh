@@ -7,7 +7,7 @@ cd ../../../../../
 # Clean up
 rm -rf typo3temp/functional-*
 
-TEMPFOLDER=$(mktemp -d)
+export TEMPFOLDER=$(mktemp -d)
 
 echo;
 echo "Running unit tests";
