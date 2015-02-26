@@ -1,0 +1,75 @@
+<project name="HelfenKannJeder Extension" default="build" basedir=".">
+	<property environment="env"/>
+	<property name="typo3Version" value="TYPO3_6-2-9" />
+	<property name="extensionName" value="helfen_kann_jeder" />
+
+	<target name="build" depends="init, phpcs, phpmd, phpcpd, tests, cleanup">
+	</target>
+	 
+	<target name="init">
+		<mkdir dir="${env.WORKSPACE}/build"/>
+		<mkdir dir="${env.WORKSPACE}/build/phpcs"/>
+		<mkdir dir="${env.WORKSPACE}/build/phpunit"/>
+		<mkdir dir="${env.WORKSPACE}/typo3_core"/>
+	</target>
+	 
+	<target name="tests">
+		<exec executable="git" failonerror="true">
+			<arg line="clone --single-branch --branch ${typo3Version} --depth 1 https://github.com/TYPO3/TYPO3.CMS.git ${env.WORKSPACE}/typo3_core" />
+		</exec>
+		 
+		<exec executable="composer">
+			<arg line="install --working-dir ${env.WORKSPACE}/typo3_core" />
+		</exec>
+		 
+		<mkdir dir="${env.WORKSPACE}/typo3_core/uploads"/>
+		<mkdir dir="${env.WORKSPACE}/typo3_core/typo3temp"/>
+		<mkdir dir="${env.WORKSPACE}/typo3_core/typo3conf/ext"/>
+		 
+		<exec executable="git" failonerror="true">
+			<arg line="clone --single-branch --branch master --depth 1 ssh://gitolite@jule.querformatik.de:6171/qu_base.git ${env.WORKSPACE}/typo3_core/typo3conf/ext/qu_base" />
+		</exec>
+		<symlink link="${env.WORKSPACE}/typo3_core/typo3conf/ext/${extensionName}" resource="${env.WORKSPACE}"/>
+		 
+		<exec executable="phpunit" dir="${env.WORKSPACE}/typo3_core">
+			<arg line="--log-junit ${env.WORKSPACE}/build/phpunit/unittests.xml --bootstrap typo3/sysext/core/Build/UnitTestsBootstrap.php typo3conf/ext/${extensionName}/Tests/Unit" />
+		</exec>
+		 
+		<exec executable="${env.WORKSPACE}/typo3_core/bin/phpunit" dir="${env.WORKSPACE}/typo3_core">
+			<env key="TYPO3_PATH_WEB" value="${env.WORKSPACE}/typo3_core"/>
+			<env key="typo3DatabaseName" value="${env.typo3DatabaseName}"/>
+			<env key="typo3DatabaseHost" value="${env.typo3DatabaseHost}"/>
+			<env key="typo3DatabaseUsername" value="${env.typo3DatabaseUsername}"/>
+			<env key="typo3DatabasePassword" value="${env.typo3DatabasePassword}"/>
+			<arg line="--log-junit ${env.WORKSPACE}/build/phpunit/functionaltests.xml --process-isolation --bootstrap typo3/sysext/core/Build/FunctionalTestsBootstrap.php typo3conf/ext/${extensionName}/Tests/Functional" />
+		</exec>
+	</target>
+	 
+	<target name="phpcs">
+		<exec executable="phpcs">
+			<arg line="--report=checkstyle
+				--report-file=${env.WORKSPACE}/build/phpcs/checkstyle.xml
+				--standard=TYPO3CMS
+				--extensions=php,inc
+				${env.WORKSPACE}" />
+		</exec>
+	</target>
+	 
+	<target name="phpmd">
+		<exec executable="phpmd">
+			<arg line=" ${env.WORKSPACE} xml codesize,unusedcode,naming,design --reportfile ${env.WORKSPACE}/build/messdetector.xml --exclude Tests/" />
+		</exec>
+	</target>
+	 
+	<target name="phpcpd">
+		<exec executable="phpcpd">
+			<arg line=" --log-pmd ${env.WORKSPACE}/build/phpcpd.xml ${env.WORKSPACE}" />
+		</exec>
+	</target>
+	 
+	<target name="cleanup">
+		<symlink action="delete" link="${env.WORKSPACE}/typo3_core/typo3conf/ext/${extensionName}" />
+		<delete dir="${env.WORKSPACE}/typo3_core"/>
+	</target>
+	 
+</project> 
