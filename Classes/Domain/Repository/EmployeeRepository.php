@@ -1,26 +1,32 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Domain\Repository;
 
+/**
+ * Represents an employee of an organisation
+ *
+ * @author Valentin Zickner
+ */
 class EmployeeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+
 	public function findByOrganisationUid($organisationUid) {
-	        $query = $this->createQuery();
+		$query = $this->createQuery();
 		return $query->matching(
-			$query->equals('organisation',$organisationUid))
-				->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
-				->execute();
+			$query->equals('organisation', $organisationUid))
+			->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
+			->execute();
 	}
 
 	public function findByOrganisationUidWithStatement($organisationUid) {
-	        $query = $this->createQuery();
+		$query = $this->createQuery();
 		return $query->matching(
-			$query->logicalAnd(
-				$query->equals('organisation',$organisationUid),
-				$query->logicalNot($query->equals('motivation', '')),
-				$query->logicalNot($query->equals('uid', 28))
+				$query->logicalAnd(
+					$query->equals('organisation', $organisationUid),
+					$query->logicalNot($query->equals('motivation', '')),
+					$query->logicalNot($query->equals('uid', 28))
+				)
 			)
-		)
-				->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
-				->execute();
+			->setOrderings( array('prename' =>  \TYPO3\CMS\Extbase\Persistence\Generic\Query::ORDER_ASCENDING) )
+			->execute();
 	}
+
 }
-?>

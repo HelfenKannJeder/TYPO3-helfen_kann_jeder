@@ -14,14 +14,12 @@ class HelfOMatController extends AbstractSearchController {
 
 	protected $helfOMatRepository;
 	protected $groupRepository;
-	protected $matrixFieldRepository;
 	protected $organisationRepository;
 
 
 	public function initializeAction() {
 		$this->helfOMatRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\HelfOMatRepository');
 		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
-		$this->matrixFieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\MatrixFieldRepository');
 		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
 	}
 
@@ -82,7 +80,7 @@ class HelfOMatController extends AbstractSearchController {
 	private function calculateGroupResult($answer) {
 		list($persLat, $persLng, $age) = $this->parseCookie();
 
-		list($organisationsNear, $matrices) = $this->groupRepository->findOrganisationMatricesNearLatLng($persLat, $persLng, $age);
+		$organisationsNear = $this->groupRepository->findOrganisationMatricesNearLatLng($persLat, $persLng, $age);
 		$organisationIds = array_keys($organisationsNear);
 
 		$questionYes = array_keys($answer, 1);

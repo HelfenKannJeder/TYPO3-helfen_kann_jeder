@@ -1,5 +1,10 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Domain\Repository;
 
-class OrganisationTypeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {}
-?>
+/**
+ * Get organisation types.
+ *
+ * @author Valentin Zickner
+ */
+class OrganisationTypeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+}
