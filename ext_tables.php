@@ -80,7 +80,6 @@ if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 		'after:list', // Position
 		array(
 			// An array holding the controller-action-combinations that are accessible
-			'Statistic'	=> 'index,detail',
 			'Matrix'	=> 'backend,import',
 			'SupportMaster'	=> 'index,overview,organisation,mailtest,diff,registerLink',
 			'HelfOMat'	=> 'master',
@@ -418,55 +417,6 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 
 $TCA['tx_helfenkannjeder_domain_model_addressdraft'] = $TCA['tx_helfenkannjeder_domain_model_address'];
 $TCA['tx_helfenkannjeder_domain_model_addressdraft']['ctrl']['title'] = 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_addressdraft';
-
-$TCA['tx_helfenkannjeder_domain_model_user'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_user',
-		'label'				=> 'session',
-		'label_alt'			=> 'browser',
-		'label_alt_force'		=> true,
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/User.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_user.gif'
-		
-	)
-);
-
-$TCA['tx_helfenkannjeder_domain_model_userdo'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_userdo',
-		'label'				=> 'user',
-		'label_alt'			=> 'timestamp',
-		'label_alt_force'		=> true,
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'type'				=> 'type',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/UserDo.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_userdo.gif'
-		
-	)
-);
 
 $TCA['tx_helfenkannjeder_domain_model_backer'] = array(
 	'ctrl' => array(

@@ -727,69 +727,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_addressdraft (
 );
 
 #
-# Table structure for table "tx_helfenkannjeder_domain_model_user"
-#
-CREATE TABLE tx_helfenkannjeder_domain_model_user (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	session varchar(255) DEFAULT '' NOT NULL,
-	lastactivity varchar(255) DEFAULT '' NOT NULL,
-	ip varchar(255) DEFAULT '' NOT NULL,
-	browser varchar(255) DEFAULT '' NOT NULL,
-	actions int(11) DEFAULT '0' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-#
-# Table structure for table "tx_helfenkannjeder_domain_model_userdo"
-#
-CREATE TABLE tx_helfenkannjeder_domain_model_userdo (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	user int(11) DEFAULT '0' NOT NULL,
-	timestamp int(11) DEFAULT '0' NOT NULL,
-	type varchar(255) DEFAULT '' NOT NULL,
-	address varchar(255) DEFAULT '' NOT NULL,
-	street varchar(255) DEFAULT '' NOT NULL,
-	city varchar(255) DEFAULT '' NOT NULL,
-	zipcode int(11) DEFAULT '0' NOT NULL,
-	longitude float(10,6) DEFAULT '0.000000' NOT NULL,
-	latitude float(10,6) DEFAULT '0.000000' NOT NULL,
-	response varchar(255) DEFAULT '' NOT NULL,
-	age int(11) DEFAULT '0' NOT NULL,
-	input varchar(255) DEFAULT '' NOT NULL,
-	result int(11) DEFAULT '0' NOT NULL,
-	activity int(11) DEFAULT '0' NOT NULL,
-	activityfield int(11) DEFAULT '0' NOT NULL,
-	status int(11) DEFAULT '0' NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-#
 # Table structure for table "tx_helfenkannjeder_domain_model_backer"
 #
 CREATE TABLE tx_helfenkannjeder_domain_model_backer (
