@@ -65,6 +65,21 @@ class GoogleMapsService implements \TYPO3\CMS\Core\SingletonInterface {
 		return $addresses;
 	}
 
+	public function filterByDistance($organisations, $latitude, $longitude, $distance) {
+		return array_filter($organisations, function ($organisation) use (&$latitude, &$longitude, &$distance) {
+			return $this->approxDistance($organisation->getLatitude(), $organisation->getLongitude(), $latitude, $longitude) < $distance;
+		});
+	}
+
+	public function sortByDistance($organisations, $latitude, $longitude) {
+		usort($organisations, function ($first, $second) use (&$latitude, &$longitude) {
+			return $this->approxDistance($first->getLatitude(), $first->getLongitude(), $latitude, $longitude) >
+				$this->approxDistance($second->getLatitude(), $second->getLongitude(), $latitude, $longitude) ? 1 : -1;
+		});
+		return $organisations;
+	}
+
+
 	/**
 	 * Calculate distance approximately between two coordinates.
 	 *

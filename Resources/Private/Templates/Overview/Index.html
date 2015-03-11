@@ -4,7 +4,7 @@ window.onload = function () {
 	tx_helfenkannjeder_set_organisation(tx_helfenkannjeder_organisation_current);
 }
 </script>
-<f:if condition="{organisationsCount}">
+<f:if condition="{organisations -> f:count()}">
 <f:then>
 <f:for each="{organisations}" as="organisation" iteration="oiter">
 <div class="helfen_kann_jeder_overview_complete helfen_kann_jeder_overview_{f:if(condition: oiter.isEven, then: 'even', else: 'odd')}">
