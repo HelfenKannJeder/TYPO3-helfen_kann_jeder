@@ -1,6 +1,11 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Service;
 
+/**
+ * SupportService finds the responsible supporter for a given location
+ *
+ * @author Valentin Zickner
+ */
 class SupportService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
@@ -15,15 +20,30 @@ class SupportService implements \TYPO3\CMS\Core\SingletonInterface {
 	 */
 	private $frontendUserGroupRepository;
 
+	/**
+	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Supporter
+	 */
 	private $defaultSupporter;
+
 	private $searchedGroups;
 	private $allSupporter;
 
+	/**
+	 * Set the default supporter to use in case of no other supporter.
+	 *
+	 * @return void
+	 */
 	public function setDefaultSupporter($defaultSupporter) {
 		$this->defaultSupporter = $defaultSupporter;
 	}
 
-	public function findSupporter($location, $supporterGroupId, $organisationtype=null) {
+	/**
+	 * @param array location Location to search the supporter for
+	 * @param integer Group of the supporter
+	 * @param organisationtype Type of the supporter
+	 * @return Supporter for the given organisation and location.
+	 */
+	public function findSupporter($location, $supporterGroupId, $organisationtype = NULL) {
 		$this->allSupporter = array();
 		$this->searchedGroups = array();
 		$searchIds = array($supporterGroupId);
@@ -34,27 +54,31 @@ class SupportService implements \TYPO3\CMS\Core\SingletonInterface {
 		if (is_array($location) && count($location) > 0) {
 			$firstLocation = current($location);
 			foreach ($firstLocation as $typeLevel => $nameLevel) {
-				if (in_array($typeLevel, array("locality", "administrative_area_level_1", "administrative_area_level_2", "country"))) {
-					$groups = $this->frontendUserGroupRepository->findByTitle((string)$nameLevel." (".$typeLevel.")");
-					$this->searchedGroups[] = (string)$nameLevel." (".$typeLevel.")";
+				if (in_array($typeLevel, array('locality', 'administrative_area_level_1', 'administrative_area_level_2', 'country'))) {
+					$groups = $this->frontendUserGroupRepository->findByTitle((string) $nameLevel . ' (' . $typeLevel . ')');
+					$this->searchedGroups[] = (string) $nameLevel . ' (' . $typeLevel . ')';
 					if (count($groups) != 0) {
 						$group = $groups[0];
 						$supporter = $this->supporterRepository->findByUsergroups(array_merge(array($group->getUid()), $searchIds));
-						if (count ($supporter) > 0) break;
+						if (count($supporter) > 0) {
+							break;
+						}
 					}
-					$groups = $this->frontendUserGroupRepository->findByTitle((string)$nameLevel);
-					$this->searchedGroups[] = (string)$nameLevel;
+					$groups = $this->frontendUserGroupRepository->findByTitle((string) $nameLevel);
+					$this->searchedGroups[] = (string) $nameLevel;
 					if (count($groups) != 0) {
 						$group = $groups[0];
 						$supporter = $this->supporterRepository->findByUsergroups(array_merge(array($group->getUid()), $searchIds));
-						if (count ($supporter) > 0) break;
+						if (count($supporter) > 0) {
+							break;
+						}
 					}
 				}
 			}
 			$this->allSupporter = $supporter;
-			$supporter = $supporter[mt_rand(0,count($supporter)-1)];
+			$supporter = $supporter[mt_rand(0, count($supporter) - 1)];
 		} else {
-			$supporter = null;
+			$supporter = NULL;
 		}
 
 		if (!($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter)) {
@@ -71,4 +95,3 @@ class SupportService implements \TYPO3\CMS\Core\SingletonInterface {
 		return $this->allSupporter;
 	}
 }
-?>
