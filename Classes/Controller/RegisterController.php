@@ -47,8 +47,8 @@ class RegisterController
 	protected $mailService;
 	protected $googleMapsService;
 	protected $matrixService;
-	protected $stepBack = false;
-	protected $stepSave = false;
+	protected $stepBack = FALSE;
+	protected $stepSave = FALSE;
 	protected $steps = array(10, 20, 21, 30, 31, 32, 33, 40, 50, 60, 70, 80);
 
 	public function initializeAction() {
@@ -59,12 +59,12 @@ class RegisterController
 		if ($this->accessControlService->hasLoggedInFrontendUser()) {
 			$this->registerOrganisationProgress = $this->registerOrganisationProgressRepository->findOneByFeuser($this->frontendUser);
 		} else {
-			$this->registerOrganisationProgress = $this->registerOrganisationProgressRepository->findByUid($this->accessControlService->getSessionVariable("registerOrganisationProgress"));
+			$this->registerOrganisationProgress = $this->registerOrganisationProgressRepository->findByUid($this->accessControlService->getSessionVariable('registerOrganisationProgress'));
 		}
 
 
 		$this->supportService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\SupportService');
-		$this->supportService->setDefaultSupporter($this->settings["supporterDefault"]);
+		$this->supportService->setDefaultSupporter($this->settings['supporterDefault']);
 		$this->addressDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\AddressDraftRepository');
 		$this->employeeDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\EmployeeDraftRepository');
 		$this->organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
@@ -78,29 +78,29 @@ class RegisterController
 		$this->activityfieldRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\ActivityFieldRepository');
 
 		$this->mailService = $this->objectManager->get('\\Tx_QuBase_Service_MailService');
-		$this->mailService->setFrom($this->settings["mailFrom"]);
+		$this->mailService->setFrom($this->settings['mailFrom']);
 		$this->googleMapsService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\GoogleMapsService');
 
 		$this->matrixService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\MatrixService');
 
-		if ($this->request->hasArgument("stepBack")) {
-			$this->stepBack = true;
+		if ($this->request->hasArgument('stepBack')) {
+			$this->stepBack = TRUE;
 		}
-		if ($this->request->hasArgument("stepSave")) {
-			$this->stepSave = true;
+		if ($this->request->hasArgument('stepSave')) {
+			$this->stepSave = TRUE;
 		}
 	}
 
 	function errorAction() {
-		if ($this->stepBack == true && $this->registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
-			&& $this->actionMethodName == "sendstep".$this->registerOrganisationProgress->getFinisheduntil()."Action") {
+		if ($this->stepBack == TRUE && $this->registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
+			&& $this->actionMethodName == 'sendstep'.$this->registerOrganisationProgress->getFinisheduntil().'Action') {
 			$currentStep = substr($this->actionMethodName,8,2);
 			$positionStep = array_search($currentStep, $this->steps)-1;
 
 			if (isset($this->steps[$positionStep])) {
 				$previousStep = $this->steps[$positionStep];
 
-				$this->redirect("showstep".$previousStep, NULL, NULL, array('registerOrganisationProgress' => $this->registerOrganisationProgress, 'stepBack' => 'redirect'));
+				$this->redirect('showstep'.$previousStep, NULL, NULL, array('registerOrganisationProgress' => $this->registerOrganisationProgress, 'stepBack' => 'redirect'));
 			} else {
 				return parent::errorAction();
 			}
@@ -153,33 +153,33 @@ class RegisterController
 	}
 
 	protected function registerHandleLoggedInUser() {
-		$this->redirect("", NULL, NULL, array(), $this->settings["loggedInMainSite"], 0);
+		$this->redirect('', NULL, NULL, array(), $this->settings['loggedInMainSite'], 0);
 	}
 
-	protected function registerHandleProveAccess($registerOrganisationProgress, $organisation, $forceAll = true) {
-		if ($registerOrganisationProgress == null) {
+	protected function registerHandleProveAccess($registerOrganisationProgress, $organisation, $forceAll = TRUE) {
+		if ($registerOrganisationProgress == NULL) {
 			$registerOrganisationProgress = $this->registerOrganisationProgress;
 		}
 		if ($registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress) {
-			if ($organisation == null) {
+			if ($organisation == NULL) {
 				$organisation = $registerOrganisationProgress->getOrganisation();
 			}
 
 			if (!$forceAll && $this->accessControlService->isLoggedIn($registerOrganisationProgress->getFeuser())) {
-				return true;
+				return TRUE;
 			}
 
 			if ($organisation instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 				&& $organisation->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 				&& $this->accessControlService->isLoggedIn($registerOrganisationProgress->getFeuser())
 				&& $this->accessControlService->isLoggedIn($organisation->getFeuser())) {
-				return true;
+				return TRUE;
 			}
 		}
-		echo "error";
+		echo 'error';
 		exit();
-		$this->redirect("showstep10", NULL, NULL, array(), $this->settings["registerOrganisationStepsPart1"]);
-		return false;
+		$this->redirect('showstep10', NULL, NULL, array(), $this->settings['registerOrganisationStepsPart1']);
+		return FALSE;
 	}
 
 	/**
@@ -187,15 +187,15 @@ class RegisterController
 	 * @return void
 	 * @ignorevalidation $registerOrganisationProgress
 	 */
-	public function showstep10Action($registerOrganisationProgress = null) {
+	public function showstep10Action($registerOrganisationProgress = NULL) {
 		if ($this->accessControlService->hasLoggedInFrontendUser()) {
 			$this->registerHandleLoggedInUser();
 		}
 
-		$this->accessControlService->removeSessionVariable("registerOrganisationProgress");
-		$registerOrganisationProgress = null;
+		$this->accessControlService->removeSessionVariable('registerOrganisationProgress');
+		$registerOrganisationProgress = NULL;
 
-		if ($registerOrganisationProgress != null) {
+		if ($registerOrganisationProgress != NULL) {
 			$this->registerHandleProveRegisterOrganisationType($registerOrganisationProgress);
 		} else {
 			$registerOrganisationProgress = new \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress($this->accessControlService->getSessionId());
@@ -204,16 +204,16 @@ class RegisterController
                         
 			$this->registerOrganisationProgressRepository->add($registerOrganisationProgress);
 			$this->persistenceManager->persistAll();
-			$this->accessControlService->setSessionVariable("registerOrganisationProgress", $registerOrganisationProgress->getUid());
+			$this->accessControlService->setSessionVariable('registerOrganisationProgress', $registerOrganisationProgress->getUid());
 		}
 
-		$this->view->assign("step", 10);
-		$this->view->assign("actionSendMethod", "sendstep10");
-		$this->view->assign("headline", "register_step1_headline");
-		$this->view->assign("objectEditName", "registerOrganisationProgress");
-		$this->view->assign("objectEdit", $registerOrganisationProgress);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array());
+		$this->view->assign('step', 10);
+		$this->view->assign('actionSendMethod', 'sendstep10');
+		$this->view->assign('headline', 'register_step1_headline');
+		$this->view->assign('objectEditName', 'registerOrganisationProgress');
+		$this->view->assign('objectEdit', $registerOrganisationProgress);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array());
 	}
 
 	/**
@@ -234,12 +234,12 @@ class RegisterController
 
 		//$this->flashMessageContainer->flush();
 		$location = array(0 => array ('country' => 'Deutschland'));
-		$registerOrganisationProgress->setSupporter($this->supportService->findSupporter($location, $this->settings["supporterGroup"]));
+		$registerOrganisationProgress->setSupporter($this->supportService->findSupporter($location, $this->settings['supporterGroup']));
 
 
 		$registerOrganisationProgress->setFinisheduntil(20);
 		$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-		$this->redirect("showstep20", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->redirect('showstep20', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 	}
 
 	/**
@@ -265,14 +265,14 @@ class RegisterController
 			$organisationTypesList[] = $organisationType;
 		}
 
-		$this->view->assign("step", 20);
-		$this->view->assign("actionSendMethod", "sendstep31");
-		$this->view->assign("headline", "register_step2_headline");
-		$this->view->assign("objectEditName", "registerOrganisationProgress");
-		$this->view->assign("objectEdit", $registerOrganisationProgress);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("organisationType", $organisationTypesList);
-		$this->view->assign("args", array());
+		$this->view->assign('step', 20);
+		$this->view->assign('actionSendMethod', 'sendstep31');
+		$this->view->assign('headline', 'register_step2_headline');
+		$this->view->assign('objectEditName', 'registerOrganisationProgress');
+		$this->view->assign('objectEdit', $registerOrganisationProgress);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('organisationType', $organisationTypesList);
+		$this->view->assign('args', array());
 	}
 
 	/**
@@ -287,62 +287,62 @@ class RegisterController
 
 		$this->registerHandleProveRegisterOrganisationType($registerOrganisationProgress);
 
-		$errors = false;
+		$errors = FALSE;
 
-		$listedCitys = $this->googleMapsService->calculateCityAndDepartment("Germany, ".$registerOrganisationProgress->getCity());
+		$listedCitys = $this->googleMapsService->calculateCityAndDepartment('Germany, '.$registerOrganisationProgress->getCity());
 
 		if ($this->stepBack) {
-			$this->accessControlService->removeSessionVariable("registerOrganisationProgress");
+			$this->accessControlService->removeSessionVariable('registerOrganisationProgress');
 
-			$this->redirect("", NULL, NULL, array('registerOrganisationProgress' => null), $this->settings["loggedInMainSite"]);
+			$this->redirect('', NULL, NULL, array('registerOrganisationProgress' => NULL), $this->settings['loggedInMainSite']);
 			return;
 		}
 
 		if (!($registerOrganisationProgress->getOrganisationtype() instanceof \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType)) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_missing_organisationtype', 'HelfenKannJeder'));
-			$errors = true;
+			$errors = TRUE;
 		}
 
 		if (!is_numeric($registerOrganisationProgress->getCity()) || strlen($registerOrganisationProgress->getCity()) != 5) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_wrong_zipcode', 'HelfenKannJeder'));
-			$errors = true;
+			$errors = TRUE;
 		}
 
-		if (!preg_match("/^[A-Za-z\-0-9]+$/si", $registerOrganisationProgress->getUsername())) {
+		if (!preg_match('/^[A-Za-z\-0-9]+$/si', $registerOrganisationProgress->getUsername())) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_invalid_username', 'HelfenKannJeder'));
-			$errors = true;
+			$errors = TRUE;
 		}
 
-		if (!preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si",
+		if (!preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si',
 				$registerOrganisationProgress->getMail())) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_invalid_mail', 'HelfenKannJeder').$registerOrganisationProgress->getMail());
-			$errors = true;
+			$errors = TRUE;
 		}
 
-		if ($registerOrganisationProgress->getSurname() == "" || $registerOrganisationProgress->getPrename() == "") {
+		if ($registerOrganisationProgress->getSurname() == '' || $registerOrganisationProgress->getPrename() == '') {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('error_registerorganisationprogress_missing_name', 'HelfenKannJeder'));
-			$errors = true;
+			$errors = TRUE;
 		}
 
-		if (count($listedCitys) == 1 && !empty($listedCitys[0]["locality"]) && $listedCitys[0]["administrative_area_level_1_short"] == "BW") {
+		if (count($listedCitys) == 1 && !empty($listedCitys[0]['locality']) && $listedCitys[0]['administrative_area_level_1_short'] == 'BW') {
 			list($username, $organisationName) = $this->generateUsername($registerOrganisationProgress->getOrganisationtype()->getAcronym(), $listedCitys[0], $registerOrganisationProgress->getDepartment(), $registerOrganisationProgress->getOrganisationtype()->getNamedisplay());
 			$username = strtolower($registerOrganisationProgress->getUsername());
 			$cityInfo = $listedCitys[0];
-			$name = $cityInfo["postal_code"];
+			$name = $cityInfo['postal_code'];
 
 			$registerOrganisationProgress->setCity($name);
-			$registerOrganisationProgress->setLongitude($cityInfo["longitude"]);
-			$registerOrganisationProgress->setLatitude($cityInfo["latitude"]);
+			$registerOrganisationProgress->setLongitude($cityInfo['longitude']);
+			$registerOrganisationProgress->setLatitude($cityInfo['latitude']);
 			if ($this->frontendUserRepository->countByUsername($username) > 0) {
 				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_missing_department', 'HelfenKannJeder')
 							.$registerOrganisationProgress->getSupporter()->getName()
 							.\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_missing_department_mail', 'HelfenKannJeder')
-							.$registerOrganisationProgress->getSupporter()->getEMail().".");
-				$errors = true;
-				$redirectTo = "showstep20";
+							.$registerOrganisationProgress->getSupporter()->getEMail().'.');
+				$errors = TRUE;
+				$redirectTo = 'showstep20';
 			} else {
 				$registerOrganisationProgress->setUsername($username);
-				if ($registerOrganisationProgress->getOrganisationname() == "") {
+				if ($registerOrganisationProgress->getOrganisationname() == '') {
 					$registerOrganisationProgress->setOrganisationname($organisationName);
 				}
 			}
@@ -350,12 +350,12 @@ class RegisterController
 		} else {
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step3_error_nothing_found', 'HelfenKannJeder'));
-			$errors = true;
+			$errors = TRUE;
 		}
 
 		$percentMax = 0;
-		$similarMax = "";
-		$words = array($registerOrganisationProgress->getUsername(), "password", "passwort", "test", "abc123", "123qwe", "12345");
+		$similarMax = '';
+		$words = array($registerOrganisationProgress->getUsername(), 'password', 'passwort', 'test', 'abc123', '123qwe', '12345');
 
 		foreach ($words as $word) {
 			similar_text($registerOrganisationProgress->getPassword(), $word, $percent);
@@ -366,56 +366,56 @@ class RegisterController
 		}
 
 		if (strlen($registerOrganisationProgress->getPassword()) < 8
-				&& !($registerOrganisationProgress->getPassword() == ""
-				&& $registerOrganisationProgress->getPassword2() == ""
+				&& !($registerOrganisationProgress->getPassword() == ''
+				&& $registerOrganisationProgress->getPassword2() == ''
 				&& $registerOrganisationProgress->getPasswordSaved())) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_password_to_short', 'HelfenKannJeder'));
-			$errors = true;
-			$registerOrganisationProgress->setPassword("");
-			$registerOrganisationProgress->setPassword2("");
+			$errors = TRUE;
+			$registerOrganisationProgress->setPassword('');
+			$registerOrganisationProgress->setPassword2('');
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 		}
 		if ($percentMax >= 80) {
 			$this->flashMessageContainer->add(sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_password_match_word', 'HelfenKannJeder'), $similarMax));
-			$errors = true;
-			$registerOrganisationProgress->setPassword("");
-			$registerOrganisationProgress->setPassword2("");
+			$errors = TRUE;
+			$registerOrganisationProgress->setPassword('');
+			$registerOrganisationProgress->setPassword2('');
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 		}
 
 
 		if ($registerOrganisationProgress->getPassword() != $registerOrganisationProgress->getPassword2()
-				&& !($registerOrganisationProgress->getPassword() == ""
-				&& $registerOrganisationProgress->getPassword2() == ""
+				&& !($registerOrganisationProgress->getPassword() == ''
+				&& $registerOrganisationProgress->getPassword2() == ''
 				&& $registerOrganisationProgress->getPasswordSaved())) {
 			$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_passwords_not_match', 'HelfenKannJeder'));
-			$errors = true;
-			$registerOrganisationProgress->setPassword("");
-			$registerOrganisationProgress->setPassword2("");
+			$errors = TRUE;
+			$registerOrganisationProgress->setPassword('');
+			$registerOrganisationProgress->setPassword2('');
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 		} 
 
 		if (!$errors) {
-			if ($registerOrganisationProgress->getPassword() == "") {
+			if ($registerOrganisationProgress->getPassword() == '') {
 				$passwordRestore = $this->registerOrganisationProgress->getPassword();
 				$registerOrganisationProgress->setPassword($passwordRestore);
 				$registerOrganisationProgress->setPassword2($passwordRestore);
 			}
 
-			$registerOrganisationProgress->setPasswordSaved(true);
+			$registerOrganisationProgress->setPasswordSaved(TRUE);
 
 			if ($this->frontendUserRepository->countByUsername($registerOrganisationProgress->getUsername()) > 0) {
 				$this->flashMessageContainer->add(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_error_user_exists', 'HelfenKannJeder'));
-				$registerOrganisationProgress->setPassword("");
-				$registerOrganisationProgress->setPassword2("");
+				$registerOrganisationProgress->setPassword('');
+				$registerOrganisationProgress->setPassword2('');
 				$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-				$this->redirect("showstep20", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
+				$this->redirect('showstep20', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 			} else {
 				// Register User, this step is not reversable!
 				$feUser = new \TYPO3\CMS\Extbase\Domain\Model\FrontendUser($registerOrganisationProgress->getUsername(), $registerOrganisationProgress->getPassword());
-				$feUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings["registerProgressUserGroup"]));
+				$feUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings['registerProgressUserGroup']));
                                 $feUser->setZip($registerOrganisationProgress->getCity());
-                                $feUser->setName($registerOrganisationProgress->getPrename()." ".$registerOrganisationProgress->getSurname());
+                                $feUser->setName($registerOrganisationProgress->getPrename().' '.$registerOrganisationProgress->getSurname());
                                 $feUser->setFirstName($registerOrganisationProgress->getPrename());
 				$feUser->setLastName($registerOrganisationProgress->getSurname());
 				$feUser->setEmail($registerOrganisationProgress->getMail());
@@ -425,7 +425,7 @@ class RegisterController
 				$registerOrganisationProgress->setFeuser($feUser);
 				$randomHash = $this->generateRandomHash();
                                 $registerOrganisationProgress->setMailHash($randomHash);
-				$linkToContinue = $this->uriBuilder->setTargetPageUid($this->settings["registerOrganisationStepsPart2"])->uriFor("sendstep32", array("registerOrganisationProgress"=>$registerOrganisationProgress, "hash"=>$randomHash));
+				$linkToContinue = $this->uriBuilder->setTargetPageUid($this->settings['registerOrganisationStepsPart2'])->uriFor('sendstep32', array('registerOrganisationProgress'=>$registerOrganisationProgress, 'hash'=>$randomHash));
 
 				$mailHeadline = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_mail_headline', 'HelfenKannJeder');
 				$mailContent = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('register_step31_mail_content', 'HelfenKannJeder');
@@ -439,10 +439,10 @@ class RegisterController
 				$registerOrganisationProgress->setFinisheduntil(32);
 				$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 
-				$this->redirect("showstep32", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
+				$this->redirect('showstep32', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 			}
 		} else {
-			$this->redirect("showstep20", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
+			$this->redirect('showstep20', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 		}
 	}
 
@@ -458,13 +458,13 @@ class RegisterController
 		}
 		$registerOrganisationProgress->setLaststep(32);
 
-		$this->view->assign("step", 32);
-		$this->view->assign("actionSendMethod", "sendstep32");
-		$this->view->assign("headline", "register_step32_headline");
-		$this->view->assign("objectEditName", "registerOrganisationProgress");
-		$this->view->assign("objectEdit", $registerOrganisationProgress);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array());
+		$this->view->assign('step', 32);
+		$this->view->assign('actionSendMethod', 'sendstep32');
+		$this->view->assign('headline', 'register_step32_headline');
+		$this->view->assign('objectEditName', 'registerOrganisationProgress');
+		$this->view->assign('objectEdit', $registerOrganisationProgress);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array());
 	}
 
 	/**
@@ -487,15 +487,15 @@ class RegisterController
 
 		$feUser = $registerOrganisationProgress->getFeuser();
 
-		if ($registerOrganisationProgress->getMailHash() == $hash && $feUser != null) {
+		if ($registerOrganisationProgress->getMailHash() == $hash && $feUser != NULL) {
 			$this->accessControlService->setFrontendUserUid($feUser->getUid());
-			$registerOrganisationProgress->setMailHash("");
+			$registerOrganisationProgress->setMailHash('');
 			$registerOrganisationProgress->setFinisheduntil(33);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 
-			$this->redirect("showstep33", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings["registerOrganisationStepsPart2"], 0);
+			$this->redirect('showstep33', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings['registerOrganisationStepsPart2'], 0);
 		} else {
-			$this->redirect("", NULL, NULL, array(), $this->settings["loggedInMainSite"], 0);
+			$this->redirect('', NULL, NULL, array(), $this->settings['loggedInMainSite'], 0);
 		}
 	}
 
@@ -508,13 +508,13 @@ class RegisterController
 		$registerOrganisationProgress->setLaststep(33);
 		$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 
-		$this->view->assign("step", 33);
-		$this->view->assign("actionSendMethod", "sendstep33");
-		$this->view->assign("headline", "register_step33_headline");
-		$this->view->assign("objectEditName", "registerOrganisationProgress");
-		$this->view->assign("objectEdit", $registerOrganisationProgress);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array());
+		$this->view->assign('step', 33);
+		$this->view->assign('actionSendMethod', 'sendstep33');
+		$this->view->assign('headline', 'register_step33_headline');
+		$this->view->assign('objectEditName', 'registerOrganisationProgress');
+		$this->view->assign('objectEdit', $registerOrganisationProgress);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array());
 	}
 
 	/**
@@ -526,11 +526,11 @@ class RegisterController
 		if ($registerOrganisationProgress->getFinisheduntil() == 33) {
 			$registerOrganisationProgress->setFinisheduntil(40);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep40", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings["registerOrganisationStepsPart3"], 0);
+			$this->redirect('showstep40', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings['registerOrganisationStepsPart3'], 0);
 		} else if ($registerOrganisationProgress->getFinisheduntil() > 33) {
-			$this->redirect("showstep40", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings["registerOrganisationStepsPart3"], 0);
+			$this->redirect('showstep40', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings['registerOrganisationStepsPart3'], 0);
 		} else if ($registerOrganisationProgress->getFinisheduntil() < 33) {
-			$this->redirect("showstep10", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings["registerOrganisationStepsPart1"], 0);
+			$this->redirect('showstep10', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings['registerOrganisationStepsPart1'], 0);
 		}
 	}
 
@@ -543,16 +543,16 @@ class RegisterController
 	 * @dontverifyrequesthash
 	 * @return void
 	 */
-	public function showstep40Action($registerOrganisationProgress = null, $organisation = null, $errorFields = array()) {
+	public function showstep40Action($registerOrganisationProgress = NULL, $organisation = NULL, $errorFields = array()) {
 		if (!($registerOrganisationProgress instanceof \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress)) {
 			$registerOrganisationProgress = $this->registerOrganisationProgress;
 		}
 		// prove owner of registerOrganisationProgress
 		$registerOrganisationProgress->setLaststep(40);
 
-		if ($organisation == null) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
-			if ($organisation == null) {
+			if ($organisation == NULL) {
 				$organisation = new \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft();
 				$organisation->setCrdate(time());
 				$organisation->setFeuser($registerOrganisationProgress->getFeuser());
@@ -560,8 +560,8 @@ class RegisterController
 				$organisation->setOrganisationtype($registerOrganisationProgress->getOrganisationtype());
 				$registerOrganisationProgress->setOrganisation($organisation);
 
-				$location = $this->googleMapsService->calculateCityAndDepartment("Germany, ".$registerOrganisationProgress->getCity());
-				$supporter = $this->supportService->findSupporter($location, $this->settings["supporterGroup"], $registerOrganisationProgress->getOrganisationtype());
+				$location = $this->googleMapsService->calculateCityAndDepartment('Germany, '.$registerOrganisationProgress->getCity());
+				$supporter = $this->supportService->findSupporter($location, $this->settings['supporterGroup'], $registerOrganisationProgress->getOrganisationtype());
 				$organisation->setSupporter($supporter);
 				$registerOrganisationProgress->setSupporter($supporter);
 				$this->organisationDraftRepository->add($organisation);
@@ -569,19 +569,19 @@ class RegisterController
 				$this->persistenceManager->persistAll();
 			}
 		}
-		$this->registerHandleProveAccess($registerOrganisationProgress, $organisation, false);
+		$this->registerHandleProveAccess($registerOrganisationProgress, $organisation, FALSE);
 
 
-		$this->view->assign("step", 40);
-		$this->view->assign("actionSendMethod", "sendstep40");
-		$this->view->assign("headline", "register_step40_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("has_errors", $this->hasErrors());
-		$this->view->assign("errorFields", $errorFields);
+		$this->view->assign('step', 40);
+		$this->view->assign('actionSendMethod', 'sendstep40');
+		$this->view->assign('headline', 'register_step40_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('has_errors', $this->hasErrors());
+		$this->view->assign('errorFields', $errorFields);
 
 	}
 
@@ -603,8 +603,8 @@ class RegisterController
 	 * @dontverifyrequesthash
 	 * @return void
 	 */
-	public function sendstep40Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function sendstep40Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -624,14 +624,14 @@ class RegisterController
 		$this->callValidator('OrganisationContactperson', $organisation);
 
 		if ($this->stepBack && $this->pageChangeAllowed()) {
-			$this->redirect("showstep33", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings["registerOrganisationStepsPart2"], 0);
+			$this->redirect('showstep33', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress), $this->settings['registerOrganisationStepsPart2'], 0);
 		} else if ($this->stepSave || !$this->pageChangeAllowed()) {
-			$this->redirect("showstep40", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
+			$this->redirect('showstep40', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
 		} else {
 			$this->flashMessageContainer->flush();
 			$registerOrganisationProgress->setFinisheduntil(50);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep50", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep50', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		}
 	}
 
@@ -643,8 +643,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep50Action($registerOrganisationProgress, $organisation = null, $errorFields = array()) {
-		if ($organisation == null) {
+	public function showstep50Action($registerOrganisationProgress, $organisation = NULL, $errorFields = array()) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -654,18 +654,18 @@ class RegisterController
 
 		$groupListByTemplate = $this->groupDraftRepository->findByOrganisationGroupListByTemplate($organisation);
 
-		$this->view->assign("step", 50);
-		$this->view->assign("groups", $groupListByTemplate);
-		$this->view->assign("groupsCount", count($groupListByTemplate));
-		$this->view->assign("actionSendMethod", "sendstep50");
-		$this->view->assign("headline", "register_step50_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("has_errors", $this->hasErrors());
-		$this->view->assign("errorFields", $errorFields);
+		$this->view->assign('step', 50);
+		$this->view->assign('groups', $groupListByTemplate);
+		$this->view->assign('groupsCount', count($groupListByTemplate));
+		$this->view->assign('actionSendMethod', 'sendstep50');
+		$this->view->assign('headline', 'register_step50_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('has_errors', $this->hasErrors());
+		$this->view->assign('errorFields', $errorFields);
 	}
 
 	/**
@@ -682,8 +682,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function sendstep50Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function sendstep50Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -695,14 +695,14 @@ class RegisterController
 		$this->callValidator('OrganisationGroup', $organisation);
 
 		if ($this->stepBack && $this->pageChangeAllowed()) {
-			$this->redirect("showstep40", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep40', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else if ($this->stepSave || !$this->pageChangeAllowed()) {
-			$this->redirect("showstep50", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
+			$this->redirect('showstep50', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
 		} else {
 			$this->flashMessageContainer->flush();
 			$registerOrganisationProgress->setFinisheduntil(60);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep60", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep60', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		}
 	}
 
@@ -714,8 +714,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep60Action($registerOrganisationProgress, $organisation = null, $errorFields = array()) {
-		if ($organisation == null) {
+	public function showstep60Action($registerOrganisationProgress, $organisation = NULL, $errorFields = array()) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -724,16 +724,16 @@ class RegisterController
 		$registerOrganisationProgress->setLaststep(60);
 
 
-		$this->view->assign("step", 60);
-		$this->view->assign("actionSendMethod", "sendstep60");
-		$this->view->assign("headline", "register_step60_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("has_errors", $this->hasErrors());
-		$this->view->assign("errorFields", $errorFields);
+		$this->view->assign('step', 60);
+		$this->view->assign('actionSendMethod', 'sendstep60');
+		$this->view->assign('headline', 'register_step60_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('has_errors', $this->hasErrors());
+		$this->view->assign('errorFields', $errorFields);
 	}
 
 	/**
@@ -752,8 +752,8 @@ class RegisterController
 	 * @dontverifyrequesthash
 	 * @return void
 	 */
-	public function sendstep60Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function sendstep60Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -764,14 +764,14 @@ class RegisterController
 		$this->callValidator('OrganisationWorkinghour', $organisation);
 
 		if ($this->stepBack && $this->pageChangeAllowed()) {
-			$this->redirect("showstep50", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep50', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else if ($this->stepSave || !$this->pageChangeAllowed()) {
-			$this->redirect("showstep60", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
+			$this->redirect('showstep60', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation, 'errorFields' => $this->getErrorFields()));
 		} else {
 			$this->flashMessageContainer->flush();
 			$registerOrganisationProgress->setFinisheduntil(70);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep70", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep70', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		}
 	}
 
@@ -782,8 +782,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep70Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function showstep70Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -794,19 +794,19 @@ class RegisterController
 		$registerOrganisationProgress->setLaststep(70);
 		$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
 
-		$this->view->assign("step", 70);
-		$this->view->assign("actionSendMethod", "sendstep70");
-		$this->view->assign("headline", "register_step70_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("has_errors", $this->hasErrors());
-		$this->view->assign("sessionid", $this->accessControlService->getSessionId());
-		$this->view->assign("imageFolder", $this->imageFolder);
-		$this->view->assign("internetexplorer", $this->getBrowser() == "ie");
-		$this->view->assign("uploadPageUid", $this->settings["registerOrganisationStepsPart2"]);
+		$this->view->assign('step', 70);
+		$this->view->assign('actionSendMethod', 'sendstep70');
+		$this->view->assign('headline', 'register_step70_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('has_errors', $this->hasErrors());
+		$this->view->assign('sessionid', $this->accessControlService->getSessionId());
+		$this->view->assign('imageFolder', $this->imageFolder);
+		$this->view->assign('internetexplorer', $this->getBrowser() == 'ie');
+		$this->view->assign('uploadPageUid', $this->settings['registerOrganisationStepsPart2']);
 	}
 
 	/**
@@ -823,8 +823,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function sendstep70Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function sendstep70Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -835,14 +835,14 @@ class RegisterController
 		$this->callValidator('OrganisationPicture', $organisation, '', $this->imageFolder);
 
 		if ($this->stepBack && $this->pageChangeAllowed()) {
-			$this->redirect("showstep60", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep60', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else if ($this->stepSave || !$this->pageChangeAllowed()) {
-			$this->redirect("showstep70", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep70', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else {
 			$this->flashMessageContainer->flush();
 			$registerOrganisationProgress->setFinisheduntil(80);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep80", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep80', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		}
 	}
 
@@ -853,27 +853,27 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep71Action($registerOrganisationProgress = null, $organisation = null) {
-		if ($registerOrganisationProgress == null) {
+	public function showstep71Action($registerOrganisationProgress = NULL, $organisation = NULL) {
+		if ($registerOrganisationProgress == NULL) {
 			$registerOrganisationProgress = $this->registerOrganisationProgress;
 		}
 
-		if ($organisation == null) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 
 		}
 		$registerOrganisationProgress->setLaststep(71);
 
-		$this->view->assign("step", 71);
-		$this->view->assign("actionSendMethod", "sendstep71");
-		$this->view->assign("headline", "register_step71_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("imageFolder", $this->imageFolder);
-		$this->view->assign("has_errors", $this->hasErrors());
+		$this->view->assign('step', 71);
+		$this->view->assign('actionSendMethod', 'sendstep71');
+		$this->view->assign('headline', 'register_step71_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('imageFolder', $this->imageFolder);
+		$this->view->assign('has_errors', $this->hasErrors());
 	}
 
 	/**
@@ -883,8 +883,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function sendstep71Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function sendstep71Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -895,14 +895,14 @@ class RegisterController
 		$this->callValidator('OrganisationPicture', $organisation, '', $this->imageFolder);
 
 		if ($this->stepBack && $this->pageChangeAllowed()) {
-			$this->redirect("showstep70", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep70', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else if ($this->stepSave || !$this->pageChangeAllowed()) {
-			$this->redirect("showstep71", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep71', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else {
 			$this->flashMessageContainer->flush();
 			$registerOrganisationProgress->setFinisheduntil(80);
 			$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
-			$this->redirect("showstep80", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep80', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		}
 	}
 
@@ -913,8 +913,8 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep80Action($registerOrganisationProgress, $organisation = null) {
-		if ($organisation == null) {
+	public function showstep80Action($registerOrganisationProgress, $organisation = NULL) {
+		if ($organisation == NULL) {
 			$organisation = $registerOrganisationProgress->getOrganisation();
 		}
 
@@ -931,19 +931,19 @@ class RegisterController
 		$this->callValidator('OrganisationWorkinghour', $organisation);
 		$this->callValidator('OrganisationPicture', $organisation, '', $this->imageFolder);
 
-		$this->view->assign("step", 80);
-		$this->view->assign("actionSendMethod", "sendstep80");
-		$this->view->assign("headline", "register_step80_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("imageFolder", $this->imageFolder);
+		$this->view->assign('step', 80);
+		$this->view->assign('actionSendMethod', 'sendstep80');
+		$this->view->assign('headline', 'register_step80_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('imageFolder', $this->imageFolder);
 		$this->view->assign('employees', $this->employeeDraftRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 		$this->view->assign('groups', $this->groupDraftRepository->findByOrganisationUid($organisation->getUid()));
-		$this->view->assign("has_errors", $this->hasErrors());
-		$this->view->assign("editLink", array(
+		$this->view->assign('has_errors', $this->hasErrors());
+		$this->view->assign('editLink', array(
 			'general' => 'showstep40',
 			'picture' => 'showstep70',
 			'matrix' => 'showstep81',
@@ -959,11 +959,11 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function sendstep80Action($registerOrganisationProgress = null, $organisation = null) {
+	public function sendstep80Action($registerOrganisationProgress = NULL, $organisation = NULL) {
 		$this->registerHandleProveAccess($registerOrganisationProgress, $organisation);
 
 		if ($this->stepBack) {
-			$this->redirect("showstep71", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+			$this->redirect('showstep71', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 		} else {
 			$this->callValidator('OrganisationInformation', $organisation);
 			$this->callValidator('OrganisationAddress', $organisation, '', $registerOrganisationProgress->getCity());
@@ -974,20 +974,20 @@ class RegisterController
 			$this->callValidator('OrganisationPicture', $organisation, '', $this->imageFolder);
 
 			if ($this->hasErrors()) {
-				$this->redirect("showstep80", NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
+				$this->redirect('showstep80', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress, 'organisation' => $organisation));
 			} else {
-				$groupExists = false;
+				$groupExists = FALSE;
 				foreach ( $this->frontendUser->getUsergroup() as $group) {
-					if ($group->getUid() == $this->settings["registerProgressUserGroup"]) {
+					if ($group->getUid() == $this->settings['registerProgressUserGroup']) {
 						$this->frontendUser->removeUsergroup($group);
 					}
-					if ($group->getUid() == $this->settings["registeredUserGroup"]) {
-						$groupExists = true;
+					if ($group->getUid() == $this->settings['registeredUserGroup']) {
+						$groupExists = TRUE;
 					}
 				}
 
 				if (!$groupExists) {
-					$this->frontendUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings["registeredUserGroup"]));
+					$this->frontendUser->addUsergroup($this->frontendUserGroupRepository->findByUid($this->settings['registeredUserGroup']));
 				}
 				$logger = $this->logManager->getLogger(__CLASS__);
 				$logger->info('User requested confirmation after self registration.', array($organisation));
@@ -1000,13 +1000,13 @@ class RegisterController
 				$this->mailService->send($registerOrganisationProgress->getMail(), $mailHeadline, $mailContent);
 				// TODO mail an supporter
 				$supporter = $organisation->getSupporter();
-				if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter && $supporter->getEmail() != "") {
+				if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter && $supporter->getEmail() != '') {
 					$mailHeadline = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.headline', 'HelfenKannJeder'), $organisation->getName());
 					$mailContent = sprintf(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('mail.supporter.afterRequest.content', 'HelfenKannJeder'), $supporter->getFirstName(), $organisation->getName());
 					$this->mailService->send($supporter->getEmail(), $mailHeadline, $mailContent);
 				}
 
-				$this->redirect("showstep90", NULL, NULL, array(), $this->settings["registerOrganisationStepsPart2"], 0);
+				$this->redirect('showstep90', NULL, NULL, array(), $this->settings['registerOrganisationStepsPart2'], 0);
 			}
 		}
 	}
@@ -1019,7 +1019,7 @@ class RegisterController
 	 * @ignorevalidation $organisation
 	 * @return void
 	 */
-	public function showstep81Action($registerOrganisationProgress = null, $organisation = null) {
+	public function showstep81Action($registerOrganisationProgress = NULL, $organisation = NULL) {
 		$this->registerHandleProveAccess($registerOrganisationProgress, $organisation);
 
 		$activities = $this->activityRepository->findAll();
@@ -1043,15 +1043,15 @@ class RegisterController
 
 		$this->view->assign('matrixarray', $matrixA);
 		$this->view->assign('activityList', array_unique($activityList));
-		$this->view->assign("step", 81);
-		$this->view->assign("actionSendMethod", "showstep80");
-		$this->view->assign("headline", "register_step81_headline");
-		$this->view->assign("objectEditName", "organisation");
-		$this->view->assign("objectEdit", $organisation);
-		$this->view->assign("registerOrganisationProgress", $registerOrganisationProgress);
-		$this->view->assign("args", array('registerOrganisationProgress' => $registerOrganisationProgress));
-		$this->view->assign("frontendUser", $this->frontendUser);
-		$this->view->assign("imageFolder", $this->imageFolder);
+		$this->view->assign('step', 81);
+		$this->view->assign('actionSendMethod', 'showstep80');
+		$this->view->assign('headline', 'register_step81_headline');
+		$this->view->assign('objectEditName', 'organisation');
+		$this->view->assign('objectEdit', $organisation);
+		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
+		$this->view->assign('args', array('registerOrganisationProgress' => $registerOrganisationProgress));
+		$this->view->assign('frontendUser', $this->frontendUser);
+		$this->view->assign('imageFolder', $this->imageFolder);
 		$this->view->assign('employees', $this->employeeDraftRepository->findByOrganisationUidWithStatement($organisation->getUid()));
 		$this->view->assign('groups', $this->groupDraftRepository->findByOrganisationUid($organisation->getUid()));
 	}
@@ -1060,7 +1060,7 @@ class RegisterController
 	 * @return void
 	 */
 	public function showstep90Action() {
-		$this->view->assign('continuePageId', $this->settings["loggedInMainSite"]);
+		$this->view->assign('continuePageId', $this->settings['loggedInMainSite']);
 	}
 
 	/**
@@ -1075,10 +1075,9 @@ class RegisterController
 			$this->organisationDraftRepository->update($organisationDraft);
 			$logger = $this->logManager->getLogger(__CLASS__);
 			$logger->info('The organisation want no more remind mails.', array($organisationDraft));
-			$this->view->assign("noRemind", true);
+			$this->view->assign('noRemind', TRUE);
 		} else {
-			$this->view->assign("noRemind", false);
+			$this->view->assign('noRemind', FALSE);
 		}
 	}
 }
-?>
