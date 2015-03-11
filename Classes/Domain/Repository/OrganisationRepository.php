@@ -71,4 +71,20 @@ class OrganisationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 		return $query->execute();
 	}
 
+	public function findOrganisationNearLocation($latitude, $longitude) {
+		$query = $this->createQuery();
+		return $query->matching(
+			$query->logicalOr(
+				$query->logicalAnd(
+					$query->greaterThanOrEqual('latitude', $latitude - 1.5),
+					$query->lessThanOrEqual('latitude', $latitude + 1.5),
+					$query->greaterThanOrEqual('longitude', $longitude - 1.5),
+					$query->lessThanOrEqual('longitude', $longitude + 1.5)
+				),
+				$query->equals('isDummy', 1)
+			)
+		)->execute();
+	}
+
+
 }

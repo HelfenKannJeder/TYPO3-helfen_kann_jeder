@@ -8,134 +8,80 @@ namespace Querformatik\HelfenKannJeder\Controller;
  * @author: Valentin Zickner
  *    Querformatik UG (haftungsbeschraenkt)
  *    Technisches Hilfswerk Karlsruhe
- * @date: 2012-06-15
+ * @date: 2015-03-11
  */
-class HelfOMatController extends AbstractSearchController {
+class HelfOMatController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
-	protected $helfOMatRepository;
-	protected $groupRepository;
-	protected $organisationRepository;
+	/**
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\HelfOMatRepository
+	 * @inject
+	 */
+	protected $helfomatRepository;
 
+	/**
+	 * @var \Querformatik\HelfenKannJeder\Service\OrganisationSearchService
+	 * @inject
+	 */
+	protected $searchService;
 
-	public function initializeAction() {
-		$this->helfOMatRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\HelfOMatRepository');
-		$this->groupRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\GroupRepository');
-		$this->organisationRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationRepository');
-	}
+	/**
+	 * @var \Querformatik\HelfenKannJeder\Service\CookieService
+	 * @inject
+	 */
+	protected $cookieService;
 
 	/**
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\HelfOMat $helfOMat
+	 * @return void
 	 */
-	public function quizAction(\Querformatik\HelfenKannJeder\Domain\Model\HelfOMat $helfOMat = null) {
-		if ($helfOMat == null && isset($this->settings["helfomat"]["default"])) {
-			$helfOMat = $this->helfOMatRepository->findByUid($this->settings["helfomat"]["default"]);
+	public function quizAction(\Querformatik\HelfenKannJeder\Domain\Model\HelfOMat $helfOMat = NULL) {
+		if ($helfOMat == NULL && isset($this->settings['helfomat']['default'])) {
+			$helfOMat = $this->helfomatRepository->findByUid($this->settings['helfomat']['default']);
 		}
 
-		$this->view->assign("helfOMat", $helfOMat);
+		$this->view->assign('helfOMat', $helfOMat);
 	}
 
 
 	/**
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\HelfOMat $helfOMat
 	 * @param array $answer
-	 *		This is from the structure {questionId} => answer, where the questionId is the unique
-	 *		identifier from the question and the answer is an integer between 0 and 2, where
-	 *			0 => neutral
-	 *			1 => yes
-	 *			2 => no
+	 * @return void
 	 */
 	public function groupResultAction(\Querformatik\HelfenKannJeder\Domain\Model\HelfOMat $helfOMat, $answer) {
-		$organisations = $this->calculateGroupResult($answer);
-
-		$this->view->assign("answer", $answer);
-		$this->view->assign("helfOMat", $helfOMat);
-		$this->view->assign('normGradeToMax', 1/100);
-		$this->view->assign("organisations", $organisations);
+		$this->view->assign('answer', $answer);
+		$this->view->assign('helfOMat', $helfOMat);
+		$this->view->assign('normGradeToMax', 1 / 100);
+		$this->view->assign('organisations', $this->calculateGroupResult($answer));
 	}
 
 
 	/**
 	 * @param array $answer
-	 *		This is from the structure {questionId} => answer, where the questionId is the unique
-	 *		identifier from the question and the answer is an integer between 0 and 2, where
-	 *			0 => neutral
-	 *			1 => yes
-	 *			2 => no
 	 */
 	public function jsonGroupResultAction($answer) {
 		$organisations = $this->calculateGroupResult($answer);
-
 		return json_encode($organisations);
 	}
 
 	/**
 	 * @param array $answer
-	 *		This is from the structure {questionId} => answer, where the questionId is the unique
-	 *		identifier from the question and the answer is an integer between 0 and 2, where
-	 *			0 => neutral
-	 *			1 => yes
-	 *			2 => no
+	 * 		This is from the structure {questionId} => answer, where the questionId
+	 * 		is the unique identifier from the question and the answer is an integer
+	 * 		between 0 and 2, where
+	 * 			0 => neutral
+	 * 			1 => yes
+	 * 			2 => no
 	 * @return array	Array of organisations
 	 */
 	private function calculateGroupResult($answer) {
-		list($persLat, $persLng, $age) = $this->parseCookie();
-
-		$organisationsNear = $this->groupRepository->findOrganisationMatricesNearLatLng($persLat, $persLng, $age);
-		$organisationIds = array_keys($organisationsNear);
-
-		$questionYes = array_keys($answer, 1);
-		$questionNo = array_keys($answer, 2);
-
-		$organisationsVoting = $this->groupRepository->findByGroupMappingWithAnswersAndOrganisation($questionYes, $questionNo, $organisationIds);
-
-		$organisations = $this->createOrganisationObjectsForTemplate($organisationsNear, $organisationsVoting, $persLat, $persLng);
-		$min = $this->getGradeMin()-10;
-		$max = $this->getGradeMax()-$min;
-
-		for ($i = count($organisations)-1; $i >= 0; $i--) {
-			if ($i >= 10) {
-				unset($organisations[$i]);
-			} else {
-				if (isset($organisations[$i]['grade'])) {
-					$organisations[$i]['grade'] = ($organisations[$i]['grade']-$min)/$max*100;
-				}
-			}
-		}
-		return $organisations;
+		list($persLat, $persLng, $age) = $this->cookieService->getPersonalCookie();
+		return $this->searchService->findOrganisations($persLat, $persLng, $answer,
+			$this->settings['config']['maxDistance'], array(&$this, 'buildOrganisationUri'));
 	}
 
-	/**
-	 * Parse cookie to get pers lat, pers lng and age.
-	 */
-	public function parseCookie() {
-		$persLat = 0.0;
-		$persLng = 0.0;
-		$age = 18;
-		if (isset($_COOKIE["hkj_info"])) {
-			$cookieInfo = explode("##1##", $_COOKIE["hkj_info"]);
-			if (count($cookieInfo) >= 5 && is_numeric($cookieInfo[0]) && is_numeric($cookieInfo[1])) {
-				$persLat = (float)$cookieInfo[0];
-				$persLng = (float)$cookieInfo[1];
-			}
- 			if (count($cookieInfo) >= 5 && is_numeric($cookieInfo[4])) {
-				$age = (int)$cookieInfo[4];
-			}
-		}
-
-		return array($persLat, $persLng, $age);
+	public function buildOrganisationUri($uid) {
+		return $this->uriBuilder->reset()->setTargetPageUid($this->settings['page']['overview']['detail'])
+			->uriFor('detail', array('organisation' => $uid), 'Overview');
 	}
-
-
-
-
-
-	private function getObjectStorageUids($storage) {
-		$uids = array();
-		foreach ($storage as $entry) {
-			$uids[] = $entry->getUid();
-		}
-		return $uids;
-	}
-
 }
-?>
