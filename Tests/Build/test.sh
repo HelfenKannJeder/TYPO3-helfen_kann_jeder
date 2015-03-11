@@ -26,6 +26,6 @@ else
 fi
 
 if [[ "$COVERAGE" == "1" ]]; then
-	phpcov merge --clover typo3conf/ext/helfen_kann_jeder/clover.xml $TEMPFOLDER
+	phpcov merge --html typo3conf/ext/helfen_kann_jeder/Tests/Report/ --clover typo3conf/ext/helfen_kann_jeder/clover.xml $TEMPFOLDER
 fi
 rm -rf $TEMPFOLDER

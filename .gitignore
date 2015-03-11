@@ -3,3 +3,4 @@
 .settings
 clover.xml
 *.swp
+Tests/Report/
