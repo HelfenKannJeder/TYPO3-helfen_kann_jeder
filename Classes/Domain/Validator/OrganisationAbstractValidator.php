@@ -17,6 +17,9 @@ abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validati
 	protected $match;
 	protected $invalidFields = array();
 
+	/**
+	 * @return void
+	 */
 	protected function addInvalidField($objectType, $fieldId, $fieldName) {
 		$this->invalidFields[] = array($objectType, $fieldId, $fieldName);
 	}
@@ -26,19 +29,19 @@ abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validati
 	}
 
 	protected function isValidMail($mail) {
-		return preg_match("/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si", $mail);
+		return preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$/si', $mail);
 	}
 
 	protected function isValidUrl($url) {
-		return preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $url);
+		return preg_match('/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i', $url);
 	}
 
 	protected function isValidPhonenumber($number) {
-		return preg_match("/^([0-9]{3,6}\ [0-9\ ]{2})/i", $number);
+		return preg_match('/^([0-9]{3,6}\ [0-9\ ]{2})/i', $number);
 	}
 
 	protected function isInRange($string, $min, $max) {
-		return strlen($string) <= $min || strlen($string) > max;
+		return strlen($string) <= $min || strlen($string) > $max;
 	}
 
 	protected function getLongestWordLength($string) {
@@ -53,11 +56,13 @@ abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validati
 		return strlen($longest);
 	}
 
-	protected function addError($message, $code, $values = null) {
-		if ($values == null) $values = array();
+	protected function addError($message, $code, $values = NULL) {
+		if ($values == NULL) {
+			$values = array();
+		}
 		$newMessage = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($message, 'HelfenKannJeder', $values);
 		if (empty($newMessage)) {
-			$newMessage = $message." (".$code.")";
+			$newMessage = $message . ' (' . $code . ')';
 		}
 		parent::addError($newMessage, $code);
 	}
@@ -66,4 +71,3 @@ abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validati
 		$this->match = $match;
 	}
 }
-?>

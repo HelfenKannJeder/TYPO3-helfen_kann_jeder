@@ -1,6 +1,11 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Domain\Validator;
 
+/**
+ * Validates a group for correctness.
+ *
+ * @author Valentin Zickner
+ */
 class GroupValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator {
 	public function isValid($group) {
 		if (! $group instanceof \Querformatik\HelfenKannJeder\Domain\Model\Group) {
@@ -13,5 +18,4 @@ class GroupValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractVal
 		}
 		return TRUE;
 	}
-} 
-?>
+}

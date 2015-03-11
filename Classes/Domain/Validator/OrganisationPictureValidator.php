@@ -14,24 +14,25 @@ class OrganisationPictureValidator extends OrganisationAbstractValidator {
 	protected $match;
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
+	 * 	$organisation
 	 */
 	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
-		$returnValue = true;
+		$returnValue = TRUE;
 
-		$pictures = explode(",", $organisation->getPictures());
+		$pictures = explode(',', $organisation->getPictures());
 
-		if (!(count($pictures) == 0 || trim($organisation->getPictures()) == "")) {
+		if (!(count($pictures) == 0 || trim($organisation->getPictures()) == '')) {
 			foreach ($pictures as $picture) {
-				if (!file_exists($this->match.$picture)) {
+				if (!file_exists($this->match . $picture)) {
 					$this->addError('error_organisation_picture_not_found', 1328039058);
-					$returnValue = false;
-				} else if (($getImageSizeInfo = getimagesize($this->match.$picture)) === false) {
+					$returnValue = FALSE;
+				} elseif (($getImageSizeInfo = getimagesize($this->match . $picture)) === FALSE) {
 					$this->addError('error_organisation_picture_not_a_image', 1328039063);
-					$returnValue = false;
-				} else if ($getImageSizeInfo[0] < 600 || $getImageSizeInfo[1] < 600) {
+					$returnValue = FALSE;
+				} elseif ($getImageSizeInfo[0] < 600 || $getImageSizeInfo[1] < 600) {
 					$this->addError('error_organisation_picture_to_small', 1328039067);
-					$returnValue = false;
+					$returnValue = FALSE;
 				}
 			}
 		}
@@ -39,4 +40,3 @@ class OrganisationPictureValidator extends OrganisationAbstractValidator {
 		return $returnValue;
 	}
 }
-?>

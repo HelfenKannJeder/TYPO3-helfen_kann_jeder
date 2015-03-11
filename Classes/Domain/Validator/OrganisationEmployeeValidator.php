@@ -13,16 +13,18 @@ namespace Querformatik\HelfenKannJeder\Domain\Validator;
 class OrganisationEmployeeValidator extends OrganisationAbstractValidator {
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
+	 * 	$organisation
 	 */
 	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
-		$returnValue = true;
+		$returnValue = TRUE;
 
 		foreach ($organisation->getEmployees() as $employee) {
 			$employeeValid = $this->isValidEmployee($employee);
 			$returnValue &= $employeeValid;
-			if (!$employeeValid)
+			if (!$employeeValid) {
 				$this->addInvalidField('employee', $employee->getUid(), '');
+			}
 		}
 
 		return $returnValue;
@@ -32,33 +34,32 @@ class OrganisationEmployeeValidator extends OrganisationAbstractValidator {
 	 * @param \Querformatik\HelfenKannJeder\EmployeeDraft $employee
 	 */
 	public function isValidEmployee(\Querformatik\HelfenKannJeder\EmployeeDraft $employee) {
-		$returnValue = true;
+		$returnValue = TRUE;
 		if (!$employee->getIscontact()) {
-			if (trim($employee->getPrename()) == "") {
+			if (trim($employee->getPrename()) == '') {
 				$this->addError('error_organisation_employee_person_missing_prename', 1327013197);
 				$this->addInvalidField('employee', $employee->getUid(), 'prename');
-				$returnValue = false;
+				$returnValue = FALSE;
 			}
 
-			if (trim($employee->getMotivation()) == "") {
+			if (trim($employee->getMotivation()) == '') {
 				$this->addError('error_organisation_employee_person_missing_motivation', 1327013214, array($employee->getPrename()));
 				$this->addInvalidField('employee', $employee->getUid(), 'motivation');
-				$returnValue = false;
+				$returnValue = FALSE;
 			}
 
-			if ($employee->getTelephone() != "" && !$this->isValidPhonenumber($employee->getTelephone())) {
+			if ($employee->getTelephone() != '' && !$this->isValidPhonenumber($employee->getTelephone())) {
 				$this->addError('error_organisation_employee_invalid_phone_number', 1327013132);
 				$this->addInvalidField('employee', $employee->getUid(), 'telephone');
-				$returnValue = false;
+				$returnValue = FALSE;
 			}
 
-			if ($employee->getMobilephone() != "" && !$this->isValidPhonenumber($employee->getMobilephone())) {
+			if ($employee->getMobilephone() != '' && !$this->isValidPhonenumber($employee->getMobilephone())) {
 				$this->addError('error_organisation_employee_invalid_mobilephone_number', 1327013138);
 				$this->addInvalidField('employee', $employee->getUid(), 'mobilephone');
-				$returnValue = false;
+				$returnValue = FALSE;
 			}
 		}
 		return $returnValue;
 	}
 }
-?>

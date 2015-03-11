@@ -13,51 +13,52 @@ namespace Querformatik\HelfenKannJeder\Domain\Validator;
 class OrganisationInformationValidator extends OrganisationAbstractValidator {
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
+	 * 	$organisation
 	 */
 	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
-		$returnValue = true;
+		$returnValue = TRUE;
 		// Prove name.
 		$longestWordCount = $this->getLongestWordLength($organisation->getName());
-		if ($organisation->getName() == "") {
+		if ($organisation->getName() == '') {
 			$this->addError('error_organisation_name_empty', 1332276437);
 			$this->addInvalidField('organisation', $organisation->getUid(), 'name');
-			$returnValue = false;
-		} else if ($longestWordCount > self::LIMIT_LONGEST_WORD_LENGTH) {
-			$this->addError('error_organisation_name_longest_word_to_long', 1332276951, array($longestWordCount, self::LIMIT_LONGEST_WORD_LENGTH));
+			$returnValue = FALSE;
+		} elseif ($longestWordCount > self::LIMIT_LONGEST_WORD_LENGTH) {
+			$this->addError('error_organisation_name_longest_word_to_long', 1332276951,
+				array($longestWordCount, self::LIMIT_LONGEST_WORD_LENGTH));
 			$this->addInvalidField('organisation', $organisation->getUid(), 'name');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
 		// Prove description.
 		$longestWordCount = $this->getLongestWordLength($organisation->getDescription());
-		if ($organisation->getDescription() == "") {
+		if ($organisation->getDescription() == '') {
 			$this->addError('error_organisation_description_empty', 1326743545);
 			$this->addInvalidField('organisation', $organisation->getUid(), 'description');
-			$returnValue = false;
-		} else if ($longestWordCount > self::LIMIT_LONGEST_WORD_LENGTH) {
-			$this->addError('error_organisation_description_longest_word_to_long', 1326797806, array($longestWordCount, self::LIMIT_LONGEST_WORD_LENGTH));
+			$returnValue = FALSE;
+		} elseif ($longestWordCount > self::LIMIT_LONGEST_WORD_LENGTH) {
+			$this->addError('error_organisation_description_longest_word_to_long', 1326797806,
+				array($longestWordCount, self::LIMIT_LONGEST_WORD_LENGTH));
 			$this->addInvalidField('organisation', $organisation->getUid(), 'description');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
 		// Prove website
-		if ($organisation->getWebsite() != "") {
+		if ($organisation->getWebsite() != '') {
 			if (!$this->isValidUrl($organisation->getWebsite())) {
-			//if (filter_var("http://".$organisation->getWebsite(), FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) === false) {
 				$this->addError('error_organisation_invalid_url', 1326797325);
 				$this->addInvalidField('organisation', $organisation->getUid(), 'website');
-				$returnValue = false;
+				$returnValue = FALSE;
 			}
-		} 
+		}
 
-		if ($organisation->getLogo() == "") {
+		if ($organisation->getLogo() == '') {
 			$this->addError('error_organisation_no_logo', 1327073916);
 			$this->addInvalidField('organisation', $organisation->getUid(), 'logo');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
 		return $returnValue;
 	}
 }
-?>

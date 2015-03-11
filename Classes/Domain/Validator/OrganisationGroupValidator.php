@@ -13,20 +13,22 @@ namespace Querformatik\HelfenKannJeder\Domain\Validator;
 class OrganisationGroupValidator extends OrganisationAbstractValidator {
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
+	 * 	$organisation
 	 */
 	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
-		$returnValue = true;
+		$returnValue = TRUE;
 
 		if ($organisation->getGroups()->count() == 0) {
 			$this->addError('error_organisation_no_groups', 1327013762);
-			$returnValue = false;
+			$returnValue = FALSE;
 		} else {
 			foreach ($organisation->getGroups() as $group) {
 				$groupValid = $this->isValidGroup($group);
 				$returnValue &= $groupValid;
-				if (!$groupValid)
+				if (!$groupValid) {
 					$this->addInvalidField('group', $group->getUid(), '');
+				}
 			}
 		}
 
@@ -37,60 +39,56 @@ class OrganisationGroupValidator extends OrganisationAbstractValidator {
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\GroupDraft $group
 	 */
 	public function isValidGroup(\Querformatik\HelfenKannJeder\Domain\Model\GroupDraft $group) {
-		$returnValue = true;
-		if (trim($group->getDescription()) == "") {
+		$returnValue = TRUE;
+		if (trim($group->getDescription()) == '') {
 			$this->addError('error_organisation_group_missing_description', 1327013891, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'description');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
-		if (trim($group->getMinimumAge()) == "") {
+		if (trim($group->getMinimumAge()) == '') {
 			$this->addError('error_organisation_group_missing_minimum_age', 1327013995, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'minimum_age');
-			$returnValue = false;
-		}
-		else if (!is_numeric($group->getMinimumAge())) {
+			$returnValue = FALSE;
+		} elseif (!is_numeric($group->getMinimumAge())) {
 			$this->addError('error_organisation_group_minimum_age_not_a_number', 1327014100, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'minimum_age');
-			$returnValue = false;
-		}
-		else if ($group->getMinimumAge() < 3 || $group->getMinimumAge() > 100) {
+			$returnValue = FALSE;
+		} elseif ($group->getMinimumAge() < 3 || $group->getMinimumAge() > 100) {
 			$this->addError('error_organisation_group_minimum_age_out_of_range', 1327014281, array($group->getName(), 3, 100));
 			$this->addInvalidField('group', $group->getUid(), 'minimum_age');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
-		if (trim($group->getMaximumAge()) == "") {
+		if (trim($group->getMaximumAge()) == '') {
 			$this->addError('error_organisation_group_missing_maximum_age', 1327014022, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'maximum_age');
-			$returnValue = false;
-		}
-		else if (!is_numeric($group->getMaximumAge())) {
+			$returnValue = FALSE;
+		} elseif (!is_numeric($group->getMaximumAge())) {
 			$this->addError('error_organisation_group_maximum_age_not_a_number', 1327014141, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'maximum_age');
-			$returnValue = false;
-		}
-		else if ($group->getMaximumAge() < 3 || $group->getMaximumAge() > 100) {
+			$returnValue = FALSE;
+		} elseif ($group->getMaximumAge() < 3 || $group->getMaximumAge() > 100) {
 			$this->addError('error_organisation_group_maximum_age_out_of_range', 1327014326, array($group->getName(), 3, 100));
 			$this->addInvalidField('group', $group->getUid(), 'maximum_age');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
 		if (is_numeric($group->getMinimumAge()) && is_numeric($group->getMaximumAge())
 			&& $group->getMinimumAge() > $group->getMaximumAge()) {
-			$this->addError('error_organisation_group_minimum_age_greater_than_maximum_age', 1327014403, array($group->getName(), $group->getMinimumAge(), $group->getMaximumAge()));
+				$this->addError('error_organisation_group_minimum_age_greater_than_maximum_age', 1327014403,
+					array($group->getName(), $group->getMinimumAge(), $group->getMaximumAge()));
 			$this->addInvalidField('group', $group->getUid(), 'minimum_age');
 			$this->addInvalidField('group', $group->getUid(), 'maximum_age');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
-		if ($group->getWebsite() != "" && !$this->isValidUrl($group->getWebsite())) {
+		if ($group->getWebsite() != '' && !$this->isValidUrl($group->getWebsite())) {
 			$this->addError('error_organisation_group_invalid_website', 1327017058, array($group->getName()));
 			$this->addInvalidField('group', $group->getUid(), 'website');
-			$returnValue = false;
+			$returnValue = FALSE;
 		}
 
 		return $returnValue;
 	}
 }
-?>
