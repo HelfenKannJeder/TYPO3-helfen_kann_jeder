@@ -10,8 +10,7 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-07-06
  */
-class Workinghour
-		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Workinghour extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
@@ -63,6 +62,9 @@ class Workinghour
 	 */
 	protected $reference;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -157,4 +159,3 @@ class Workinghour
 		return $this->reference;
 	}
 }
-?>

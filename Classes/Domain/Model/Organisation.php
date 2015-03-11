@@ -116,7 +116,7 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Employee>
-	 *	Persons of this institute.
+	 * 	Persons of this institute.
 	 * @lazy
 	 * @cascade remove
 	 */
@@ -158,6 +158,9 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $isDummy;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->workinghours = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -248,7 +251,7 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	public function getAddress() {
-		return $this->getStreet()."\n".$this->getZipcode()." ".$this->getCity();
+		return $this->getStreet() . "\n" . $this->getZipcode() . ' ' . $this->getCity();
 	}
 
 	public function setTelephone($telephone) {
@@ -310,14 +313,17 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $workinghours;
 	}
 
-	protected function sortWorkinghours($a, $b) {
-		if ($a == null || $b == null) return 0;
+	protected function sortWorkinghours($first, $second) {
+		if ($first == NULL || $second == NULL) {
+			return 0;
+		}
 
-		if ($a->getDay() > $b->getDay()) {
+		if ($first->getDay() > $second->getDay()) {
 			return 1;
-		} else if ($a->getDay() < $b->getDay()) {
+		} elseif ($first->getDay() < $second->getDay()) {
 			return -1;
-		} else if (($a->getStarttimehour()*60+$a->getStarttimeminute()) > ($b->getStarttimehour()*60+$b->getStarttimeminute())) {
+		} elseif (($first->getStarttimehour() * 60 + $first->getStarttimeminute()) >
+			($second->getStarttimehour() * 60 + $second->getStarttimeminute())) {
 			return 1;
 		} else {
 			return -1;
@@ -387,7 +393,7 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->addresses->detach($address);
 	}
 
-	public function getAddresses()  {
+	public function getAddresses() {
 		return clone $this->addresses;
 	}
 
@@ -421,4 +427,3 @@ class Organisation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->isDummy;
 	}
 }
-?>

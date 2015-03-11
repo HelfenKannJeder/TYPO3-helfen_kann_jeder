@@ -14,7 +14,7 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
 	 */
-	protected $organisation; 
+	protected $organisation;
 
 	/**
 	 * @var string
@@ -208,4 +208,3 @@ class Employee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->reference;
 	}
 }
-?>

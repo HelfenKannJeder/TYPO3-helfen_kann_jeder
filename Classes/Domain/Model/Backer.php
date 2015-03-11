@@ -61,6 +61,9 @@ class Backer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $since;
 
+	/**
+	 * @return void
+	 */
 	public function setDegree($degree) {
 		$this->degree = $degree;
 	}
@@ -138,7 +141,6 @@ class Backer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	public function getSince() {
-		return $this->since+86400/2;
+		return $this->since + 86400 / 2;
 	}
 }
-?>

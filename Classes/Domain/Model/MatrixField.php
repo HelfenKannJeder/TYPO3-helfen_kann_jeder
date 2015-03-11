@@ -18,7 +18,7 @@ class MatrixField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Organisation
-	 *	The organisation of this layer.
+	 * 	The organisation of this layer.
 	 */
 	protected $organisation;
 
@@ -38,6 +38,9 @@ class MatrixField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $grade;
 
+	/**
+	 * @return void
+	 */
 	public function __construct($matrix, $organisation, $activity, $activityfield, $grade) {
 		$this->setMatrix($matrix);
 		$this->setOrganisation($organisation);
@@ -86,4 +89,3 @@ class MatrixField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->grade;
 	}
 }
-?>

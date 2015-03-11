@@ -83,21 +83,6 @@ $TCA['tx_helfenkannjeder_domain_model_activity'] = array(
 				'rows' => 30 
 			)
 		),
-		'words' => array(
-			'exclude' => 0,
-			'label' => 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_activity.words',
-			'config' => array(
-				'type' => 'select',
-				'foreign_table' => 'tx_helfenkannjeder_domain_model_word',
-				'foreign_table_where' => '',
-				'items' => array(
-					array('---', 0),
-				),
-				'wizards' => array(
-				),
-				'suppress_icons' => 1,
-			)
-		),
 	),
 	'types' => array(
 		'0' => array('showitem' => 'name, description, keywords'),

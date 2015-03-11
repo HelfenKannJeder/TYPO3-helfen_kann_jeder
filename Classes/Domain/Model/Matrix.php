@@ -33,6 +33,9 @@ class Matrix extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $matrixfields;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->matrixfields = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -73,7 +76,7 @@ class Matrix extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 				return $field;
 			}
 		}
-		return null;
+		return NULL;
 	}
 
 	public function addMatrixfield($matrixfield) {
@@ -86,4 +89,3 @@ class Matrix extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->matrixfields->removeAll($storage);
 	}
 }
-?>

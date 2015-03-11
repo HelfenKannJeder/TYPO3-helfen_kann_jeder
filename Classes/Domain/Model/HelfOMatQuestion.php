@@ -10,8 +10,7 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2012-06-15
  */
-class HelfOMatQuestion
-		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class HelfOMatQuestion extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\HelfOMat
 	 */
@@ -56,6 +55,9 @@ class HelfOMatQuestion
 	 */
 	protected $sort;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groupPositive = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->groupNegative = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -149,7 +151,7 @@ class HelfOMatQuestion
 		$this->groupNegativenot->attach($groupNegativenot);
 	}
 
-	public function removeGroupNegativenot($groupNgativenot) {
+	public function removeGroupNegativenot($groupNegativenot) {
 		$this->groupNegativenot->detach($groupNegativenot);
 	}
 
@@ -161,4 +163,3 @@ class HelfOMatQuestion
 		$this->sort = $sort;
 	}
 }
-?>

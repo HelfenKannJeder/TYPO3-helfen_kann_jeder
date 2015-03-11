@@ -23,6 +23,9 @@ class GroupOfGroupTemplate extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntit
 	 */
 	protected $groupTemplates;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groupTemplates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -43,4 +46,3 @@ class GroupOfGroupTemplate extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntit
 		return $this->groupTemplates;
 	}
 }
-?>

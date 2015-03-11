@@ -90,6 +90,9 @@ class OrganisationType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $dummyOrganisation;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groupTemplateCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -198,4 +201,3 @@ class OrganisationType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->dummyOrganisation;
 	}
 }
-?>

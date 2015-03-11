@@ -22,4 +22,3 @@ class EmployeeDraft extends Employee {
 	 */
 	protected $reference;
 }
-?>

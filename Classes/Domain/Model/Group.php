@@ -74,6 +74,9 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $sort;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->contactpersons = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -184,4 +187,3 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->template;
 	}
 }
-?>

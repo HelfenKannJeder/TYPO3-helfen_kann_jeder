@@ -128,19 +128,19 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	public function getAddress() {
-		return $this->getStreet()."\n".(($this->getZipcode() == 0)?"":$this->getZipcode())." ".$this->getCity();
+		return $this->getStreet() . '\n' . (($this->getZipcode() == 0) ? '' : $this->getZipcode()) . ' ' . $this->getCity();
 	}
 
 	// TODO: Out source to validate class
 	public function validate($googleMapsService) {
-		$listedCitys = $googleMapsService->calculateCityAndDepartment("Germany, ".$this->getAddress());
+		$listedCitys = $googleMapsService->calculateCityAndDepartment('Germany, ' . $this->getAddress());
 		if (count($listedCitys) >= 1) {
 			$cityInfo = $listedCitys[0];
-			$this->setZipcode($cityInfo["postal_code"]);
-			$this->setCity($cityInfo["locality"]);
-			$this->setLatitude($cityInfo["latitude"]);
-			$this->setLongitude($cityInfo["longitude"]);
-			return true;
+			$this->setZipcode($cityInfo['postal_code']);
+			$this->setCity($cityInfo['locality']);
+			$this->setLatitude($cityInfo['latitude']);
+			$this->setLongitude($cityInfo['longitude']);
+			return TRUE;
 		} else {
 			$this->setLatitude(0.0000);
 			$this->setLongitude(0.0000);
@@ -148,6 +148,9 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		}
 	}
 
+	/**
+	 * @return void
+	 */
 	public function setReference($reference) {
 		$this->reference = $reference;
 	}
@@ -164,4 +167,3 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->website;
 	}
 }
-?>

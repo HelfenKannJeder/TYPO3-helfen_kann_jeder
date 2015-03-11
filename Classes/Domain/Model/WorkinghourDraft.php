@@ -32,4 +32,3 @@ class WorkinghourDraft extends Workinghour {
 	 */
 	protected $reference;
 }
-?>

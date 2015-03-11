@@ -37,6 +37,9 @@ class GroupTemplateCategory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEnti
 	 */
 	protected $sort;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->groupTemplates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -81,4 +84,3 @@ class GroupTemplateCategory extends \TYPO3\CMS\Extbase\DomainObject\AbstractEnti
 		return $this->sort;
 	}
 }
-?>

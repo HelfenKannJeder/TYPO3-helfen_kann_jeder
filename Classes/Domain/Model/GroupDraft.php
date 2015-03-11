@@ -29,4 +29,3 @@ class GroupDraft extends Group {
 	protected $reference;
 
 }
-?>

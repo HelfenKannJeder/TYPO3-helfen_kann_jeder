@@ -25,37 +25,37 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	 * @var boolean
 	 * @validate Boolean(is=true)
 	 */
-	protected $agreement = false;
+	protected $agreement = FALSE;
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationType
 	 * @validate NotEmpty
 	 */
-	protected $organisationtype = null;
+	protected $organisationtype = NULL;
 
 	/**
 	 * @var string
 	 * @validate StringLength(minimum=3, maximum=50)
 	 */
-	protected $typename = "";
+	protected $typename = '';
 
 	/**
 	 * @var string
 	 * @validate StringLength(minimum=1, maximum=5)
 	 */
-	protected $typeacronym = "";
+	protected $typeacronym = '';
 
 	/**
 	 * @var string
 	 * @validate StringLength(minimum=3, maximum=500)
 	 */
-	protected $typedescription = "";
+	protected $typedescription = '';
 
 	/**
 	 * @var string
 	 * @validate StringLength(minimum=1, maximum=255)
 	 */
-	protected $city = "";
+	protected $city = '';
 
 	/**
 	 * @var float
@@ -70,48 +70,48 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	/**
 	 * @var string
 	 */
-	protected $department = "";
+	protected $department = '';
 
 	/**
 	 * @var string
 	 */
-	protected $username = "";
+	protected $username = '';
 
 	/**
 	 * @var string
 	 */
-	protected $organisationname = "";
+	protected $organisationname = '';
 
 	/**
 	 * @var string
 	 */
-	protected $password = "";
+	protected $password = '';
 
 	/**
 	 * @var string
 	 */
-	protected $password2 = "";
+	protected $password2 = '';
 
 	/**
 	 * @var boolean
 	 */
-	protected $passwordSaved = false;
+	protected $passwordSaved = FALSE;
 
 	/**
 	 * @var string
 	 * @validate EmailAddress
 	 */
-	protected $mail = "";
+	protected $mail = '';
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
 	 */
-	protected $feuser = null;
+	protected $feuser = NULL;
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 */
-	protected $organisation = null;
+	protected $organisation = NULL;
 
 	/**
 	 * @var integer
@@ -126,7 +126,7 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	/**
 	 * @var string
 	 */
-	protected $mailHash = "";
+	protected $mailHash = '';
 
 	/**
 	 * @var \Querformatik\HelfenKannJeder\Domain\Model\Supporter
@@ -149,13 +149,16 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	 * @var string
 	 * @validate \SJBR\SrFreecap\Validation\Validator\CaptchaValidator
 	 */
-	protected $captcha;  
+	protected $captcha;
 
 	/**
 	 * @var string
 	 */
-	protected $imageFolder = "uploads/tx_helfenkannjeder/";
+	protected $imageFolder = 'uploads/tx_helfenkannjeder/';
 
+	/**
+	 * @return void
+	 */
 	public function __construct($sessionid = '') {
 		$this->sessionid = $sessionid;
 		$this->setModified(time());
@@ -372,4 +375,3 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 		return $this->captcha;
 	}
 }
-?>

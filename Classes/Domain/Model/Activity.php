@@ -10,8 +10,7 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  *    Technisches Hilfswerk Karlsruhe
  * @date: 2011-03-19
  */
-class Activity
-		extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Activity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * @var string
 	 */
@@ -28,18 +27,15 @@ class Activity
 	protected $activityFields;
 
 	/**
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\Word>
-	 */
-	protected $words;
-
-	/**
 	 * @var string
 	 */
 	protected $keywords;
 
+	/**
+	 * @return void
+	 */
 	public function __construct($name) {
 		$this->activityFields = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-		$this->words = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->setName($name);
 	}
 
@@ -67,14 +63,6 @@ class Activity
 		return $this->activityFields;
 	}
 
-	public function addWord($word) {
-		$this->words->attach($word);
-	}
-
-	public function getWords() {
-		return $this->words;
-	}
-
 	public function setKeywords($keywords) {
 		$this->keywords = $keywords;
 	}
@@ -83,4 +71,3 @@ class Activity
 		return $this->keywords;
 	}
 }
-?>

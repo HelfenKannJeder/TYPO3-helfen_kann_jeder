@@ -26,6 +26,9 @@ class ActivityField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $activities;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->activities = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
@@ -54,4 +57,3 @@ class ActivityField extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->activities;
 	}
 }
-?>

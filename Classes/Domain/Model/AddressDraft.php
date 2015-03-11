@@ -23,4 +23,3 @@ class AddressDraft extends Address {
 	protected $reference;
 
 }
-?>

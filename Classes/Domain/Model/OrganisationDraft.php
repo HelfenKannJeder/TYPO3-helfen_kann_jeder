@@ -12,7 +12,6 @@ namespace Querformatik\HelfenKannJeder\Domain\Model;
  */
 class OrganisationDraft extends Organisation {
 
-
 	/**
 	 * @var integer
 	 */
@@ -41,7 +40,7 @@ class OrganisationDraft extends Organisation {
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft>
-	 *	Persons of this institute.
+	 * 	Persons of this institute.
 	 * @lazy
 	 * @cascade remove
 	 */
@@ -148,11 +147,11 @@ class OrganisationDraft extends Organisation {
 	}
 
 	public function getControlHash() {
-		return substr(md5("Unique hash with info: ".$this->getName()." and created at ".$this->getCrdate()." and additionally the uid: ".$this->getUid()." end of information"),0,10);
+		return substr(md5('Unique hash with info: ' . $this->getName() . ' and created at ' . $this->getCrdate() .
+			' and additionally the uid: ' . $this->getUid() . ' end of information'), 0, 10);
 	}
 
 	public function getTstamp() {
 		return $this->tstamp;
 	}
 }
-?>

@@ -48,10 +48,16 @@ class HelfOMat extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public static $METHOD_GROUP = 1;
 
+	/**
+	 * @return void
+	 */
 	public function __construct() {
 		$this->questions = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
+	/**
+	 * @return void
+	 */
 	public function setName($name) {
 		$this->name = $name;
 	}
@@ -100,4 +106,3 @@ class HelfOMat extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->method;
 	}
 }
-?>
