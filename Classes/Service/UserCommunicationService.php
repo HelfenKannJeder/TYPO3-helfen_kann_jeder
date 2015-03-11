@@ -1,29 +1,35 @@
 <?php
 namespace Querformatik\HelfenKannJeder\Service;
 
+/**
+ * This class is for control the communication from qu_messaging with other
+ * users.
+ *
+ * @author Valentin Zickner
+ */
 class UserCommunicationService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
-	 * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
+	 * @var \Querformatik\HelfenKannJeder\Domain\Repository\OrganisationDraftRepository
+	 * @inject
 	 */
-	protected $objectManager;
+	protected $draftRepository;
 
 	/**
-	 * @param \TYPO3\CMS\Extbase\Object\ObjectManagerInterface $objectManager
+	 * @var \Querformatik\HelfenKannJeder\Service\AccessControlService
+	 * @inject
 	 */
-	public function injectObjectManager(\TYPO3\CMS\Extbase\Object\ObjectManagerInterface $objectManager) {
-		$this->objectManager = $objectManager;
-	}
+	protected $accessControlService;
 
+	/**
+	 * @return string String of allowed contacts to communicate with.
+	 */
 	public function getAllowedContacts() {
-		$organisationDraftRepository = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Domain\\Repository\\OrganisationDraftRepository');
-		$accessControlService = $this->objectManager->get('\\Querformatik\\HelfenKannJeder\\Service\\AccessControlService');
-
 		$allowedContacts = array();
-		$frontendUser = $accessControlService->getFrontendUser();
+		$frontendUser = $this->accessControlService->getFrontendUser();
 
 		if ($frontendUser instanceof \TYPO3\CMS\Extbase\Domain\Model\FrontendUser) {
-			$organisations = $organisationDraftRepository->findByFeuser($frontendUser->getUid());
+			$organisations = $this->draftRepository->findByFeuser($frontendUser->getUid());
 			foreach ($organisations as $organisation) {
 				$supporter = $organisation->getSupporter();
 				if ($supporter instanceof \Querformatik\HelfenKannJeder\Domain\Model\Supporter) {
@@ -31,8 +37,8 @@ class UserCommunicationService implements \TYPO3\CMS\Core\SingletonInterface {
 				}
 			}
 		} else {
-			$frontendSupporter = $accessControlService->getFrontendSupporter();
-			$organisations = $organisationDraftRepository->findBySupporterAndRequest($frontendSupporter);
+			$frontendSupporter = $this->accessControlService->getFrontendSupporter();
+			$organisations = $this->draftRepository->findBySupporterAndRequest($frontendSupporter);
 			foreach ($organisations as $organisation) {
 				$feUser = $organisation->getFeuser();
 				if ($feUser instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy) {
@@ -44,8 +50,6 @@ class UserCommunicationService implements \TYPO3\CMS\Core\SingletonInterface {
 			}
 		}
 
-		return implode(",", $allowedContacts);
-		
+		return implode(',', $allowedContacts);
 	}
 }
-?>
