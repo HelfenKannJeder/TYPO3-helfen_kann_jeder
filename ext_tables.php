@@ -445,30 +445,6 @@ $TCA['tx_helfenkannjeder_domain_model_registerorganisationprogress'] = array(
 	)
 );
 
-$TCA['tx_helfenkannjeder_domain_model_log'] = array(
-	'ctrl' => array(
-		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_log',
-		'label'				=> 'feuser',
-		'label_alt'			=> 'message',
-		'label_alt_force'		=> true,
-		'tstamp'			=> 'tstamp',
-		'crdate'			=> 'crdate',
-		'languageField'			=> 'sys_language_uid',
-		'transOrigPointerField'		=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
-		'prependAtCopy'			=> 'LLL:EXT:lang/locallang_general.xml:LGL.prependAtCopy',
-		'copyAfterDuplFields'		=> 'sys_language_uid',
-		'useColumnsForDefaultValues'	=> 'sys_language_uid',
-		'delete'			=> 'deleted',
-		'enablecolumns'			=> array(
-			'disabled'		=> 'hidden'
-		),
-		'dynamicConfigFile'		=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'Configuration/TCA/Log.php',
-		'iconfile'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'Resources/Public/Icons/icon_helfen_kann_jeder_domain_model_log.gif'
-		
-	)
-);
-
 $TCA['tx_helfenkannjeder_domain_model_helfomat'] = array(
 	'ctrl' => array(
 		'title'				=> 'LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_db.xlf:tx_helfenkannjeder_domain_model_helfomat',

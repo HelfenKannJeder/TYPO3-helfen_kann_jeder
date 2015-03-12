@@ -781,30 +781,6 @@ CREATE TABLE tx_helfenkannjeder_domain_model_registerorganisationprogress (
 );
 
 #
-# Table structure for table "tx_helfenkannjeder_domain_model_log"
-#
-CREATE TABLE tx_helfenkannjeder_domain_model_log (
-	uid int(11) unsigned NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-
-	feuser int(11) DEFAULT '0' NOT NULL,
-	organisation int(11) DEFAULT '0' NOT NULL,
-	message text NOT NULL,
-
-	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
-	crdate int(11) unsigned DEFAULT '0' NOT NULL,
-	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	access_group int(11) DEFAULT '0' NOT NULL,
-
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-#
 # Table structure for table "tx_helfenkannjeder_domain_model_helfomat"
 #
 CREATE TABLE tx_helfenkannjeder_domain_model_helfomat (
