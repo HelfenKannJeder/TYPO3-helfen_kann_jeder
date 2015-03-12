@@ -210,8 +210,24 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @return void
 	 */
 	public function testBuildOrganisationUri() {
-		// TODO: Build this test
-		$this->assertTrue(TRUE);
+		$uriBuilder = $this->getMock('\TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder', array('reset', 'setTargetPageUid', 'uriFor'));
+		$this->inject($this->controller, 'uriBuilder', $uriBuilder);
+
+		$uriBuilder->expects($this->once())
+			->method('reset')
+			->will($this->returnValue($uriBuilder));
+
+		$uriBuilder->expects($this->once())
+			->method('setTargetPageUid')
+			->with(1337)
+			->will($this->returnValue($uriBuilder));
+
+		$uriBuilder->expects($this->once())
+			->method('uriFor')
+			->with('detail', array('organisation' => 43), 'Overview')
+			->will($this->returnValue('some_uri'));
+
+		$this->assertEquals('some_uri', $this->controller->buildOrganisationUri(43));
 	}
 
 	/**
