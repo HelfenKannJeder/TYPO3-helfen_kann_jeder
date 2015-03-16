@@ -79,6 +79,7 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		);
 		$this->controller->_set('settings', $this->settings);
 
+		// TODO: The class name of the mock is wrong!
 		$this->helfomatRepository = $this->getMock('\Querformatik\HelfenKannJeder\Domain\Model\HelfOMat', array('findByUid'));
 		$this->inject($this->controller, 'helfomatRepository', $this->helfomatRepository);
 
@@ -86,7 +87,7 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 		$this->inject($this->controller, 'cookieService', $this->cookieService);
 
 		$this->searchService = $this->getMock('\Querformatik\HelfenKannJeder\Service\OrganisationSearchService',
-			array('findOrganisations'));
+			array('findOrganisations', 'createOrganisationObjects', 'normOrganisationGrade'));
 		$this->inject($this->controller, 'searchService', $this->searchService);
 	}
 
@@ -177,7 +178,7 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 				$this->identicalTo($organisations)
 			);
 
-		$this->pTestCalculateGroupResult($answer, $organisations);
+		$this->pTestCalculateGroupResult($organisations);
 
 		$this->controller->groupResultAction($helfomat, $answer);
 	}
@@ -199,7 +200,7 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 				'something special'
 			)
 		);
-		$this->pTestCalculateGroupResult($answer, $organisations);
+		$this->pTestCalculateGroupResult($organisations);
 
 		$result = $this->controller->jsonGroupResultAction($answer);
 		$this->assertEquals('{"10":["something special"]}', $result);
@@ -233,18 +234,32 @@ class HelfOMatControllerTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @return void
 	 */
-	private function pTestCalculateGroupResult($answer, $organisations) {
+	private function pTestCalculateGroupResult($organisations) {
 		$this->cookieService
 			->expects($this->any())
 			->method('getPersonalCookie')
 			->will($this->returnValue(array(49.1234, 8.2313, 18)));
 
+		$dummyMapping = 'MAPPING_DUMMY';
 		$this->searchService
 			->expects($this->once())
 			->method('findOrganisations')
 			->with(
-				49.1234, 8.2313, $answer, 100, array(&$this->controller, 'buildOrganisationUri')
+				49.1234, 8.2313, array(10), array(11, 9)
 			)
+			->will($this->returnValue($dummyMapping));
+
+		$dummyList = 'DUMMY_LIST';
+		$this->searchService
+			->expects($this->once())
+			->method('createOrganisationObjects')
+			->with($dummyMapping, 49.1234, 8.2313, 100, array(&$this->controller, 'buildOrganisationUri'))
+			->will($this->returnValue(array($dummyList, 30, 100)));
+
+		$this->searchService
+			->expects($this->once())
+			->method('normOrganisationGrade')
+			->with($dummyList, 20, 80)
 			->will($this->returnValue($organisations));
 	}
 }

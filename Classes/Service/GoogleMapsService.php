@@ -79,6 +79,15 @@ class GoogleMapsService implements \TYPO3\CMS\Core\SingletonInterface {
 		return $organisations;
 	}
 
+	public function calculateDistance($organisation, $latitude, $longitude) {
+		if (($latitude == 0 && $longitude == 0) || $organisation->getIsDummy()) {
+			$distance = -1;
+		} else {
+			$distance = $this->approxDistance($organisation->getLatitude(), $organisation->getLongitude(),
+				$latitude, $longitude);
+		}
+		return $distance;
+	}
 
 	/**
 	 * Calculate distance approximately between two coordinates.

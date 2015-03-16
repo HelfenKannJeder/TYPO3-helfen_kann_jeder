@@ -76,8 +76,18 @@ class HelfOMatController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	 */
 	private function calculateGroupResult($answer) {
 		list($persLat, $persLng, $age) = $this->cookieService->getPersonalCookie();
-		return $this->searchService->findOrganisations($persLat, $persLng, $answer,
-			$this->settings['config']['maxDistance'], array(&$this, 'buildOrganisationUri'));
+
+		$questionYes = array_keys($answer, 1);
+		$questionNo = array_keys($answer, 2);
+
+		$organisationsVoting = $this->searchService->findOrganisations($persLat, $persLng, $questionYes, $questionNo);
+		list($organisations, $gradeMin, $gradeMax) = $this->searchService->createOrganisationObjects($organisationsVoting,
+			$persLat, $persLng, $this->settings['config']['maxDistance'], array(&$this, 'buildOrganisationUri'));
+
+		$min = $gradeMin - 10;
+		$max = $gradeMax - $min;
+
+		return $this->searchService->normOrganisationGrade($organisations, $min, $max);
 	}
 
 	public function buildOrganisationUri($uid) {

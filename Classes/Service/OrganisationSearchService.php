@@ -26,7 +26,7 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 	 */
 	protected $googleMapsService;
 
-	public function findOrganisations($persLat, $persLng, $answer, $maxDistance, $uriBuilder) {
+	public function findOrganisations($persLat, $persLng, $questionYes, $questionNo) {
 		$organisationLists = $this->organisationRepository->findOrganisationNearLocation($persLat, $persLng);
 
 		$organisationsNear = array();
@@ -38,17 +38,16 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 			}
 		}
 
-		$questionYes = array_keys($answer, 1);
-		$questionNo = array_keys($answer, 2);
-
 		$organisationsVoting = $this->groupRepository->findByGroupMappingWithAnswersAndOrganisation($questionYes,
 			$questionNo, $organisationIds);
+		foreach ($organisationsVoting as $key => $voting) {
+			$organisationsVoting[$key]['object'] = $organisationsNear[$voting['organisation']];
+		}
 
-		list($organisations, $gradeMin, $gradeMax) = $this->createOrganisationObjects($organisationsNear,
-			$organisationsVoting, $persLat, $persLng, $maxDistance, $uriBuilder);
-		$min = $gradeMin - 10;
-		$max = $gradeMax - $min;
+		return $organisationsVoting;
+	}
 
+	public function normOrganisationGrade($organisations, $min, $max) {
 		for ($i = count($organisations) - 1; $i >= 0; $i--) {
 			if ($i >= 10) {
 				unset($organisations[$i]);
@@ -61,7 +60,7 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 		return $organisations;
 	}
 
-	public function createOrganisationObjects($allOrganisations, $votings, $persLat, $persLng, $maxDistance, $uriBuilder) {
+	public function createOrganisationObjects($votings, $persLat, $persLng, $maxDistance, $uriBuilder) {
 		$gradeMin = NULL;
 		$gradeMax = NULL;
 
@@ -69,7 +68,7 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 		$organisationTypes = array();
 
 		foreach ($votings as $voting) {
-			$organisation = $allOrganisations[$voting['organisation']];
+			$organisation = $voting['object'];
 
 			$grade = round($voting['gradesum']);
 			if ($gradeMin != NULL) {
@@ -79,7 +78,7 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 			}
 			$gradeMax = max($grade, $gradeMax);
 
-			$distance = $this->calculateDistance($persLat, $persLng, $organisation);
+			$distance = $this->googleMapsService->calculateDistance($organisation, $persLat, $persLng);
 
 			if ($distance <= $maxDistance || $distance == -1) {
 				if (!$organisation->getIsDummy()) {
@@ -100,18 +99,11 @@ class OrganisationSearchService implements \TYPO3\CMS\Core\SingletonInterface {
 		return array($organisations, $gradeMin, $gradeMax);
 	}
 
-	protected function calculateDistance($latitude, $longitude, $organisation) {
-		if (($latitude == 0 && $longitude == 0) || $organisation->getIsDummy()) {
-			$distance = -1;
-		} else {
-			$distance = $this->googleMapsService->approxDistance(
-				$organisation->getLatitude(), $organisation->getLongitude(), $latitude, $longitude
-			);
-		}
-		return $distance;
-	}
-
 	protected function buildOrganisationInfo($organisation, $grade, $distance, $uriBuilder) {
+		if ($organisation == NULL) {
+			return NULL;
+		}
+
 		return array(
 			'uid' => $organisation->getUid(),
 			'name' => $organisation->getName(),
