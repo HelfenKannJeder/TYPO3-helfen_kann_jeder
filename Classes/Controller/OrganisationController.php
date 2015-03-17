@@ -502,4 +502,14 @@ class OrganisationController extends AbstractOrganisationController {
 		$this->view->assign('groups', $this->groupDraftRepository->findByOrganisationUid($organisation->getUid()));
 	}
 
+	/**
+	 * Get the first supporter for the current, logged in, organisation
+	 *
+	 * @return void
+	 */
+	public function supporterAction() {
+		$this->view->assign('organisation', $this->organisations->getFirst());
+		$this->view->assign('frontendUser', $this->accessControlService->getFrontendUser());
+	}
+
 }

@@ -42,6 +42,9 @@
 			<trans-unit id="tx_helfenkannjeder_register_session_lifetime" xml:space="preserve">
 				<source>Session Lifetime (in seconds)</source>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_organisation_supporter" xml:space="preserve">
+				<source>Show Organisation Supporter</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

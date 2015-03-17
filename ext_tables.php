@@ -11,6 +11,12 @@ $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamel
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Querformatik.' .$_EXTKEY,
+	'Right',
+	'HelfenKannJeder Right Column'
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+	'Querformatik.' .$_EXTKEY,
 	'GeneratorList',
 	'Generator'
 );
@@ -502,4 +508,9 @@ $pluginSignature = strtolower($extensionName) . '_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform,recursive';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_organisation.xml');
+
+$pluginSignature = strtolower($extensionName) . '_right';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'select_key';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform,recursive';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_right.xml');
 ?>

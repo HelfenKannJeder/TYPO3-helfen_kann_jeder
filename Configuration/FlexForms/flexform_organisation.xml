@@ -57,6 +57,10 @@
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_backer</numIndex>
 										<numIndex index="1">Backer->index</numIndex>
 									</numIndex>
+									<numIndex index="12" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_organisation_supporter</numIndex>
+										<numIndex index="1">Organisation->supporter</numIndex>
+									</numIndex>
 								</items>
 								<maxitems>1</maxitems>
 								<size>1</size>

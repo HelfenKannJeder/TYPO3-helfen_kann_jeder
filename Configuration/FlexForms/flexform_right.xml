@@ -1,0 +1,30 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Options</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_default</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_organisation_supporter</numIndex>
+										<numIndex index="1">Organisation->supporter</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

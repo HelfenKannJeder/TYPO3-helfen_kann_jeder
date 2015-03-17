@@ -29,6 +29,15 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+	'Querformatik.' . $_EXTKEY,
+	'Right',
+	array(
+		'Organisation' => 'supporter',
+	)
+);
+
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Querformatik.' .$_EXTKEY,
 	'Location',
 	array(

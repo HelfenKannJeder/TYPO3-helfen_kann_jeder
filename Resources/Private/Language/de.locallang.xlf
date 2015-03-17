@@ -559,6 +559,10 @@ Bitte beachte auch unsere </target>
 				<source></source>
 				<target>Bild löschen</target>
 			</trans-unit>
+			<trans-unit id="mail" xml:space="preserve" approved="yes">
+				<source>Mail</source>
+				<target>E-Mail</target>
+			</trans-unit>
 			<trans-unit id="organisation_employee_mail" xml:space="preserve" approved="yes">
 				<source></source>
 				<target>E-Mail</target>

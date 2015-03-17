@@ -55,6 +55,10 @@
 				<source>Session Lifetime (in seconds)</source>
 				<target>Session Lebenszeit (in Sekunden)</target>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_organisation_supporter" xml:space="preserve" approved="yes">
+				<source>Show Organisation Supporter</source>
+				<target>Zeige Supporter der Organisation</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
