@@ -43,7 +43,13 @@
 				<source>Session Lifetime (in seconds)</source>
 			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_action_organisation_supporter" xml:space="preserve">
-				<source>Show Organisation Supporter</source>
+				<source>Supporter Information</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_logged_in" xml:space="preserve">
+				<source>Logged in Information</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_map" xml:space="preserve">
+				<source>Position Information</source>
 			</trans-unit>
 		</body>
 	</file>

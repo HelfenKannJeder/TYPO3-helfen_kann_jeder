@@ -64,7 +64,6 @@ plugin.tx_helfenkannjeder {
 			termsOfUse = 78
 			privacy = 81
 			messaging = 62
-			register.guide = 94
 			overview.detail = 9
 		}
 

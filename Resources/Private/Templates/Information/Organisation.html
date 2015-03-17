@@ -1,0 +1,20 @@
+{namespace q=Tx_QuBase_ViewHelpers}
+<f:if condition="{organisation}">
+<div class="csc-textpic csc-textpic-intext-left-nowrap">
+	<div class="csc-textpic-imagewrap">
+		<div class="csc-textpic-image csc-textpic-last">
+			<q:image.first path="uploads/pics/" src="{organisation.supporter.image}" alt="{organisation.supporter.name}" width="62" />
+		</div>
+	</div>
+	<div class="csc-textpic-text">
+		<div class="csc-textpicHeader csc-textpicHeader-26">
+			<h1>{organisation.supporter.name}</h1>
+		</div>
+		<p class="bodytext">{f:translate(key: 'register_supporter')}</p>
+		<p class="bodytext">
+		<f:if condition="{organisation.supporter.telephone}">Telefon: {organisation.supporter.telephone}<br /></f:if>
+		<f:if condition="{organisation.supporter.email}">{f:translate(key: 'mail')}: <a href="mailto:{organisation.supporter.email}">{organisation.supporter.email}</a><br /></f:if>
+		</p>
+	</div>
+</div>
+</f:if>

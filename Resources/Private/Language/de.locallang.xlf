@@ -1984,14 +1984,6 @@ http://helfenkannjeder.de/%s</target>
 				<source></source>
 				<target>.</target>
 			</trans-unit>
-			<trans-unit id="register_guide" xml:space="preserve" approved="yes">
-				<source></source>
-				<target>Anleitung zur Registrierung</target>
-			</trans-unit>
-			<trans-unit id="register_guide_text" xml:space="preserve" approved="yes">
-				<source></source>
-				<target>Bist Du noch unschlüssig, ob Du dich registrieren sollst? Willst Du wissen, was Dich erwartet? Hier findest Du Antworten darauf.</target>
-			</trans-unit>
 			<trans-unit id="register_step31_error_mail_server_connection_failed" xml:space="preserve" approved="yes">
 				<source></source>
 				<target>Es liegt ein interner Fehler vor. Der Schritt konnte nicht vollständig ausgeführt werden. Wende Dich bitte an webmaster@helfenkannjeder.de und sende uns (gerne auch ohne weitere Kommentare) diese Fehlermeldung.</target>

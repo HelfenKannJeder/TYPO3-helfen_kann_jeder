@@ -56,8 +56,16 @@
 				<target>Session Lebenszeit (in Sekunden)</target>
 			</trans-unit>
 			<trans-unit id="tx_helfenkannjeder_action_organisation_supporter" xml:space="preserve" approved="yes">
-				<source>Show Organisation Supporter</source>
-				<target>Zeige Supporter der Organisation</target>
+				<source>Logged in Information</source>
+				<target>Informationen zu Supporter</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_logged_in" xml:space="preserve" approved="yes">
+				<source>Logged in Information</source>
+				<target>Informationen zum Anmeldestatus</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_map" xml:space="preserve" approved="yes">
+				<source>Position Information</source>
+				<target>Informationen zur Position</target>
 			</trans-unit>
 		</body>
 	</file>

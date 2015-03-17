@@ -15,7 +15,15 @@
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_organisation_supporter</numIndex>
-										<numIndex index="1">Organisation->supporter</numIndex>
+										<numIndex index="1">Information->organisation</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_logged_in</numIndex>
+										<numIndex index="1">Information->loggedIn</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:helfen_kann_jeder/Resources/Private/Language/locallang_ff.xlf:tx_helfenkannjeder_action_map</numIndex>
+										<numIndex index="1">Information->map</numIndex>
 									</numIndex>
 								</items>
 								<maxitems>1</maxitems>

@@ -40,12 +40,12 @@
 <f:render partial="AddressForm" arguments="{num: 'new', invisible: 1, organisation: organisation, errorFields: errorFields, forceDefault: 0, forceNotDefault: 1}" />
 <div style="cursor:pointer" onclick="register_organisation_object_create('organisationAddressNum');return false;"><f:image src="{f:uri.resource(path:'Icons/icon_helfen_kann_jeder_frontend_new.png')}" alt="{f:translate(key: 'organisation_address_add_new')}" /> {f:translate(key: 'organisation_address_add_new')}</div>
 <script type="text/javascript">
-window.onload = function () {
+$(document).ready(function () {
 	register_organisation_address_init({mainPosition.latitude}, {mainPosition.longitude});
 <f:for each="{organisation.addresses}" as="address" iteration="addressIteration">
 	register_organisation_address_draw({address.latitude}, {address.longitude}, '{address.street}');
 </f:for>
-}
+});
 </script>
 <br />
 <h2>{f:translate(key: 'organisation_contactperson')}</h2>

@@ -32,7 +32,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	'Querformatik.' . $_EXTKEY,
 	'Right',
 	array(
-		'Organisation' => 'supporter',
+		'Information' => 'organisation,loggedIn,map',
 	)
 );
 
