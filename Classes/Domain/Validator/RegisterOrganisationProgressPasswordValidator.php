@@ -12,7 +12,7 @@ class RegisterOrganisationProgressPasswordValidator extends \TYPO3\CMS\Extbase\V
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress
 	 * 	$registerProgress 
 	 */
-	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerProgress) {
+	public function isValid($registerProgress) {
 		if ($registerProgress->getPassword() !== $registerProgress->getPassword2()) {
 			$this->addError('The passwords do not match.', 1321614404);
 		}

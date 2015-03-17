@@ -78,7 +78,7 @@ plugin.tx_helfenkannjeder {
 			Querformatik\HelfenKannJeder\Domain\Model\Supporter {
 				mapping {
 					tableName = fe_users
-#					recordType = Tx_HelfenKannJeder_Domain_Model_Supporter
+					recordType = Querformatik\HelfenKannJeder\Domain\Model\Supporter
 				}
 			}
 		}

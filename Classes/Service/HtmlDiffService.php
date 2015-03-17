@@ -8,7 +8,7 @@ require_once("typo3conf/ext/helfen_kann_jeder/Classes/External/DaisyDiff/HTMLDif
 class HtmlDiffService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	public function diff($old, $new) {
-		$htmlDiff = new HtmlDiffer();
+		$htmlDiff = new \HtmlDiffer();
 		return $htmlDiff->htmlDiff($old, $new);
 	}
 }

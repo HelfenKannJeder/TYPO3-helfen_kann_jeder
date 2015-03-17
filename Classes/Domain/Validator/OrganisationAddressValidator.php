@@ -16,7 +16,7 @@ class OrganisationAddressValidator extends OrganisationAbstractValidator {
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 * 	$organisation
 	 */
-	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
+	public function isValid($organisation) {
 		$returnValue = TRUE;
 		if ($organisation->getDefaultaddress() == 0) {
 			$this->addError('error_organisation_address_no_default_address', 1326798986);
@@ -47,9 +47,9 @@ class OrganisationAddressValidator extends OrganisationAbstractValidator {
 	}
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\AdressDraft $address
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\AddressDraft $address
 	 */
-	public function isValidAddress(\Querformatik\HelfenKannJeder\Domain\Model\AdressDraft $address) {
+	public function isValidAddress(\Querformatik\HelfenKannJeder\Domain\Model\AddressDraft $address) {
 		$returnValue = TRUE;
 		if ($address->getLatitude() == 0 || $address->getLongitude() == 0) {
 			$this->addError('error_organisation_address_not_found', 1326799082, array($address->getStreet(), $address->getCity()));

@@ -16,7 +16,7 @@ class OrganisationGroupValidator extends OrganisationAbstractValidator {
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 * 	$organisation
 	 */
-	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
+	public function isValid($organisation) {
 		$returnValue = TRUE;
 
 		if ($organisation->getGroups()->count() == 0) {

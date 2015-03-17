@@ -16,7 +16,7 @@ class OrganisationEmployeeValidator extends OrganisationAbstractValidator {
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft
 	 * 	$organisation
 	 */
-	public function isValid(\Querformatik\HelfenKannJeder\Domain\Model\OrganisationDraft $organisation) {
+	public function isValid($organisation) {
 		$returnValue = TRUE;
 
 		foreach ($organisation->getEmployees() as $employee) {
@@ -31,9 +31,9 @@ class OrganisationEmployeeValidator extends OrganisationAbstractValidator {
 	}
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\EmployeeDraft $employee
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft $employee
 	 */
-	public function isValidEmployee(\Querformatik\HelfenKannJeder\EmployeeDraft $employee) {
+	public function isValidEmployee(\Querformatik\HelfenKannJeder\Domain\Model\EmployeeDraft $employee) {
 		$returnValue = TRUE;
 		if (!$employee->getIscontact()) {
 			if (trim($employee->getPrename()) == '') {
