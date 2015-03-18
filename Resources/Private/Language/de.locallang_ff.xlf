@@ -67,6 +67,14 @@
 				<source>Position Information</source>
 				<target>Informationen zur Position</target>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_location" xml:space="preserve" approved="yes">
+				<source>Location settings</source>
+				<target>Ortseinstellung</target>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_picture" xml:space="preserve" approved="yes">
+				<source>Picture Information</source>
+				<target>Bilderinformation</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

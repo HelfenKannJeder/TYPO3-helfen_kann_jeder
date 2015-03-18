@@ -51,6 +51,12 @@
 			<trans-unit id="tx_helfenkannjeder_action_map" xml:space="preserve">
 				<source>Position Information</source>
 			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_location" xml:space="preserve">
+				<source>Location settings</source>
+			</trans-unit>
+			<trans-unit id="tx_helfenkannjeder_action_picture" xml:space="preserve">
+				<source>Picture Information</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

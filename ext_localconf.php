@@ -33,6 +33,8 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	'Right',
 	array(
 		'Information' => 'organisation,loggedIn,map',
+		'Location' => 'index',
+		'Picture' => 'index',
 	)
 );
 
