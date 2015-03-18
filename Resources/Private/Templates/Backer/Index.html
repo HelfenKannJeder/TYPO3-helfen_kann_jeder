@@ -1,9 +1,9 @@
-{namespace hkj=Querformatik\HelfenKannJeder\ViewHelpers}
+{namespace q=Tx_QuBase_ViewHelpers}
 <div class="helfen_kann_jeder_backer">
 <h2><f:translate key="backer_thanks_ideal_contribution">For the ideal contribution we thanks to ...</f:translate></h2>
 <f:for each="{backersIdeal}" iteration="backerIteration" as="backer">
 	<div class="backer">
-		<f:link.action arguments="{backer: backer}"><hkj:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" width="50c" height="50c" /></f:link.action>
+		<f:link.action arguments="{backer: backer}"><q:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" width="50c" height="50c" /></f:link.action>
 		<f:link.action arguments="{backer: backer}"><f:if condition="{backer.surname}"><f:then><f:if condition="{backer.degree}">{backer.degree} </f:if>{backer.prename} {backer.surname}</f:then><f:else>{backer.company}</f:else></f:if></f:link.action>
 	</div>
 </f:for>
@@ -12,7 +12,7 @@
 <h2><f:translate key="backer_thanks_finance_contribution">For the finance contribution we thanks to ...</f:translate></h2>
 <f:for each="{backersFinancial}" as="backer">
 	<div class="backer">
-	<div class="helfenkannjeder_backer_small_image"><f:link.action arguments="{backer: backer}"><hkj:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" maxWidth="100c" minHeight="50" height="50c" /></f:link.action></div>
+	<div class="helfenkannjeder_backer_small_image"><f:link.action arguments="{backer: backer}"><q:image.first path="uploads/pics/" src="{backer.thumbnail}" alt="{backer.prename} {backer.surname}" width="100m" height="50m" /></f:link.action></div>
 	<div class="helfenkannjeder_backer_small_text"><f:link.action arguments="{backer: backer}"><f:if condition="{backer.surname}"><f:then><f:if condition="{backer.degree}">{backer.degree} </f:if>{backer.prename} {backer.surname}</f:then><f:else>{backer.company}</f:else></f:if></f:link.action></div>
 </div>
 </f:for>
@@ -21,7 +21,7 @@
 <div class="clearer"></div>
 <f:if condition="{backerSelected}">
 	<div class="backer_details">
-		<div class="backer_image"><hkj:image.first path="uploads/pics/" src="{backerSelected.picture}" alt="{backerSelected.prename} {backerSelected.surname}" width="90m" /></div>
+		<div class="backer_image"><q:image.first path="uploads/pics/" src="{backerSelected.picture}" alt="{backerSelected.prename} {backerSelected.surname}" width="90m" /></div>
 		<div class="backer_text">
 <f:if condition="{backerSelected.surname}"><f:then>
 <h1><f:if condition="{backerSelected.degree}">{backerSelected.degree} </f:if>{backerSelected.prename} {backerSelected.surname}</h1>
