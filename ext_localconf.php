@@ -38,23 +38,6 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 	)
 );
 
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'Location',
-	array(
-		'Location' => 'index',
-	)
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Querformatik.' .$_EXTKEY,
-	'PictureList',
-	array(
-		'Picture' => 'index',
-	)
-);
-
 /**
  * Hooking for PluginInfo
  */

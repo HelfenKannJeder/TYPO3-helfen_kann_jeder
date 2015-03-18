@@ -15,66 +15,6 @@ $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamel
 	'HelfenKannJeder Right Column'
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'GeneratorList',
-	'Generator'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'MapList',
-	'Map'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'OverviewList',
-	'Overview'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'CitysignList',
-	'Citysign'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'PictureList',
-	'Picture'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'EmployeeList',
-	'Employee'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'EmployeeDetail',
-	'Employee Details'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'TestList',
-	'Test'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'BackerList',
-	'Backer'
-);
-
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Querformatik.' .$_EXTKEY,
-	'Location',
-	'Location'
-);
-
 if (TYPO3_MODE == 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
 	/**
 	 * Registers a Backend Module
