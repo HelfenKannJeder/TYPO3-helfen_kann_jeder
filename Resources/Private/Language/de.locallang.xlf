@@ -1271,7 +1271,7 @@ An dieser Stelle schließt Du die Registrierung Deines Benutzerkontos ab. Anschl
 			</trans-unit>
 			<trans-unit id="register_step31_label_surname" xml:space="preserve" approved="yes">
 				<source></source>
-				<target>Dein Name</target>
+				<target>Dein Nachname</target>
 			</trans-unit>
 			<trans-unit id="register_step31_label_prename" xml:space="preserve" approved="yes">
 				<source></source>
