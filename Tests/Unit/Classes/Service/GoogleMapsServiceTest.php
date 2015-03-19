@@ -51,6 +51,19 @@ class GoogleMapsServiceTest  extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	}
 
 	/**
+	 * Test the convertion of an german zipcode
+	 *
+	 * @test
+	 * @return void
+	 */
+	public function testCalculateCityAndDepartmentForZipcode() {
+		$addresses = $this->googleMapsService->calculateCityAndDepartment('Germany, 76133');
+		$this->assertEquals(1, count($addresses));
+		$this->assertTrue($addresses[0]['locality'] != '');
+	}
+
+
+	/**
 	 * Test the approx distance method.
 	 *
 	 * @test

@@ -176,69 +176,57 @@ class RegisterController
 				return TRUE;
 			}
 		}
-		echo 'error';
-		exit();
 		$this->redirect('showstep10', NULL, NULL, array(), $this->settings['registerOrganisationStepsPart1']);
 		return FALSE;
 	}
 
 	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgressStep10 $step10
 	 * @return void
-	 * @ignorevalidation $registerOrganisationProgress
+	 * @ignorevalidation $step10
 	 */
-	public function showstep10Action($registerOrganisationProgress = NULL) {
+	public function showstep10Action($step10 = NULL) {
 		if ($this->accessControlService->hasLoggedInFrontendUser()) {
 			$this->registerHandleLoggedInUser();
 		}
 
 		$this->accessControlService->removeSessionVariable('registerOrganisationProgress');
-		$registerOrganisationProgress = NULL;
 
-		if ($registerOrganisationProgress != NULL) {
-			$this->registerHandleProveRegisterOrganisationType($registerOrganisationProgress);
-		} else {
-			$registerOrganisationProgress = new \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress($this->accessControlService->getSessionId());
-			$registerOrganisationProgress->setLaststep(10);
-			$registerOrganisationProgress->setFinisheduntil(10);
-                        
-			$this->registerOrganisationProgressRepository->add($registerOrganisationProgress);
-			$this->persistenceManager->persistAll();
-			$this->accessControlService->setSessionVariable('registerOrganisationProgress', $registerOrganisationProgress->getUid());
-		}
-
+		$registerOrganisationProgress = new \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress($this->accessControlService->getSessionId());
+		$registerOrganisationProgress->setLaststep(10);
+		$registerOrganisationProgress->setFinisheduntil(10);
+                
 		$this->view->assign('step', 10);
 		$this->view->assign('actionSendMethod', 'sendstep10');
 		$this->view->assign('headline', 'register_step1_headline');
-		$this->view->assign('objectEditName', 'registerOrganisationProgress');
-		$this->view->assign('objectEdit', $registerOrganisationProgress);
+		$this->view->assign('objectEditName', 'step10');
+		$this->view->assign('objectEdit', NULL);
 		$this->view->assign('registerOrganisationProgress', $registerOrganisationProgress);
 		$this->view->assign('args', array());
 	}
 
 	/**
+	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgressStep10 $step10
 	 * @return void
 	 */
-	public function initializeSendstep10Action() {
-		$this->registerPartialValidatorForArgument('registerOrganisationProgress');
-	}
-
-	/**
-	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
-	 * @return void
-	 */
-	public function sendstep10Action($registerOrganisationProgress) {
+	public function sendstep10Action($step10) {
 		if ($this->accessControlService->hasLoggedInFrontendUser()) {
 			$this->registerHandleLoggedInUser();
 		}
 
 		//$this->flashMessageContainer->flush();
 		$location = array(0 => array ('country' => 'Deutschland'));
+
+		$registerOrganisationProgress = new \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress($this->accessControlService->getSessionId());
+		$registerOrganisationProgress->setLaststep(10);
+		$registerOrganisationProgress->setFinisheduntil(20);
+		$registerOrganisationProgress->setAgreement(TRUE);
 		$registerOrganisationProgress->setSupporter($this->supportService->findSupporter($location, $this->settings['supporterGroup']));
 
+		$this->registerOrganisationProgressRepository->add($registerOrganisationProgress);
+		$this->persistenceManager->persistAll();
 
-		$registerOrganisationProgress->setFinisheduntil(20);
-		$this->registerOrganisationProgressRepository->update($registerOrganisationProgress);
+		$this->accessControlService->setSessionVariable('registerOrganisationProgress', $registerOrganisationProgress->getUid());
 		$this->redirect('showstep20', NULL, NULL, array('registerOrganisationProgress' => $registerOrganisationProgress));
 	}
 
@@ -277,7 +265,6 @@ class RegisterController
 
 	/**
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\RegisterOrganisationProgress $registerOrganisationProgress
-	 * @ignorevalidation $registerOrganisationProgress
 	 * @return void
 	 */
 	public function sendstep31Action($registerOrganisationProgress) {
@@ -324,7 +311,7 @@ class RegisterController
 			$errors = TRUE;
 		}
 
-		if (count($listedCitys) == 1 && !empty($listedCitys[0]['locality']) && $listedCitys[0]['administrative_area_level_1_short'] == 'BW') {
+		if (count($listedCitys) == 1 && $listedCitys[0]['locality'] != '') {
 			list($username, $organisationName) = $this->generateUsername($registerOrganisationProgress->getOrganisationtype()->getAcronym(), $listedCitys[0], $registerOrganisationProgress->getDepartment(), $registerOrganisationProgress->getOrganisationtype()->getNamedisplay());
 			$username = strtolower($registerOrganisationProgress->getUsername());
 			$cityInfo = $listedCitys[0];

@@ -43,7 +43,11 @@
 				<source></source>
 				<target>Bitte bestätige die Bedingungen.</target>
 			</trans-unit>
-			<trans-unit id="error.170320111501" xml:space="preserve" approved="yes">
+			<trans-unit id="error.1221560718" xml:space="preserve" approved="yes">
+				<source></source>
+				<target>Bitte gebe den Sicherheitscode auf dem Bild entsprechend in das Textfeld ein.</target>
+			</trans-unit>
+			<trans-unit id="error.9221561048" xml:space="preserve" approved="yes">
 				<source></source>
 				<target>Der Sicherheitscode ist falsch, bitte versuche es nocheinmal.</target>
 			</trans-unit>
@@ -1339,7 +1343,7 @@ Solltest Du einmal nicht weiter kommen, zögere bitte nicht und wende Dich an un
 			</trans-unit>
 			<trans-unit id="register_step3_error_nothing_found" xml:space="preserve" approved="yes">
 				<source></source>
-				<target>Eine Nutzung der Plattform ist zurzeit nur innerhalb von Baden-Württemberg möglich - hier konnte Dein Ort nicht ermittelt werden. Bitte überprüfe Deine Eingabe oder wende Dich an den Support.</target>
+				<target>Dein eingegebener Ort konnte nicht ermittelt werden. Bitte überprüfe Deine Eingabe oder wende Dich an den Support.</target>
 			</trans-unit>
 			<trans-unit id="register_step4" xml:space="preserve" approved="yes">
 				<source></source>

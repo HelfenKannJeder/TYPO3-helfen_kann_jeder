@@ -144,14 +144,6 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 	protected $prename;
 
 	/**
-	 * captcha
-	 *
-	 * @var string
-	 * @validate \SJBR\SrFreecap\Validation\Validator\CaptchaValidator
-	 */
-	protected $captcha;
-
-	/**
 	 * @var string
 	 */
 	protected $imageFolder = 'uploads/tx_helfenkannjeder/';
@@ -365,13 +357,5 @@ class RegisterOrganisationProgress extends \TYPO3\CMS\Extbase\DomainObject\Abstr
 
 	public function getPrename() {
 		return $this->prename;
-	}
-
-	public function setCaptcha($captcha) {
-		$this->captcha = $captcha;
-	}
-
-	public function getCaptcha() {
-		return $this->captcha;
 	}
 }
