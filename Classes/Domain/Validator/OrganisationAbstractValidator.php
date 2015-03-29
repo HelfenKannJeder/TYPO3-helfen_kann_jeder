@@ -41,7 +41,7 @@ abstract class OrganisationAbstractValidator extends \TYPO3\CMS\Extbase\Validati
 	}
 
 	protected function isInRange($string, $min, $max) {
-		return strlen($string) <= $min || strlen($string) > $max;
+		return strlen($string) >= $min && strlen($string) <= $max;
 	}
 
 	protected function getLongestWordLength($string) {
