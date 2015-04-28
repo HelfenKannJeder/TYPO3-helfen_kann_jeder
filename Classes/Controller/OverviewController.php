@@ -78,6 +78,7 @@ class OverviewController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
 	/**
 	 * @param \Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation
+	 * @ignorevalidation $organisation
 	 * @return void
 	 */
 	public function detailAction(\Querformatik\HelfenKannJeder\Domain\Model\Organisation $organisation) {
