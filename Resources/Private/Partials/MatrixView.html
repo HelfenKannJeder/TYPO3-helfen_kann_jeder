@@ -20,7 +20,7 @@ window.onload = function() {
 	<tr id="helfen_kann_jeder_matrix_headline">
 		<td></td>
 		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
-		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}"><img src="{f:uri.action(action: 'column', pluginName: 'OverviewList', controller: 'Matrix', pageType: 1332254762, arguments: {activityfield: activityfield}, format: '.png')}" alt="{activityfield.name}" /></td>
+		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}"><div><span>{activityfield.name}</span></div></td>
 		</f:for>
 	</tr>
 	</thead>
@@ -49,12 +49,4 @@ window.onload = function() {
 		</f:if>
 	</f:for>
 	</tbody>
-	<tfoot>
-	<tr id="helfen_kann_jeder_matrix_subline">
-		<td></td>
-		<f:for each="{activityfields}" as="activityfield" iteration="iteration">
-		<td id="helfen_kann_jeder_matrix_headline_uid_{activityfield.uid}" class="helfen_kann_jeder_matrix_col helfen_kann_jeder_matrix_col_{f:if(condition: iteration.isEven, then: 'even', else: 'odd')} helfen_kann_jeder_matrix_row_{activityfield.uid}" title="{activityfield.description}"><img src="{f:uri.action(action: 'column', pluginName: 'OverviewList', controller: 'Matrix', pageType: 1332254762, arguments: {activityfield: activityfield}, format: '.png')}" alt="{activityfield.name}" /></td>
-		</f:for>
-	</tr>
-	</tfoot>
 </table>
