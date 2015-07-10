@@ -142,7 +142,6 @@ $TCA['tx_helfenkannjeder_domain_model_address'] = array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
-				'eval' => 'int',
 				'max' => 255
 			)
 		),
