@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2015 Valentin Zickner <valentin.zickner@helfenkannjeder.de>
+ * Copyright (C) 2016 Valentin Zickner <valentin.zickner@helfenkannjeder.de>
  *
  * This file is part of HelfenKannJeder.
  *
@@ -18,37 +18,28 @@
  * along with HelfenKannJeder.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-########################################################################
-# Extension Manager/Repository config file for ext "helfen_kann_jeder".
-#
-# Auto generated 16-09-2012 22:53
-#
-# Manual updates:
-# Only the data in the array - everything else is removed by next
-# writing. "version" and "dependencies" must not be touched!
-########################################################################
-
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Helfen Kann Jeder',
 	'description' => '',
 	'category' => 'plugin',
 	'author' => 'Valentin Zickner',
-	'author_company' => 'Querformatik UG (haftungsbeschraenkt) and Technisches Hilfswerk Karlsruhe',
-	'author_email' => 'zickner@querformatik.de',
-	'dependencies' => 'extbase,fluid,captcha_viewhelper,coreapi,vhs',
+	'author_company' => 'HelfenKannJeder e.V.',
+	'author_email' => 'valentin.zickner@helfenkannjeder.de',
 	'state' => 'stable',
 	'clearCacheOnLoad' => 1,
 	'version' => '2.1.1-dev',
-	'contraints' => array(
+	'constraints' => array(
 		'depends' => array(
-			'typo3' => '4.3.0-4.5.99',
+			'typo3' => '4.5.0-0.0.0',
 			'extbase' => '1.0.0-0.0.0',
 			'fluid' => '1.0.0-0.0.0',
 			'mvc_extjs' => '0.1.1-0.0.0',
-			'captcha_viewhelper' => '0.0.0',
 			'pagepath' => '0.0.0',
 			'coreapi' => '0.0.0',
 			'vhs' => '2.3.1',
+			'qu_base' => '0.0.0',
+			'sr_freecap' => '2.0.5-0.0.0',
+			't3jquery' => '2.7.0-0.0.0',
 		),
 		'conflicts' => array(
 		),
@@ -57,18 +48,7 @@ $EM_CONF[$_EXTKEY] = array(
 	),
 	'suggests' => array(
 	),
-	'conflicts' => '',
-	'constraints' => array(
-		'depends' => array(
-			'extbase' => '',
-			'fluid' => '',
-			'captcha_viewhelper' => '',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
+	'conflicts' => ''
 );
 
 ?>
